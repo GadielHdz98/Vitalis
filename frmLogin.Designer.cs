@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            txt_user = new TextBox();
             label1 = new Label();
-            textBox2 = new TextBox();
+            txt_password = new TextBox();
             btn_ingresar = new Button();
             btn_salir = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -47,13 +47,14 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txt_user
             // 
-            textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(604, 130);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(300, 33);
-            textBox1.TabIndex = 1;
+            txt_user.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txt_user.Location = new Point(604, 130);
+            txt_user.Name = "txt_user";
+            txt_user.PlaceholderText = "Nombre Usuario";
+            txt_user.Size = new Size(300, 33);
+            txt_user.TabIndex = 1;
             // 
             // label1
             // 
@@ -66,13 +67,15 @@
             label1.TabIndex = 2;
             label1.Text = "LOGIN";
             // 
-            // textBox2
+            // txt_password
             // 
-            textBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(604, 206);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(300, 33);
-            textBox2.TabIndex = 3;
+            txt_password.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txt_password.Location = new Point(604, 206);
+            txt_password.Name = "txt_password";
+            txt_password.PlaceholderText = "Contraseña";
+            txt_password.Size = new Size(300, 33);
+            txt_password.TabIndex = 3;
+            txt_password.UseSystemPasswordChar = true;
             // 
             // btn_ingresar
             // 
@@ -86,6 +89,7 @@
             btn_ingresar.TabIndex = 4;
             btn_ingresar.Text = "Ingresar";
             btn_ingresar.UseVisualStyleBackColor = false;
+            btn_ingresar.Click += btn_ingresar_Click;
             // 
             // btn_salir
             // 
@@ -99,6 +103,7 @@
             btn_salir.TabIndex = 5;
             btn_salir.Text = "Salir";
             btn_salir.UseVisualStyleBackColor = false;
+            btn_salir.Click += btn_salir_Click;
             // 
             // frmLogin
             // 
@@ -108,12 +113,13 @@
             ClientSize = new Size(970, 546);
             Controls.Add(btn_salir);
             Controls.Add(btn_ingresar);
-            Controls.Add(textBox2);
+            Controls.Add(txt_password);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txt_user);
             Controls.Add(pictureBox1);
             Name = "frmLogin";
             Text = "Vitalis";
+            Load += frmLogin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -122,9 +128,9 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private TextBox textBox1;
+        private TextBox txt_user;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txt_password;
         private Button btn_ingresar;
         private Button btn_salir;
     }
