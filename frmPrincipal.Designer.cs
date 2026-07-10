@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            pcb_logobienvenida = new PictureBox();
             label1 = new Label();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox8 = new PictureBox();
+            pcb_logomenu = new PictureBox();
+            pcb_iniciomenu = new PictureBox();
+            pcb_pacientesmenu = new PictureBox();
+            pcb_consultasmenu = new PictureBox();
+            pcb_ayudamenu = new PictureBox();
             lbl_iniciosb = new Label();
             lbl_pacientes = new Label();
             label4 = new Label();
             lbl_ayuda = new Label();
+            pnl_Iniciotb = new Panel();
             label2 = new Label();
-            pictureBox9 = new PictureBox();
+            pcb_iniciotopbar = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_logobienvenida).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_logomenu).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_iniciomenu).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_pacientesmenu).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_consultasmenu).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_ayudamenu).BeginInit();
+            pnl_Iniciotb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pcb_iniciotopbar).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -63,24 +63,15 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // pcb_logobienvenida
             // 
-            pictureBox2.BackColor = Color.FromArgb(58, 154, 138);
-            pictureBox2.Location = new Point(268, -1);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1651, 93);
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources.Logo_VerFondo_blanco;
-            pictureBox3.Location = new Point(800, 250);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(594, 534);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
+            pcb_logobienvenida.Image = Properties.Resources.Logo_VerFondo_blanco;
+            pcb_logobienvenida.Location = new Point(800, 250);
+            pcb_logobienvenida.Name = "pcb_logobienvenida";
+            pcb_logobienvenida.Size = new Size(594, 534);
+            pcb_logobienvenida.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcb_logobienvenida.TabIndex = 2;
+            pcb_logobienvenida.TabStop = false;
             // 
             // label1
             // 
@@ -94,55 +85,55 @@
             label1.TabIndex = 3;
             label1.Text = "Bienvenido Usuario";
             // 
-            // pictureBox4
+            // pcb_logomenu
             // 
-            pictureBox4.Image = Properties.Resources.Logo_GH_VerFondo_Verde_para_el_SideBar;
-            pictureBox4.Location = new Point(23, 12);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(215, 191);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 4;
-            pictureBox4.TabStop = false;
+            pcb_logomenu.Image = Properties.Resources.Logo_GH_VerFondo_Verde_para_el_SideBar;
+            pcb_logomenu.Location = new Point(23, 12);
+            pcb_logomenu.Name = "pcb_logomenu";
+            pcb_logomenu.Size = new Size(215, 191);
+            pcb_logomenu.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcb_logomenu.TabIndex = 4;
+            pcb_logomenu.TabStop = false;
             // 
-            // pictureBox5
+            // pcb_iniciomenu
             // 
-            pictureBox5.BackColor = Color.FromArgb(58, 154, 138);
-            pictureBox5.Cursor = Cursors.Hand;
-            pictureBox5.Location = new Point(1, 318);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(268, 93);
-            pictureBox5.TabIndex = 5;
-            pictureBox5.TabStop = false;
+            pcb_iniciomenu.BackColor = Color.FromArgb(58, 154, 138);
+            pcb_iniciomenu.Cursor = Cursors.Hand;
+            pcb_iniciomenu.Location = new Point(1, 318);
+            pcb_iniciomenu.Name = "pcb_iniciomenu";
+            pcb_iniciomenu.Size = new Size(268, 93);
+            pcb_iniciomenu.TabIndex = 5;
+            pcb_iniciomenu.TabStop = false;
             // 
-            // pictureBox6
+            // pcb_pacientesmenu
             // 
-            pictureBox6.BackColor = Color.FromArgb(58, 154, 138);
-            pictureBox6.Cursor = Cursors.Hand;
-            pictureBox6.Location = new Point(1, 411);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(268, 93);
-            pictureBox6.TabIndex = 6;
-            pictureBox6.TabStop = false;
+            pcb_pacientesmenu.BackColor = Color.FromArgb(58, 154, 138);
+            pcb_pacientesmenu.Cursor = Cursors.Hand;
+            pcb_pacientesmenu.Location = new Point(1, 411);
+            pcb_pacientesmenu.Name = "pcb_pacientesmenu";
+            pcb_pacientesmenu.Size = new Size(268, 93);
+            pcb_pacientesmenu.TabIndex = 6;
+            pcb_pacientesmenu.TabStop = false;
             // 
-            // pictureBox7
+            // pcb_consultasmenu
             // 
-            pictureBox7.BackColor = Color.FromArgb(58, 154, 138);
-            pictureBox7.Cursor = Cursors.Hand;
-            pictureBox7.Location = new Point(1, 504);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(268, 93);
-            pictureBox7.TabIndex = 7;
-            pictureBox7.TabStop = false;
+            pcb_consultasmenu.BackColor = Color.FromArgb(58, 154, 138);
+            pcb_consultasmenu.Cursor = Cursors.Hand;
+            pcb_consultasmenu.Location = new Point(1, 504);
+            pcb_consultasmenu.Name = "pcb_consultasmenu";
+            pcb_consultasmenu.Size = new Size(268, 93);
+            pcb_consultasmenu.TabIndex = 7;
+            pcb_consultasmenu.TabStop = false;
             // 
-            // pictureBox8
+            // pcb_ayudamenu
             // 
-            pictureBox8.BackColor = Color.FromArgb(58, 154, 138);
-            pictureBox8.Cursor = Cursors.Hand;
-            pictureBox8.Location = new Point(1, 598);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(268, 93);
-            pictureBox8.TabIndex = 8;
-            pictureBox8.TabStop = false;
+            pcb_ayudamenu.BackColor = Color.FromArgb(58, 154, 138);
+            pcb_ayudamenu.Cursor = Cursors.Hand;
+            pcb_ayudamenu.Location = new Point(1, 598);
+            pcb_ayudamenu.Name = "pcb_ayudamenu";
+            pcb_ayudamenu.Size = new Size(268, 93);
+            pcb_ayudamenu.TabIndex = 8;
+            pcb_ayudamenu.TabStop = false;
             // 
             // lbl_iniciosb
             // 
@@ -196,6 +187,16 @@
             lbl_ayuda.TabIndex = 12;
             lbl_ayuda.Text = "ayuda";
             // 
+            // pnl_Iniciotb
+            // 
+            pnl_Iniciotb.BackColor = Color.FromArgb(58, 154, 138);
+            pnl_Iniciotb.Controls.Add(label2);
+            pnl_Iniciotb.Controls.Add(pcb_iniciotopbar);
+            pnl_Iniciotb.Location = new Point(269, 0);
+            pnl_Iniciotb.Name = "pnl_Iniciotb";
+            pnl_Iniciotb.Size = new Size(1658, 100);
+            pnl_Iniciotb.TabIndex = 13;
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -203,21 +204,21 @@
             label2.Cursor = Cursors.Hand;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(239, 239, 239);
-            label2.Location = new Point(380, 31);
+            label2.Location = new Point(101, 40);
             label2.Name = "label2";
             label2.Size = new Size(78, 32);
-            label2.TabIndex = 14;
+            label2.TabIndex = 15;
             label2.Text = "Inicio";
             // 
-            // pictureBox9
+            // pcb_iniciotopbar
             // 
-            pictureBox9.BackColor = Color.FromArgb(58, 154, 138);
-            pictureBox9.Cursor = Cursors.Hand;
-            pictureBox9.Location = new Point(268, -1);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(268, 93);
-            pictureBox9.TabIndex = 13;
-            pictureBox9.TabStop = false;
+            pcb_iniciotopbar.BackColor = Color.FromArgb(58, 154, 138);
+            pcb_iniciotopbar.Cursor = Cursors.Hand;
+            pcb_iniciotopbar.Location = new Point(0, 4);
+            pcb_iniciotopbar.Name = "pcb_iniciotopbar";
+            pcb_iniciotopbar.Size = new Size(268, 93);
+            pcb_iniciotopbar.TabIndex = 14;
+            pcb_iniciotopbar.TabStop = false;
             // 
             // frmPrincipal
             // 
@@ -226,20 +227,18 @@
             BackColor = Color.FromArgb(239, 239, 239);
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1924, 1057);
-            Controls.Add(label2);
-            Controls.Add(pictureBox9);
+            Controls.Add(pnl_Iniciotb);
             Controls.Add(lbl_ayuda);
             Controls.Add(label4);
             Controls.Add(lbl_pacientes);
             Controls.Add(lbl_iniciosb);
-            Controls.Add(pictureBox8);
-            Controls.Add(pictureBox7);
-            Controls.Add(pictureBox6);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
+            Controls.Add(pcb_ayudamenu);
+            Controls.Add(pcb_consultasmenu);
+            Controls.Add(pcb_pacientesmenu);
+            Controls.Add(pcb_iniciomenu);
+            Controls.Add(pcb_logomenu);
             Controls.Add(label1);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
+            Controls.Add(pcb_logobienvenida);
             Controls.Add(pictureBox1);
             DoubleBuffered = true;
             Name = "frmPrincipal";
@@ -248,14 +247,15 @@
             WindowState = FormWindowState.Maximized;
             Load += frmPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_logobienvenida).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_logomenu).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_iniciomenu).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_pacientesmenu).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_consultasmenu).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_ayudamenu).EndInit();
+            pnl_Iniciotb.ResumeLayout(false);
+            pnl_Iniciotb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pcb_iniciotopbar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -263,19 +263,19 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
+        private PictureBox pcb_logobienvenida;
         private Label label1;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox8;
+        private PictureBox pcb_logomenu;
+        private PictureBox pcb_iniciomenu;
+        private PictureBox pcb_pacientesmenu;
+        private PictureBox pcb_consultasmenu;
+        private PictureBox pcb_ayudamenu;
         private Label lbl_iniciosb;
         private Label lbl_pacientes;
         private Label label4;
         private Label lbl_ayuda;
+        private Panel pnl_Iniciotb;
         private Label label2;
-        private PictureBox pictureBox9;
+        private PictureBox pcb_iniciotopbar;
     }
 }

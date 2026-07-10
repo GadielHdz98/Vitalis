@@ -1,6 +1,6 @@
 ﻿namespace Vitalis
 {
-    partial class Form1
+    partial class frmLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -60,7 +60,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(698, 71);
+            label1.Location = new Point(717, 67);
             label1.Name = "label1";
             label1.Size = new Size(87, 32);
             label1.TabIndex = 2;
@@ -80,7 +80,7 @@
             btn_ingresar.BackgroundImageLayout = ImageLayout.Center;
             btn_ingresar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_ingresar.ForeColor = Color.White;
-            btn_ingresar.Location = new Point(666, 324);
+            btn_ingresar.Location = new Point(679, 324);
             btn_ingresar.Name = "btn_ingresar";
             btn_ingresar.Size = new Size(160, 45);
             btn_ingresar.TabIndex = 4;
@@ -93,14 +93,14 @@
             btn_salir.BackgroundImageLayout = ImageLayout.Center;
             btn_salir.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_salir.ForeColor = Color.White;
-            btn_salir.Location = new Point(666, 393);
+            btn_salir.Location = new Point(679, 393);
             btn_salir.Name = "btn_salir";
             btn_salir.Size = new Size(160, 45);
             btn_salir.TabIndex = 5;
             btn_salir.Text = "Salir";
             btn_salir.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -112,8 +112,8 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(pictureBox1);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "frmLogin";
+            Text = "Vitalis";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

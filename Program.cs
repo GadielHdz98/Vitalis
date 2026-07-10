@@ -12,6 +12,7 @@ namespace Vitalis
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new frmPrincipal());
+            //Application.Run(new frmLogin());
         }
     }
 }
