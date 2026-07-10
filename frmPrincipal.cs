@@ -22,7 +22,7 @@ namespace Vitalis
             int altura_max = this.Height;
             int ancho_max = this.Width;
 
-            MessageBox.Show($"Altura: {altura_max}, Ancho: {ancho_max}");
+            // MessageBox.Show($"Altura: {altura_max}, Ancho: {ancho_max}");
             
             this.Height = altura_max;
             this. Width = ancho_max;

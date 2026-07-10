@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySqlConnector;
+
+namespace Vitalis
+{
+    internal class clsConexion
+    {
+        private string host = "localhost";
+        private string bd = "vitalisserviciosmedicos";
+        private string usuario = "root";
+        private string password = "";
+        private string puerto = "3307";
+
+        private string cadenaConexion => $"server={host};database={bd};user={usuario};password={password};port={puerto}";
+
+        public MySqlConnection AbrirConexion()
+        {
+            var conexion = new MySqlConnection(cadenaConexion);
+            try
+            {
+                conexion.Open();
+                return conexion;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al intentar conectarse a la Base de datos" + ex.Message, ex);
+            }
+
+        }
+
+        public void CerrarConexion(MySqlConnection conexion)
+        {
+            try
+            {
+                if (conexion != null && conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                    conexion.Dispose();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al cerra la Base de datos" + ex.Message, ex);
+            }
+
+        }
+    }
+}
