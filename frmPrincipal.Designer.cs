@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            pcb_menusb = new PictureBox();
             pcb_logobienvenida = new PictureBox();
             label1 = new Label();
             pcb_logomenu = new PictureBox();
@@ -41,9 +41,11 @@
             label4 = new Label();
             lbl_ayuda = new Label();
             pnl_Iniciotb = new Panel();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             label2 = new Label();
-            pcb_iniciotopbar = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            label3 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pcb_menusb).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcb_logobienvenida).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcb_logomenu).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcb_iniciomenu).BeginInit();
@@ -51,17 +53,18 @@
             ((System.ComponentModel.ISupportInitialize)pcb_consultasmenu).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcb_ayudamenu).BeginInit();
             pnl_Iniciotb.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pcb_iniciotopbar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pcb_menusb
             // 
-            pictureBox1.BackColor = Color.FromArgb(58, 154, 138);
-            pictureBox1.Location = new Point(1, -1);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(268, 1059);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pcb_menusb.BackColor = Color.FromArgb(58, 154, 138);
+            pcb_menusb.Location = new Point(1, -1);
+            pcb_menusb.Name = "pcb_menusb";
+            pcb_menusb.Size = new Size(268, 1059);
+            pcb_menusb.TabIndex = 0;
+            pcb_menusb.TabStop = false;
             // 
             // pcb_logobienvenida
             // 
@@ -97,7 +100,7 @@
             // 
             // pcb_iniciomenu
             // 
-            pcb_iniciomenu.BackColor = Color.FromArgb(58, 154, 138);
+            pcb_iniciomenu.BackColor = Color.FromArgb(77, 180, 163);
             pcb_iniciomenu.Cursor = Cursors.Hand;
             pcb_iniciomenu.Location = new Point(1, 318);
             pcb_iniciomenu.Name = "pcb_iniciomenu";
@@ -138,7 +141,7 @@
             // lbl_iniciosb
             // 
             lbl_iniciosb.AutoSize = true;
-            lbl_iniciosb.BackColor = Color.FromArgb(58, 154, 138);
+            lbl_iniciosb.BackColor = Color.FromArgb(77, 180, 163);
             lbl_iniciosb.Cursor = Cursors.Hand;
             lbl_iniciosb.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_iniciosb.ForeColor = Color.FromArgb(239, 239, 239);
@@ -189,13 +192,34 @@
             // 
             // pnl_Iniciotb
             // 
-            pnl_Iniciotb.BackColor = Color.FromArgb(58, 154, 138);
+            pnl_Iniciotb.BackColor = Color.FromArgb(239, 239, 239);
+            pnl_Iniciotb.Controls.Add(label3);
             pnl_Iniciotb.Controls.Add(label2);
-            pnl_Iniciotb.Controls.Add(pcb_iniciotopbar);
+            pnl_Iniciotb.Controls.Add(pictureBox2);
+            pnl_Iniciotb.Controls.Add(pictureBox1);
             pnl_Iniciotb.Location = new Point(269, 0);
             pnl_Iniciotb.Name = "pnl_Iniciotb";
-            pnl_Iniciotb.Size = new Size(1658, 100);
+            pnl_Iniciotb.Size = new Size(1658, 1058);
             pnl_Iniciotb.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.FromArgb(58, 154, 138);
+            pictureBox1.Location = new Point(0, -1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1655, 105);
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.FromArgb(77, 180, 163);
+            pictureBox2.Cursor = Cursors.Hand;
+            pictureBox2.Location = new Point(0, -1);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(268, 105);
+            pictureBox2.TabIndex = 14;
+            pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -204,21 +228,24 @@
             label2.Cursor = Cursors.Hand;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(239, 239, 239);
-            label2.Location = new Point(101, 40);
+            label2.Location = new Point(790, 513);
             label2.Name = "label2";
             label2.Size = new Size(78, 32);
             label2.TabIndex = 15;
             label2.Text = "Inicio";
             // 
-            // pcb_iniciotopbar
+            // label3
             // 
-            pcb_iniciotopbar.BackColor = Color.FromArgb(58, 154, 138);
-            pcb_iniciotopbar.Cursor = Cursors.Hand;
-            pcb_iniciotopbar.Location = new Point(0, 4);
-            pcb_iniciotopbar.Name = "pcb_iniciotopbar";
-            pcb_iniciotopbar.Size = new Size(268, 93);
-            pcb_iniciotopbar.TabIndex = 14;
-            pcb_iniciotopbar.TabStop = false;
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(77, 180, 163);
+            label3.Cursor = Cursors.Hand;
+            label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(239, 239, 239);
+            label3.Location = new Point(106, 40);
+            label3.Name = "label3";
+            label3.Size = new Size(78, 32);
+            label3.TabIndex = 14;
+            label3.Text = "Inicio";
             // 
             // frmPrincipal
             // 
@@ -227,6 +254,8 @@
             BackColor = Color.FromArgb(239, 239, 239);
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1924, 1057);
+            Controls.Add(label1);
+            Controls.Add(pcb_logobienvenida);
             Controls.Add(pnl_Iniciotb);
             Controls.Add(lbl_ayuda);
             Controls.Add(label4);
@@ -237,16 +266,14 @@
             Controls.Add(pcb_pacientesmenu);
             Controls.Add(pcb_iniciomenu);
             Controls.Add(pcb_logomenu);
-            Controls.Add(label1);
-            Controls.Add(pcb_logobienvenida);
-            Controls.Add(pictureBox1);
+            Controls.Add(pcb_menusb);
             DoubleBuffered = true;
             Name = "frmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmPrincipal";
             WindowState = FormWindowState.Maximized;
             Load += frmPrincipal_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcb_menusb).EndInit();
             ((System.ComponentModel.ISupportInitialize)pcb_logobienvenida).EndInit();
             ((System.ComponentModel.ISupportInitialize)pcb_logomenu).EndInit();
             ((System.ComponentModel.ISupportInitialize)pcb_iniciomenu).EndInit();
@@ -255,14 +282,15 @@
             ((System.ComponentModel.ISupportInitialize)pcb_ayudamenu).EndInit();
             pnl_Iniciotb.ResumeLayout(false);
             pnl_Iniciotb.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pcb_iniciotopbar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox pcb_menusb;
         private PictureBox pcb_logobienvenida;
         private Label label1;
         private PictureBox pcb_logomenu;
@@ -275,7 +303,9 @@
         private Label label4;
         private Label lbl_ayuda;
         private Panel pnl_Iniciotb;
+        private PictureBox pictureBox1;
+        private Label label3;
         private Label label2;
-        private PictureBox pcb_iniciotopbar;
+        private PictureBox pictureBox2;
     }
 }
