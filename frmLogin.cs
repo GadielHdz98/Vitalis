@@ -17,8 +17,8 @@ namespace Vitalis
             try
             {
                 clsLogin login = new clsLogin();
-                login.Usuario = txt_user.Text;
-                login.Password = txt_password.Text;
+                login.Usuario = txtUser.Text;
+                login.Password = txtPassword.Text;
 
                 bool resp = login.ValidarAcceso();
                 if (resp == true)

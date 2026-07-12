@@ -63,9 +63,69 @@ namespace Vitalis.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fotoUsuarioVacia {
+            get {
+                object obj = ResourceManager.GetObject("fotoUsuarioVacia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fotoUsuarioVacia1 {
+            get {
+                object obj = ResourceManager.GetObject("fotoUsuarioVacia1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoSalir {
+            get {
+                object obj = ResourceManager.GetObject("IconoSalir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoSalir1 {
+            get {
+                object obj = ResourceManager.GetObject("IconoSalir1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoSalir2 {
+            get {
+                object obj = ResourceManager.GetObject("IconoSalir2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_ColorFondoVerde {
             get {
                 object obj = ResourceManager.GetObject("Logo ColorFondoVerde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_fondoVerdeMenuSideBar {
+            get {
+                object obj = ResourceManager.GetObject("Logo fondoVerdeMenuSideBar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +156,16 @@ namespace Vitalis.Properties {
         internal static System.Drawing.Bitmap MockUpPrincipal {
             get {
                 object obj = ResourceManager.GetObject("MockUpPrincipal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuarioFoto {
+            get {
+                object obj = ResourceManager.GetObject("usuarioFoto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
