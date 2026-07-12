@@ -12,9 +12,12 @@ namespace Vitalis
 {
     public partial class frmPrincipal : Form
     {
+        private clsPrincipal principal = new clsPrincipal();
+
         public frmPrincipal()
         {
-            InitializeComponent();
+            InitializeComponent();           
+                      
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -26,6 +29,8 @@ namespace Vitalis
             
             this.Height = altura_max;
             this. Width = ancho_max;
+
+            principal.AgregarAlContenedor(new frmInicio(), pnlContenedor);
         }
     }
 }
