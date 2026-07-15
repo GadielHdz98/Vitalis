@@ -62,7 +62,7 @@
             pnlSideBar.Dock = DockStyle.Left;
             pnlSideBar.Location = new Point(0, 0);
             pnlSideBar.Name = "pnlSideBar";
-            pnlSideBar.Size = new Size(185, 711);
+            pnlSideBar.Size = new Size(185, 1009);
             pnlSideBar.TabIndex = 0;
             // 
             // pnlPerfilUsuarioSideBar
@@ -74,7 +74,7 @@
             pnlPerfilUsuarioSideBar.Controls.Add(lblNombreUsuarioSideBar);
             pnlPerfilUsuarioSideBar.Controls.Add(pcbFotoDePerfilUsuario);
             pnlPerfilUsuarioSideBar.Dock = DockStyle.Bottom;
-            pnlPerfilUsuarioSideBar.Location = new Point(0, 550);
+            pnlPerfilUsuarioSideBar.Location = new Point(0, 848);
             pnlPerfilUsuarioSideBar.Name = "pnlPerfilUsuarioSideBar";
             pnlPerfilUsuarioSideBar.Size = new Size(185, 161);
             pnlPerfilUsuarioSideBar.TabIndex = 5;
@@ -126,7 +126,7 @@
             lblNombreUsuarioSideBar.RightToLeft = RightToLeft.No;
             lblNombreUsuarioSideBar.Size = new Size(180, 50);
             lblNombreUsuarioSideBar.TabIndex = 6;
-            lblNombreUsuarioSideBar.Text = "Luis Gadiel Hernandez Bautista";
+            lblNombreUsuarioSideBar.Text = "Nombre del usuario";
             lblNombreUsuarioSideBar.TextAlign = ContentAlignment.TopCenter;
             // 
             // pcbFotoDePerfilUsuario
@@ -189,6 +189,7 @@
             btnPacientesSideBar.Text = "Pacientes";
             btnPacientesSideBar.TextAlign = ContentAlignment.MiddleLeft;
             btnPacientesSideBar.UseVisualStyleBackColor = false;
+            btnPacientesSideBar.Click += btnPacientesSideBar_Click;
             // 
             // btnInicioSideBar
             // 
@@ -206,6 +207,7 @@
             btnInicioSideBar.Text = "Inicio";
             btnInicioSideBar.TextAlign = ContentAlignment.MiddleLeft;
             btnInicioSideBar.UseVisualStyleBackColor = false;
+            btnInicioSideBar.Click += btnInicioSideBar_Click;
             // 
             // pnlLogoVitalisSideBar
             // 
@@ -229,10 +231,12 @@
             // 
             // pnlContenedor
             // 
+            pnlContenedor.AutoScroll = true;
             pnlContenedor.Dock = DockStyle.Fill;
             pnlContenedor.Location = new Point(185, 0);
+            pnlContenedor.Margin = new Padding(0);
             pnlContenedor.Name = "pnlContenedor";
-            pnlContenedor.Size = new Size(1149, 711);
+            pnlContenedor.Size = new Size(1735, 1009);
             pnlContenedor.TabIndex = 1;
             // 
             // frmPrincipal
@@ -241,11 +245,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 239, 239);
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1334, 711);
+            ClientSize = new Size(1920, 1009);
             Controls.Add(pnlContenedor);
             Controls.Add(pnlSideBar);
             DoubleBuffered = true;
-            MinimumSize = new Size(1000, 620);
+            MinimumSize = new Size(1100, 720);
             Name = "frmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmPrincipal";

@@ -16,8 +16,8 @@ namespace Vitalis
 
         public frmPrincipal()
         {
-            InitializeComponent();           
-                      
+            InitializeComponent();
+
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -25,12 +25,22 @@ namespace Vitalis
             int altura_max = this.Height;
             int ancho_max = this.Width;
 
-            // MessageBox.Show($"Altura: {altura_max}, Ancho: {ancho_max}");
-            
+            //MessageBox.Show($"Altura: {altura_max}, Ancho: {ancho_max}");
+
             this.Height = altura_max;
-            this. Width = ancho_max;
+            this.Width = ancho_max;
 
             principal.AgregarAlContenedor(new frmInicio(), pnlContenedor);
+        }
+
+        private void btnInicioSideBar_Click(object sender, EventArgs e)
+        {           
+            principal.AgregarAlContenedor(new frmInicio(), pnlContenedor);
+        }
+
+        private void btnPacientesSideBar_Click(object sender, EventArgs e)
+        {           
+            principal.AgregarAlContenedor(new frmPacientes(), pnlContenedor);
         }
     }
 }

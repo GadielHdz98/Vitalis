@@ -1,0 +1,104 @@
+﻿namespace Vitalis
+{
+    partial class frmPacientesRecientes
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            lblVitalisInicio = new Label();
+            dgvPacientesRegistradosRecientemente = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvPacientesRegistradosRecientemente).BeginInit();
+            SuspendLayout();
+            // 
+            // lblVitalisInicio
+            // 
+            lblVitalisInicio.Anchor = AnchorStyles.Top;
+            lblVitalisInicio.Font = new Font("Segoe UI", 38.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblVitalisInicio.ForeColor = Color.FromArgb(23, 147, 209);
+            lblVitalisInicio.Location = new Point(410, 0);
+            lblVitalisInicio.Name = "lblVitalisInicio";
+            lblVitalisInicio.Size = new Size(879, 68);
+            lblVitalisInicio.TabIndex = 5;
+            lblVitalisInicio.Text = "Pacientes agregados recientemente";
+            // 
+            // dgvPacientesRegistradosRecientemente
+            // 
+            dgvPacientesRegistradosRecientemente.AllowUserToAddRows = false;
+            dgvPacientesRegistradosRecientemente.AllowUserToDeleteRows = false;
+            dgvPacientesRegistradosRecientemente.AllowUserToResizeColumns = false;
+            dgvPacientesRegistradosRecientemente.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(239, 239, 239);
+            dgvPacientesRegistradosRecientemente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvPacientesRegistradosRecientemente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvPacientesRegistradosRecientemente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPacientesRegistradosRecientemente.BackgroundColor = Color.White;
+            dgvPacientesRegistradosRecientemente.BorderStyle = BorderStyle.None;
+            dgvPacientesRegistradosRecientemente.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvPacientesRegistradosRecientemente.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvPacientesRegistradosRecientemente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvPacientesRegistradosRecientemente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPacientesRegistradosRecientemente.EnableHeadersVisualStyles = false;
+            dgvPacientesRegistradosRecientemente.GridColor = Color.White;
+            dgvPacientesRegistradosRecientemente.Location = new Point(28, 86);
+            dgvPacientesRegistradosRecientemente.MultiSelect = false;
+            dgvPacientesRegistradosRecientemente.Name = "dgvPacientesRegistradosRecientemente";
+            dgvPacientesRegistradosRecientemente.ReadOnly = true;
+            dgvPacientesRegistradosRecientemente.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dgvPacientesRegistradosRecientemente.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dgvPacientesRegistradosRecientemente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPacientesRegistradosRecientemente.Size = new Size(1647, 743);
+            dgvPacientesRegistradosRecientemente.TabIndex = 9;
+            // 
+            // frmPacientesRecientes
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1703, 861);
+            Controls.Add(dgvPacientesRegistradosRecientemente);
+            Controls.Add(lblVitalisInicio);
+            Name = "frmPacientesRecientes";
+            Text = "Pacientes agregados recientemente";
+            ((System.ComponentModel.ISupportInitialize)dgvPacientesRegistradosRecientemente).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Label lblVitalisInicio;
+        private DataGridView dgvPacientesRegistradosRecientemente;
+    }
+}

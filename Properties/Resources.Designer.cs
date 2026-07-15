@@ -83,6 +83,16 @@ namespace Vitalis.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconoBuscar {
+            get {
+                object obj = ResourceManager.GetObject("IconoBuscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconoSalir {
             get {
                 object obj = ResourceManager.GetObject("IconoSalir", resourceCulture);

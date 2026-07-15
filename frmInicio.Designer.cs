@@ -82,7 +82,7 @@
             lblMensajeBienvenidaInicio.Name = "lblMensajeBienvenidaInicio";
             lblMensajeBienvenidaInicio.Size = new Size(784, 152);
             lblMensajeBienvenidaInicio.TabIndex = 6;
-            lblMensajeBienvenidaInicio.Text = "Buenas tardes, Dr Cesar Adrian.";
+            lblMensajeBienvenidaInicio.Text = "Bienvenido";
             lblMensajeBienvenidaInicio.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
