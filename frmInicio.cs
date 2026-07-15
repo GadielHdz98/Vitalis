@@ -15,7 +15,7 @@ namespace Vitalis
         public frmInicio()
         {
             InitializeComponent();
-            MostrarSaludo("Luis Gadiel", "Doctor");
+            //MostrarSaludo("Luis Gadiel", "Doctor");
             
         }
         private void MostrarSaludo(string nombreUsuario, string rolUsuario)

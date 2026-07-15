@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Vitalis
 {
-    internal class clsPrincipal
+    internal class clsPacientes
     {
-        private Form misFormsAbiertos = null;
+        private Form misFormsAbiertos;
 
         public void AgregarAlContenedor(Form formulario, Panel panel)
-        { 
+        {
             //Verifica que no este abierto ningun form, y si lo hay, lo cierre
             if (misFormsAbiertos != null)
             {
@@ -29,9 +29,10 @@ namespace Vitalis
             //Incrustar en el panel donde se mostrara segun el parametro del metodo
             panel.Controls.Add(formulario);
             panel.Tag = formulario;
+            panel.BringToFront();
 
             //Mostrar formulario
             formulario.Show();
-        }        
+        }
     }
 }

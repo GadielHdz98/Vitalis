@@ -10,7 +10,7 @@ namespace Vitalis
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();            
+            //ApplicationConfiguration.Initialize();
 
             /*using (frmLogin login = new frmLogin())
             {
@@ -18,10 +18,12 @@ namespace Vitalis
                 {
                     Application.Run(new frmPrincipal());
                 }
-            } */
+            }*/
 
             //Application.Run(new frmLogin());
             Application.Run(new frmPrincipal());
+            //Application.Run(new frmConsultasRecientes());
+
         }
     }
 }

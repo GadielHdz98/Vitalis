@@ -14,7 +14,7 @@ namespace Vitalis
         private string bd = "vitalisserviciosmedicos";
         private string usuario = "root";
         private string password = "";
-        private string puerto = "3307";
+        private string puerto = "3306";
 
         private string cadenaConexion => $"server={host};database={bd};user={usuario};password={password};port={puerto}";
 

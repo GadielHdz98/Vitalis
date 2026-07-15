@@ -9,6 +9,10 @@ namespace Vitalis
 {
     internal class clsLogin
     {
+
+        string nombreUsuario = "Doctor";
+        string rolUsuario = "Enfermero";
+
         private string usuario;
         private string password;
 
