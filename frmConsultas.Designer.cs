@@ -28,98 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            mySqlCommand1 = new MySqlConnector.MySqlCommand();
-            panel1 = new Panel();
-            btnBuscarPacientesTopBar = new Button();
-            btnAgregarPacientesTopBar = new Button();
-            btnPacientesRecientesTopBar = new Button();
-            panel1.SuspendLayout();
+            pnlConsultasTopBar = new Panel();
+            panel2 = new Panel();
+            btnBuscarConsultasTopBar = new Button();
+            btnAgregarConsultasTopBar = new Button();
+            btnConsultasRecientesTopBar = new Button();
+            pnlContenedorConsultas = new Panel();
+            pnlConsultasTopBar.SuspendLayout();
             SuspendLayout();
             // 
-            // mySqlCommand1
+            // pnlConsultasTopBar
             // 
-            mySqlCommand1.CommandTimeout = 0;
-            mySqlCommand1.Connection = null;
-            mySqlCommand1.Transaction = null;
-            mySqlCommand1.UpdatedRowSource = System.Data.UpdateRowSource.None;
+            pnlConsultasTopBar.BackColor = Color.FromArgb(58, 154, 138);
+            pnlConsultasTopBar.Controls.Add(panel2);
+            pnlConsultasTopBar.Controls.Add(btnBuscarConsultasTopBar);
+            pnlConsultasTopBar.Controls.Add(btnAgregarConsultasTopBar);
+            pnlConsultasTopBar.Controls.Add(btnConsultasRecientesTopBar);
+            pnlConsultasTopBar.Dock = DockStyle.Top;
+            pnlConsultasTopBar.Location = new Point(0, 0);
+            pnlConsultasTopBar.Name = "pnlConsultasTopBar";
+            pnlConsultasTopBar.Size = new Size(1719, 70);
+            pnlConsultasTopBar.TabIndex = 9;
             // 
-            // panel1
+            // panel2
             // 
-            panel1.BackColor = Color.FromArgb(58, 154, 138);
-            panel1.Controls.Add(btnBuscarPacientesTopBar);
-            panel1.Controls.Add(btnAgregarPacientesTopBar);
-            panel1.Controls.Add(btnPacientesRecientesTopBar);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1133, 70);
-            panel1.TabIndex = 9;
+            panel2.Location = new Point(1, 73);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(200, 100);
+            panel2.TabIndex = 10;
             // 
-            // btnBuscarPacientesTopBar
+            // btnBuscarConsultasTopBar
             // 
-            btnBuscarPacientesTopBar.BackColor = Color.FromArgb(58, 154, 138);
-            btnBuscarPacientesTopBar.Cursor = Cursors.Hand;
-            btnBuscarPacientesTopBar.FlatAppearance.BorderSize = 0;
-            btnBuscarPacientesTopBar.FlatStyle = FlatStyle.Flat;
-            btnBuscarPacientesTopBar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBuscarPacientesTopBar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnBuscarPacientesTopBar.Location = new Point(186, 0);
-            btnBuscarPacientesTopBar.Margin = new Padding(0);
-            btnBuscarPacientesTopBar.Name = "btnBuscarPacientesTopBar";
-            btnBuscarPacientesTopBar.Size = new Size(185, 70);
-            btnBuscarPacientesTopBar.TabIndex = 3;
-            btnBuscarPacientesTopBar.Text = "Buscar";
-            btnBuscarPacientesTopBar.UseVisualStyleBackColor = false;
-            btnBuscarPacientesTopBar.Click += btnBuscarPacientesTopBar_Click;
+            btnBuscarConsultasTopBar.BackColor = Color.FromArgb(58, 154, 138);
+            btnBuscarConsultasTopBar.Cursor = Cursors.Hand;
+            btnBuscarConsultasTopBar.FlatAppearance.BorderSize = 0;
+            btnBuscarConsultasTopBar.FlatStyle = FlatStyle.Flat;
+            btnBuscarConsultasTopBar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBuscarConsultasTopBar.ForeColor = Color.FromArgb(239, 239, 239);
+            btnBuscarConsultasTopBar.Location = new Point(186, 0);
+            btnBuscarConsultasTopBar.Margin = new Padding(0);
+            btnBuscarConsultasTopBar.Name = "btnBuscarConsultasTopBar";
+            btnBuscarConsultasTopBar.Size = new Size(185, 70);
+            btnBuscarConsultasTopBar.TabIndex = 3;
+            btnBuscarConsultasTopBar.Text = "Buscar";
+            btnBuscarConsultasTopBar.UseVisualStyleBackColor = false;
+            btnBuscarConsultasTopBar.Click += btnBuscarConsultasTopBar_Click;
             // 
-            // btnAgregarPacientesTopBar
+            // btnAgregarConsultasTopBar
             // 
-            btnAgregarPacientesTopBar.BackColor = Color.FromArgb(58, 154, 138);
-            btnAgregarPacientesTopBar.FlatAppearance.BorderSize = 0;
-            btnAgregarPacientesTopBar.FlatStyle = FlatStyle.Flat;
-            btnAgregarPacientesTopBar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregarPacientesTopBar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnAgregarPacientesTopBar.Location = new Point(371, 0);
-            btnAgregarPacientesTopBar.Margin = new Padding(0);
-            btnAgregarPacientesTopBar.Name = "btnAgregarPacientesTopBar";
-            btnAgregarPacientesTopBar.Size = new Size(185, 70);
-            btnAgregarPacientesTopBar.TabIndex = 4;
-            btnAgregarPacientesTopBar.Text = "Agregar";
-            btnAgregarPacientesTopBar.UseVisualStyleBackColor = false;
-            btnAgregarPacientesTopBar.Click += btnAgregarPacientesTopBar_Click;
+            btnAgregarConsultasTopBar.BackColor = Color.FromArgb(58, 154, 138);
+            btnAgregarConsultasTopBar.FlatAppearance.BorderSize = 0;
+            btnAgregarConsultasTopBar.FlatStyle = FlatStyle.Flat;
+            btnAgregarConsultasTopBar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregarConsultasTopBar.ForeColor = Color.FromArgb(239, 239, 239);
+            btnAgregarConsultasTopBar.Location = new Point(371, 0);
+            btnAgregarConsultasTopBar.Margin = new Padding(0);
+            btnAgregarConsultasTopBar.Name = "btnAgregarConsultasTopBar";
+            btnAgregarConsultasTopBar.Size = new Size(185, 70);
+            btnAgregarConsultasTopBar.TabIndex = 4;
+            btnAgregarConsultasTopBar.Text = "Agregar";
+            btnAgregarConsultasTopBar.UseVisualStyleBackColor = false;
+            btnAgregarConsultasTopBar.Click += btnAgregarConsultasTopBar_Click;
             // 
-            // btnPacientesRecientesTopBar
+            // btnConsultasRecientesTopBar
             // 
-            btnPacientesRecientesTopBar.BackColor = Color.FromArgb(58, 154, 138);
-            btnPacientesRecientesTopBar.FlatAppearance.BorderSize = 0;
-            btnPacientesRecientesTopBar.FlatStyle = FlatStyle.Flat;
-            btnPacientesRecientesTopBar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPacientesRecientesTopBar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnPacientesRecientesTopBar.Location = new Point(1, 0);
-            btnPacientesRecientesTopBar.Margin = new Padding(0);
-            btnPacientesRecientesTopBar.Name = "btnPacientesRecientesTopBar";
-            btnPacientesRecientesTopBar.Size = new Size(185, 70);
-            btnPacientesRecientesTopBar.TabIndex = 2;
-            btnPacientesRecientesTopBar.Text = "Recientes";
-            btnPacientesRecientesTopBar.UseVisualStyleBackColor = false;
+            btnConsultasRecientesTopBar.BackColor = Color.FromArgb(58, 154, 138);
+            btnConsultasRecientesTopBar.FlatAppearance.BorderSize = 0;
+            btnConsultasRecientesTopBar.FlatStyle = FlatStyle.Flat;
+            btnConsultasRecientesTopBar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConsultasRecientesTopBar.ForeColor = Color.FromArgb(239, 239, 239);
+            btnConsultasRecientesTopBar.Location = new Point(1, 0);
+            btnConsultasRecientesTopBar.Margin = new Padding(0);
+            btnConsultasRecientesTopBar.Name = "btnConsultasRecientesTopBar";
+            btnConsultasRecientesTopBar.Size = new Size(185, 70);
+            btnConsultasRecientesTopBar.TabIndex = 2;
+            btnConsultasRecientesTopBar.Text = "Recientes";
+            btnConsultasRecientesTopBar.UseVisualStyleBackColor = false;
+            btnConsultasRecientesTopBar.Click += btnConsultasRecientesTopBar_Click;
+            // 
+            // pnlContenedorConsultas
+            // 
+            pnlContenedorConsultas.Dock = DockStyle.Fill;
+            pnlContenedorConsultas.Location = new Point(0, 70);
+            pnlContenedorConsultas.Name = "pnlContenedorConsultas";
+            pnlContenedorConsultas.Size = new Size(1719, 900);
+            pnlContenedorConsultas.TabIndex = 10;
             // 
             // frmConsultas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1133, 672);
-            Controls.Add(panel1);
+            ClientSize = new Size(1719, 970);
+            Controls.Add(pnlContenedorConsultas);
+            Controls.Add(pnlConsultasTopBar);
             Name = "frmConsultas";
             Text = "frmConsultas";
-            panel1.ResumeLayout(false);
+            pnlConsultasTopBar.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private MySqlConnector.MySqlCommand mySqlCommand1;
-        private Panel panel1;
-        private Button btnBuscarPacientesTopBar;
-        private Button btnAgregarPacientesTopBar;
-        private Button btnPacientesRecientesTopBar;
+        private Panel pnlConsultasTopBar;
+        private Button btnBuscarConsultasTopBar;
+        private Button btnAgregarConsultasTopBar;
+        private Button btnConsultasRecientesTopBar;
+        private Panel panel2;
+        private Panel pnlContenedorConsultas;
     }
 }

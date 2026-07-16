@@ -44,7 +44,7 @@
             lblVitalisInicio.AutoSize = true;
             lblVitalisInicio.Font = new Font("Segoe UI", 38.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblVitalisInicio.ForeColor = Color.FromArgb(23, 147, 209);
-            lblVitalisInicio.Location = new Point(431, 452);
+            lblVitalisInicio.Location = new Point(724, 601);
             lblVitalisInicio.Name = "lblVitalisInicio";
             lblVitalisInicio.Size = new Size(258, 68);
             lblVitalisInicio.TabIndex = 4;
@@ -54,7 +54,7 @@
             // 
             pcbLogoInicio.Anchor = AnchorStyles.None;
             pcbLogoInicio.Image = Properties.Resources.Logo_VerFondo_blanco;
-            pcbLogoInicio.Location = new Point(389, 115);
+            pcbLogoInicio.Location = new Point(682, 264);
             pcbLogoInicio.Name = "pcbLogoInicio";
             pcbLogoInicio.Size = new Size(350, 350);
             pcbLogoInicio.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -67,7 +67,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(23, 147, 209);
-            label1.Location = new Point(364, 518);
+            label1.Location = new Point(657, 667);
             label1.Name = "label1";
             label1.Size = new Size(393, 32);
             label1.TabIndex = 5;
@@ -78,7 +78,7 @@
             lblMensajeBienvenidaInicio.Anchor = AnchorStyles.Bottom;
             lblMensajeBienvenidaInicio.Font = new Font("Segoe UI", 38.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMensajeBienvenidaInicio.ForeColor = Color.FromArgb(23, 147, 209);
-            lblMensajeBienvenidaInicio.Location = new Point(184, 522);
+            lblMensajeBienvenidaInicio.Location = new Point(477, 820);
             lblMensajeBienvenidaInicio.Name = "lblMensajeBienvenidaInicio";
             lblMensajeBienvenidaInicio.Size = new Size(784, 152);
             lblMensajeBienvenidaInicio.TabIndex = 6;
@@ -91,7 +91,7 @@
             pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1133, 70);
+            pictureBox1.Size = new Size(1719, 70);
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
@@ -111,7 +111,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1133, 672);
+            ClientSize = new Size(1719, 970);
             Controls.Add(lblVitalisInicio);
             Controls.Add(label1);
             Controls.Add(label2);

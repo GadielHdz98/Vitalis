@@ -36,16 +36,18 @@
             btnSalir = new Button();
             pnlImagenesLogin = new Panel();
             pnlLogin = new Panel();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlImagenesLogin.SuspendLayout();
             pnlLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.Logo_fondoVerdeMenuSideBar;
-            pictureBox1.Location = new Point(44, 24);
+            pictureBox1.Location = new Point(-49, 24);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(304, 315);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -121,7 +123,7 @@
             pnlImagenesLogin.Dock = DockStyle.Left;
             pnlImagenesLogin.Location = new Point(0, 0);
             pnlImagenesLogin.Name = "pnlImagenesLogin";
-            pnlImagenesLogin.Size = new Size(386, 361);
+            pnlImagenesLogin.Size = new Size(200, 361);
             pnlImagenesLogin.TabIndex = 6;
             // 
             // pnlLogin
@@ -132,10 +134,21 @@
             pnlLogin.Controls.Add(btnIngresar);
             pnlLogin.Controls.Add(txtPassword);
             pnlLogin.Dock = DockStyle.Left;
-            pnlLogin.Location = new Point(386, 0);
+            pnlLogin.Location = new Point(200, 0);
             pnlLogin.Name = "pnlLogin";
             pnlLogin.Size = new Size(360, 361);
             pnlLogin.TabIndex = 7;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.None;
+            pictureBox2.Image = Properties.Resources.Logo_fondoVerdeMenuSideBar;
+            pictureBox2.Location = new Point(505, 24);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(304, 315);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
             // 
             // frmLogin
             // 
@@ -145,6 +158,7 @@
             ClientSize = new Size(744, 361);
             Controls.Add(pnlLogin);
             Controls.Add(pnlImagenesLogin);
+            Controls.Add(pictureBox2);
             MaximumSize = new Size(760, 400);
             MinimumSize = new Size(760, 400);
             Name = "frmLogin";
@@ -154,6 +168,7 @@
             pnlImagenesLogin.ResumeLayout(false);
             pnlLogin.ResumeLayout(false);
             pnlLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -167,5 +182,6 @@
         private Button btnSalir;
         private Panel pnlImagenesLogin;
         private Panel pnlLogin;
+        private PictureBox pictureBox2;
     }
 }

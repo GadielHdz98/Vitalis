@@ -17,7 +17,7 @@ namespace Vitalis
         public frmPacientes()
         {
             InitializeComponent();
-            MessageBox.Show($"Size: {this.Width}, {this.Height}");
+            pacientes.AgregarAlContenedor(new frmPacientesRecientes(), pnlContenedorPacientes);
         }
 
         private void btnPacientesRecientesTopBar_Click(object sender, EventArgs e)
@@ -33,11 +33,6 @@ namespace Vitalis
         private void btnAgregarPacientesTopBar_Click(object sender, EventArgs e)
         {
             pacientes.AgregarAlContenedor(new frmPacientesAgregar(), pnlContenedorPacientes);
-        }
-
-        private void frmPacientes_Load(object sender, EventArgs e)
-        {
-            MessageBox.Show($"{this.Height}, {this.Width}");
         }
     }
 }

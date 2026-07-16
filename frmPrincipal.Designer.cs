@@ -62,7 +62,7 @@
             pnlSideBar.Dock = DockStyle.Left;
             pnlSideBar.Location = new Point(0, 0);
             pnlSideBar.Name = "pnlSideBar";
-            pnlSideBar.Size = new Size(185, 1009);
+            pnlSideBar.Size = new Size(200, 1009);
             pnlSideBar.TabIndex = 0;
             // 
             // pnlPerfilUsuarioSideBar
@@ -76,7 +76,7 @@
             pnlPerfilUsuarioSideBar.Dock = DockStyle.Bottom;
             pnlPerfilUsuarioSideBar.Location = new Point(0, 848);
             pnlPerfilUsuarioSideBar.Name = "pnlPerfilUsuarioSideBar";
-            pnlPerfilUsuarioSideBar.Size = new Size(185, 161);
+            pnlPerfilUsuarioSideBar.Size = new Size(200, 161);
             pnlPerfilUsuarioSideBar.TabIndex = 5;
             // 
             // pictureBox1
@@ -98,7 +98,7 @@
             btnCerrarSesionSideBar.ForeColor = Color.FromArgb(239, 239, 239);
             btnCerrarSesionSideBar.Location = new Point(6, 119);
             btnCerrarSesionSideBar.Name = "btnCerrarSesionSideBar";
-            btnCerrarSesionSideBar.Size = new Size(179, 30);
+            btnCerrarSesionSideBar.Size = new Size(193, 30);
             btnCerrarSesionSideBar.TabIndex = 8;
             btnCerrarSesionSideBar.Text = "Cerrar sesión";
             btnCerrarSesionSideBar.UseVisualStyleBackColor = false;
@@ -108,7 +108,7 @@
             lblRolUsuarioSideBar.AutoEllipsis = true;
             lblRolUsuarioSideBar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblRolUsuarioSideBar.ForeColor = Color.FromArgb(239, 239, 239);
-            lblRolUsuarioSideBar.Location = new Point(3, 86);
+            lblRolUsuarioSideBar.Location = new Point(6, 86);
             lblRolUsuarioSideBar.Name = "lblRolUsuarioSideBar";
             lblRolUsuarioSideBar.RightToLeft = RightToLeft.No;
             lblRolUsuarioSideBar.Size = new Size(182, 30);
@@ -121,7 +121,7 @@
             lblNombreUsuarioSideBar.AutoEllipsis = true;
             lblNombreUsuarioSideBar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNombreUsuarioSideBar.ForeColor = Color.FromArgb(239, 239, 239);
-            lblNombreUsuarioSideBar.Location = new Point(3, 36);
+            lblNombreUsuarioSideBar.Location = new Point(11, 36);
             lblNombreUsuarioSideBar.Name = "lblNombreUsuarioSideBar";
             lblNombreUsuarioSideBar.RightToLeft = RightToLeft.No;
             lblNombreUsuarioSideBar.Size = new Size(180, 50);
@@ -132,7 +132,7 @@
             // pcbFotoDePerfilUsuario
             // 
             pcbFotoDePerfilUsuario.Image = Properties.Resources.fotoUsuarioVacia1;
-            pcbFotoDePerfilUsuario.Location = new Point(77, 3);
+            pcbFotoDePerfilUsuario.Location = new Point(82, -1);
             pcbFotoDePerfilUsuario.Name = "pcbFotoDePerfilUsuario";
             pcbFotoDePerfilUsuario.Size = new Size(30, 30);
             pcbFotoDePerfilUsuario.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -150,9 +150,9 @@
             btnAyudaSideBar.Location = new Point(0, 351);
             btnAyudaSideBar.Margin = new Padding(0);
             btnAyudaSideBar.Name = "btnAyudaSideBar";
-            btnAyudaSideBar.Size = new Size(185, 70);
+            btnAyudaSideBar.Size = new Size(200, 70);
             btnAyudaSideBar.TabIndex = 4;
-            btnAyudaSideBar.Text = "Ayuda";
+            btnAyudaSideBar.Text = ". . .";
             btnAyudaSideBar.TextAlign = ContentAlignment.MiddleLeft;
             btnAyudaSideBar.UseVisualStyleBackColor = false;
             // 
@@ -167,11 +167,12 @@
             btnConsultasSideBar.Location = new Point(0, 281);
             btnConsultasSideBar.Margin = new Padding(0);
             btnConsultasSideBar.Name = "btnConsultasSideBar";
-            btnConsultasSideBar.Size = new Size(185, 70);
+            btnConsultasSideBar.Size = new Size(200, 70);
             btnConsultasSideBar.TabIndex = 3;
             btnConsultasSideBar.Text = "Consultas";
             btnConsultasSideBar.TextAlign = ContentAlignment.MiddleLeft;
             btnConsultasSideBar.UseVisualStyleBackColor = false;
+            btnConsultasSideBar.Click += btnConsultasSideBar_Click;
             // 
             // btnPacientesSideBar
             // 
@@ -184,7 +185,7 @@
             btnPacientesSideBar.Location = new Point(0, 211);
             btnPacientesSideBar.Margin = new Padding(0);
             btnPacientesSideBar.Name = "btnPacientesSideBar";
-            btnPacientesSideBar.Size = new Size(185, 70);
+            btnPacientesSideBar.Size = new Size(200, 70);
             btnPacientesSideBar.TabIndex = 2;
             btnPacientesSideBar.Text = "Pacientes";
             btnPacientesSideBar.TextAlign = ContentAlignment.MiddleLeft;
@@ -202,7 +203,7 @@
             btnInicioSideBar.Location = new Point(0, 141);
             btnInicioSideBar.Margin = new Padding(0);
             btnInicioSideBar.Name = "btnInicioSideBar";
-            btnInicioSideBar.Size = new Size(185, 70);
+            btnInicioSideBar.Size = new Size(200, 70);
             btnInicioSideBar.TabIndex = 1;
             btnInicioSideBar.Text = "Inicio";
             btnInicioSideBar.TextAlign = ContentAlignment.MiddleLeft;
@@ -215,13 +216,13 @@
             pnlLogoVitalisSideBar.Dock = DockStyle.Top;
             pnlLogoVitalisSideBar.Location = new Point(0, 0);
             pnlLogoVitalisSideBar.Name = "pnlLogoVitalisSideBar";
-            pnlLogoVitalisSideBar.Size = new Size(185, 141);
+            pnlLogoVitalisSideBar.Size = new Size(200, 141);
             pnlLogoVitalisSideBar.TabIndex = 0;
             // 
             // pcbLogoVitalisSideBar
             // 
             pcbLogoVitalisSideBar.Image = Properties.Resources.Logo_fondoVerdeMenuSideBar;
-            pcbLogoVitalisSideBar.Location = new Point(18, 0);
+            pcbLogoVitalisSideBar.Location = new Point(27, 0);
             pcbLogoVitalisSideBar.Margin = new Padding(0);
             pcbLogoVitalisSideBar.Name = "pcbLogoVitalisSideBar";
             pcbLogoVitalisSideBar.Size = new Size(144, 137);
@@ -233,10 +234,10 @@
             // 
             pnlContenedor.AutoScroll = true;
             pnlContenedor.Dock = DockStyle.Fill;
-            pnlContenedor.Location = new Point(185, 0);
+            pnlContenedor.Location = new Point(200, 0);
             pnlContenedor.Margin = new Padding(0);
             pnlContenedor.Name = "pnlContenedor";
-            pnlContenedor.Size = new Size(1735, 1009);
+            pnlContenedor.Size = new Size(1720, 1009);
             pnlContenedor.TabIndex = 1;
             // 
             // frmPrincipal

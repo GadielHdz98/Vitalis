@@ -31,6 +31,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             lblVitalisInicio = new Label();
             dgvConsultasRealizadas = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvConsultasRealizadas).BeginInit();
@@ -41,7 +43,7 @@
             lblVitalisInicio.Anchor = AnchorStyles.Top;
             lblVitalisInicio.Font = new Font("Segoe UI", 38.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblVitalisInicio.ForeColor = Color.FromArgb(23, 147, 209);
-            lblVitalisInicio.Location = new Point(102, 9);
+            lblVitalisInicio.Location = new Point(403, 9);
             lblVitalisInicio.Name = "lblVitalisInicio";
             lblVitalisInicio.Size = new Size(900, 68);
             lblVitalisInicio.TabIndex = 7;
@@ -70,24 +72,40 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvConsultasRealizadas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvConsultasRealizadas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(23, 147, 209);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvConsultasRealizadas.DefaultCellStyle = dataGridViewCellStyle3;
             dgvConsultasRealizadas.EnableHeadersVisualStyles = false;
             dgvConsultasRealizadas.GridColor = Color.White;
-            dgvConsultasRealizadas.Location = new Point(22, 91);
+            dgvConsultasRealizadas.Location = new Point(45, 91);
             dgvConsultasRealizadas.MultiSelect = false;
             dgvConsultasRealizadas.Name = "dgvConsultasRealizadas";
             dgvConsultasRealizadas.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(23, 147, 209);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvConsultasRealizadas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvConsultasRealizadas.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dgvConsultasRealizadas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dgvConsultasRealizadas.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvConsultasRealizadas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvConsultasRealizadas.Size = new Size(1074, 448);
+            dgvConsultasRealizadas.Size = new Size(1642, 853);
             dgvConsultasRealizadas.TabIndex = 10;
             // 
             // frmConsultasRecientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1117, 563);
+            ClientSize = new Size(1719, 970);
             Controls.Add(dgvConsultasRealizadas);
             Controls.Add(lblVitalisInicio);
             Name = "frmConsultasRecientes";

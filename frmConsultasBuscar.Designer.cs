@@ -30,13 +30,18 @@
         {
             dataGridView1 = new DataGridView();
             pnlBuscarPaciente = new Panel();
+            btnEliminar = new Button();
+            btnEditar = new Button();
+            rbtnFemenino = new RadioButton();
+            rbtnMasculino = new RadioButton();
+            lblSexo = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtDia = new TextBox();
+            txtMes = new TextBox();
             lblConsultasBuscarAvisoFecha = new Label();
-            txtConsultaAno = new TextBox();
+            txtAño = new TextBox();
             lblConsultasBuscarFecha = new Label();
             cbxCITA = new CheckBox();
             cbxCIR = new CheckBox();
@@ -45,9 +50,6 @@
             cmbDiagnostico = new ComboBox();
             cmbTurno = new ComboBox();
             cmbConsultor = new ComboBox();
-            lblSexoF = new Label();
-            lblSexoM = new Label();
-            lblSexo = new Label();
             pcbFotoPaciente = new PictureBox();
             button1 = new Button();
             btnBuscarPaciente = new Button();
@@ -55,7 +57,6 @@
             cmbCarrera = new ComboBox();
             cmbCuatri = new ComboBox();
             txtGrupo = new TextBox();
-            lblAvisoAntesDeBuscar = new Label();
             lblConsultasBuscarTitulo = new Label();
             pcbIconoBuscar = new PictureBox();
             txtBuscarPorNumConsul = new TextBox();
@@ -70,21 +71,26 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(11, 347);
+            dataGridView1.Location = new Point(31, 433);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1110, 313);
+            dataGridView1.Size = new Size(1662, 509);
             dataGridView1.TabIndex = 13;
             // 
             // pnlBuscarPaciente
             // 
             pnlBuscarPaciente.BackColor = Color.White;
+            pnlBuscarPaciente.Controls.Add(btnEliminar);
+            pnlBuscarPaciente.Controls.Add(btnEditar);
+            pnlBuscarPaciente.Controls.Add(rbtnFemenino);
+            pnlBuscarPaciente.Controls.Add(rbtnMasculino);
+            pnlBuscarPaciente.Controls.Add(lblSexo);
             pnlBuscarPaciente.Controls.Add(label3);
             pnlBuscarPaciente.Controls.Add(label2);
             pnlBuscarPaciente.Controls.Add(label1);
-            pnlBuscarPaciente.Controls.Add(textBox2);
-            pnlBuscarPaciente.Controls.Add(textBox1);
+            pnlBuscarPaciente.Controls.Add(txtDia);
+            pnlBuscarPaciente.Controls.Add(txtMes);
             pnlBuscarPaciente.Controls.Add(lblConsultasBuscarAvisoFecha);
-            pnlBuscarPaciente.Controls.Add(txtConsultaAno);
+            pnlBuscarPaciente.Controls.Add(txtAño);
             pnlBuscarPaciente.Controls.Add(lblConsultasBuscarFecha);
             pnlBuscarPaciente.Controls.Add(cbxCITA);
             pnlBuscarPaciente.Controls.Add(cbxCIR);
@@ -93,9 +99,6 @@
             pnlBuscarPaciente.Controls.Add(cmbDiagnostico);
             pnlBuscarPaciente.Controls.Add(cmbTurno);
             pnlBuscarPaciente.Controls.Add(cmbConsultor);
-            pnlBuscarPaciente.Controls.Add(lblSexoF);
-            pnlBuscarPaciente.Controls.Add(lblSexoM);
-            pnlBuscarPaciente.Controls.Add(lblSexo);
             pnlBuscarPaciente.Controls.Add(pcbFotoPaciente);
             pnlBuscarPaciente.Controls.Add(button1);
             pnlBuscarPaciente.Controls.Add(btnBuscarPaciente);
@@ -103,16 +106,78 @@
             pnlBuscarPaciente.Controls.Add(cmbCarrera);
             pnlBuscarPaciente.Controls.Add(cmbCuatri);
             pnlBuscarPaciente.Controls.Add(txtGrupo);
-            pnlBuscarPaciente.Location = new Point(11, 75);
+            pnlBuscarPaciente.Location = new Point(31, 75);
             pnlBuscarPaciente.Name = "pnlBuscarPaciente";
-            pnlBuscarPaciente.Size = new Size(1094, 253);
+            pnlBuscarPaciente.Size = new Size(1662, 332);
             pnlBuscarPaciente.TabIndex = 12;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEliminar.BackColor = Color.FromArgb(192, 0, 0);
+            btnEliminar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.ForeColor = Color.FromArgb(239, 239, 239);
+            btnEliminar.Location = new Point(1466, 75);
+            btnEliminar.Margin = new Padding(0);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(150, 33);
+            btnEliminar.TabIndex = 48;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEditar.BackColor = Color.FromArgb(10, 64, 88);
+            btnEditar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEditar.ForeColor = Color.FromArgb(239, 239, 239);
+            btnEditar.Location = new Point(1466, 26);
+            btnEditar.Margin = new Padding(0);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(150, 33);
+            btnEditar.TabIndex = 47;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // rbtnFemenino
+            // 
+            rbtnFemenino.AutoSize = true;
+            rbtnFemenino.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnFemenino.Location = new Point(337, 288);
+            rbtnFemenino.Name = "rbtnFemenino";
+            rbtnFemenino.Size = new Size(39, 29);
+            rbtnFemenino.TabIndex = 46;
+            rbtnFemenino.TabStop = true;
+            rbtnFemenino.Text = "F";
+            rbtnFemenino.UseVisualStyleBackColor = true;
+            // 
+            // rbtnMasculino
+            // 
+            rbtnMasculino.AutoSize = true;
+            rbtnMasculino.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbtnMasculino.Location = new Point(258, 288);
+            rbtnMasculino.Name = "rbtnMasculino";
+            rbtnMasculino.Size = new Size(47, 29);
+            rbtnMasculino.TabIndex = 45;
+            rbtnMasculino.TabStop = true;
+            rbtnMasculino.Text = "M";
+            rbtnMasculino.UseVisualStyleBackColor = true;
+            // 
+            // lblSexo
+            // 
+            lblSexo.AutoSize = true;
+            lblSexo.Font = new Font("Segoe UI", 14.25F);
+            lblSexo.Location = new Point(106, 290);
+            lblSexo.Name = "lblSexo";
+            lblSexo.Size = new Size(56, 25);
+            lblSexo.TabIndex = 44;
+            lblSexo.Text = "Sexo:";
             // 
             // label3
             // 
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(158, 158, 158);
-            label3.Location = new Point(584, 217);
+            label3.Location = new Point(878, 286);
             label3.Name = "label3";
             label3.Size = new Size(507, 29);
             label3.TabIndex = 33;
@@ -123,7 +188,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(23, 147, 209);
-            label2.Location = new Point(752, 40);
+            label2.Location = new Point(1053, 66);
             label2.Name = "label2";
             label2.Size = new Size(20, 25);
             label2.TabIndex = 32;
@@ -134,64 +199,64 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(23, 147, 209);
-            label1.Location = new Point(660, 39);
+            label1.Location = new Point(954, 66);
             label1.Name = "label1";
             label1.Size = new Size(20, 25);
             label1.TabIndex = 31;
             label1.Text = "/";
             // 
-            // textBox2
+            // txtDia
             // 
-            textBox2.BackColor = Color.White;
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(774, 36);
-            textBox2.MaxLength = 1;
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Día";
-            textBox2.Size = new Size(67, 33);
-            textBox2.TabIndex = 30;
+            txtDia.BackColor = Color.White;
+            txtDia.BorderStyle = BorderStyle.FixedSingle;
+            txtDia.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDia.Location = new Point(1081, 64);
+            txtDia.MaxLength = 1;
+            txtDia.Name = "txtDia";
+            txtDia.PlaceholderText = "Día";
+            txtDia.Size = new Size(67, 33);
+            txtDia.TabIndex = 30;
             // 
-            // textBox1
+            // txtMes
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(683, 36);
-            textBox1.MaxLength = 1;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Més";
-            textBox1.Size = new Size(67, 33);
-            textBox1.TabIndex = 29;
+            txtMes.BackColor = Color.White;
+            txtMes.BorderStyle = BorderStyle.FixedSingle;
+            txtMes.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtMes.Location = new Point(980, 64);
+            txtMes.MaxLength = 1;
+            txtMes.Name = "txtMes";
+            txtMes.PlaceholderText = "Més";
+            txtMes.Size = new Size(67, 33);
+            txtMes.TabIndex = 29;
             // 
             // lblConsultasBuscarAvisoFecha
             // 
             lblConsultasBuscarAvisoFecha.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblConsultasBuscarAvisoFecha.ForeColor = Color.FromArgb(158, 158, 158);
-            lblConsultasBuscarAvisoFecha.Location = new Point(591, 72);
+            lblConsultasBuscarAvisoFecha.Location = new Point(878, 100);
             lblConsultasBuscarAvisoFecha.Name = "lblConsultasBuscarAvisoFecha";
             lblConsultasBuscarAvisoFecha.Size = new Size(270, 33);
             lblConsultasBuscarAvisoFecha.TabIndex = 28;
             lblConsultasBuscarAvisoFecha.Text = "Ingrese unicamente numeros.";
             // 
-            // txtConsultaAno
+            // txtAño
             // 
-            txtConsultaAno.BackColor = Color.White;
-            txtConsultaAno.BorderStyle = BorderStyle.FixedSingle;
-            txtConsultaAno.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtConsultaAno.Location = new Point(591, 36);
-            txtConsultaAno.MaxLength = 1;
-            txtConsultaAno.Name = "txtConsultaAno";
-            txtConsultaAno.PlaceholderText = "Año";
-            txtConsultaAno.Size = new Size(67, 33);
-            txtConsultaAno.TabIndex = 27;
+            txtAño.BackColor = Color.White;
+            txtAño.BorderStyle = BorderStyle.FixedSingle;
+            txtAño.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtAño.Location = new Point(881, 64);
+            txtAño.MaxLength = 1;
+            txtAño.Name = "txtAño";
+            txtAño.PlaceholderText = "Año";
+            txtAño.Size = new Size(67, 33);
+            txtAño.TabIndex = 27;
             // 
             // lblConsultasBuscarFecha
             // 
             lblConsultasBuscarFecha.AutoSize = true;
             lblConsultasBuscarFecha.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblConsultasBuscarFecha.ForeColor = Color.FromArgb(23, 147, 209);
-            lblConsultasBuscarFecha.Location = new Point(591, 8);
+            lblConsultasBuscarFecha.Location = new Point(881, 26);
             lblConsultasBuscarFecha.Name = "lblConsultasBuscarFecha";
             lblConsultasBuscarFecha.Size = new Size(67, 25);
             lblConsultasBuscarFecha.TabIndex = 23;
@@ -201,7 +266,7 @@
             // 
             cbxCITA.AutoSize = true;
             cbxCITA.Font = new Font("Segoe UI", 14.25F);
-            cbxCITA.Location = new Point(304, 203);
+            cbxCITA.Location = new Point(495, 288);
             cbxCITA.Name = "cbxCITA";
             cbxCITA.Size = new Size(284, 29);
             cbxCITA.TabIndex = 22;
@@ -212,7 +277,7 @@
             // 
             cbxCIR.AutoSize = true;
             cbxCIR.Font = new Font("Segoe UI", 14.25F);
-            cbxCIR.Location = new Point(304, 161);
+            cbxCIR.Location = new Point(495, 241);
             cbxCIR.Name = "cbxCIR";
             cbxCIR.Size = new Size(234, 29);
             cbxCIR.TabIndex = 21;
@@ -224,7 +289,7 @@
             lblConsultaBuscarConsulta.AutoSize = true;
             lblConsultaBuscarConsulta.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblConsultaBuscarConsulta.ForeColor = Color.FromArgb(23, 147, 209);
-            lblConsultaBuscarConsulta.Location = new Point(304, 8);
+            lblConsultaBuscarConsulta.Location = new Point(495, 26);
             lblConsultaBuscarConsulta.Name = "lblConsultaBuscarConsulta";
             lblConsultaBuscarConsulta.Size = new Size(95, 25);
             lblConsultaBuscarConsulta.TabIndex = 20;
@@ -235,7 +300,7 @@
             lblConsultasBuscarPacientes.AutoSize = true;
             lblConsultasBuscarPacientes.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblConsultasBuscarPacientes.ForeColor = Color.FromArgb(23, 147, 209);
-            lblConsultasBuscarPacientes.Location = new Point(21, 8);
+            lblConsultasBuscarPacientes.Location = new Point(106, 26);
             lblConsultasBuscarPacientes.Name = "lblConsultasBuscarPacientes";
             lblConsultasBuscarPacientes.Size = new Size(92, 25);
             lblConsultasBuscarPacientes.TabIndex = 19;
@@ -246,7 +311,7 @@
             cmbDiagnostico.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbDiagnostico.ForeColor = Color.Black;
             cmbDiagnostico.FormattingEnabled = true;
-            cmbDiagnostico.Location = new Point(304, 122);
+            cmbDiagnostico.Location = new Point(495, 173);
             cmbDiagnostico.Name = "cmbDiagnostico";
             cmbDiagnostico.Size = new Size(270, 33);
             cmbDiagnostico.TabIndex = 18;
@@ -256,7 +321,7 @@
             cmbTurno.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbTurno.ForeColor = Color.Black;
             cmbTurno.FormattingEnabled = true;
-            cmbTurno.Location = new Point(304, 36);
+            cmbTurno.Location = new Point(495, 63);
             cmbTurno.Name = "cmbTurno";
             cmbTurno.Size = new Size(270, 33);
             cmbTurno.TabIndex = 17;
@@ -266,47 +331,17 @@
             cmbConsultor.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbConsultor.ForeColor = Color.Black;
             cmbConsultor.FormattingEnabled = true;
-            cmbConsultor.Location = new Point(304, 79);
+            cmbConsultor.Location = new Point(495, 114);
             cmbConsultor.Name = "cmbConsultor";
             cmbConsultor.Size = new Size(270, 33);
             cmbConsultor.TabIndex = 16;
             // 
-            // lblSexoF
-            // 
-            lblSexoF.AutoSize = true;
-            lblSexoF.Font = new Font("Segoe UI", 14.25F);
-            lblSexoF.Location = new Point(201, 215);
-            lblSexoF.Name = "lblSexoF";
-            lblSexoF.Size = new Size(21, 25);
-            lblSexoF.TabIndex = 14;
-            lblSexoF.Text = "F";
-            // 
-            // lblSexoM
-            // 
-            lblSexoM.AutoSize = true;
-            lblSexoM.Font = new Font("Segoe UI", 14.25F);
-            lblSexoM.Location = new Point(123, 215);
-            lblSexoM.Name = "lblSexoM";
-            lblSexoM.Size = new Size(29, 25);
-            lblSexoM.TabIndex = 13;
-            lblSexoM.Text = "M";
-            // 
-            // lblSexo
-            // 
-            lblSexo.AutoSize = true;
-            lblSexo.Font = new Font("Segoe UI", 14.25F);
-            lblSexo.Location = new Point(18, 215);
-            lblSexo.Name = "lblSexo";
-            lblSexo.Size = new Size(56, 25);
-            lblSexo.TabIndex = 12;
-            lblSexo.Text = "Sexo:";
-            // 
             // pcbFotoPaciente
             // 
-            pcbFotoPaciente.Image = Properties.Resources.Logo_ColorFondoVerde;
-            pcbFotoPaciente.Location = new Point(922, 17);
+            pcbFotoPaciente.Image = Properties.Resources.fotoperfilusuariosinfoto;
+            pcbFotoPaciente.Location = new Point(1232, 26);
             pcbFotoPaciente.Name = "pcbFotoPaciente";
-            pcbFotoPaciente.Size = new Size(158, 145);
+            pcbFotoPaciente.Size = new Size(200, 200);
             pcbFotoPaciente.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbFotoPaciente.TabIndex = 9;
             pcbFotoPaciente.TabStop = false;
@@ -316,10 +351,10 @@
             button1.BackColor = Color.DarkGoldenrod;
             button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(239, 239, 239);
-            button1.Location = new Point(935, 184);
+            button1.Location = new Point(1053, 233);
             button1.Margin = new Padding(0);
             button1.Name = "button1";
-            button1.Size = new Size(145, 33);
+            button1.Size = new Size(150, 33);
             button1.TabIndex = 11;
             button1.Text = "Vaciar campos";
             button1.UseVisualStyleBackColor = false;
@@ -329,10 +364,10 @@
             btnBuscarPaciente.BackColor = Color.FromArgb(10, 64, 88);
             btnBuscarPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBuscarPaciente.ForeColor = Color.FromArgb(239, 239, 239);
-            btnBuscarPaciente.Location = new Point(774, 184);
+            btnBuscarPaciente.Location = new Point(881, 233);
             btnBuscarPaciente.Margin = new Padding(0);
             btnBuscarPaciente.Name = "btnBuscarPaciente";
-            btnBuscarPaciente.Size = new Size(145, 33);
+            btnBuscarPaciente.Size = new Size(150, 33);
             btnBuscarPaciente.TabIndex = 10;
             btnBuscarPaciente.Text = "Buscar";
             btnBuscarPaciente.UseVisualStyleBackColor = false;
@@ -342,7 +377,7 @@
             cmbTipoPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbTipoPaciente.ForeColor = Color.Black;
             cmbTipoPaciente.FormattingEnabled = true;
-            cmbTipoPaciente.Location = new Point(20, 36);
+            cmbTipoPaciente.Location = new Point(106, 64);
             cmbTipoPaciente.Name = "cmbTipoPaciente";
             cmbTipoPaciente.Size = new Size(270, 33);
             cmbTipoPaciente.TabIndex = 8;
@@ -352,7 +387,7 @@
             cmbCarrera.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbCarrera.ForeColor = Color.Black;
             cmbCarrera.FormattingEnabled = true;
-            cmbCarrera.Location = new Point(21, 79);
+            cmbCarrera.Location = new Point(106, 114);
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(270, 33);
             cmbCarrera.TabIndex = 7;
@@ -362,7 +397,7 @@
             cmbCuatri.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbCuatri.ForeColor = Color.Black;
             cmbCuatri.FormattingEnabled = true;
-            cmbCuatri.Location = new Point(21, 125);
+            cmbCuatri.Location = new Point(106, 173);
             cmbCuatri.Name = "cmbCuatri";
             cmbCuatri.Size = new Size(270, 33);
             cmbCuatri.TabIndex = 6;
@@ -372,22 +407,12 @@
             txtGrupo.BackColor = Color.White;
             txtGrupo.BorderStyle = BorderStyle.FixedSingle;
             txtGrupo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtGrupo.Location = new Point(21, 173);
+            txtGrupo.Location = new Point(106, 235);
             txtGrupo.MaxLength = 1;
             txtGrupo.Name = "txtGrupo";
             txtGrupo.PlaceholderText = "Grupo";
             txtGrupo.Size = new Size(270, 33);
             txtGrupo.TabIndex = 1;
-            // 
-            // lblAvisoAntesDeBuscar
-            // 
-            lblAvisoAntesDeBuscar.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblAvisoAntesDeBuscar.ForeColor = Color.FromArgb(158, 158, 158);
-            lblAvisoAntesDeBuscar.Location = new Point(535, 377);
-            lblAvisoAntesDeBuscar.Name = "lblAvisoAntesDeBuscar";
-            lblAvisoAntesDeBuscar.Size = new Size(287, 57);
-            lblAvisoAntesDeBuscar.TabIndex = 15;
-            lblAvisoAntesDeBuscar.Text = "Asegurese de llenar por lo menos un campo antes de buscar.";
             // 
             // lblConsultasBuscarTitulo
             // 
@@ -395,7 +420,7 @@
             lblConsultasBuscarTitulo.BackColor = Color.Transparent;
             lblConsultasBuscarTitulo.Font = new Font("Segoe UI", 38.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblConsultasBuscarTitulo.ForeColor = Color.FromArgb(23, 147, 209);
-            lblConsultasBuscarTitulo.Location = new Point(11, 4);
+            lblConsultasBuscarTitulo.Location = new Point(31, 4);
             lblConsultasBuscarTitulo.Name = "lblConsultasBuscarTitulo";
             lblConsultasBuscarTitulo.Size = new Size(721, 68);
             lblConsultasBuscarTitulo.TabIndex = 11;
@@ -404,7 +429,7 @@
             // pcbIconoBuscar
             // 
             pcbIconoBuscar.Image = Properties.Resources.IconoBuscar;
-            pcbIconoBuscar.Location = new Point(1070, 25);
+            pcbIconoBuscar.Location = new Point(1658, 25);
             pcbIconoBuscar.Name = "pcbIconoBuscar";
             pcbIconoBuscar.Size = new Size(35, 35);
             pcbIconoBuscar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -416,7 +441,7 @@
             txtBuscarPorNumConsul.BackColor = Color.White;
             txtBuscarPorNumConsul.BorderStyle = BorderStyle.FixedSingle;
             txtBuscarPorNumConsul.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscarPorNumConsul.Location = new Point(796, 25);
+            txtBuscarPorNumConsul.Location = new Point(1369, 25);
             txtBuscarPorNumConsul.Name = "txtBuscarPorNumConsul";
             txtBuscarPorNumConsul.PlaceholderText = "Buscar por Num. consulta";
             txtBuscarPorNumConsul.Size = new Size(267, 33);
@@ -426,13 +451,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1133, 672);
+            ClientSize = new Size(1719, 970);
             Controls.Add(pcbIconoBuscar);
             Controls.Add(txtBuscarPorNumConsul);
             Controls.Add(dataGridView1);
             Controls.Add(pnlBuscarPaciente);
             Controls.Add(lblConsultasBuscarTitulo);
-            Controls.Add(lblAvisoAntesDeBuscar);
             Name = "frmConsultasBuscar";
             Text = "frmConsultasBuscar";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -448,10 +472,6 @@
 
         private DataGridView dataGridView1;
         private Panel pnlBuscarPaciente;
-        private Label lblAvisoAntesDeBuscar;
-        private Label lblSexoF;
-        private Label lblSexoM;
-        private Label lblSexo;
         private PictureBox pcbFotoPaciente;
         private Button button1;
         private Button btnBuscarPaciente;
@@ -469,13 +489,18 @@
         private CheckBox cbxCIR;
         private Label lblConsultasBuscarFecha;
         private Label lblConsultasBuscarAvisoFecha;
-        private TextBox txtConsultaAno;
+        private TextBox txtAño;
         private Label label2;
         private Label label1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtDia;
+        private TextBox txtMes;
         private PictureBox pcbIconoBuscar;
         private TextBox txtBuscarPorNumConsul;
         private Label label3;
+        private RadioButton rbtnFemenino;
+        private RadioButton rbtnMasculino;
+        private Label lblSexo;
+        private Button btnEliminar;
+        private Button btnEditar;
     }
 }
