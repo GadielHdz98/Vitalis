@@ -12,25 +12,27 @@ namespace Vitalis
 {
     public partial class frmConsultas : Form
     {
-        private clsPrincipal principal = new clsPrincipal();
+        private clsConsultas consultas = new clsConsultas();
 
         public frmConsultas()
         {
             InitializeComponent();
-        }
-        private void btnPacientesRecientesTopBar_Click(object sender, EventArgs e)
-        {
-
+            consultas.AgregarAlContenedor(new frmConsultasRecientes(), pnlContenedorConsultas);
         }
 
-        private void btnBuscarPacientesTopBar_Click(object sender, EventArgs e)
+        private void btnConsultasRecientesTopBar_Click(object sender, EventArgs e)
         {
-
+            consultas.AgregarAlContenedor(new frmConsultasRecientes(), pnlContenedorConsultas);
         }
 
-        private void btnAgregarPacientesTopBar_Click(object sender, EventArgs e)
+        private void btnBuscarConsultasTopBar_Click(object sender, EventArgs e)
         {
+            consultas.AgregarAlContenedor(new frmConsultasBuscar(), pnlContenedorConsultas);
+        }
 
+        private void btnAgregarConsultasTopBar_Click(object sender, EventArgs e)
+        {
+            consultas.AgregarAlContenedor(new frmAgregarConsulta(), pnlContenedorConsultas);
         }
     }
 }

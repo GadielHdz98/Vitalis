@@ -126,7 +126,6 @@
             Controls.Add(pnlBuscarPacientes);
             Name = "frmPacientes";
             Text = "Pacientes";
-            Load += frmPacientes_Load;
             pnlBuscarPacientes.ResumeLayout(false);
             pnlPacientesTopBar.ResumeLayout(false);
             ResumeLayout(false);
