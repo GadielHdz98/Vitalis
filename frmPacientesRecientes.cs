@@ -12,9 +12,29 @@ namespace Vitalis
 {
     public partial class frmPacientesRecientes : Form
     {
+        clsPacientesRecientes pacientesR;
+
         public frmPacientesRecientes()
         {
             InitializeComponent();
+            CargarGrid();
         }
+
+        public void CargarGrid()
+        {
+            pacientesR = new clsPacientesRecientes();
+            dgvPacientesRegistradosRecientemente.DataSource = null;
+            dgvPacientesRegistradosRecientemente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            try
+            {
+                dgvPacientesRegistradosRecientemente.DataSource = pacientesR.CargarDataGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dgvServiciosMedicos = new DataGridView();
             pcbIconoBuscarServicio = new PictureBox();
             txtBuscarServicioMedico = new TextBox();
             lblDiagnostico = new Label();
             pnlDiagnosticos = new Panel();
+            label6 = new Label();
+            txtNombreUsuario = new TextBox();
             cmbPerfil = new ComboBox();
             label5 = new Label();
             label4 = new Label();
@@ -49,8 +51,6 @@
             btnEliminar = new Button();
             txtNombreServicioMedico = new TextBox();
             btnGuardar = new Button();
-            label6 = new Label();
-            txtNombreUsuario = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvServiciosMedicos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbIconoBuscarServicio).BeginInit();
             pnlDiagnosticos.SuspendLayout();
@@ -62,21 +62,21 @@
             dgvServiciosMedicos.AllowUserToDeleteRows = false;
             dgvServiciosMedicos.AllowUserToResizeColumns = false;
             dgvServiciosMedicos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(239, 239, 239);
-            dgvServiciosMedicos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(239, 239, 239);
+            dgvServiciosMedicos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvServiciosMedicos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvServiciosMedicos.BackgroundColor = Color.White;
             dgvServiciosMedicos.BorderStyle = BorderStyle.None;
             dgvServiciosMedicos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvServiciosMedicos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvServiciosMedicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvServiciosMedicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvServiciosMedicos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvServiciosMedicos.EnableHeadersVisualStyles = false;
             dgvServiciosMedicos.GridColor = Color.White;
@@ -85,11 +85,12 @@
             dgvServiciosMedicos.Name = "dgvServiciosMedicos";
             dgvServiciosMedicos.ReadOnly = true;
             dgvServiciosMedicos.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dgvServiciosMedicos.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dgvServiciosMedicos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvServiciosMedicos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvServiciosMedicos.Size = new Size(885, 593);
             dgvServiciosMedicos.TabIndex = 15;
+            dgvServiciosMedicos.SelectionChanged += dgvServiciosMedicos_SelectionChanged;
             // 
             // pcbIconoBuscarServicio
             // 
@@ -112,6 +113,7 @@
             txtBuscarServicioMedico.PlaceholderText = "Buscar servicio medico";
             txtBuscarServicioMedico.Size = new Size(270, 33);
             txtBuscarServicioMedico.TabIndex = 13;
+            txtBuscarServicioMedico.TextChanged += txtBuscarServicioMedico_TextChanged;
             // 
             // lblDiagnostico
             // 
@@ -147,13 +149,37 @@
             pnlDiagnosticos.Size = new Size(654, 593);
             pnlDiagnosticos.TabIndex = 11;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.FromArgb(23, 147, 209);
+            label6.Location = new Point(66, 242);
+            label6.Name = "label6";
+            label6.Size = new Size(86, 25);
+            label6.TabIndex = 78;
+            label6.Text = "Usuario:";
+            // 
+            // txtNombreUsuario
+            // 
+            txtNombreUsuario.BackColor = Color.FromArgb(239, 239, 239);
+            txtNombreUsuario.BorderStyle = BorderStyle.FixedSingle;
+            txtNombreUsuario.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNombreUsuario.Location = new Point(205, 240);
+            txtNombreUsuario.MaxLength = 50;
+            txtNombreUsuario.Name = "txtNombreUsuario";
+            txtNombreUsuario.PlaceholderText = "Nombre del usuario.";
+            txtNombreUsuario.Size = new Size(270, 33);
+            txtNombreUsuario.TabIndex = 77;
+            // 
             // cmbPerfil
             // 
             cmbPerfil.BackColor = Color.FromArgb(239, 239, 239);
             cmbPerfil.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbPerfil.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbPerfil.ForeColor = Color.FromArgb(239, 239, 239);
+            cmbPerfil.ForeColor = Color.Black;
             cmbPerfil.FormattingEnabled = true;
+            cmbPerfil.Items.AddRange(new object[] { "Doctor", "Enfermera", "Administrador" });
             cmbPerfil.Location = new Point(204, 294);
             cmbPerfil.Name = "cmbPerfil";
             cmbPerfil.Size = new Size(270, 33);
@@ -240,6 +266,7 @@
             btnNuevo.TabIndex = 69;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = false;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // label2
             // 
@@ -275,6 +302,7 @@
             btnEliminar.TabIndex = 66;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // txtNombreServicioMedico
             // 
@@ -300,29 +328,7 @@
             btnGuardar.TabIndex = 65;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.FromArgb(23, 147, 209);
-            label6.Location = new Point(66, 242);
-            label6.Name = "label6";
-            label6.Size = new Size(86, 25);
-            label6.TabIndex = 78;
-            label6.Text = "Usuario:";
-            // 
-            // txtNombreUsuario
-            // 
-            txtNombreUsuario.BackColor = Color.FromArgb(239, 239, 239);
-            txtNombreUsuario.BorderStyle = BorderStyle.FixedSingle;
-            txtNombreUsuario.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreUsuario.Location = new Point(205, 240);
-            txtNombreUsuario.MaxLength = 50;
-            txtNombreUsuario.Name = "txtNombreUsuario";
-            txtNombreUsuario.PlaceholderText = "Nombre del usuario.";
-            txtNombreUsuario.Size = new Size(270, 33);
-            txtNombreUsuario.TabIndex = 77;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // frmUsuarios
             // 
