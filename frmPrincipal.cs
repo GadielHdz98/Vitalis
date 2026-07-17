@@ -20,7 +20,7 @@ namespace Vitalis
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
-        {            
+        {
             principal.AgregarAlContenedor(new frmInicio(), pnlContenedor);
         }
 
@@ -37,6 +37,11 @@ namespace Vitalis
         private void btnConsultasSideBar_Click(object sender, EventArgs e)
         {
             principal.AgregarAlContenedor(new frmConsultas(), pnlContenedor);
+        }
+
+        private void btnAdministracionSideBar_Click(object sender, EventArgs e)
+        {
+            principal.AgregarAlContenedor(new frmAdministracion(), pnlContenedor);
         }
     }
 }

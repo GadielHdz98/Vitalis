@@ -43,7 +43,7 @@
             lblVitalisInicio.ForeColor = Color.FromArgb(23, 147, 209);
             lblVitalisInicio.Location = new Point(411, 9);
             lblVitalisInicio.Name = "lblVitalisInicio";
-            lblVitalisInicio.Size = new Size(879, 68);
+            lblVitalisInicio.Size = new Size(898, 68);
             lblVitalisInicio.TabIndex = 5;
             lblVitalisInicio.Text = "Pacientes agregados recientemente";
             // 
@@ -72,7 +72,7 @@
             dgvPacientesRegistradosRecientemente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPacientesRegistradosRecientemente.EnableHeadersVisualStyles = false;
             dgvPacientesRegistradosRecientemente.GridColor = Color.White;
-            dgvPacientesRegistradosRecientemente.Location = new Point(57, 86);
+            dgvPacientesRegistradosRecientemente.Location = new Point(57, 101);
             dgvPacientesRegistradosRecientemente.MultiSelect = false;
             dgvPacientesRegistradosRecientemente.Name = "dgvPacientesRegistradosRecientemente";
             dgvPacientesRegistradosRecientemente.ReadOnly = true;
@@ -80,7 +80,7 @@
             dataGridViewCellStyle3.BackColor = Color.White;
             dgvPacientesRegistradosRecientemente.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvPacientesRegistradosRecientemente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvPacientesRegistradosRecientemente.Size = new Size(1605, 737);
+            dgvPacientesRegistradosRecientemente.Size = new Size(1605, 722);
             dgvPacientesRegistradosRecientemente.TabIndex = 9;
             // 
             // frmPacientesRecientes

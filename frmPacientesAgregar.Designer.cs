@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            rbtnFemenino = new RadioButton();
-            rbtnMasculino = new RadioButton();
+            pnlAgregarPacientes = new Panel();
+            cmbSexo = new ComboBox();
+            label5 = new Label();
+            label3 = new Label();
+            label2 = new Label();
             btnSinFoto = new Button();
             label1 = new Label();
             btnCambiarFoto = new Button();
@@ -39,7 +41,7 @@
             btnGuardar = new Button();
             txtUltimaTemperatura = new TextBox();
             txtUltimaPresionArt = new TextBox();
-            textBox2 = new TextBox();
+            txtAltura = new TextBox();
             txtPeso = new TextBox();
             lblSubTituloFisiologicos = new Label();
             label4 = new Label();
@@ -56,68 +58,94 @@
             cmbTipoPaciente = new ComboBox();
             txtMatriculaNoTrab = new TextBox();
             lblConsultasBuscarTitulo = new Label();
-            panel1.SuspendLayout();
+            pnlAgregarPacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // pnlAgregarPacientes
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(rbtnFemenino);
-            panel1.Controls.Add(rbtnMasculino);
-            panel1.Controls.Add(btnSinFoto);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(btnCambiarFoto);
-            panel1.Controls.Add(pcbFotoPaciente);
-            panel1.Controls.Add(btnVaciarCampos);
-            panel1.Controls.Add(btnGuardar);
-            panel1.Controls.Add(txtUltimaTemperatura);
-            panel1.Controls.Add(txtUltimaPresionArt);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(txtPeso);
-            panel1.Controls.Add(lblSubTituloFisiologicos);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(lblSubTituloIdentificacion);
-            panel1.Controls.Add(lblSexo);
-            panel1.Controls.Add(txtGrupo);
-            panel1.Controls.Add(cmbGrado);
-            panel1.Controls.Add(cmbCarrera);
-            panel1.Controls.Add(lblPacienteFechaNaci);
-            panel1.Controls.Add(dtmpFechaNaciUsuario);
-            panel1.Controls.Add(txtPacienteApellidoMaterno);
-            panel1.Controls.Add(txtPacienteApellidoPaterno);
-            panel1.Controls.Add(txtNombre);
-            panel1.Controls.Add(cmbTipoPaciente);
-            panel1.Controls.Add(txtMatriculaNoTrab);
-            panel1.Location = new Point(34, 75);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1635, 748);
-            panel1.TabIndex = 0;
+            pnlAgregarPacientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlAgregarPacientes.BackColor = Color.White;
+            pnlAgregarPacientes.Controls.Add(cmbSexo);
+            pnlAgregarPacientes.Controls.Add(label5);
+            pnlAgregarPacientes.Controls.Add(label3);
+            pnlAgregarPacientes.Controls.Add(label2);
+            pnlAgregarPacientes.Controls.Add(btnSinFoto);
+            pnlAgregarPacientes.Controls.Add(label1);
+            pnlAgregarPacientes.Controls.Add(btnCambiarFoto);
+            pnlAgregarPacientes.Controls.Add(pcbFotoPaciente);
+            pnlAgregarPacientes.Controls.Add(btnVaciarCampos);
+            pnlAgregarPacientes.Controls.Add(btnGuardar);
+            pnlAgregarPacientes.Controls.Add(txtUltimaTemperatura);
+            pnlAgregarPacientes.Controls.Add(txtUltimaPresionArt);
+            pnlAgregarPacientes.Controls.Add(txtAltura);
+            pnlAgregarPacientes.Controls.Add(txtPeso);
+            pnlAgregarPacientes.Controls.Add(lblSubTituloFisiologicos);
+            pnlAgregarPacientes.Controls.Add(label4);
+            pnlAgregarPacientes.Controls.Add(lblSubTituloIdentificacion);
+            pnlAgregarPacientes.Controls.Add(lblSexo);
+            pnlAgregarPacientes.Controls.Add(txtGrupo);
+            pnlAgregarPacientes.Controls.Add(cmbGrado);
+            pnlAgregarPacientes.Controls.Add(cmbCarrera);
+            pnlAgregarPacientes.Controls.Add(lblPacienteFechaNaci);
+            pnlAgregarPacientes.Controls.Add(dtmpFechaNaciUsuario);
+            pnlAgregarPacientes.Controls.Add(txtPacienteApellidoMaterno);
+            pnlAgregarPacientes.Controls.Add(txtPacienteApellidoPaterno);
+            pnlAgregarPacientes.Controls.Add(txtNombre);
+            pnlAgregarPacientes.Controls.Add(cmbTipoPaciente);
+            pnlAgregarPacientes.Controls.Add(txtMatriculaNoTrab);
+            pnlAgregarPacientes.Location = new Point(34, 75);
+            pnlAgregarPacientes.Name = "pnlAgregarPacientes";
+            pnlAgregarPacientes.Size = new Size(1635, 748);
+            pnlAgregarPacientes.TabIndex = 0;
             // 
-            // rbtnFemenino
+            // cmbSexo
             // 
-            rbtnFemenino.AutoSize = true;
-            rbtnFemenino.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbtnFemenino.Location = new Point(681, 99);
-            rbtnFemenino.Name = "rbtnFemenino";
-            rbtnFemenino.Size = new Size(39, 29);
-            rbtnFemenino.TabIndex = 43;
-            rbtnFemenino.TabStop = true;
-            rbtnFemenino.Text = "F";
-            rbtnFemenino.UseVisualStyleBackColor = true;
+            cmbSexo.BackColor = Color.FromArgb(239, 239, 239);
+            cmbSexo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSexo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbSexo.ForeColor = Color.Black;
+            cmbSexo.FormattingEnabled = true;
+            cmbSexo.Location = new Point(544, 167);
+            cmbSexo.Name = "cmbSexo";
+            cmbSexo.Size = new Size(270, 33);
+            cmbSexo.TabIndex = 47;
             // 
-            // rbtnMasculino
+            // label5
             // 
-            rbtnMasculino.AutoSize = true;
-            rbtnMasculino.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbtnMasculino.Location = new Point(603, 99);
-            rbtnMasculino.Name = "rbtnMasculino";
-            rbtnMasculino.Size = new Size(47, 29);
-            rbtnMasculino.TabIndex = 42;
-            rbtnMasculino.TabStop = true;
-            rbtnMasculino.Text = "M";
-            rbtnMasculino.UseVisualStyleBackColor = true;
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(23, 147, 209);
+            label5.Location = new Point(914, 167);
+            label5.Name = "label5";
+            label5.Size = new Size(73, 25);
+            label5.TabIndex = 46;
+            label5.Text = "Grado:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(23, 147, 209);
+            label3.Location = new Point(914, 107);
+            label3.Name = "label3";
+            label3.Size = new Size(83, 25);
+            label3.TabIndex = 45;
+            label3.Text = "Carrera:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(23, 147, 209);
+            label2.Location = new Point(82, 107);
+            label2.Name = "label2";
+            label2.Size = new Size(57, 25);
+            label2.TabIndex = 44;
+            label2.Text = "Tipo:";
             // 
             // btnSinFoto
             // 
@@ -125,10 +153,10 @@
             btnSinFoto.FlatAppearance.BorderSize = 0;
             btnSinFoto.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSinFoto.ForeColor = Color.FromArgb(239, 239, 239);
-            btnSinFoto.Location = new Point(1371, 405);
+            btnSinFoto.Location = new Point(1393, 373);
             btnSinFoto.Margin = new Padding(0);
             btnSinFoto.Name = "btnSinFoto";
-            btnSinFoto.Size = new Size(145, 33);
+            btnSinFoto.Size = new Size(160, 35);
             btnSinFoto.TabIndex = 41;
             btnSinFoto.Text = "Sin foto";
             btnSinFoto.UseVisualStyleBackColor = false;
@@ -151,10 +179,10 @@
             btnCambiarFoto.FlatAppearance.BorderSize = 0;
             btnCambiarFoto.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCambiarFoto.ForeColor = Color.FromArgb(239, 239, 239);
-            btnCambiarFoto.Location = new Point(1371, 359);
+            btnCambiarFoto.Location = new Point(1393, 329);
             btnCambiarFoto.Margin = new Padding(0);
             btnCambiarFoto.Name = "btnCambiarFoto";
-            btnCambiarFoto.Size = new Size(145, 33);
+            btnCambiarFoto.Size = new Size(160, 35);
             btnCambiarFoto.TabIndex = 39;
             btnCambiarFoto.Text = "Cambiar foto";
             btnCambiarFoto.UseVisualStyleBackColor = false;
@@ -171,14 +199,14 @@
             // 
             // btnVaciarCampos
             // 
-            btnVaciarCampos.BackColor = Color.DarkGoldenrod;
+            btnVaciarCampos.BackColor = Color.Orange;
             btnVaciarCampos.FlatAppearance.BorderSize = 0;
             btnVaciarCampos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVaciarCampos.ForeColor = Color.FromArgb(239, 239, 239);
-            btnVaciarCampos.Location = new Point(1371, 495);
+            btnVaciarCampos.Location = new Point(1130, 499);
             btnVaciarCampos.Margin = new Padding(0);
             btnVaciarCampos.Name = "btnVaciarCampos";
-            btnVaciarCampos.Size = new Size(150, 33);
+            btnVaciarCampos.Size = new Size(160, 35);
             btnVaciarCampos.TabIndex = 37;
             btnVaciarCampos.Text = "Vaciar campos";
             btnVaciarCampos.UseVisualStyleBackColor = false;
@@ -190,20 +218,20 @@
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnGuardar.Location = new Point(1215, 495);
+            btnGuardar.Location = new Point(949, 501);
             btnGuardar.Margin = new Padding(0);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(145, 33);
+            btnGuardar.Size = new Size(160, 35);
             btnGuardar.TabIndex = 36;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
             // 
             // txtUltimaTemperatura
             // 
-            txtUltimaTemperatura.BackColor = Color.White;
+            txtUltimaTemperatura.BackColor = Color.FromArgb(239, 239, 239);
             txtUltimaTemperatura.BorderStyle = BorderStyle.FixedSingle;
             txtUltimaTemperatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUltimaTemperatura.Location = new Point(518, 371);
+            txtUltimaTemperatura.Location = new Point(544, 438);
             txtUltimaTemperatura.MaxLength = 3;
             txtUltimaTemperatura.Name = "txtUltimaTemperatura";
             txtUltimaTemperatura.PlaceholderText = "Ultima temperatura (°C) ";
@@ -212,34 +240,34 @@
             // 
             // txtUltimaPresionArt
             // 
-            txtUltimaPresionArt.BackColor = Color.White;
+            txtUltimaPresionArt.BackColor = Color.FromArgb(239, 239, 239);
             txtUltimaPresionArt.BorderStyle = BorderStyle.FixedSingle;
             txtUltimaPresionArt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUltimaPresionArt.Location = new Point(518, 302);
+            txtUltimaPresionArt.Location = new Point(544, 369);
             txtUltimaPresionArt.MaxLength = 7;
             txtUltimaPresionArt.Name = "txtUltimaPresionArt";
             txtUltimaPresionArt.PlaceholderText = "Ultima presion arterial (x/y)";
             txtUltimaPresionArt.Size = new Size(270, 33);
             txtUltimaPresionArt.TabIndex = 34;
             // 
-            // textBox2
+            // txtAltura
             // 
-            textBox2.BackColor = Color.White;
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(518, 232);
-            textBox2.MaxLength = 3;
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Altura (cm)";
-            textBox2.Size = new Size(270, 33);
-            textBox2.TabIndex = 33;
+            txtAltura.BackColor = Color.FromArgb(239, 239, 239);
+            txtAltura.BorderStyle = BorderStyle.FixedSingle;
+            txtAltura.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtAltura.Location = new Point(544, 299);
+            txtAltura.MaxLength = 3;
+            txtAltura.Name = "txtAltura";
+            txtAltura.PlaceholderText = "Altura (cm)";
+            txtAltura.Size = new Size(270, 33);
+            txtAltura.TabIndex = 33;
             // 
             // txtPeso
             // 
-            txtPeso.BackColor = Color.White;
+            txtPeso.BackColor = Color.FromArgb(239, 239, 239);
             txtPeso.BorderStyle = BorderStyle.FixedSingle;
             txtPeso.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPeso.Location = new Point(518, 165);
+            txtPeso.Location = new Point(544, 232);
             txtPeso.MaxLength = 3;
             txtPeso.Name = "txtPeso";
             txtPeso.PlaceholderText = "Peso (kg)";
@@ -250,11 +278,11 @@
             // 
             lblSubTituloFisiologicos.AutoSize = true;
             lblSubTituloFisiologicos.BackColor = Color.Transparent;
-            lblSubTituloFisiologicos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSubTituloFisiologicos.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             lblSubTituloFisiologicos.ForeColor = Color.FromArgb(23, 147, 209);
-            lblSubTituloFisiologicos.Location = new Point(518, 33);
+            lblSubTituloFisiologicos.Location = new Point(544, 33);
             lblSubTituloFisiologicos.Name = "lblSubTituloFisiologicos";
-            lblSubTituloFisiologicos.Size = new Size(115, 25);
+            lblSubTituloFisiologicos.Size = new Size(148, 32);
             lblSubTituloFisiologicos.TabIndex = 31;
             lblSubTituloFisiologicos.Text = "Fisiológicos";
             // 
@@ -262,11 +290,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label4.ForeColor = Color.FromArgb(23, 147, 209);
-            label4.Location = new Point(941, 33);
+            label4.Location = new Point(914, 33);
             label4.Name = "label4";
-            label4.Size = new Size(140, 25);
+            label4.Size = new Size(181, 32);
             label4.TabIndex = 30;
             label4.Text = "Institucionales";
             // 
@@ -274,30 +302,31 @@
             // 
             lblSubTituloIdentificacion.AutoSize = true;
             lblSubTituloIdentificacion.BackColor = Color.Transparent;
-            lblSubTituloIdentificacion.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSubTituloIdentificacion.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             lblSubTituloIdentificacion.ForeColor = Color.FromArgb(23, 147, 209);
             lblSubTituloIdentificacion.Location = new Point(82, 33);
             lblSubTituloIdentificacion.Name = "lblSubTituloIdentificacion";
-            lblSubTituloIdentificacion.Size = new Size(161, 25);
+            lblSubTituloIdentificacion.Size = new Size(208, 32);
             lblSubTituloIdentificacion.TabIndex = 29;
             lblSubTituloIdentificacion.Text = "De identificación";
             // 
             // lblSexo
             // 
             lblSexo.AutoSize = true;
-            lblSexo.Font = new Font("Segoe UI", 14.25F);
-            lblSexo.Location = new Point(518, 101);
+            lblSexo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            lblSexo.ForeColor = Color.FromArgb(23, 147, 209);
+            lblSexo.Location = new Point(544, 107);
             lblSexo.Name = "lblSexo";
-            lblSexo.Size = new Size(56, 25);
+            lblSexo.Size = new Size(61, 25);
             lblSexo.TabIndex = 26;
             lblSexo.Text = "Sexo:";
             // 
             // txtGrupo
             // 
-            txtGrupo.BackColor = Color.White;
+            txtGrupo.BackColor = Color.FromArgb(239, 239, 239);
             txtGrupo.BorderStyle = BorderStyle.FixedSingle;
             txtGrupo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtGrupo.Location = new Point(941, 232);
+            txtGrupo.Location = new Point(1010, 232);
             txtGrupo.MaxLength = 1;
             txtGrupo.Name = "txtGrupo";
             txtGrupo.PlaceholderText = "Grupo";
@@ -306,20 +335,24 @@
             // 
             // cmbGrado
             // 
+            cmbGrado.BackColor = Color.FromArgb(239, 239, 239);
+            cmbGrado.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbGrado.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbGrado.ForeColor = Color.Black;
             cmbGrado.FormattingEnabled = true;
-            cmbGrado.Location = new Point(941, 164);
+            cmbGrado.Location = new Point(1010, 164);
             cmbGrado.Name = "cmbGrado";
             cmbGrado.Size = new Size(270, 33);
             cmbGrado.TabIndex = 24;
             // 
             // cmbCarrera
             // 
+            cmbCarrera.BackColor = Color.FromArgb(239, 239, 239);
+            cmbCarrera.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCarrera.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbCarrera.ForeColor = Color.Black;
             cmbCarrera.FormattingEnabled = true;
-            cmbCarrera.Location = new Point(941, 98);
+            cmbCarrera.Location = new Point(1010, 101);
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(270, 33);
             cmbCarrera.TabIndex = 23;
@@ -330,7 +363,7 @@
             lblPacienteFechaNaci.BackColor = Color.Transparent;
             lblPacienteFechaNaci.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPacienteFechaNaci.ForeColor = Color.FromArgb(23, 147, 209);
-            lblPacienteFechaNaci.Location = new Point(82, 433);
+            lblPacienteFechaNaci.Location = new Point(145, 446);
             lblPacienteFechaNaci.Name = "lblPacienteFechaNaci";
             lblPacienteFechaNaci.Size = new Size(198, 25);
             lblPacienteFechaNaci.TabIndex = 22;
@@ -339,20 +372,20 @@
             // dtmpFechaNaciUsuario
             // 
             dtmpFechaNaciUsuario.CalendarFont = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtmpFechaNaciUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtmpFechaNaciUsuario.Location = new Point(82, 474);
-            dtmpFechaNaciUsuario.MaximumSize = new Size(270, 33);
-            dtmpFechaNaciUsuario.MinimumSize = new Size(270, 33);
+            dtmpFechaNaciUsuario.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtmpFechaNaciUsuario.Location = new Point(145, 501);
+            dtmpFechaNaciUsuario.MaximumSize = new Size(300, 33);
+            dtmpFechaNaciUsuario.MinimumSize = new Size(300, 33);
             dtmpFechaNaciUsuario.Name = "dtmpFechaNaciUsuario";
-            dtmpFechaNaciUsuario.Size = new Size(270, 33);
+            dtmpFechaNaciUsuario.Size = new Size(300, 33);
             dtmpFechaNaciUsuario.TabIndex = 21;
             // 
             // txtPacienteApellidoMaterno
             // 
-            txtPacienteApellidoMaterno.BackColor = Color.White;
+            txtPacienteApellidoMaterno.BackColor = Color.FromArgb(239, 239, 239);
             txtPacienteApellidoMaterno.BorderStyle = BorderStyle.FixedSingle;
             txtPacienteApellidoMaterno.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPacienteApellidoMaterno.Location = new Point(82, 371);
+            txtPacienteApellidoMaterno.Location = new Point(145, 373);
             txtPacienteApellidoMaterno.MaxLength = 50;
             txtPacienteApellidoMaterno.Name = "txtPacienteApellidoMaterno";
             txtPacienteApellidoMaterno.PlaceholderText = "Apellido materno";
@@ -361,10 +394,10 @@
             // 
             // txtPacienteApellidoPaterno
             // 
-            txtPacienteApellidoPaterno.BackColor = Color.White;
+            txtPacienteApellidoPaterno.BackColor = Color.FromArgb(239, 239, 239);
             txtPacienteApellidoPaterno.BorderStyle = BorderStyle.FixedSingle;
             txtPacienteApellidoPaterno.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPacienteApellidoPaterno.Location = new Point(82, 302);
+            txtPacienteApellidoPaterno.Location = new Point(145, 304);
             txtPacienteApellidoPaterno.MaxLength = 50;
             txtPacienteApellidoPaterno.Name = "txtPacienteApellidoPaterno";
             txtPacienteApellidoPaterno.PlaceholderText = "Apellido paterno";
@@ -373,10 +406,10 @@
             // 
             // txtNombre
             // 
-            txtNombre.BackColor = Color.White;
+            txtNombre.BackColor = Color.FromArgb(239, 239, 239);
             txtNombre.BorderStyle = BorderStyle.FixedSingle;
             txtNombre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombre.Location = new Point(82, 232);
+            txtNombre.Location = new Point(145, 234);
             txtNombre.MaxLength = 50;
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "Nombre(s)";
@@ -385,20 +418,22 @@
             // 
             // cmbTipoPaciente
             // 
+            cmbTipoPaciente.BackColor = Color.FromArgb(239, 239, 239);
+            cmbTipoPaciente.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbTipoPaciente.ForeColor = Color.Black;
             cmbTipoPaciente.FormattingEnabled = true;
-            cmbTipoPaciente.Location = new Point(82, 95);
+            cmbTipoPaciente.Location = new Point(145, 101);
             cmbTipoPaciente.Name = "cmbTipoPaciente";
             cmbTipoPaciente.Size = new Size(270, 33);
             cmbTipoPaciente.TabIndex = 17;
             // 
             // txtMatriculaNoTrab
             // 
-            txtMatriculaNoTrab.BackColor = Color.White;
+            txtMatriculaNoTrab.BackColor = Color.FromArgb(239, 239, 239);
             txtMatriculaNoTrab.BorderStyle = BorderStyle.FixedSingle;
             txtMatriculaNoTrab.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtMatriculaNoTrab.Location = new Point(82, 164);
+            txtMatriculaNoTrab.Location = new Point(145, 167);
             txtMatriculaNoTrab.MaxLength = 8;
             txtMatriculaNoTrab.Name = "txtMatriculaNoTrab";
             txtMatriculaNoTrab.PlaceholderText = "Matricula/No. Trab";
@@ -423,18 +458,18 @@
             BackColor = Color.FromArgb(239, 239, 239);
             ClientSize = new Size(1703, 861);
             Controls.Add(lblConsultasBuscarTitulo);
-            Controls.Add(panel1);
+            Controls.Add(pnlAgregarPacientes);
             Name = "frmPacientesAgregar";
             Text = "frmAgregarPaciente";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            pnlAgregarPacientes.ResumeLayout(false);
+            pnlAgregarPacientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel pnlAgregarPacientes;
         private Label lblConsultasBuscarTitulo;
         private TextBox txtMatriculaNoTrab;
         private ComboBox cmbTipoPaciente;
@@ -450,7 +485,7 @@
         private Label lblSexo;
         private Label label4;
         private Label lblSubTituloFisiologicos;
-        private TextBox textBox2;
+        private TextBox txtAltura;
         private TextBox txtPeso;
         private TextBox txtUltimaTemperatura;
         private TextBox txtUltimaPresionArt;
@@ -460,7 +495,9 @@
         private Label label1;
         private Button btnCambiarFoto;
         private PictureBox pcbFotoPaciente;
-        private RadioButton rbtnFemenino;
-        private RadioButton rbtnMasculino;
+        private Label label5;
+        private Label label3;
+        private Label label2;
+        private ComboBox cmbSexo;
     }
 }
