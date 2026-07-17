@@ -31,16 +31,17 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pnlDiagnosticos = new Panel();
-            button1 = new Button();
+            btnNuevo = new Button();
             label2 = new Label();
             label1 = new Label();
             btnEliminar = new Button();
             rchtxtSintomas = new RichTextBox();
             txtNombreDiagnostico = new TextBox();
-            btnEditar = new Button();
+            btnGuardar = new Button();
             lblDiagnostico = new Label();
-            textBox1 = new TextBox();
+            txtBuscarDiagnostico = new TextBox();
             pictureBox1 = new PictureBox();
             dgvDiagnosticos = new DataGridView();
             pnlDiagnosticos.SuspendLayout();
@@ -51,30 +52,31 @@
             // pnlDiagnosticos
             // 
             pnlDiagnosticos.BackColor = Color.White;
-            pnlDiagnosticos.Controls.Add(button1);
+            pnlDiagnosticos.Controls.Add(btnNuevo);
             pnlDiagnosticos.Controls.Add(label2);
             pnlDiagnosticos.Controls.Add(label1);
             pnlDiagnosticos.Controls.Add(btnEliminar);
             pnlDiagnosticos.Controls.Add(rchtxtSintomas);
             pnlDiagnosticos.Controls.Add(txtNombreDiagnostico);
-            pnlDiagnosticos.Controls.Add(btnEditar);
+            pnlDiagnosticos.Controls.Add(btnGuardar);
             pnlDiagnosticos.Location = new Point(74, 186);
             pnlDiagnosticos.Name = "pnlDiagnosticos";
             pnlDiagnosticos.Size = new Size(654, 593);
             pnlDiagnosticos.TabIndex = 0;
             // 
-            // button1
+            // btnNuevo
             // 
-            button1.BackColor = Color.FromArgb(10, 64, 88);
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(239, 239, 239);
-            button1.Location = new Point(265, 362);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Size = new Size(160, 35);
-            button1.TabIndex = 69;
-            button1.Text = "Nuevo";
-            button1.UseVisualStyleBackColor = false;
+            btnNuevo.BackColor = Color.FromArgb(10, 64, 88);
+            btnNuevo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNuevo.ForeColor = Color.FromArgb(239, 239, 239);
+            btnNuevo.Location = new Point(265, 362);
+            btnNuevo.Margin = new Padding(0);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(160, 35);
+            btnNuevo.TabIndex = 69;
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.UseVisualStyleBackColor = false;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // label2
             // 
@@ -110,6 +112,7 @@
             btnEliminar.TabIndex = 66;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // rchtxtSintomas
             // 
@@ -135,18 +138,19 @@
             txtNombreDiagnostico.Size = new Size(270, 33);
             txtNombreDiagnostico.TabIndex = 2;
             // 
-            // btnEditar
+            // btnGuardar
             // 
-            btnEditar.BackColor = Color.FromArgb(10, 64, 88);
-            btnEditar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnEditar.Location = new Point(65, 362);
-            btnEditar.Margin = new Padding(0);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(160, 35);
-            btnEditar.TabIndex = 65;
-            btnEditar.Text = "Guardar";
-            btnEditar.UseVisualStyleBackColor = false;
+            btnGuardar.BackColor = Color.FromArgb(10, 64, 88);
+            btnGuardar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.ForeColor = Color.FromArgb(239, 239, 239);
+            btnGuardar.Location = new Point(65, 362);
+            btnGuardar.Margin = new Padding(0);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(160, 35);
+            btnGuardar.TabIndex = 65;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // lblDiagnostico
             // 
@@ -159,17 +163,18 @@
             lblDiagnostico.TabIndex = 2;
             lblDiagnostico.Text = "Diagnosticos";
             // 
-            // textBox1
+            // txtBuscarDiagnostico
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(769, 136);
-            textBox1.MaxLength = 50;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Buscar diagnostico";
-            textBox1.Size = new Size(270, 33);
-            textBox1.TabIndex = 3;
+            txtBuscarDiagnostico.BackColor = Color.White;
+            txtBuscarDiagnostico.BorderStyle = BorderStyle.FixedSingle;
+            txtBuscarDiagnostico.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBuscarDiagnostico.Location = new Point(769, 136);
+            txtBuscarDiagnostico.MaxLength = 50;
+            txtBuscarDiagnostico.Name = "txtBuscarDiagnostico";
+            txtBuscarDiagnostico.PlaceholderText = "Buscar diagnostico";
+            txtBuscarDiagnostico.Size = new Size(270, 33);
+            txtBuscarDiagnostico.TabIndex = 3;
+            txtBuscarDiagnostico.TextChanged += txtBuscarDiagnostico_TextChanged;
             // 
             // pictureBox1
             // 
@@ -203,6 +208,14 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvDiagnosticos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvDiagnosticos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvDiagnosticos.DefaultCellStyle = dataGridViewCellStyle3;
             dgvDiagnosticos.EnableHeadersVisualStyles = false;
             dgvDiagnosticos.GridColor = Color.White;
             dgvDiagnosticos.Location = new Point(769, 186);
@@ -210,11 +223,12 @@
             dgvDiagnosticos.Name = "dgvDiagnosticos";
             dgvDiagnosticos.ReadOnly = true;
             dgvDiagnosticos.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dgvDiagnosticos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dgvDiagnosticos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvDiagnosticos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvDiagnosticos.Size = new Size(885, 593);
             dgvDiagnosticos.TabIndex = 10;
+            dgvDiagnosticos.SelectionChanged += dgvDiagnosticos_SelectionChanged;
             // 
             // frmDiagnosticos
             // 
@@ -224,7 +238,7 @@
             ClientSize = new Size(1703, 861);
             Controls.Add(dgvDiagnosticos);
             Controls.Add(pictureBox1);
-            Controls.Add(textBox1);
+            Controls.Add(txtBuscarDiagnostico);
             Controls.Add(lblDiagnostico);
             Controls.Add(pnlDiagnosticos);
             Name = "frmDiagnosticos";
@@ -245,11 +259,11 @@
         private RichTextBox rchtxtSintomas;
         private Label label2;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtBuscarDiagnostico;
         private PictureBox pictureBox1;
-        private Button button1;
+        private Button btnNuevo;
         private Button btnEliminar;
-        private Button btnEditar;
+        private Button btnGuardar;
         private DataGridView dgvDiagnosticos;
     }
 }

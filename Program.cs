@@ -12,16 +12,16 @@ namespace Vitalis
             // see https://aka.ms/applicationconfiguration.
             //ApplicationConfiguration.Initialize();
 
-            /*using (frmLogin login = new frmLogin())
+            using (frmLogin login = new frmLogin())
             {
                 if (login.ShowDialog() == DialogResult.OK)
                 {
                     Application.Run(new frmPrincipal());
                 }
-            }*/
+            }
 
             //Application.Run(new frmLogin());
-            Application.Run(new frmPrincipal());
+            //Application.Run(new frmPrincipal());
             //Application.Run(new frmConsultasRecientes());
 
         }
