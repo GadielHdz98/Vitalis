@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             dgvCarreras = new DataGridView();
             pcbBuscar = new PictureBox();
             txtBuscarCarrera = new TextBox();
             lblDiagnostico = new Label();
             pnlDiagnosticos = new Panel();
-            button1 = new Button();
+            btnNuevo = new Button();
             lblDescripcion = new Label();
             lblcarrera = new Label();
             btnEliminar = new Button();
             rchtxtDescripcionCarrera = new RichTextBox();
             txtNombreCarrera = new TextBox();
-            btnEditar = new Button();
+            btnGuardar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCarreras).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbBuscar).BeginInit();
             pnlDiagnosticos.SuspendLayout();
@@ -54,23 +55,31 @@
             dgvCarreras.AllowUserToDeleteRows = false;
             dgvCarreras.AllowUserToResizeColumns = false;
             dgvCarreras.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(239, 239, 239);
-            dgvCarreras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(239, 239, 239);
+            dgvCarreras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvCarreras.Anchor = AnchorStyles.None;
             dgvCarreras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCarreras.BackgroundColor = Color.White;
             dgvCarreras.BorderStyle = BorderStyle.None;
             dgvCarreras.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvCarreras.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvCarreras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvCarreras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvCarreras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvCarreras.DefaultCellStyle = dataGridViewCellStyle3;
             dgvCarreras.EnableHeadersVisualStyles = false;
             dgvCarreras.GridColor = Color.White;
             dgvCarreras.Location = new Point(764, 187);
@@ -78,11 +87,12 @@
             dgvCarreras.Name = "dgvCarreras";
             dgvCarreras.ReadOnly = true;
             dgvCarreras.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dgvCarreras.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dgvCarreras.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvCarreras.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCarreras.Size = new Size(885, 593);
             dgvCarreras.TabIndex = 15;
+            dgvCarreras.SelectionChanged += dgvCarreras_SelectionChanged;
             // 
             // pcbBuscar
             // 
@@ -105,6 +115,7 @@
             txtBuscarCarrera.PlaceholderText = "Buscar carrera";
             txtBuscarCarrera.Size = new Size(270, 33);
             txtBuscarCarrera.TabIndex = 13;
+            txtBuscarCarrera.TextChanged += txtNombreCarrera_TextChanged;
             // 
             // lblDiagnostico
             // 
@@ -120,30 +131,31 @@
             // pnlDiagnosticos
             // 
             pnlDiagnosticos.BackColor = Color.White;
-            pnlDiagnosticos.Controls.Add(button1);
+            pnlDiagnosticos.Controls.Add(btnNuevo);
             pnlDiagnosticos.Controls.Add(lblDescripcion);
             pnlDiagnosticos.Controls.Add(lblcarrera);
             pnlDiagnosticos.Controls.Add(btnEliminar);
             pnlDiagnosticos.Controls.Add(rchtxtDescripcionCarrera);
             pnlDiagnosticos.Controls.Add(txtNombreCarrera);
-            pnlDiagnosticos.Controls.Add(btnEditar);
+            pnlDiagnosticos.Controls.Add(btnGuardar);
             pnlDiagnosticos.Location = new Point(74, 186);
             pnlDiagnosticos.Name = "pnlDiagnosticos";
             pnlDiagnosticos.Size = new Size(654, 593);
             pnlDiagnosticos.TabIndex = 11;
             // 
-            // button1
+            // btnNuevo
             // 
-            button1.BackColor = Color.FromArgb(10, 64, 88);
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(239, 239, 239);
-            button1.Location = new Point(265, 362);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Size = new Size(160, 35);
-            button1.TabIndex = 69;
-            button1.Text = "Nuevo";
-            button1.UseVisualStyleBackColor = false;
+            btnNuevo.BackColor = Color.FromArgb(10, 64, 88);
+            btnNuevo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNuevo.ForeColor = Color.FromArgb(239, 239, 239);
+            btnNuevo.Location = new Point(265, 362);
+            btnNuevo.Margin = new Padding(0);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(160, 35);
+            btnNuevo.TabIndex = 69;
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.UseVisualStyleBackColor = false;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // lblDescripcion
             // 
@@ -179,6 +191,7 @@
             btnEliminar.TabIndex = 66;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnBorrar_Click;
             // 
             // rchtxtDescripcionCarrera
             // 
@@ -204,18 +217,19 @@
             txtNombreCarrera.Size = new Size(270, 33);
             txtNombreCarrera.TabIndex = 2;
             // 
-            // btnEditar
+            // btnGuardar
             // 
-            btnEditar.BackColor = Color.FromArgb(10, 64, 88);
-            btnEditar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnEditar.Location = new Point(65, 362);
-            btnEditar.Margin = new Padding(0);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(160, 35);
-            btnEditar.TabIndex = 65;
-            btnEditar.Text = "Guardar";
-            btnEditar.UseVisualStyleBackColor = false;
+            btnGuardar.BackColor = Color.FromArgb(10, 64, 88);
+            btnGuardar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.ForeColor = Color.FromArgb(239, 239, 239);
+            btnGuardar.Location = new Point(65, 362);
+            btnGuardar.Margin = new Padding(0);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(160, 35);
+            btnGuardar.TabIndex = 65;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // frmCarreras
             // 
@@ -244,12 +258,12 @@
         private TextBox txtBuscarCarrera;
         private Label lblDiagnostico;
         private Panel pnlDiagnosticos;
-        private Button button1;
+        private Button btnNuevo;
         private Label lblDescripcion;
         private Label lblcarrera;
         private Button btnEliminar;
         private RichTextBox rchtxtDescripcionCarrera;
         private TextBox txtNombreCarrera;
-        private Button btnEditar;
+        private Button btnGuardar;
     }
 }
