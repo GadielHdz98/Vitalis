@@ -8,36 +8,41 @@ using System.Threading.Tasks;
 
 namespace Vitalis
 {
-    internal class clsDiagnosticos
+    internal class clsCarreras
     {
-        private int idDiagnostico;
-        private string nombreDiagnostico;
-        private string sintomas;
+        // Atributos privados
+        private string nombreCarrera;
+        private string descripcion;
 
+        private int idCarrera; //atributo para referenciar en update y delete
+
+        // Usamos una tabla temporal y un adaptador
         private MySqlDataAdapter consulta;
         private DataTable tabla;
+
+        //Usamos command para insertar o actualizar
         private MySqlCommand comando;
 
-        public int IdDiagnostico { get => idDiagnostico; set => idDiagnostico = value; }
-        public string NombreDiagnostico { get => nombreDiagnostico; set => nombreDiagnostico = value; }
-        public string Sintomas { get => sintomas; set => sintomas = value; }
+        // Propiedad pública para el atributo nombreCarrera
+        public string NombreCarrera
+        {
+            get => nombreCarrera;
+            set => nombreCarrera = value;
+        }
+        public int IdCarrera { get => idCarrera; set => idCarrera = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
 
-        //Metodo para cargar dgv
+
+        // Método para cargar todos los datos en el DataGrid
         public DataTable CargarDataGrid()
         {
             tabla = new DataTable();
-
             try
             {
                 clsConexion conexionBD = new clsConexion();
-
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = @"SELECT id_Diagnostico AS Clave,
-                            nombreDiagnostico AS Diagnostico,
-                            Sintomas
-                            FROM Diagnosticos;";
-
+                    string sql = "SELECT id_Carrera AS Clave, nombreCarrera AS carrera, descripcion AS descripcion FROM carreras;";
                     using (consulta = new MySqlDataAdapter(sql, conexion))
                     {
                         consulta.Fill(tabla);
@@ -46,41 +51,43 @@ namespace Vitalis
             }
             catch (Exception ex)
             {
-                throw new Exception("Error en la conexion a la base de datos" + ex.Message);
+                throw new Exception("Error en la conexion de la base de datos: " + ex.Message);
             }
-
             return tabla;
         }
+
         // Método para consultar por coincidencias (Búsqueda en tiempo real, Busqueda tipo Like)
         public DataTable Consultar()
         {
             tabla = new DataTable();
-
             try
             {
                 clsConexion conexionBD = new clsConexion();
-
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = @"SELECT id_Diagnostico AS Clave, nombreDiagnostico AS Diagnostico, Sintomas FROM Diagnosticos WHERE nombreDiagnostico LIKE @nombre;";
+                    // Consulta SQL usando el operador LIKE para coincidencias parciales
+                    string sql = "SELECT id_Carrera AS Clave, nombreCarrera AS carrera, descripcion AS descripcion FROM carreras WHERE nombreCarrera LIKE @carrera;";
 
                     using (var comando = new MySqlCommand(sql, conexion))
                     {
-                        comando.Parameters.AddWithValue("@nombre", "%" + nombreDiagnostico + "%");
+                        // Se agregan los comodines '%' para buscar cualquier coincidencia que contenga el texto
+                        comando.Parameters.AddWithValue("@carrera", "%" + nombreCarrera + "%");
 
                         using (consulta = new MySqlDataAdapter(comando))
                         {
                             consulta.Fill(tabla);
                         }
-                    }
-                }
+                    } // Libera el comando automáticamente
+                } // Libera la conexión automáticamente
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw new Exception("Error en la conexion de la base de datos: " + ex.Message);
             }
             return tabla;
         }
+
+        //METODO PARA AGREGAR O ACTUALIZAR CARRERAS.
         public string GuardarActualizar(int tipoOperacion)
         {
             string msg = "";
@@ -92,15 +99,13 @@ namespace Vitalis
                     switch (tipoOperacion)
                     {
                         case 0: //Insertar nuevo registro
-
-                            string sqlN = "INSERT INTO Diagnosticos (nombreDiagnostico, Sintomas) VALUES (@nombreDiagnostico, @sintomas)";
+                            string sqlN = "INSERT INTO carreras (nombreCarrera,descripcion) VALUES (@nombreCarrera, @descripcion)";
                             using (comando = new MySqlCommand(sqlN, conexion))
                             {
-                                comando.Parameters.AddWithValue("nombreDiagnostico", nombreDiagnostico);
-                                comando.Parameters.AddWithValue("sintomas", sintomas);
+                                comando.Parameters.AddWithValue("nombreCarrera", nombreCarrera);
+                                comando.Parameters.AddWithValue("descripcion", descripcion);
 
                                 int filasAfectadas = comando.ExecuteNonQuery();
-
                                 if (filasAfectadas > 0)
                                 {
                                     msg = "El registro se guardo correctamente";
@@ -109,21 +114,17 @@ namespace Vitalis
                                 {
                                     msg = "Error, no se guardaron los datos";
                                 }
-                            }
+                            } //Termina el using, libera la operacion de insercion
                             break;
-
-                        case 1: //Actualizar registro
-
-                            string sqlA = "UPDATE Diagnosticos D SET D.nombreDiagnostico = @nombreDiagnostico, D.Sintomas = @sintomas WHERE D.id_Diagnostico = @idDiagnostico";
-
+                        case 1: // actualizar old registro
+                            string sqlA = "UPDATE carreras C SET C.nombreCarrera = @nombreCarrera, C.descripcion = @descripcion WHERE C.idCarrera = @idCarrera";
                             using (comando = new MySqlCommand(sqlA, conexion))
                             {
-                                comando.Parameters.AddWithValue("nombreDiagnostico", nombreDiagnostico);
-                                comando.Parameters.AddWithValue("sintomas", sintomas);
-                                comando.Parameters.AddWithValue("idDiagnostico", idDiagnostico);
+                                comando.Parameters.AddWithValue("nombreCarrera", nombreCarrera);
+                                comando.Parameters.AddWithValue("descripcion", descripcion);
+                                comando.Parameters.AddWithValue("idCarrera", idCarrera);
 
                                 int filasAfectadas = comando.ExecuteNonQuery();
-
                                 if (filasAfectadas > 0)
                                 {
                                     msg = "El registro se actualizo correctamente";
@@ -132,34 +133,31 @@ namespace Vitalis
                                 {
                                     msg = "Error, no se pudieron actualizar los datos";
                                 }
-                            }
+                            } //Libera la operacion de insercion
                             break;
                     }
-                }
+                }//Libera la conexion             
             }
             catch (Exception ex)
             {
-                throw new Exception("Error " + ex.Message);
+                throw new Exception("Error" + ex.Message);
             }
-
             return msg;
         }
+
+        //METODO PARA ELIMINAR ALGUN REGISTRO
         public string Eliminar()
         {
             string msg = "";
-
             try
             {
                 clsConexion conexionBD = new clsConexion();
-
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sqlE = "DELETE FROM Diagnosticos WHERE id_Diagnostico = @idDiagnostico;";
-
+                    string sqlE = "DELETE FROM carreras WHERE id_carrera = @idCarrera;";
                     using (comando = new MySqlCommand(sqlE, conexion))
                     {
-                        comando.Parameters.AddWithValue("@idDiagnostico", idDiagnostico);
-
+                        comando.Parameters.AddWithValue("@idCarrera", idCarrera);
                         int filasAfectadas = comando.ExecuteNonQuery();
 
                         if (filasAfectadas > 0)
@@ -170,17 +168,14 @@ namespace Vitalis
                         {
                             msg = "Los datos no se pudieron eliminar correctamente";
                         }
-                    }
+                    } //Libera la eliminacion
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception("Error " + ex.Message);
             }
-
             return msg;
         }
-
-
     }
 }
