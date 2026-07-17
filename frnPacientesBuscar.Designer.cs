@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pnlBuscarPaciente = new Panel();
             button1 = new Button();
             rbtnFemenino = new RadioButton();
@@ -46,13 +49,13 @@
             txtApellidoPaternoPaciente = new TextBox();
             txtNombrePaciente = new TextBox();
             lblVitalisInicio = new Label();
-            dataGridView1 = new DataGridView();
             txtBuscarMatricula = new TextBox();
             pictureBox1 = new PictureBox();
+            dgvPacientesRegistradosRecientemente = new DataGridView();
             pnlBuscarPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPacientesRegistradosRecientemente).BeginInit();
             SuspendLayout();
             // 
             // pnlBuscarPaciente
@@ -99,7 +102,7 @@
             // 
             rbtnFemenino.AutoSize = true;
             rbtnFemenino.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbtnFemenino.Location = new Point(1025, 55);
+            rbtnFemenino.Location = new Point(1017, 55);
             rbtnFemenino.Name = "rbtnFemenino";
             rbtnFemenino.Size = new Size(39, 29);
             rbtnFemenino.TabIndex = 46;
@@ -111,7 +114,7 @@
             // 
             rbtnMasculino.AutoSize = true;
             rbtnMasculino.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbtnMasculino.Location = new Point(947, 55);
+            rbtnMasculino.Location = new Point(939, 55);
             rbtnMasculino.Name = "rbtnMasculino";
             rbtnMasculino.Size = new Size(47, 29);
             rbtnMasculino.TabIndex = 45;
@@ -123,7 +126,7 @@
             // 
             lblSexo.AutoSize = true;
             lblSexo.Font = new Font("Segoe UI", 14.25F);
-            lblSexo.Location = new Point(862, 57);
+            lblSexo.Location = new Point(854, 57);
             lblSexo.Name = "lblSexo";
             lblSexo.Size = new Size(56, 25);
             lblSexo.TabIndex = 44;
@@ -165,7 +168,7 @@
             // 
             lblAvisoAntesDeBuscar.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblAvisoAntesDeBuscar.ForeColor = Color.FromArgb(158, 158, 158);
-            lblAvisoAntesDeBuscar.Location = new Point(1139, 235);
+            lblAvisoAntesDeBuscar.Location = new Point(580, 232);
             lblAvisoAntesDeBuscar.Name = "lblAvisoAntesDeBuscar";
             lblAvisoAntesDeBuscar.Size = new Size(515, 29);
             lblAvisoAntesDeBuscar.TabIndex = 15;
@@ -184,12 +187,12 @@
             // btnVaciarCampos
             // 
             btnVaciarCampos.Anchor = AnchorStyles.None;
-            btnVaciarCampos.BackColor = Color.DarkGoldenrod;
+            btnVaciarCampos.BackColor = Color.Orange;
             btnVaciarCampos.FlatAppearance.BorderSize = 0;
             btnVaciarCampos.FlatStyle = FlatStyle.Flat;
             btnVaciarCampos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVaciarCampos.ForeColor = Color.FromArgb(239, 239, 239);
-            btnVaciarCampos.Location = new Point(862, 184);
+            btnVaciarCampos.Location = new Point(854, 184);
             btnVaciarCampos.Margin = new Padding(0);
             btnVaciarCampos.Name = "btnVaciarCampos";
             btnVaciarCampos.Size = new Size(160, 35);
@@ -206,7 +209,7 @@
             btnBuscarPaciente.FlatStyle = FlatStyle.Flat;
             btnBuscarPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBuscarPaciente.ForeColor = Color.FromArgb(239, 239, 239);
-            btnBuscarPaciente.Location = new Point(862, 118);
+            btnBuscarPaciente.Location = new Point(854, 118);
             btnBuscarPaciente.Margin = new Padding(0);
             btnBuscarPaciente.Name = "btnBuscarPaciente";
             btnBuscarPaciente.Size = new Size(160, 35);
@@ -216,6 +219,8 @@
             // 
             // cmbTipoPaciente
             // 
+            cmbTipoPaciente.BackColor = Color.FromArgb(239, 239, 239);
+            cmbTipoPaciente.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbTipoPaciente.ForeColor = Color.Black;
             cmbTipoPaciente.FormattingEnabled = true;
@@ -226,6 +231,8 @@
             // 
             // cmbCarrera
             // 
+            cmbCarrera.BackColor = Color.FromArgb(239, 239, 239);
+            cmbCarrera.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCarrera.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbCarrera.ForeColor = Color.Black;
             cmbCarrera.FormattingEnabled = true;
@@ -236,6 +243,8 @@
             // 
             // cmbCuatri
             // 
+            cmbCuatri.BackColor = Color.FromArgb(239, 239, 239);
+            cmbCuatri.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCuatri.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbCuatri.ForeColor = Color.Black;
             cmbCuatri.FormattingEnabled = true;
@@ -246,7 +255,7 @@
             // 
             // txtApellidoMaternoPaciente
             // 
-            txtApellidoMaternoPaciente.BackColor = Color.White;
+            txtApellidoMaternoPaciente.BackColor = Color.FromArgb(239, 239, 239);
             txtApellidoMaternoPaciente.BorderStyle = BorderStyle.FixedSingle;
             txtApellidoMaternoPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtApellidoMaternoPaciente.Location = new Point(76, 187);
@@ -257,7 +266,7 @@
             // 
             // txtApellidoPaternoPaciente
             // 
-            txtApellidoPaternoPaciente.BackColor = Color.White;
+            txtApellidoPaternoPaciente.BackColor = Color.FromArgb(239, 239, 239);
             txtApellidoPaternoPaciente.BorderStyle = BorderStyle.FixedSingle;
             txtApellidoPaternoPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtApellidoPaternoPaciente.Location = new Point(76, 121);
@@ -268,7 +277,7 @@
             // 
             // txtNombrePaciente
             // 
-            txtNombrePaciente.BackColor = Color.White;
+            txtNombrePaciente.BackColor = Color.FromArgb(239, 239, 239);
             txtNombrePaciente.BorderStyle = BorderStyle.FixedSingle;
             txtNombrePaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNombrePaciente.Location = new Point(76, 54);
@@ -287,17 +296,6 @@
             lblVitalisInicio.Size = new Size(715, 68);
             lblVitalisInicio.TabIndex = 6;
             lblVitalisInicio.Text = "Datos del paciente a buscar";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(32, 372);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1657, 566);
-            dataGridView1.TabIndex = 7;
             // 
             // txtBuscarMatricula
             // 
@@ -320,14 +318,50 @@
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
+            // dgvPacientesRegistradosRecientemente
+            // 
+            dgvPacientesRegistradosRecientemente.AllowUserToAddRows = false;
+            dgvPacientesRegistradosRecientemente.AllowUserToDeleteRows = false;
+            dgvPacientesRegistradosRecientemente.AllowUserToResizeColumns = false;
+            dgvPacientesRegistradosRecientemente.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(239, 239, 239);
+            dgvPacientesRegistradosRecientemente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvPacientesRegistradosRecientemente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvPacientesRegistradosRecientemente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPacientesRegistradosRecientemente.BackgroundColor = Color.White;
+            dgvPacientesRegistradosRecientemente.BorderStyle = BorderStyle.None;
+            dgvPacientesRegistradosRecientemente.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvPacientesRegistradosRecientemente.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvPacientesRegistradosRecientemente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvPacientesRegistradosRecientemente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPacientesRegistradosRecientemente.EnableHeadersVisualStyles = false;
+            dgvPacientesRegistradosRecientemente.GridColor = Color.White;
+            dgvPacientesRegistradosRecientemente.Location = new Point(32, 388);
+            dgvPacientesRegistradosRecientemente.MultiSelect = false;
+            dgvPacientesRegistradosRecientemente.Name = "dgvPacientesRegistradosRecientemente";
+            dgvPacientesRegistradosRecientemente.ReadOnly = true;
+            dgvPacientesRegistradosRecientemente.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dgvPacientesRegistradosRecientemente.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dgvPacientesRegistradosRecientemente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPacientesRegistradosRecientemente.Size = new Size(1657, 527);
+            dgvPacientesRegistradosRecientemente.TabIndex = 10;
+            // 
             // frnPacientesBuscar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1719, 970);
+            Controls.Add(dgvPacientesRegistradosRecientemente);
             Controls.Add(pictureBox1);
             Controls.Add(txtBuscarMatricula);
-            Controls.Add(dataGridView1);
             Controls.Add(lblVitalisInicio);
             Controls.Add(pnlBuscarPaciente);
             Name = "frnPacientesBuscar";
@@ -335,8 +369,8 @@
             pnlBuscarPaciente.ResumeLayout(false);
             pnlBuscarPaciente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPacientesRegistradosRecientemente).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -348,7 +382,6 @@
         private TextBox txtNombrePaciente;
         private Label lblVitalisInicio;
         private TextBox txtApellidoPaternoPaciente;
-        private DataGridView dataGridView1;
         private TextBox txtApellidoMaternoPaciente;
         private ComboBox cmbTipoPaciente;
         private ComboBox cmbCarrera;
@@ -365,5 +398,6 @@
         private RadioButton rbtnMasculino;
         private Label lblSexo;
         private Button button1;
+        private DataGridView dgvPacientesRegistradosRecientemente;
     }
 }

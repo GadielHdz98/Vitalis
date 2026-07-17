@@ -19,14 +19,26 @@ namespace Vitalis
 
         private void btnVaciarCampos_Click(object sender, EventArgs e)
         {
-            txtMatriculaNoTrab.Text = string.Empty;
-            txtNombre.Text = string.Empty;
-            txtPacienteApellidoMaterno.Text = string.Empty;
-            txtPacienteApellidoPaterno.Text = string.Empty;
-            txtPeso.Text = string.Empty;   
-            txtUltimaPresionArt.Text = string.Empty;
-            txtUltimaTemperatura.Text = string.Empty;
-            txtGrupo.Text= string.Empty;
+            
+            foreach (Control c in pnlAgregarPacientes.Controls)
+            {
+                if (c is TextBox)
+                {
+                    c.Text = string.Empty;
+                }
+                else if (c is ComboBox combo)
+                {
+                    //combo.SelectedIndex = 0;
+                }
+                else if (c is CheckBox checkBox)
+                {
+                    checkBox.Checked = false;
+                }
+                else if (c is RadioButton rdbtn)
+                {
+                    rdbtn.Checked = false;
+                }
+            }
         }
     }
 }

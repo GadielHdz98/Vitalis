@@ -36,20 +36,18 @@
             btnSalir = new Button();
             pnlImagenesLogin = new Panel();
             pnlLogin = new Panel();
-            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlImagenesLogin.SuspendLayout();
             pnlLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.Logo_fondoVerdeMenuSideBar;
-            pictureBox1.Location = new Point(-49, 24);
+            pictureBox1.Location = new Point(0, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(304, 315);
+            pictureBox1.Size = new Size(322, 355);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -57,8 +55,9 @@
             // txtUser
             // 
             txtUser.Anchor = AnchorStyles.None;
+            txtUser.BackColor = Color.FromArgb(239, 239, 239);
             txtUser.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUser.Location = new Point(28, 76);
+            txtUser.Location = new Point(58, 86);
             txtUser.Name = "txtUser";
             txtUser.PlaceholderText = "Nombre Usuario";
             txtUser.Size = new Size(300, 33);
@@ -70,7 +69,7 @@
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLogin.ForeColor = Color.White;
-            lblLogin.Location = new Point(134, 14);
+            lblLogin.Location = new Point(165, 39);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(87, 32);
             lblLogin.TabIndex = 2;
@@ -79,8 +78,9 @@
             // txtPassword
             // 
             txtPassword.Anchor = AnchorStyles.None;
+            txtPassword.BackColor = Color.FromArgb(239, 239, 239);
             txtPassword.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPassword.Location = new Point(28, 115);
+            txtPassword.Location = new Point(58, 137);
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderText = "Contraseña";
             txtPassword.Size = new Size(300, 33);
@@ -94,9 +94,9 @@
             btnIngresar.BackgroundImageLayout = ImageLayout.Center;
             btnIngresar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnIngresar.ForeColor = Color.White;
-            btnIngresar.Location = new Point(102, 184);
+            btnIngresar.Location = new Point(133, 195);
             btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(160, 45);
+            btnIngresar.Size = new Size(160, 35);
             btnIngresar.TabIndex = 4;
             btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = false;
@@ -109,9 +109,9 @@
             btnSalir.BackgroundImageLayout = ImageLayout.Center;
             btnSalir.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalir.ForeColor = Color.White;
-            btnSalir.Location = new Point(102, 235);
+            btnSalir.Location = new Point(133, 246);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(160, 45);
+            btnSalir.Size = new Size(160, 35);
             btnSalir.TabIndex = 5;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
@@ -123,7 +123,7 @@
             pnlImagenesLogin.Dock = DockStyle.Left;
             pnlImagenesLogin.Location = new Point(0, 0);
             pnlImagenesLogin.Name = "pnlImagenesLogin";
-            pnlImagenesLogin.Size = new Size(200, 361);
+            pnlImagenesLogin.Size = new Size(322, 361);
             pnlImagenesLogin.TabIndex = 6;
             // 
             // pnlLogin
@@ -134,21 +134,10 @@
             pnlLogin.Controls.Add(btnIngresar);
             pnlLogin.Controls.Add(txtPassword);
             pnlLogin.Dock = DockStyle.Left;
-            pnlLogin.Location = new Point(200, 0);
+            pnlLogin.Location = new Point(322, 0);
             pnlLogin.Name = "pnlLogin";
-            pnlLogin.Size = new Size(360, 361);
+            pnlLogin.Size = new Size(423, 361);
             pnlLogin.TabIndex = 7;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.Image = Properties.Resources.Logo_fondoVerdeMenuSideBar;
-            pictureBox2.Location = new Point(505, 24);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(304, 315);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 8;
-            pictureBox2.TabStop = false;
             // 
             // frmLogin
             // 
@@ -158,7 +147,6 @@
             ClientSize = new Size(744, 361);
             Controls.Add(pnlLogin);
             Controls.Add(pnlImagenesLogin);
-            Controls.Add(pictureBox2);
             MaximumSize = new Size(760, 400);
             MinimumSize = new Size(760, 400);
             Name = "frmLogin";
@@ -168,7 +156,6 @@
             pnlImagenesLogin.ResumeLayout(false);
             pnlLogin.ResumeLayout(false);
             pnlLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -182,6 +169,5 @@
         private Button btnSalir;
         private Panel pnlImagenesLogin;
         private Panel pnlLogin;
-        private PictureBox pictureBox2;
     }
 }

@@ -35,7 +35,7 @@
             lblRolUsuarioSideBar = new Label();
             lblNombreUsuarioSideBar = new Label();
             pcbFotoDePerfilUsuario = new PictureBox();
-            btnAyudaSideBar = new Button();
+            btnAdministracionSideBar = new Button();
             btnConsultasSideBar = new Button();
             btnPacientesSideBar = new Button();
             btnInicioSideBar = new Button();
@@ -54,7 +54,7 @@
             // 
             pnlSideBar.BackColor = Color.FromArgb(58, 154, 138);
             pnlSideBar.Controls.Add(pnlPerfilUsuarioSideBar);
-            pnlSideBar.Controls.Add(btnAyudaSideBar);
+            pnlSideBar.Controls.Add(btnAdministracionSideBar);
             pnlSideBar.Controls.Add(btnConsultasSideBar);
             pnlSideBar.Controls.Add(btnPacientesSideBar);
             pnlSideBar.Controls.Add(btnInicioSideBar);
@@ -139,22 +139,23 @@
             pcbFotoDePerfilUsuario.TabIndex = 5;
             pcbFotoDePerfilUsuario.TabStop = false;
             // 
-            // btnAyudaSideBar
+            // btnAdministracionSideBar
             // 
-            btnAyudaSideBar.BackColor = Color.FromArgb(58, 154, 138);
-            btnAyudaSideBar.Dock = DockStyle.Top;
-            btnAyudaSideBar.FlatAppearance.BorderSize = 0;
-            btnAyudaSideBar.FlatStyle = FlatStyle.Flat;
-            btnAyudaSideBar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAyudaSideBar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnAyudaSideBar.Location = new Point(0, 351);
-            btnAyudaSideBar.Margin = new Padding(0);
-            btnAyudaSideBar.Name = "btnAyudaSideBar";
-            btnAyudaSideBar.Size = new Size(200, 70);
-            btnAyudaSideBar.TabIndex = 4;
-            btnAyudaSideBar.Text = ". . .";
-            btnAyudaSideBar.TextAlign = ContentAlignment.MiddleLeft;
-            btnAyudaSideBar.UseVisualStyleBackColor = false;
+            btnAdministracionSideBar.BackColor = Color.FromArgb(58, 154, 138);
+            btnAdministracionSideBar.Dock = DockStyle.Top;
+            btnAdministracionSideBar.FlatAppearance.BorderSize = 0;
+            btnAdministracionSideBar.FlatStyle = FlatStyle.Flat;
+            btnAdministracionSideBar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdministracionSideBar.ForeColor = Color.FromArgb(239, 239, 239);
+            btnAdministracionSideBar.Location = new Point(0, 351);
+            btnAdministracionSideBar.Margin = new Padding(0);
+            btnAdministracionSideBar.Name = "btnAdministracionSideBar";
+            btnAdministracionSideBar.Size = new Size(200, 70);
+            btnAdministracionSideBar.TabIndex = 4;
+            btnAdministracionSideBar.Text = "Administracion";
+            btnAdministracionSideBar.TextAlign = ContentAlignment.MiddleLeft;
+            btnAdministracionSideBar.UseVisualStyleBackColor = false;
+            btnAdministracionSideBar.Click += btnAdministracionSideBar_Click;
             // 
             // btnConsultasSideBar
             // 
@@ -276,7 +277,7 @@
         private Panel pnlLogoVitalisSideBar;
         private PictureBox pcbLogoVitalisSideBar;
         private Button btnInicioSideBar;
-        private Button btnAyudaSideBar;
+        private Button btnAdministracionSideBar;
         private Button btnConsultasSideBar;
         private Button btnPacientesSideBar;
         private Panel pnlPerfilUsuarioSideBar;
