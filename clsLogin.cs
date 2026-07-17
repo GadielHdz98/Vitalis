@@ -9,10 +9,6 @@ namespace Vitalis
 {
     internal class clsLogin
     {
-
-        string nombreUsuario = "Doctor";
-        string rolUsuario = "Enfermero";
-
         private string usuario;
         private string password;
 
@@ -23,10 +19,13 @@ namespace Vitalis
         private static string perfil;
         private static bool esEnfermero;
         private static bool esDoctor;
+        private static bool esAdministrador;
 
         //Propiedad estatica
         public static bool EsEnfermero { get => esEnfermero; private set => esEnfermero = value; }
         public static bool EsDoctor { get => esDoctor; private set => esDoctor = value; }
+        public static bool EsAdministrador { get => esAdministrador; set => esAdministrador = value; }
+
         public void asignarPermisos()
         {
             switch (perfil)
@@ -34,14 +33,22 @@ namespace Vitalis
                 case "Enfermero":
                     esEnfermero = true;
                     esDoctor = false;
+                    esAdministrador = false;
                     break;
                 case "Doctor":
                     esEnfermero = false;
                     esDoctor = true;
+                    esAdministrador = false;
+                    break;
+                case "Administrador":
+                    esEnfermero = false;
+                    esDoctor = false;
+                    esAdministrador = true;
                     break;
                 default:
                     esEnfermero = false;
                     esDoctor = false;
+                    esAdministrador = false;
                     break;
             }
         }
@@ -54,8 +61,8 @@ namespace Vitalis
                 using (var conexion = conexionBD.AbrirConexion())
                 {
 
-                    string sql = "SELECT perfil FROM usuarios " +
-                                 "WHERE nombreUsuario = @usuario AND contrasena;";
+                    string sql = "SELECT id_ServicioMedico,nombre,apellidoPaterno,apellidoMaterno,perfil FROM serviciosmedicos " +
+                                 "WHERE nombreUsuario = @usuario AND contrasena = @password;";
 
                     using (var consulta = new MySqlCommand(sql, conexion))
                     {
@@ -69,7 +76,7 @@ namespace Vitalis
                                 perfil = resultado.GetString("perfil");
                                 asignarPermisos();
 
-                                if (!esEnfermero && !esDoctor)
+                                if (!esEnfermero && !esDoctor && !esAdministrador)
                                 {
                                     throw new Exception($"El perfil ingresado no tiene permiso para acceder");
                                 }
