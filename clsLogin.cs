@@ -30,7 +30,7 @@ namespace Vitalis
         {
             switch (perfil)
             {
-                case "Enfermero":
+                case "Enfermera":
                     esEnfermero = true;
                     esDoctor = false;
                     esAdministrador = false;
@@ -68,6 +68,7 @@ namespace Vitalis
                     {
                         consulta.Parameters.AddWithValue("@usuario", usuario);
                         consulta.Parameters.AddWithValue("@password", password);
+
 
                         using (var resultado = consulta.ExecuteReader())
                         {
