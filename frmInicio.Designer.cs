@@ -34,6 +34,7 @@
             lblMensajeBienvenidaInicio = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pcbLogoInicio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -78,7 +79,7 @@
             lblMensajeBienvenidaInicio.Anchor = AnchorStyles.Bottom;
             lblMensajeBienvenidaInicio.Font = new Font("Segoe UI", 38.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMensajeBienvenidaInicio.ForeColor = Color.FromArgb(23, 147, 209);
-            lblMensajeBienvenidaInicio.Location = new Point(477, 820);
+            lblMensajeBienvenidaInicio.Location = new Point(492, 826);
             lblMensajeBienvenidaInicio.Name = "lblMensajeBienvenidaInicio";
             lblMensajeBienvenidaInicio.Size = new Size(784, 152);
             lblMensajeBienvenidaInicio.TabIndex = 6;
@@ -107,11 +108,24 @@
             label2.TabIndex = 8;
             label2.Text = "Inicio";
             // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Bottom;
+            label3.Font = new Font("Segoe UI", 38.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(23, 147, 209);
+            label3.Location = new Point(492, 715);
+            label3.Name = "label3";
+            label3.Size = new Size(784, 152);
+            label3.TabIndex = 9;
+            label3.Text = "Excuse me sir";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // frmInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1719, 970);
+            Controls.Add(label3);
             Controls.Add(lblVitalisInicio);
             Controls.Add(label1);
             Controls.Add(label2);
@@ -133,5 +147,6 @@
         private Label lblMensajeBienvenidaInicio;
         private PictureBox pictureBox1;
         private Label label2;
+        private Label label3;
     }
 }
