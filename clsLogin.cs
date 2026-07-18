@@ -23,9 +23,7 @@ namespace Vitalis
 
         //Propiedad estatica
         public static bool EsEnfermero { get => esEnfermero; private set => esEnfermero = value; }
-        public static bool EsDoctor { get => esDoctor; private set => esDoctor = value; }
-        public static bool EsAdministrador { get => esAdministrador; set => esAdministrador = value; }
-
+        public static bool EsDoctor { get => esDoctor; private set => esDoctor = value; }        
         public void asignarPermisos()
         {
             switch (perfil)
