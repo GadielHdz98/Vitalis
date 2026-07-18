@@ -9,9 +9,6 @@ namespace Vitalis
 {
     internal class clsLogin
     {
-        private string usuario;
-        private string password;
-
         public string Usuario { get => usuario; set => usuario = value; }
         public string Password { get => password; set => password = value; }
 
@@ -23,7 +20,9 @@ namespace Vitalis
 
         //Propiedad estatica
         public static bool EsEnfermero { get => esEnfermero; private set => esEnfermero = value; }
-        public static bool EsDoctor { get => esDoctor; private set => esDoctor = value; }        
+        public static bool EsDoctor { get => esDoctor; private set => esDoctor = value; }
+        public static bool EsAdministrador { get => esAdministrador; set => esAdministrador = value; }
+
         public void asignarPermisos()
         {
             switch (perfil)
