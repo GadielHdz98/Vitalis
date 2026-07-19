@@ -33,6 +33,8 @@ namespace Vitalis
 
             //Mostrar formulario
             formulario.Show();
+            //Mensaje x
+            //Hola mundo.
         }
     }
 }

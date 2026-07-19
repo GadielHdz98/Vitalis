@@ -15,7 +15,7 @@ namespace Vitalis
         public frmInicio()
         {
             InitializeComponent();
-            //MostrarSaludo("Luis Gadiel", "Doctor");
+            MostrarSaludo(clsLogin.nombreUsuarioLogeado, clsLogin.perfil);
             
         }
         private void MostrarSaludo(string nombreUsuario, string rolUsuario)
@@ -36,7 +36,6 @@ namespace Vitalis
             {
                 saludo = "Buenas noches";
             }
-
             switch (rolUsuario)
             {
                 case "Doctor":
@@ -46,13 +45,16 @@ namespace Vitalis
                 case "Enfermero":
                     nombreCompleto = $"Enf. {nombreUsuario}";
                     break;
+                case "Administrador":
+                    nombreCompleto = $"Admr. {nombreUsuario}";
+                    break;
 
                 default:
                     nombreCompleto = nombreUsuario;
                     break;
             }
             
-            lblMensajeBienvenidaInicio.Text = $"{saludo}, {nombreCompleto}";
+            lblMensajeBienvenidaInicio.Text = $"{saludo}, {nombreCompleto}.";
             
         }
     }
