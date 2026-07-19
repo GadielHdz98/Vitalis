@@ -13,17 +13,16 @@ namespace Vitalis
         // Atributos privados
         private string nombreCarrera;
         private string descripcion;
+        private int idCarrera; //atributo para referenciar en update y delete.
 
-        private int idCarrera; //atributo para referenciar en update y delete
-
-        // Usamos una tabla temporal y un adaptador
+        // Usamos una tabla temporal y un adaptador.
         private MySqlDataAdapter consulta;
         private DataTable tabla;
 
-        //Usamos command para insertar o actualizar
+        //Usamos command para insertar o actualizar.
         private MySqlCommand comando;
 
-        // Propiedad pública para el atributo nombreCarrera
+        // Propiedad pública para el atributo nombreCarrera.
         public string NombreCarrera
         {
             get => nombreCarrera;
@@ -33,7 +32,7 @@ namespace Vitalis
         public string Descripcion { get => descripcion; set => descripcion = value; }
 
 
-        // Método para cargar todos los datos en el DataGrid
+        // Método para cargar todos los datos en el DataGrid.
         public DataTable CargarDataGrid()
         {
             tabla = new DataTable();
@@ -56,7 +55,7 @@ namespace Vitalis
             return tabla;
         }
 
-        // Método para consultar por coincidencias (Búsqueda en tiempo real, Busqueda tipo Like)
+        // Método para consultar por coincidencias (Búsqueda en tiempo real, Busqueda tipo Like).
         public DataTable Consultar()
         {
             tabla = new DataTable();

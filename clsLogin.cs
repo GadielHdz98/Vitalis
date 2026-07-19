@@ -9,7 +9,7 @@ namespace Vitalis
 {
     internal class clsLogin
     {
-
+        
         private string usuario;
         private string password;
 
@@ -17,10 +17,13 @@ namespace Vitalis
         public string Password { get => password; set => password = value; }
 
         //atributo estatico.
-        private static string perfil;
+        public static string perfil;
         private static bool esEnfermero;
         private static bool esDoctor;
         private static bool esAdministrador;
+        public static string nombreUsuarioLogeado;
+        public static string apellidoPaUsuarioLogeado;
+        public static string apellidoMaUsuarioLogeado;        
 
         //Propiedad estatica
         public static bool EsEnfermero { get => esEnfermero; private set => esEnfermero = value; }
@@ -68,7 +71,7 @@ namespace Vitalis
                     using (var consulta = new MySqlCommand(sql, conexion))
                     {
                         consulta.Parameters.AddWithValue("@usuario", usuario);
-                        consulta.Parameters.AddWithValue("@password", password);
+                        consulta.Parameters.AddWithValue("@password", password);                       
 
 
                         using (var resultado = consulta.ExecuteReader())
@@ -76,6 +79,9 @@ namespace Vitalis
                             if (resultado.Read())
                             {
                                 perfil = resultado.GetString("perfil");
+                                nombreUsuarioLogeado = resultado.GetString("nombre");
+                                apellidoPaUsuarioLogeado = resultado.GetString("apellidoPaterno");
+                                apellidoMaUsuarioLogeado = resultado.GetString("apellidoMaterno");                                
                                 asignarPermisos();
 
                                 if (!esEnfermero && !esDoctor && !esAdministrador)

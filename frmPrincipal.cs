@@ -17,6 +17,8 @@ namespace Vitalis
         public frmPrincipal()
         {
             InitializeComponent();
+            mostrarDatosUsuario(clsLogin.nombreUsuarioLogeado, clsLogin.apellidoPaUsuarioLogeado, clsLogin.apellidoMaUsuarioLogeado, clsLogin.perfil);
+            principal.AgregarAlContenedor(new frmInicio(), pnlContenedor);        
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -42,6 +44,12 @@ namespace Vitalis
         private void btnAdministracionSideBar_Click(object sender, EventArgs e)
         {
             principal.AgregarAlContenedor(new frmAdministracion(), pnlContenedor);
+        }
+
+        private void mostrarDatosUsuario(string nombre,string apellidoP, string apellidoM, string perfil)
+        {
+            lblNombreUsuarioSideBar.Text = $"{nombre} {apellidoP} {apellidoM}";
+            lblRolUsuarioSideBar.Text = $"{perfil}";
         }
     }
 }
