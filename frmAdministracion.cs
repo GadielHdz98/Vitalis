@@ -17,6 +17,7 @@ namespace Vitalis
         public frmAdministracion()
         {
             InitializeComponent();
+            administracion.AgregarAlContenedor(new frmDiagnosticos(), pnlContenedorAdministracion);
         }
 
         private void btnDiagnosticos_Click(object sender, EventArgs e)

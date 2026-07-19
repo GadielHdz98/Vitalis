@@ -28,7 +28,7 @@ namespace Vitalis
                                  "P.nombre AS Nombre, " +
                                  "P.apellidoPaterno AS 'A. Paterno', " +
                                  "P.apellidoMaterno AS 'A. Materno', " +
-                                 "CA.carrera AS Carrera, " +
+                                 "CA.nombreCarrera AS Carrera, " +
                                  "P.grado AS Grado, " +
                                  "P.grupo AS Grupo, " +
                                  "P.tipoPaciente AS Tipo, " +
@@ -37,9 +37,8 @@ namespace Vitalis
                                  "SM.perfil AS Rol, " +
                                  "D.nombreDiagnostico AS Diagnostico, " +
                                  "C.tratamiento AS Tratamiento, " +
-                                 "C.CIR AS CIR, " +
-                                 "C.cita AS Cita, " +
-                                 "C.citaProgramada AS CitaProgramada, " +
+                                 "C.CIR AS CIR, " +                                 
+                                 "C.citaProgramada AS Cita, " +
                                  "C.citaHora AS HoraCita, " +
                                  "C.FechaConsulta AS FechaConsulta, " +
                                  "C.horaInicio AS HoraInicio, " +
@@ -57,7 +56,7 @@ namespace Vitalis
             }
             catch (Exception ex)
             {
-                throw new Exception("error en la conexión al cargar catalogo de alumnos " + ex.Message);
+                throw new Exception("Error en la conexión al cargar catalogo de alumnos " + ex.Message);
             }
             return tabla;
         }

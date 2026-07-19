@@ -42,7 +42,7 @@ namespace Vitalis
                 clsConexion conexionBD = new clsConexion();
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = "SELECT id_Carrera AS Clave, nombreCarrera AS carrera, descripcion AS descripcion FROM carreras;";
+                    string sql = "SELECT id_carrera AS Clave, nombreCarrera AS carrera, descripcion AS descripcion FROM carreras;";
                     using (consulta = new MySqlDataAdapter(sql, conexion))
                     {
                         consulta.Fill(tabla);
@@ -66,7 +66,7 @@ namespace Vitalis
                 using (var conexion = conexionBD.AbrirConexion())
                 {
                     // Consulta SQL usando el operador LIKE para coincidencias parciales
-                    string sql = "SELECT id_Carrera AS Clave, nombreCarrera AS carrera, descripcion AS descripcion FROM carreras WHERE nombreCarrera LIKE @carrera;";
+                    string sql = "SELECT id_carrera AS Clave, nombreCarrera AS carrera, descripcion AS descripcion FROM carreras WHERE nombreCarrera LIKE @carrera;";
 
                     using (var comando = new MySqlCommand(sql, conexion))
                     {

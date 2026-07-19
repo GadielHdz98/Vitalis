@@ -34,7 +34,6 @@
             lblMensajeBienvenidaInicio = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pcbLogoInicio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -45,7 +44,7 @@
             lblVitalisInicio.AutoSize = true;
             lblVitalisInicio.Font = new Font("Segoe UI", 38.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblVitalisInicio.ForeColor = Color.FromArgb(23, 147, 209);
-            lblVitalisInicio.Location = new Point(724, 601);
+            lblVitalisInicio.Location = new Point(723, 617);
             lblVitalisInicio.Name = "lblVitalisInicio";
             lblVitalisInicio.Size = new Size(258, 68);
             lblVitalisInicio.TabIndex = 4;
@@ -55,9 +54,9 @@
             // 
             pcbLogoInicio.Anchor = AnchorStyles.None;
             pcbLogoInicio.Image = Properties.Resources.Logo_VerFondo_blanco;
-            pcbLogoInicio.Location = new Point(682, 264);
+            pcbLogoInicio.Location = new Point(656, 230);
             pcbLogoInicio.Name = "pcbLogoInicio";
-            pcbLogoInicio.Size = new Size(350, 350);
+            pcbLogoInicio.Size = new Size(400, 400);
             pcbLogoInicio.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbLogoInicio.TabIndex = 3;
             pcbLogoInicio.TabStop = false;
@@ -68,7 +67,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(23, 147, 209);
-            label1.Location = new Point(657, 667);
+            label1.Location = new Point(656, 685);
             label1.Name = "label1";
             label1.Size = new Size(393, 32);
             label1.TabIndex = 5;
@@ -79,7 +78,7 @@
             lblMensajeBienvenidaInicio.Anchor = AnchorStyles.Bottom;
             lblMensajeBienvenidaInicio.Font = new Font("Segoe UI", 38.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMensajeBienvenidaInicio.ForeColor = Color.FromArgb(23, 147, 209);
-            lblMensajeBienvenidaInicio.Location = new Point(492, 826);
+            lblMensajeBienvenidaInicio.Location = new Point(466, 728);
             lblMensajeBienvenidaInicio.Name = "lblMensajeBienvenidaInicio";
             lblMensajeBienvenidaInicio.Size = new Size(784, 152);
             lblMensajeBienvenidaInicio.TabIndex = 6;
@@ -108,24 +107,11 @@
             label2.TabIndex = 8;
             label2.Text = "Inicio";
             // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Bottom;
-            label3.Font = new Font("Segoe UI", 38.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(23, 147, 209);
-            label3.Location = new Point(492, 715);
-            label3.Name = "label3";
-            label3.Size = new Size(784, 152);
-            label3.TabIndex = 9;
-            label3.Text = "Excuse me sir";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // frmInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1719, 970);
-            Controls.Add(label3);
             Controls.Add(lblVitalisInicio);
             Controls.Add(label1);
             Controls.Add(label2);
@@ -147,6 +133,5 @@
         private Label lblMensajeBienvenidaInicio;
         private PictureBox pictureBox1;
         private Label label2;
-        private Label label3;
     }
 }

@@ -1,0 +1,150 @@
+/*
+SQLyog Enterprise v13.1.1 (64 bit)
+MySQL - 10.4.32-MariaDB : Database - vitalisserviciosmedicos
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`vitalisserviciosmedicos` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+
+USE `vitalisserviciosmedicos`;
+
+/*Table structure for table `carreras` */
+
+DROP TABLE IF EXISTS `carreras`;
+
+CREATE TABLE `carreras` (
+  `id_carrera` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreCarrera` varchar(100) NOT NULL,
+  `descripcion` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_carrera`),
+  UNIQUE KEY `carrera` (`nombreCarrera`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `carreras` */
+
+insert  into `carreras`(`id_carrera`,`nombreCarrera`,`descripcion`) values 
+(1,'TI','Carrera orientada a la tecnologia con enfoque especial en el desarrollo de software.'),
+(7,'Gastronomia','Es una carrera donde se hacaen hotcakes ola.'),
+(8,'Mecanica','Es una carrera donde se arreglan coches'),
+(9,'Contaduria','Carrera orientada a la economia y manejo de dinero');
+
+/*Table structure for table `consultas` */
+
+DROP TABLE IF EXISTS `consultas`;
+
+CREATE TABLE `consultas` (
+  `id_Consulta` int(11) NOT NULL AUTO_INCREMENT,
+  `Matricula` int(8) NOT NULL,
+  `id_ServicioMedico` int(11) NOT NULL,
+  `tratamiento` varchar(1000) NOT NULL,
+  `CIR` tinyint(1) NOT NULL,
+  `cita` tinyint(1) NOT NULL,
+  `citaProgramada` date NOT NULL,
+  `citaHora` time NOT NULL,
+  `horaInicio` time NOT NULL,
+  `horaFinal` time NOT NULL,
+  `id_Diagnostico` int(11) NOT NULL,
+  `FechaConsulta` date NOT NULL,
+  PRIMARY KEY (`id_Consulta`),
+  KEY `Matricula` (`Matricula`),
+  KEY `id_ServicioMedico` (`id_ServicioMedico`),
+  KEY `id_Diagnostico` (`id_Diagnostico`),
+  CONSTRAINT `consultas_ibfk_1` FOREIGN KEY (`Matricula`) REFERENCES `pacientes` (`Matricula`),
+  CONSTRAINT `consultas_ibfk_2` FOREIGN KEY (`id_ServicioMedico`) REFERENCES `serviciosmedicos` (`id_ServicioMedico`),
+  CONSTRAINT `consultas_ibfk_3` FOREIGN KEY (`id_Diagnostico`) REFERENCES `diagnosticos` (`id_Diagnostico`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `consultas` */
+
+/*Table structure for table `diagnosticos` */
+
+DROP TABLE IF EXISTS `diagnosticos`;
+
+CREATE TABLE `diagnosticos` (
+  `id_Diagnostico` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreDiagnostico` varchar(100) NOT NULL,
+  `Descripcion` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_Diagnostico`),
+  UNIQUE KEY `nombreDiagnostico` (`nombreDiagnostico`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `diagnosticos` */
+
+insert  into `diagnosticos`(`id_Diagnostico`,`nombreDiagnostico`,`Descripcion`) values 
+(6,'Hola','Mundo'),
+(7,'Adios','Mundo');
+
+/*Table structure for table `expediente` */
+
+DROP TABLE IF EXISTS `expediente`;
+
+CREATE TABLE `expediente` (
+  `id_Expediente` int(11) NOT NULL AUTO_INCREMENT,
+  `sexo` enum('Masculino','Femenino') NOT NULL,
+  `peso` double(5,2) NOT NULL,
+  `altura` double(5,2) NOT NULL,
+  `temperatura` double(4,2) NOT NULL,
+  `presionArterial` varchar(20) NOT NULL,
+  `foto` varchar(100) DEFAULT NULL,
+  `fechaNacimiento` date NOT NULL,
+  `Matricula` int(8) NOT NULL,
+  PRIMARY KEY (`id_Expediente`),
+  UNIQUE KEY `Matricula` (`Matricula`),
+  CONSTRAINT `expediente_ibfk_1` FOREIGN KEY (`Matricula`) REFERENCES `pacientes` (`Matricula`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `expediente` */
+
+/*Table structure for table `pacientes` */
+
+DROP TABLE IF EXISTS `pacientes`;
+
+CREATE TABLE `pacientes` (
+  `Matricula` int(8) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `apellidoPaterno` varchar(100) NOT NULL,
+  `apellidoMaterno` varchar(100) NOT NULL,
+  `tipoPaciente` enum('Alumno','Docente') NOT NULL,
+  `id_carrera` int(11) NOT NULL,
+  `grado` varchar(10) DEFAULT NULL,
+  `grupo` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`Matricula`),
+  KEY `id_carrera` (`id_carrera`),
+  CONSTRAINT `pacientes_ibfk_1` FOREIGN KEY (`id_carrera`) REFERENCES `carreras` (`id_carrera`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `pacientes` */
+
+/*Table structure for table `serviciosmedicos` */
+
+DROP TABLE IF EXISTS `serviciosmedicos`;
+
+CREATE TABLE `serviciosmedicos` (
+  `id_ServicioMedico` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `apellidoPaterno` varchar(100) NOT NULL,
+  `apellidoMaterno` varchar(100) NOT NULL,
+  `nombreUsuario` varchar(100) NOT NULL,
+  `contrasena` varchar(100) NOT NULL,
+  `perfil` enum('Administrador','Doctor','Enfermera') NOT NULL,
+  PRIMARY KEY (`id_ServicioMedico`),
+  UNIQUE KEY `nombreUsuario` (`nombreUsuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `serviciosmedicos` */
+
+insert  into `serviciosmedicos`(`id_ServicioMedico`,`nombre`,`apellidoPaterno`,`apellidoMaterno`,`nombreUsuario`,`contrasena`,`perfil`) values 
+(1,'Luis','Hernandez','Bautista','Luis','123','Doctor');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

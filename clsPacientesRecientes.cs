@@ -26,7 +26,7 @@ namespace Vitalis
                                  "P.nombre AS Nombre, " +
                                  "P.apellidoPaterno AS 'A. Paterno', " +
                                  "P.apellidoMaterno AS 'A. Materno', " +
-                                 "C.carrera AS Carrera, " +
+                                 "C.nombreCarrera AS Carrera, " +
                                  "P.tipoPaciente AS Tipo, " +
                                  "p.grado AS Grado, " +
                                  "P.grupo AS Grupo, " +

@@ -140,7 +140,7 @@
             pnlDiagnosticos.Controls.Add(btnGuardar);
             pnlDiagnosticos.Location = new Point(74, 186);
             pnlDiagnosticos.Name = "pnlDiagnosticos";
-            pnlDiagnosticos.Size = new Size(654, 593);
+            pnlDiagnosticos.Size = new Size(654, 594);
             pnlDiagnosticos.TabIndex = 11;
             // 
             // btnNuevo

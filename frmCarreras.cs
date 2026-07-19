@@ -67,11 +67,15 @@ namespace Vitalis
         //su funcion es mostrar el nombre de la carrera y la descripcion en los txtboxs correspondientes
         private void dgvCarreras_SelectionChanged(object sender, EventArgs e)
         {
-            //Campo oculto que me servira de referencia para actualizar y eliminar (el id en la celda 0)
-            idCarrera = int.Parse(dgvCarreras.CurrentRow.Cells[0].Value.ToString());
+            if (dgvCarreras.CurrentRow == null)
+            {
+                return;
+            }
 
-            //Visuales, al momento de seleccionar una celda los datos de X celda de la fila seran llevados a los textBoxs
+            idCarrera = Convert.ToInt32(dgvCarreras.CurrentRow.Cells[0].Value);
+
             txtNombreCarrera.Text = dgvCarreras.CurrentRow.Cells[1].Value.ToString();
+
             rchtxtDescripcionCarrera.Text = dgvCarreras.CurrentRow.Cells[2].Value.ToString();
 
         }

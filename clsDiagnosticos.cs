@@ -12,7 +12,7 @@ namespace Vitalis
     {
         private int idDiagnostico;
         private string nombreDiagnostico;
-        private string sintomas;
+        private string descripcion;
 
         private MySqlDataAdapter consulta;
         private DataTable tabla;
@@ -20,7 +20,7 @@ namespace Vitalis
 
         public int IdDiagnostico { get => idDiagnostico; set => idDiagnostico = value; }
         public string NombreDiagnostico { get => nombreDiagnostico; set => nombreDiagnostico = value; }
-        public string Sintomas { get => sintomas; set => sintomas = value; }
+        public string Sintomas { get => descripcion; set => descripcion = value; }
 
         //Metodo para cargar dgv
         public DataTable CargarDataGrid()
@@ -33,9 +33,9 @@ namespace Vitalis
 
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = @"SELECT id_Diagnostico AS Clave,
+                    string sql = @"SELECT id_diagnostico AS Clave,
                             nombreDiagnostico AS Diagnostico,
-                            Sintomas
+                            Descripcion
                             FROM Diagnosticos;";
 
                     using (consulta = new MySqlDataAdapter(sql, conexion))
@@ -62,7 +62,7 @@ namespace Vitalis
 
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = @"SELECT id_Diagnostico AS Clave, nombreDiagnostico AS Diagnostico, Sintomas FROM Diagnosticos WHERE nombreDiagnostico LIKE @nombre;";
+                    string sql = @"SELECT id_Diagnostico AS Clave, nombreDiagnostico AS Diagnostico, Descripcion FROM Diagnosticos WHERE nombreDiagnostico LIKE @nombre;";
 
                     using (var comando = new MySqlCommand(sql, conexion))
                     {
@@ -93,11 +93,11 @@ namespace Vitalis
                     {
                         case 0: //Insertar nuevo registro
 
-                            string sqlN = "INSERT INTO Diagnosticos (nombreDiagnostico, Sintomas) VALUES (@nombreDiagnostico, @sintomas)";
+                            string sqlN = "INSERT INTO Diagnosticos (nombreDiagnostico, Descripcion) VALUES (@nombreDiagnostico, @descripcion)";
                             using (comando = new MySqlCommand(sqlN, conexion))
                             {
-                                comando.Parameters.AddWithValue("nombreDiagnostico", nombreDiagnostico);
-                                comando.Parameters.AddWithValue("sintomas", sintomas);
+                                comando.Parameters.AddWithValue("@nombreDiagnostico", nombreDiagnostico);
+                                comando.Parameters.AddWithValue("@descripcion", descripcion);
 
                                 int filasAfectadas = comando.ExecuteNonQuery();
 
@@ -114,13 +114,13 @@ namespace Vitalis
 
                         case 1: //Actualizar registro
 
-                            string sqlA = "UPDATE Diagnosticos D SET D.nombreDiagnostico = @nombreDiagnostico, D.Sintomas = @sintomas WHERE D.id_Diagnostico = @idDiagnostico";
+                            string sqlA = "UPDATE Diagnosticos D SET D.nombreDiagnostico = @nombreDiagnostico, D.Descripcion = @descripcion WHERE D.id_Diagnostico = @idDiagnostico";
 
                             using (comando = new MySqlCommand(sqlA, conexion))
                             {
-                                comando.Parameters.AddWithValue("nombreDiagnostico", nombreDiagnostico);
-                                comando.Parameters.AddWithValue("sintomas", sintomas);
-                                comando.Parameters.AddWithValue("idDiagnostico", idDiagnostico);
+                                comando.Parameters.AddWithValue("@nombreDiagnostico", nombreDiagnostico);
+                                comando.Parameters.AddWithValue("@descripcion", descripcion);
+                                comando.Parameters.AddWithValue("@idDiagnostico", idDiagnostico);
 
                                 int filasAfectadas = comando.ExecuteNonQuery();
 
