@@ -32,6 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             lblVitalisInicio = new Label();
             dgvPacientesRegistradosRecientemente = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvPacientesRegistradosRecientemente).BeginInit();
@@ -75,22 +76,30 @@
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(23, 147, 209);
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvPacientesRegistradosRecientemente.DefaultCellStyle = dataGridViewCellStyle3;
             dgvPacientesRegistradosRecientemente.EnableHeadersVisualStyles = false;
             dgvPacientesRegistradosRecientemente.GridColor = Color.White;
-            dgvPacientesRegistradosRecientemente.Location = new Point(57, 101);
+            dgvPacientesRegistradosRecientemente.Location = new Point(152, 91);
             dgvPacientesRegistradosRecientemente.MultiSelect = false;
             dgvPacientesRegistradosRecientemente.Name = "dgvPacientesRegistradosRecientemente";
             dgvPacientesRegistradosRecientemente.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(23, 147, 209);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvPacientesRegistradosRecientemente.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvPacientesRegistradosRecientemente.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dgvPacientesRegistradosRecientemente.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dgvPacientesRegistradosRecientemente.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvPacientesRegistradosRecientemente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvPacientesRegistradosRecientemente.Size = new Size(1605, 722);
-            dgvPacientesRegistradosRecientemente.TabIndex = 9;
+            dgvPacientesRegistradosRecientemente.Size = new Size(1394, 708);
+            dgvPacientesRegistradosRecientemente.TabIndex = 11;
             // 
             // frmPacientesRecientes
             // 

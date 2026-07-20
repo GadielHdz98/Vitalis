@@ -10,6 +10,22 @@ namespace Vitalis
     internal class clsPacientes
     {
         private Form misFormsAbiertos;
+        private int matricula;
+        private string nombre;
+        private string apellidoPaterno;
+        private string apellidoMaterno;
+        private string tipoPaciente;
+
+        private int? idCarrera;
+        private string grado;
+        private string grupo;
+
+        private string sexo;
+        private double peso;
+        private double altura;
+        private double temperatura;
+        private string presionArterial;
+        private DateTime fechaNacimiento;
 
         public void AgregarAlContenedor(Form formulario, Panel panel)
         {
@@ -34,122 +50,33 @@ namespace Vitalis
 
             //Mostrar formulario
             formulario.Show();
-        }       
-
-        private int matricula;
-        private string nombre;
-        private string apellidoPaterno;
-        private string apellidoMaterno;
-        private string tipoPaciente;
-
-        private int? idCarrera;
-        private string grado;
-        private string grupo;
-
-        private string sexo;
-        private double peso;
-        private double altura;
-        private double temperatura;
-        private string presionArterial;
-        private DateTime fechaNacimiento;
+        }        
 
         //Objetos para consultas
         private MySqlCommand comando;
 
-        public int Matricula
-        {
-            get => matricula;
-            set => matricula = value;
-        }
-
-        public string Nombre
-        {
-            get => nombre;
-            set => nombre = value;
-        }
-
-        public string ApellidoPaterno
-        {
-            get => apellidoPaterno;
-            set => apellidoPaterno = value;
-        }
-
-        public string ApellidoMaterno
-        {
-            get => apellidoMaterno;
-            set => apellidoMaterno = value;
-        }
-
-        public string TipoPaciente
-        {
-            get => tipoPaciente;
-            set => tipoPaciente = value;
-        }
-
-        public int? IdCarrera
-        {
-            get => idCarrera;
-            set => idCarrera = value;
-        }
-
-        public string Grado
-        {
-            get => grado;
-            set => grado = value;
-        }
-
-        public string Grupo
-        {
-            get => grupo;
-            set => grupo = value;
-        }
-
-        public string Sexo
-        {
-            get => sexo;
-            set => sexo = value;
-        }
-
-        public double Peso
-        {
-            get => peso;
-            set => peso = value;
-        }
-
-        public double Altura
-        {
-            get => altura;
-            set => altura = value;
-        }
-
-        public double Temperatura
-        {
-            get => temperatura;
-            set => temperatura = value;
-        }
-
-        public string PresionArterial
-        {
-            get => presionArterial;
-            set => presionArterial = value;
-        }
-
-        public DateTime FechaNacimiento
-        {
-            get => fechaNacimiento;
-            set => fechaNacimiento = value;
-        }       
+        public int Matricula { get => matricula; set => matricula = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string ApellidoPaterno { get => apellidoPaterno; set => apellidoPaterno = value; }
+        public string ApellidoMaterno { get => apellidoMaterno; set => apellidoMaterno = value; }
+        public string TipoPaciente { get => tipoPaciente; set => tipoPaciente = value; }
+        public int? IdCarrera { get => idCarrera; set => idCarrera = value; }
+        public string Grado { get => grado; set => grado = value; }
+        public string Grupo { get => grupo; set => grupo = value; }
+        public string Sexo { get => sexo; set => sexo = value; }
+        public double Peso { get => peso; set => peso = value; }
+        public double Altura { get => altura; set => altura = value; }
+        public double Temperatura { get => temperatura; set => temperatura = value; }
+        public string PresionArterial { get => presionArterial; set => presionArterial = value; }
+        public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
 
         public string GuardarPaciente()
         {
             string msg = "";
-
             clsConexion conexionBD = new clsConexion();
-
             using (var conexion = conexionBD.AbrirConexion())
             {
                 MySqlTransaction transaccion = conexion.BeginTransaction();
-
                 try
                 {
                     string sqlPaciente =
@@ -175,7 +102,6 @@ namespace Vitalis
                         @Grado,
                         @Grupo
                     );";
-
                     using (comando = new MySqlCommand(sqlPaciente, conexion, transaccion))
                     {
                         comando.Parameters.AddWithValue("@Matricula", matricula);
@@ -201,7 +127,6 @@ namespace Vitalis
 
                         comando.ExecuteNonQuery();
                     }
-
                     string sqlExpediente =
                     @"INSERT INTO expediente
                     (
@@ -225,7 +150,6 @@ namespace Vitalis
                         @FechaNacimiento,
                         @Matricula
                     );";
-
                     using (comando = new MySqlCommand(sqlExpediente, conexion, transaccion))
                     {
                         comando.Parameters.AddWithValue("@Sexo", sexo);
@@ -238,7 +162,6 @@ namespace Vitalis
 
                         comando.ExecuteNonQuery();
                     }
-
                     transaccion.Commit();
 
                     msg = "El paciente se guardó correctamente.";

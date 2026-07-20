@@ -82,7 +82,7 @@
             dgvConsultasRealizadas.DefaultCellStyle = dataGridViewCellStyle3;
             dgvConsultasRealizadas.EnableHeadersVisualStyles = false;
             dgvConsultasRealizadas.GridColor = Color.White;
-            dgvConsultasRealizadas.Location = new Point(45, 91);
+            dgvConsultasRealizadas.Location = new Point(95, 91);
             dgvConsultasRealizadas.MultiSelect = false;
             dgvConsultasRealizadas.Name = "dgvConsultasRealizadas";
             dgvConsultasRealizadas.ReadOnly = true;
@@ -98,7 +98,7 @@
             dataGridViewCellStyle5.BackColor = Color.White;
             dgvConsultasRealizadas.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvConsultasRealizadas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvConsultasRealizadas.Size = new Size(1642, 853);
+            dgvConsultasRealizadas.Size = new Size(1525, 807);
             dgvConsultasRealizadas.TabIndex = 10;
             // 
             // frmConsultasRecientes

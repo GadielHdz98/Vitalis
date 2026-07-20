@@ -214,7 +214,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.BackColor = Color.FromArgb(10, 64, 88);
+            btnGuardar.BackColor = Color.FromArgb(58, 154, 138);
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.FromArgb(239, 239, 239);

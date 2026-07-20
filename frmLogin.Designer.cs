@@ -105,7 +105,7 @@
             // btnSalir
             // 
             btnSalir.Anchor = AnchorStyles.None;
-            btnSalir.BackColor = Color.FromArgb(10, 64, 88);
+            btnSalir.BackColor = Color.Red;
             btnSalir.BackgroundImageLayout = ImageLayout.Center;
             btnSalir.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalir.ForeColor = Color.White;

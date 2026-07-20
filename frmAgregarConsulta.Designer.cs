@@ -393,7 +393,7 @@
             btnVaciarCampos.FlatAppearance.BorderSize = 0;
             btnVaciarCampos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVaciarCampos.ForeColor = Color.FromArgb(239, 239, 239);
-            btnVaciarCampos.Location = new Point(1013, 465);
+            btnVaciarCampos.Location = new Point(1189, 465);
             btnVaciarCampos.Margin = new Padding(0);
             btnVaciarCampos.Name = "btnVaciarCampos";
             btnVaciarCampos.Size = new Size(160, 35);
@@ -404,11 +404,11 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.BackColor = Color.FromArgb(10, 64, 88);
+            btnGuardar.BackColor = Color.FromArgb(58, 154, 138);
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnGuardar.Location = new Point(1193, 465);
+            btnGuardar.Location = new Point(997, 465);
             btnGuardar.Margin = new Padding(0);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(160, 35);
