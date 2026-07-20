@@ -31,6 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             lblVitalisInicio = new Label();
             dgvPacientesRegistradosRecientemente = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvPacientesRegistradosRecientemente).BeginInit();
@@ -70,6 +71,14 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvPacientesRegistradosRecientemente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvPacientesRegistradosRecientemente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvPacientesRegistradosRecientemente.DefaultCellStyle = dataGridViewCellStyle3;
             dgvPacientesRegistradosRecientemente.EnableHeadersVisualStyles = false;
             dgvPacientesRegistradosRecientemente.GridColor = Color.White;
             dgvPacientesRegistradosRecientemente.Location = new Point(57, 101);
@@ -77,8 +86,8 @@
             dgvPacientesRegistradosRecientemente.Name = "dgvPacientesRegistradosRecientemente";
             dgvPacientesRegistradosRecientemente.ReadOnly = true;
             dgvPacientesRegistradosRecientemente.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dgvPacientesRegistradosRecientemente.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dgvPacientesRegistradosRecientemente.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvPacientesRegistradosRecientemente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPacientesRegistradosRecientemente.Size = new Size(1605, 722);
             dgvPacientesRegistradosRecientemente.TabIndex = 9;
