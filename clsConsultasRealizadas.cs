@@ -23,26 +23,23 @@ namespace Vitalis
                 using (var conexion = conexionBD.AbrirConexion())
                 {
                     // Unimos las 4 tablas mediante INNER JOIN para mostrar descripciones claras en el Grid
-                    string sql = "SELECT C.id_Consulta AS Consulta, " +
+                    string sql = "SELECT C.id_Consulta AS 'No. Consulta', " +
                                  "P.Matricula AS Matricula, " +
-                                 "P.nombre AS Nombre, " +
-                                 "P.apellidoPaterno AS 'A. Paterno', " +
-                                 "P.apellidoMaterno AS 'A. Materno', " +
+                                 "CONCAT(P.nombre, ' ', P.apellidoPaterno, ' ', P.apellidoMaterno) AS 'Nombre Completo', " +
                                  "CA.nombreCarrera AS Carrera, " +
                                  "P.grado AS Grado, " +
                                  "P.grupo AS Grupo, " +
                                  "P.tipoPaciente AS Tipo, " +
-                                 "SM.nombre AS NombreAtendio, " +
-                                 "SM.apellidoPaterno AS ApellidoAtendio, " +
+                                 "CONCAT(SM.nombre, ' ', SM.apellidoPaterno, ' ', SM.apellidoMaterno) AS Consultor, " +
                                  "SM.perfil AS Rol, " +
                                  "D.nombreDiagnostico AS Diagnostico, " +
                                  "C.tratamiento AS Tratamiento, " +
                                  "C.CIR AS CIR, " +                                 
                                  "C.citaProgramada AS Cita, " +
-                                 "C.citaHora AS HoraCita, " +
-                                 "C.FechaConsulta AS FechaConsulta, " +
-                                 "C.horaInicio AS HoraInicio, " +
-                                 "C.horaFinal AS HoraFinal " +
+                                 "C.citaHora AS 'Hora Cita', " +
+                                 "C.FechaConsulta AS 'Fecha Consulta', " +
+                                 "C.horaInicio AS 'Hora Inicio', " +
+                                 "C.horaFinal AS 'Hora Final' " +
                                  "FROM consultas C " +
                                  "INNER JOIN pacientes P ON C.Matricula = P.Matricula " +
                                  "INNER JOIN carreras CA ON P.id_carrera = CA.id_carrera " +

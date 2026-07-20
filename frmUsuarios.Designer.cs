@@ -36,6 +36,8 @@
             txtBuscarServicioMedico = new TextBox();
             lblDiagnostico = new Label();
             pnlDiagnosticos = new Panel();
+            label7 = new Label();
+            txtNoTrabajador = new TextBox();
             label6 = new Label();
             txtNombreUsuario = new TextBox();
             cmbPerfil = new ComboBox();
@@ -80,7 +82,7 @@
             dgvServiciosMedicos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvServiciosMedicos.EnableHeadersVisualStyles = false;
             dgvServiciosMedicos.GridColor = Color.White;
-            dgvServiciosMedicos.Location = new Point(764, 187);
+            dgvServiciosMedicos.Location = new Point(764, 186);
             dgvServiciosMedicos.MultiSelect = false;
             dgvServiciosMedicos.Name = "dgvServiciosMedicos";
             dgvServiciosMedicos.ReadOnly = true;
@@ -110,7 +112,7 @@
             txtBuscarServicioMedico.Location = new Point(764, 135);
             txtBuscarServicioMedico.MaxLength = 50;
             txtBuscarServicioMedico.Name = "txtBuscarServicioMedico";
-            txtBuscarServicioMedico.PlaceholderText = "Buscar servicio medico";
+            txtBuscarServicioMedico.PlaceholderText = "Buscar por nombre";
             txtBuscarServicioMedico.Size = new Size(270, 33);
             txtBuscarServicioMedico.TabIndex = 13;
             txtBuscarServicioMedico.TextChanged += txtBuscarServicioMedico_TextChanged;
@@ -129,6 +131,8 @@
             // pnlDiagnosticos
             // 
             pnlDiagnosticos.BackColor = Color.White;
+            pnlDiagnosticos.Controls.Add(label7);
+            pnlDiagnosticos.Controls.Add(txtNoTrabajador);
             pnlDiagnosticos.Controls.Add(label6);
             pnlDiagnosticos.Controls.Add(txtNombreUsuario);
             pnlDiagnosticos.Controls.Add(cmbPerfil);
@@ -149,12 +153,36 @@
             pnlDiagnosticos.Size = new Size(654, 593);
             pnlDiagnosticos.TabIndex = 11;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(23, 147, 209);
+            label7.Location = new Point(39, 41);
+            label7.Name = "label7";
+            label7.Size = new Size(146, 25);
+            label7.TabIndex = 80;
+            label7.Text = "No. Trabajador";
+            // 
+            // txtNoTrabajador
+            // 
+            txtNoTrabajador.BackColor = Color.FromArgb(239, 239, 239);
+            txtNoTrabajador.BorderStyle = BorderStyle.FixedSingle;
+            txtNoTrabajador.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNoTrabajador.Location = new Point(206, 39);
+            txtNoTrabajador.MaxLength = 50;
+            txtNoTrabajador.Name = "txtNoTrabajador";
+            txtNoTrabajador.PlaceholderText = "No. Trabajador";
+            txtNoTrabajador.ReadOnly = true;
+            txtNoTrabajador.Size = new Size(270, 33);
+            txtNoTrabajador.TabIndex = 79;
+            // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(23, 147, 209);
-            label6.Location = new Point(66, 242);
+            label6.Location = new Point(67, 271);
             label6.Name = "label6";
             label6.Size = new Size(86, 25);
             label6.TabIndex = 78;
@@ -165,7 +193,7 @@
             txtNombreUsuario.BackColor = Color.FromArgb(239, 239, 239);
             txtNombreUsuario.BorderStyle = BorderStyle.FixedSingle;
             txtNombreUsuario.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreUsuario.Location = new Point(205, 240);
+            txtNombreUsuario.Location = new Point(206, 269);
             txtNombreUsuario.MaxLength = 50;
             txtNombreUsuario.Name = "txtNombreUsuario";
             txtNombreUsuario.PlaceholderText = "Nombre del usuario.";
@@ -180,7 +208,7 @@
             cmbPerfil.ForeColor = Color.Black;
             cmbPerfil.FormattingEnabled = true;
             cmbPerfil.Items.AddRange(new object[] { "Doctor", "Enfermera", "Administrador" });
-            cmbPerfil.Location = new Point(204, 294);
+            cmbPerfil.Location = new Point(205, 323);
             cmbPerfil.Name = "cmbPerfil";
             cmbPerfil.Size = new Size(270, 33);
             cmbPerfil.TabIndex = 76;
@@ -190,7 +218,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(23, 147, 209);
-            label5.Location = new Point(66, 297);
+            label5.Location = new Point(67, 326);
             label5.Name = "label5";
             label5.Size = new Size(63, 25);
             label5.TabIndex = 75;
@@ -201,7 +229,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(23, 147, 209);
-            label4.Location = new Point(65, 187);
+            label4.Location = new Point(66, 216);
             label4.Name = "label4";
             label4.Size = new Size(119, 25);
             label4.TabIndex = 74;
@@ -212,7 +240,7 @@
             txtApellidMaternoServicio.BackColor = Color.FromArgb(239, 239, 239);
             txtApellidMaternoServicio.BorderStyle = BorderStyle.FixedSingle;
             txtApellidMaternoServicio.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtApellidMaternoServicio.Location = new Point(204, 185);
+            txtApellidMaternoServicio.Location = new Point(205, 214);
             txtApellidMaternoServicio.MaxLength = 50;
             txtApellidMaternoServicio.Name = "txtApellidMaternoServicio";
             txtApellidMaternoServicio.PlaceholderText = "Apellido materno";
@@ -224,7 +252,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(23, 147, 209);
-            label3.Location = new Point(65, 124);
+            label3.Location = new Point(66, 153);
             label3.Name = "label3";
             label3.Size = new Size(110, 25);
             label3.TabIndex = 72;
@@ -235,7 +263,7 @@
             txtApellidoPaternoServicio.BackColor = Color.FromArgb(239, 239, 239);
             txtApellidoPaternoServicio.BorderStyle = BorderStyle.FixedSingle;
             txtApellidoPaternoServicio.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtApellidoPaternoServicio.Location = new Point(204, 122);
+            txtApellidoPaternoServicio.Location = new Point(205, 151);
             txtApellidoPaternoServicio.MaxLength = 50;
             txtApellidoPaternoServicio.Name = "txtApellidoPaternoServicio";
             txtApellidoPaternoServicio.PlaceholderText = "Apellido paterno";
@@ -247,12 +275,13 @@
             txtContrasenia.BackColor = Color.FromArgb(239, 239, 239);
             txtContrasenia.BorderStyle = BorderStyle.FixedSingle;
             txtContrasenia.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtContrasenia.Location = new Point(204, 349);
+            txtContrasenia.Location = new Point(205, 378);
             txtContrasenia.MaxLength = 50;
             txtContrasenia.Name = "txtContrasenia";
             txtContrasenia.PlaceholderText = "Contraseña";
             txtContrasenia.Size = new Size(270, 33);
             txtContrasenia.TabIndex = 70;
+            txtContrasenia.UseSystemPasswordChar = true;
             // 
             // btnNuevo
             // 
@@ -273,7 +302,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(23, 147, 209);
-            label2.Location = new Point(66, 351);
+            label2.Location = new Point(67, 380);
             label2.Name = "label2";
             label2.Size = new Size(118, 25);
             label2.TabIndex = 68;
@@ -284,7 +313,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(23, 147, 209);
-            label1.Location = new Point(65, 64);
+            label1.Location = new Point(66, 93);
             label1.Name = "label1";
             label1.Size = new Size(91, 25);
             label1.TabIndex = 67;
@@ -309,10 +338,10 @@
             txtNombreServicioMedico.BackColor = Color.FromArgb(239, 239, 239);
             txtNombreServicioMedico.BorderStyle = BorderStyle.FixedSingle;
             txtNombreServicioMedico.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreServicioMedico.Location = new Point(204, 62);
+            txtNombreServicioMedico.Location = new Point(205, 91);
             txtNombreServicioMedico.MaxLength = 50;
             txtNombreServicioMedico.Name = "txtNombreServicioMedico";
-            txtNombreServicioMedico.PlaceholderText = "Nombre del servicio";
+            txtNombreServicioMedico.PlaceholderText = "Nombre del  trabajador";
             txtNombreServicioMedico.Size = new Size(270, 33);
             txtNombreServicioMedico.TabIndex = 2;
             // 
@@ -372,5 +401,7 @@
         private ComboBox cmbPerfil;
         private Label label6;
         private TextBox txtNombreUsuario;
+        private Label label7;
+        private TextBox txtNoTrabajador;
     }
 }
