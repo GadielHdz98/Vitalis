@@ -136,7 +136,7 @@ namespace Vitalis
                             case 1: // ACTUALIZAR
                                     // Paso A: Actualizar la tabla de usuarios utilizando el ID que recuperamos en el clic del Grid
                                 string sqlUpdUser = "UPDATE serviciosmedicos SET nombre = @nombre, apellidoPaterno = @apellidoP, apellidoMaterno = @apellidoM, " +
-                                                    "nombreUsuario = @nombreU, contrasena = @password, perfil = @perfil " +
+                                                    "nombreUsuario = @nombreU, perfil = @perfil " +
                                                     "WHERE id_ServicioMedico = @idServicioM;";
 
                                 using (comando = new MySqlCommand(sqlUpdUser, conexion))
@@ -146,7 +146,6 @@ namespace Vitalis
                                     comando.Parameters.AddWithValue("@apellidoP", apellidoP);
                                     comando.Parameters.AddWithValue("@apellidoM", apellidoM);
                                     comando.Parameters.AddWithValue("@nombreU", usuario);
-                                    comando.Parameters.AddWithValue("@password", password);
                                     comando.Parameters.AddWithValue("@perfil", perfil);
 
                                     comando.ExecuteNonQuery();

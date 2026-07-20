@@ -73,6 +73,7 @@ namespace Vitalis
                 idServicioM = int.Parse(dgvServiciosMedicos.CurrentRow.Cells["Trabajador"].Value.ToString());
 
                 //Esto es para la tabla alumnos
+                txtNoTrabajador.Text = idServicioM.ToString();
                 txtNombreServicioMedico.Text = dgvServiciosMedicos.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtApellidoPaternoServicio.Text = dgvServiciosMedicos.CurrentRow.Cells["ApellidoPaterno"].Value.ToString();
                 txtApellidMaternoServicio.Text = dgvServiciosMedicos.CurrentRow.Cells["ApellidoMaterno"].Value.ToString();
@@ -97,6 +98,7 @@ namespace Vitalis
                 trabajador = new clsUsuarios();
 
                 // 1. Llenamos las propiedades del bloque Alumno
+                trabajador.IdServicioM = int.Parse(txtNoTrabajador.Text);
                 trabajador.Nombre = string.IsNullOrEmpty(txtNombreServicioMedico.Text) ? null : txtNombreServicioMedico.Text;
                 trabajador.ApellidoP = string.IsNullOrEmpty(txtApellidoPaternoServicio.Text) ? null : txtApellidoPaternoServicio.Text;
                 trabajador.ApellidoM = string.IsNullOrEmpty(txtApellidMaternoServicio.Text) ? null : txtApellidMaternoServicio.Text;
