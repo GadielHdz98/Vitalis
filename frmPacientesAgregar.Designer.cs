@@ -51,7 +51,7 @@
             cmbGrado = new ComboBox();
             cmbCarrera = new ComboBox();
             lblPacienteFechaNaci = new Label();
-            dtmpFechaNaciUsuario = new DateTimePicker();
+            dtmpFechaNaciPaciente = new DateTimePicker();
             txtPacienteApellidoMaterno = new TextBox();
             txtPacienteApellidoPaterno = new TextBox();
             txtNombre = new TextBox();
@@ -88,7 +88,7 @@
             pnlAgregarPacientes.Controls.Add(cmbGrado);
             pnlAgregarPacientes.Controls.Add(cmbCarrera);
             pnlAgregarPacientes.Controls.Add(lblPacienteFechaNaci);
-            pnlAgregarPacientes.Controls.Add(dtmpFechaNaciUsuario);
+            pnlAgregarPacientes.Controls.Add(dtmpFechaNaciPaciente);
             pnlAgregarPacientes.Controls.Add(txtPacienteApellidoMaterno);
             pnlAgregarPacientes.Controls.Add(txtPacienteApellidoPaterno);
             pnlAgregarPacientes.Controls.Add(txtNombre);
@@ -225,6 +225,7 @@
             btnGuardar.TabIndex = 36;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // txtUltimaTemperatura
             // 
@@ -369,16 +370,17 @@
             lblPacienteFechaNaci.TabIndex = 22;
             lblPacienteFechaNaci.Text = "Fecha de nacimiento:";
             // 
-            // dtmpFechaNaciUsuario
+            // dtmpFechaNaciPaciente
             // 
-            dtmpFechaNaciUsuario.CalendarFont = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtmpFechaNaciUsuario.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtmpFechaNaciUsuario.Location = new Point(145, 501);
-            dtmpFechaNaciUsuario.MaximumSize = new Size(300, 33);
-            dtmpFechaNaciUsuario.MinimumSize = new Size(300, 33);
-            dtmpFechaNaciUsuario.Name = "dtmpFechaNaciUsuario";
-            dtmpFechaNaciUsuario.Size = new Size(300, 33);
-            dtmpFechaNaciUsuario.TabIndex = 21;
+            dtmpFechaNaciPaciente.CalendarFont = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtmpFechaNaciPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtmpFechaNaciPaciente.Format = DateTimePickerFormat.Short;
+            dtmpFechaNaciPaciente.Location = new Point(145, 501);
+            dtmpFechaNaciPaciente.MaximumSize = new Size(300, 33);
+            dtmpFechaNaciPaciente.MinimumSize = new Size(250, 33);
+            dtmpFechaNaciPaciente.Name = "dtmpFechaNaciPaciente";
+            dtmpFechaNaciPaciente.Size = new Size(270, 33);
+            dtmpFechaNaciPaciente.TabIndex = 21;
             // 
             // txtPacienteApellidoMaterno
             // 
@@ -427,6 +429,7 @@
             cmbTipoPaciente.Name = "cmbTipoPaciente";
             cmbTipoPaciente.Size = new Size(270, 33);
             cmbTipoPaciente.TabIndex = 17;
+            cmbTipoPaciente.SelectedIndexChanged += cmbTipoPaciente_SelectedIndexChanged;
             // 
             // txtMatriculaNoTrab
             // 
@@ -476,7 +479,7 @@
         private TextBox txtPacienteApellidoPaterno;
         private TextBox txtNombre;
         private TextBox txtPacienteApellidoMaterno;
-        private DateTimePicker dtmpFechaNaciUsuario;
+        private DateTimePicker dtmpFechaNaciPaciente;
         private Label lblPacienteFechaNaci;
         private ComboBox cmbCarrera;
         private TextBox txtGrupo;

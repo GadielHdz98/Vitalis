@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,223 @@ namespace Vitalis
 
             //Mostrar formulario
             formulario.Show();
+        }       
+
+        private int matricula;
+        private string nombre;
+        private string apellidoPaterno;
+        private string apellidoMaterno;
+        private string tipoPaciente;
+
+        private int? idCarrera;
+        private string grado;
+        private string grupo;
+
+        private string sexo;
+        private double peso;
+        private double altura;
+        private double temperatura;
+        private string presionArterial;
+        private DateTime fechaNacimiento;
+
+        //Objetos para consultas
+        private MySqlCommand comando;
+
+        public int Matricula
+        {
+            get => matricula;
+            set => matricula = value;
+        }
+
+        public string Nombre
+        {
+            get => nombre;
+            set => nombre = value;
+        }
+
+        public string ApellidoPaterno
+        {
+            get => apellidoPaterno;
+            set => apellidoPaterno = value;
+        }
+
+        public string ApellidoMaterno
+        {
+            get => apellidoMaterno;
+            set => apellidoMaterno = value;
+        }
+
+        public string TipoPaciente
+        {
+            get => tipoPaciente;
+            set => tipoPaciente = value;
+        }
+
+        public int? IdCarrera
+        {
+            get => idCarrera;
+            set => idCarrera = value;
+        }
+
+        public string Grado
+        {
+            get => grado;
+            set => grado = value;
+        }
+
+        public string Grupo
+        {
+            get => grupo;
+            set => grupo = value;
+        }
+
+        public string Sexo
+        {
+            get => sexo;
+            set => sexo = value;
+        }
+
+        public double Peso
+        {
+            get => peso;
+            set => peso = value;
+        }
+
+        public double Altura
+        {
+            get => altura;
+            set => altura = value;
+        }
+
+        public double Temperatura
+        {
+            get => temperatura;
+            set => temperatura = value;
+        }
+
+        public string PresionArterial
+        {
+            get => presionArterial;
+            set => presionArterial = value;
+        }
+
+        public DateTime FechaNacimiento
+        {
+            get => fechaNacimiento;
+            set => fechaNacimiento = value;
+        }       
+
+        public string GuardarPaciente()
+        {
+            string msg = "";
+
+            clsConexion conexionBD = new clsConexion();
+
+            using (var conexion = conexionBD.AbrirConexion())
+            {
+                MySqlTransaction transaccion = conexion.BeginTransaction();
+
+                try
+                {
+                    string sqlPaciente =
+                    @"INSERT INTO pacientes
+                    (
+                        Matricula,
+                        nombre,
+                        apellidoPaterno,
+                        apellidoMaterno,
+                        tipoPaciente,
+                        id_carrera,
+                        grado,
+                        grupo
+                    )
+                    VALUES
+                    (
+                        @Matricula,
+                        @Nombre,
+                        @ApellidoPaterno,
+                        @ApellidoMaterno,
+                        @TipoPaciente,
+                        @IdCarrera,
+                        @Grado,
+                        @Grupo
+                    );";
+
+                    using (comando = new MySqlCommand(sqlPaciente, conexion, transaccion))
+                    {
+                        comando.Parameters.AddWithValue("@Matricula", matricula);
+                        comando.Parameters.AddWithValue("@Nombre", nombre);
+                        comando.Parameters.AddWithValue("@ApellidoPaterno", apellidoPaterno);
+                        comando.Parameters.AddWithValue("@ApellidoMaterno", apellidoMaterno);
+                        comando.Parameters.AddWithValue("@TipoPaciente", tipoPaciente);
+
+                        if (idCarrera.HasValue)
+                            comando.Parameters.AddWithValue("@IdCarrera", idCarrera.Value);
+                        else
+                            comando.Parameters.AddWithValue("@IdCarrera", DBNull.Value);
+
+                        if (string.IsNullOrWhiteSpace(grado))
+                            comando.Parameters.AddWithValue("@Grado", DBNull.Value);
+                        else
+                            comando.Parameters.AddWithValue("@Grado", grado);
+
+                        if (string.IsNullOrWhiteSpace(grupo))
+                            comando.Parameters.AddWithValue("@Grupo", DBNull.Value);
+                        else
+                            comando.Parameters.AddWithValue("@Grupo", grupo);
+
+                        comando.ExecuteNonQuery();
+                    }
+
+                    string sqlExpediente =
+                    @"INSERT INTO expediente
+                    (
+                        sexo,
+                        peso,
+                        altura,
+                        temperatura,
+                        presionArterial,
+                        foto,
+                        fechaNacimiento,
+                        Matricula
+                    )
+                    VALUES
+                    (
+                        @Sexo,
+                        @Peso,
+                        @Altura,
+                        @Temperatura,
+                        @PresionArterial,
+                        NULL,
+                        @FechaNacimiento,
+                        @Matricula
+                    );";
+
+                    using (comando = new MySqlCommand(sqlExpediente, conexion, transaccion))
+                    {
+                        comando.Parameters.AddWithValue("@Sexo", sexo);
+                        comando.Parameters.AddWithValue("@Peso", peso);
+                        comando.Parameters.AddWithValue("@Altura", altura);
+                        comando.Parameters.AddWithValue("@Temperatura", temperatura);
+                        comando.Parameters.AddWithValue("@PresionArterial", presionArterial);
+                        comando.Parameters.AddWithValue("@FechaNacimiento", fechaNacimiento);
+                        comando.Parameters.AddWithValue("@Matricula", matricula);
+
+                        comando.ExecuteNonQuery();
+                    }
+
+                    transaccion.Commit();
+
+                    msg = "El paciente se guardó correctamente.";
+                }
+                catch (Exception ex)
+                {
+                    transaccion.Rollback();
+                    throw new Exception("Error al guardar el paciente: " + ex.Message);
+                }
+            }
+
+            return msg;
         }
     }
 }
