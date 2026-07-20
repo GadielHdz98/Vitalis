@@ -89,6 +89,7 @@ namespace Vitalis
         }
         public void HabilitarControles()
         {
+            
             bool esAlumno = cmbTipoPaciente.Text == "Alumno";
 
             cmbCarrera.Enabled = esAlumno;
