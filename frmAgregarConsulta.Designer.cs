@@ -315,7 +315,7 @@
             richTextBox1.ForeColor = Color.FromArgb(239, 239, 239);
             richTextBox1.Location = new Point(651, 208);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(270, 152);
+            richTextBox1.Size = new Size(270, 117);
             richTextBox1.TabIndex = 61;
             richTextBox1.Tag = "Tratamiento";
             richTextBox1.Text = "";

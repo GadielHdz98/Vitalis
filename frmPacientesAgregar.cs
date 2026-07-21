@@ -84,9 +84,42 @@ namespace Vitalis
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al cargar las carreras.  " + ex.Message);
             }
         }
+        public bool ValidarCamposVacios()
+        {
+            string mensajeError = "Asegurese de llenar todos los campos correctamente.";
+            bool esValido = true;
+
+            foreach (TextBox txt in pnlAgregarPacientes.Controls.OfType<TextBox>())
+            {
+                if (txt.Enabled && txt.Text.Trim() == "")
+                {
+                    txt.Focus();
+                    esValido = false;
+                    break;
+                }
+            }
+            foreach (ComboBox combo in pnlAgregarPacientes.Controls.OfType<ComboBox>())
+            {
+                if (combo.Enabled && combo.SelectedIndex < 1)
+                {
+                    combo.Focus();
+                    esValido = false;
+                    break;
+                }
+            }
+
+            if (!esValido)
+            {
+                MessageBox.Show(mensajeError, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return esValido;
+        }
+        
+
         public void HabilitarControles()
         {
             
@@ -132,7 +165,7 @@ namespace Vitalis
         {
             try
             {
-                if (txtMatriculaNoTrab.Text != null || txtMatriculaNoTrab.Text != "")
+                if (ValidarCamposVacios())
                 {
                     paciente = new clsPacientes();
 
