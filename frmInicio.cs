@@ -15,8 +15,7 @@ namespace Vitalis
         public frmInicio()
         {
             InitializeComponent();
-            MostrarSaludo(clsLogin.nombreUsuarioLogeado, clsLogin.perfil);
-            
+            MostrarSaludo(clsLogin.nombreUsuarioLogeado, clsLogin.perfil);            
         }
         private void MostrarSaludo(string nombreUsuario, string rolUsuario)
         {
@@ -38,7 +37,7 @@ namespace Vitalis
             }
             switch (rolUsuario)
             {
-                case "Doctor":
+                case "Medico":
                     nombreCompleto = $"Dr. {nombreUsuario}";
                     break;
 

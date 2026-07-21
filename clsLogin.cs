@@ -39,7 +39,7 @@ namespace Vitalis
                     esDoctor = false;
                     esAdministrador = false;
                     break;
-                case "Doctor":
+                case "Medico":
                     esEnfermero = false;
                     esDoctor = true;
                     esAdministrador = false;

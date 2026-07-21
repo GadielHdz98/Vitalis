@@ -21,6 +21,7 @@ namespace Vitalis
                 login.Password = txtPassword.Text;
 
                 bool resp = login.ValidarAcceso();
+
                 if (resp == true)
                 {
                     this.DialogResult = DialogResult.OK;
