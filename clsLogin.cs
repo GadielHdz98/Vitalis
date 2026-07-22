@@ -81,7 +81,7 @@ namespace Vitalis
                                 perfil = resultado.GetString("perfil");
                                 nombreUsuarioLogeado = resultado.GetString("nombre");
                                 apellidoPaUsuarioLogeado = resultado.GetString("apellidoPaterno");
-                                apellidoMaUsuarioLogeado = resultado.GetString("apellidoMaterno");                                
+                                apellidoMaUsuarioLogeado = resultado.GetString("apellidoMaterno");
                                 asignarPermisos();
 
                                 if (!esEnfermero && !esDoctor && !esAdministrador)

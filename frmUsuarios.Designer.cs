@@ -288,7 +288,7 @@
             btnNuevo.BackColor = Color.FromArgb(10, 64, 88);
             btnNuevo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNuevo.ForeColor = Color.FromArgb(239, 239, 239);
-            btnNuevo.Location = new Point(260, 433);
+            btnNuevo.Location = new Point(254, 463);
             btnNuevo.Margin = new Padding(0);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(160, 35);
@@ -324,7 +324,7 @@
             btnEliminar.BackColor = Color.FromArgb(192, 0, 0);
             btnEliminar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnEliminar.Location = new Point(454, 433);
+            btnEliminar.Location = new Point(448, 463);
             btnEliminar.Margin = new Padding(0);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(160, 35);
@@ -350,7 +350,7 @@
             btnGuardar.BackColor = Color.FromArgb(58, 154, 138);
             btnGuardar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnGuardar.Location = new Point(65, 433);
+            btnGuardar.Location = new Point(59, 463);
             btnGuardar.Margin = new Padding(0);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(160, 35);
