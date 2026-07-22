@@ -30,6 +30,7 @@
         {
             lblConsultasBuscarTitulo = new Label();
             pnlAgregarConsultas = new Panel();
+            button1 = new Button();
             txtApellidoMaterno = new TextBox();
             label14 = new Label();
             txtTipo = new TextBox();
@@ -60,7 +61,7 @@
             lblhoraYfcha = new Label();
             pcbFotoPaciente = new PictureBox();
             btnVaciarCampos = new Button();
-            btnGuardar = new Button();
+            btnGenerarReceta = new Button();
             label4 = new Label();
             lblSubTituloPaciente = new Label();
             txtGrupo = new TextBox();
@@ -87,6 +88,7 @@
             // 
             pnlAgregarConsultas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnlAgregarConsultas.BackColor = Color.White;
+            pnlAgregarConsultas.Controls.Add(button1);
             pnlAgregarConsultas.Controls.Add(txtApellidoMaterno);
             pnlAgregarConsultas.Controls.Add(label14);
             pnlAgregarConsultas.Controls.Add(txtTipo);
@@ -117,7 +119,7 @@
             pnlAgregarConsultas.Controls.Add(lblhoraYfcha);
             pnlAgregarConsultas.Controls.Add(pcbFotoPaciente);
             pnlAgregarConsultas.Controls.Add(btnVaciarCampos);
-            pnlAgregarConsultas.Controls.Add(btnGuardar);
+            pnlAgregarConsultas.Controls.Add(btnGenerarReceta);
             pnlAgregarConsultas.Controls.Add(label4);
             pnlAgregarConsultas.Controls.Add(lblSubTituloPaciente);
             pnlAgregarConsultas.Controls.Add(txtGrupo);
@@ -126,8 +128,23 @@
             pnlAgregarConsultas.Controls.Add(txtMatriculaPaciente);
             pnlAgregarConsultas.Location = new Point(39, 80);
             pnlAgregarConsultas.Name = "pnlAgregarConsultas";
-            pnlAgregarConsultas.Size = new Size(1619, 639);
+            pnlAgregarConsultas.Size = new Size(1619, 665);
             pnlAgregarConsultas.TabIndex = 13;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(58, 154, 138);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.FromArgb(239, 239, 239);
+            button1.Location = new Point(1189, 431);
+            button1.Margin = new Padding(0);
+            button1.Name = "button1";
+            button1.Size = new Size(160, 35);
+            button1.TabIndex = 96;
+            button1.Text = "Guardar";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += btnGuardar_Click;
             // 
             // txtApellidoMaterno
             // 
@@ -235,7 +252,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(23, 147, 209);
-            label8.Location = new Point(520, 495);
+            label8.Location = new Point(518, 551);
             label8.Name = "label8";
             label8.Size = new Size(94, 25);
             label8.TabIndex = 86;
@@ -244,20 +261,24 @@
             // dtmpHoraFinConsulta
             // 
             dtmpHoraFinConsulta.CalendarMonthBackground = Color.FromArgb(239, 239, 239);
+            dtmpHoraFinConsulta.CustomFormat = "HH:mm";
             dtmpHoraFinConsulta.Font = new Font("Segoe UI", 14F);
-            dtmpHoraFinConsulta.Format = DateTimePickerFormat.Time;
-            dtmpHoraFinConsulta.Location = new Point(651, 489);
+            dtmpHoraFinConsulta.Format = DateTimePickerFormat.Custom;
+            dtmpHoraFinConsulta.Location = new Point(649, 545);
             dtmpHoraFinConsulta.Name = "dtmpHoraFinConsulta";
+            dtmpHoraFinConsulta.ShowUpDown = true;
             dtmpHoraFinConsulta.Size = new Size(213, 32);
             dtmpHoraFinConsulta.TabIndex = 84;
             // 
             // dtmpHoraInicioConsulta
             // 
             dtmpHoraInicioConsulta.CalendarMonthBackground = Color.FromArgb(239, 239, 239);
+            dtmpHoraInicioConsulta.CustomFormat = "HH:mm";
             dtmpHoraInicioConsulta.Font = new Font("Segoe UI", 14F);
-            dtmpHoraInicioConsulta.Format = DateTimePickerFormat.Time;
-            dtmpHoraInicioConsulta.Location = new Point(651, 435);
+            dtmpHoraInicioConsulta.Format = DateTimePickerFormat.Custom;
+            dtmpHoraInicioConsulta.Location = new Point(649, 491);
             dtmpHoraInicioConsulta.Name = "dtmpHoraInicioConsulta";
+            dtmpHoraInicioConsulta.ShowUpDown = true;
             dtmpHoraInicioConsulta.Size = new Size(213, 32);
             dtmpHoraInicioConsulta.TabIndex = 83;
             // 
@@ -266,7 +287,7 @@
             dtmpFechaConsulta.CalendarMonthBackground = Color.FromArgb(239, 239, 239);
             dtmpFechaConsulta.Font = new Font("Segoe UI", 14F);
             dtmpFechaConsulta.Format = DateTimePickerFormat.Short;
-            dtmpFechaConsulta.Location = new Point(651, 379);
+            dtmpFechaConsulta.Location = new Point(649, 435);
             dtmpFechaConsulta.Name = "dtmpFechaConsulta";
             dtmpFechaConsulta.Size = new Size(213, 32);
             dtmpFechaConsulta.TabIndex = 81;
@@ -277,7 +298,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(23, 147, 209);
-            label7.Location = new Point(520, 441);
+            label7.Location = new Point(518, 497);
             label7.Name = "label7";
             label7.Size = new Size(115, 25);
             label7.TabIndex = 80;
@@ -310,11 +331,13 @@
             // dtmpHoraCita
             // 
             dtmpHoraCita.CalendarMonthBackground = Color.FromArgb(239, 239, 239);
+            dtmpHoraCita.CustomFormat = "HH:mm";
             dtmpHoraCita.Enabled = false;
             dtmpHoraCita.Font = new Font("Segoe UI", 14F);
-            dtmpHoraCita.Format = DateTimePickerFormat.Time;
+            dtmpHoraCita.Format = DateTimePickerFormat.Custom;
             dtmpHoraCita.Location = new Point(1074, 155);
             dtmpHoraCita.Name = "dtmpHoraCita";
+            dtmpHoraCita.ShowUpDown = true;
             dtmpHoraCita.Size = new Size(213, 32);
             dtmpHoraCita.TabIndex = 77;
             // 
@@ -407,10 +430,10 @@
             // 
             rchtxtTratamiento.BackColor = Color.FromArgb(239, 239, 239);
             rchtxtTratamiento.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rchtxtTratamiento.ForeColor = Color.FromArgb(239, 239, 239);
+            rchtxtTratamiento.ForeColor = Color.Black;
             rchtxtTratamiento.Location = new Point(651, 208);
             rchtxtTratamiento.Name = "rchtxtTratamiento";
-            rchtxtTratamiento.Size = new Size(270, 117);
+            rchtxtTratamiento.Size = new Size(270, 111);
             rchtxtTratamiento.TabIndex = 61;
             rchtxtTratamiento.Tag = "Tratamiento";
             rchtxtTratamiento.Text = "";
@@ -457,7 +480,7 @@
             lblhoraYfcha.BackColor = Color.Transparent;
             lblhoraYfcha.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblhoraYfcha.ForeColor = Color.FromArgb(23, 147, 209);
-            lblhoraYfcha.Location = new Point(522, 385);
+            lblhoraYfcha.Location = new Point(520, 441);
             lblhoraYfcha.Name = "lblhoraYfcha";
             lblhoraYfcha.Size = new Size(67, 25);
             lblhoraYfcha.TabIndex = 47;
@@ -479,7 +502,7 @@
             btnVaciarCampos.FlatAppearance.BorderSize = 0;
             btnVaciarCampos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVaciarCampos.ForeColor = Color.FromArgb(239, 239, 239);
-            btnVaciarCampos.Location = new Point(1189, 465);
+            btnVaciarCampos.Location = new Point(1189, 492);
             btnVaciarCampos.Margin = new Padding(0);
             btnVaciarCampos.Name = "btnVaciarCampos";
             btnVaciarCampos.Size = new Size(160, 35);
@@ -488,19 +511,19 @@
             btnVaciarCampos.UseVisualStyleBackColor = false;
             btnVaciarCampos.Click += btnVaciarCampos_Click;
             // 
-            // btnGuardar
+            // btnGenerarReceta
             // 
-            btnGuardar.BackColor = Color.FromArgb(58, 154, 138);
-            btnGuardar.FlatAppearance.BorderSize = 0;
-            btnGuardar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGuardar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnGuardar.Location = new Point(997, 465);
-            btnGuardar.Margin = new Padding(0);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(160, 35);
-            btnGuardar.TabIndex = 36;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = false;
+            btnGenerarReceta.BackColor = Color.FromArgb(10, 64, 88);
+            btnGenerarReceta.FlatAppearance.BorderSize = 0;
+            btnGenerarReceta.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGenerarReceta.ForeColor = Color.FromArgb(239, 239, 239);
+            btnGenerarReceta.Location = new Point(1189, 546);
+            btnGenerarReceta.Margin = new Padding(0);
+            btnGenerarReceta.Name = "btnGenerarReceta";
+            btnGenerarReceta.Size = new Size(160, 35);
+            btnGenerarReceta.TabIndex = 36;
+            btnGenerarReceta.Text = "Generar receta";
+            btnGenerarReceta.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -640,5 +663,7 @@
         private TextBox txtCarrera;
         private TextBox txtApellidoMaterno;
         private Label label14;
+        private Button button1;
+        private Button btnGenerarReceta;
     }
 }

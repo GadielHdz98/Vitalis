@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -117,20 +118,31 @@ namespace Vitalis
                         comando.Parameters.AddWithValue("@TipoPaciente", tipoPaciente);
 
                         if (idCarrera.HasValue)
+                        {
                             comando.Parameters.AddWithValue("@IdCarrera", idCarrera.Value);
+                        }
                         else
+                        {
                             comando.Parameters.AddWithValue("@IdCarrera", DBNull.Value);
+                        }
 
                         if (string.IsNullOrWhiteSpace(grado))
+                        {
                             comando.Parameters.AddWithValue("@Grado", DBNull.Value);
+                        }
                         else
+                        {
                             comando.Parameters.AddWithValue("@Grado", grado);
+                        }                           
 
                         if (string.IsNullOrWhiteSpace(grupo))
-                            comando.Parameters.AddWithValue("@Grupo", DBNull.Value);
+                        {
+                            comando.Parameters.AddWithValue("@Grupo", DBNull.Value);                           
+                        }
                         else
+                        {
                             comando.Parameters.AddWithValue("@Grupo", grupo);
-
+                        }
                         comando.ExecuteNonQuery();
                     }
                     string sqlExpediente =
