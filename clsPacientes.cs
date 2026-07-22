@@ -1,6 +1,8 @@
 ﻿using MySqlConnector;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +29,9 @@ namespace Vitalis
         private string presionArterial;
         private DateTime fechaNacimiento;
 
+        //Adaptador y tabla virtuales de la clase
+        
+
         public void AgregarAlContenedor(Form formulario, Panel panel)
         {
             //Verifica que no este abierto ningun form, y si lo hay, lo cierre
@@ -50,9 +55,11 @@ namespace Vitalis
 
             //Mostrar formulario
             formulario.Show();
-        }        
+        }
 
-        //Objetos para consultas
+        //Objetos para consultas     
+        private MySqlDataAdapter consulta;
+        private DataTable tabla;
         private MySqlCommand comando;
 
         public int Matricula { get => matricula; set => matricula = value; }
@@ -111,20 +118,31 @@ namespace Vitalis
                         comando.Parameters.AddWithValue("@TipoPaciente", tipoPaciente);
 
                         if (idCarrera.HasValue)
+                        {
                             comando.Parameters.AddWithValue("@IdCarrera", idCarrera.Value);
+                        }
                         else
+                        {
                             comando.Parameters.AddWithValue("@IdCarrera", DBNull.Value);
+                        }
 
                         if (string.IsNullOrWhiteSpace(grado))
+                        {
                             comando.Parameters.AddWithValue("@Grado", DBNull.Value);
+                        }
                         else
+                        {
                             comando.Parameters.AddWithValue("@Grado", grado);
+                        }                           
 
                         if (string.IsNullOrWhiteSpace(grupo))
-                            comando.Parameters.AddWithValue("@Grupo", DBNull.Value);
+                        {
+                            comando.Parameters.AddWithValue("@Grupo", DBNull.Value);                           
+                        }
                         else
+                        {
                             comando.Parameters.AddWithValue("@Grupo", grupo);
-
+                        }
                         comando.ExecuteNonQuery();
                     }
                     string sqlExpediente =
@@ -175,5 +193,46 @@ namespace Vitalis
 
             return msg;
         }
+        public DataTable Consultar()
+        {
+            tabla = new DataTable();
+
+            try
+            {
+                clsConexion conexionBD = new clsConexion();
+
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    string sql = "SELECT P.tipoPaciente AS Tipo, " +
+                                 "P.nombre AS Nombre, " +
+                                 "P.apellidoPaterno AS ApellidoPaterno, " +
+                                 "P.apellidoMaterno AS ApellidoMaterno, " +
+                                 "C.nombreCarrera AS Carrera, " +
+                                 "P.grado AS Grado, " +
+                                 "P.grupo AS Grupo " +
+                                 "FROM pacientes P " +
+                                 //Usamos left join para cuando llamemos a un paciente de tipo trabajador, se llamen bien todos los datos, sin perder alguno
+                                 //priorizando la tabla izquierda
+                                 "LEFT JOIN carreras C ON P.id_carrera = C.id_carrera " +
+                                 "WHERE P.Matricula = @matricula;";
+
+                    using (comando = new MySqlCommand(sql, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@matricula", Matricula);
+
+                        using (consulta = new MySqlDataAdapter(comando))
+                        {
+                            consulta.Fill(tabla);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la conexion de la base de datos: " + ex.Message);
+            }
+
+            return tabla;
+        }  
     }
 }

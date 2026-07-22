@@ -17,7 +17,6 @@ namespace Vitalis
         private string puerto = "3306";
 
         private string cadenaConexion => $"server={host};database={bd};user={usuario};password={password};port={puerto}";
-
         public MySqlConnection AbrirConexion()
         {
             var conexion = new MySqlConnection(cadenaConexion);
@@ -30,7 +29,6 @@ namespace Vitalis
             {
                 throw new Exception("Error al intentar conectarse a la Base de datos" + ex.Message, ex);
             }
-
         }
 
         public void CerrarConexion(MySqlConnection conexion)

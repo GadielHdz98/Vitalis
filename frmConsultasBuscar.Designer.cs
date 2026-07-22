@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             dgvConsultasBuscar = new DataGridView();
             pnlBuscarPaciente = new Panel();
             cmbSexo = new ComboBox();
@@ -65,6 +66,7 @@
             lblConsultasBuscarTitulo = new Label();
             pcbIconoBuscar = new PictureBox();
             txtBuscarPorNumConsul = new TextBox();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)dgvConsultasBuscar).BeginInit();
             pnlBuscarPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
@@ -419,6 +421,7 @@
             pcbFotoPaciente.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbFotoPaciente.TabIndex = 9;
             pcbFotoPaciente.TabStop = false;
+            toolTip1.SetToolTip(pcbFotoPaciente, "Imagen del paciente");
             // 
             // btnVaciarCampos
             // 
@@ -593,5 +596,6 @@
         private Label lblTurno;
         private ComboBox cmbSexo;
         private Label lblSexo;
+        private ToolTip toolTip1;
     }
 }

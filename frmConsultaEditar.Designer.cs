@@ -119,7 +119,7 @@
             rchtxtTratamiento.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rchtxtTratamiento.Location = new Point(23, 261);
             rchtxtTratamiento.Name = "rchtxtTratamiento";
-            rchtxtTratamiento.Size = new Size(270, 100);
+            rchtxtTratamiento.Size = new Size(270, 117);
             rchtxtTratamiento.TabIndex = 64;
             rchtxtTratamiento.Tag = "Tratamiento";
             rchtxtTratamiento.Text = "";

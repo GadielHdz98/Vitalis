@@ -30,8 +30,16 @@
         {
             lblConsultasBuscarTitulo = new Label();
             pnlAgregarConsultas = new Panel();
+            button1 = new Button();
+            txtApellidoMaterno = new TextBox();
+            label14 = new Label();
+            txtTipo = new TextBox();
+            txtGrado = new TextBox();
+            txtCarrera = new TextBox();
+            label5 = new Label();
+            label10 = new Label();
+            label9 = new Label();
             label8 = new Label();
-            cmbSexo = new ComboBox();
             dtmpHoraFinConsulta = new DateTimePicker();
             dtmpHoraInicioConsulta = new DateTimePicker();
             dtmpFechaConsulta = new DateTimePicker();
@@ -39,34 +47,29 @@
             label3 = new Label();
             label2 = new Label();
             dtmpHoraCita = new DateTimePicker();
-            dtpckFechaCita = new DateTimePicker();
+            dtmpFechaCita = new DateTimePicker();
             label13 = new Label();
             label12 = new Label();
             label11 = new Label();
             label1 = new Label();
-            chcbxCita = new CheckBox();
+            chkCita = new CheckBox();
             label6 = new Label();
-            richTextBox1 = new RichTextBox();
-            cbxCIR = new CheckBox();
+            rchtxtTratamiento = new RichTextBox();
+            chkCIR = new CheckBox();
             cmbDiagnostico = new ComboBox();
-            label5 = new Label();
-            pictureBox1 = new PictureBox();
+            pcbIconBuscar = new PictureBox();
             lblhoraYfcha = new Label();
             pcbFotoPaciente = new PictureBox();
             btnVaciarCampos = new Button();
-            btnGuardar = new Button();
+            btnGenerarReceta = new Button();
             label4 = new Label();
             lblSubTituloPaciente = new Label();
-            lblSexo = new Label();
             txtGrupo = new TextBox();
-            cmbGrado = new ComboBox();
-            cmbCarrera = new ComboBox();
-            txtPacienteApellidoPaterno = new TextBox();
+            txtApellidoPaterno = new TextBox();
             txtNombre = new TextBox();
-            cmbTipoPaciente = new ComboBox();
             txtMatriculaPaciente = new TextBox();
             pnlAgregarConsultas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcbIconBuscar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
             SuspendLayout();
             // 
@@ -85,8 +88,16 @@
             // 
             pnlAgregarConsultas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnlAgregarConsultas.BackColor = Color.White;
+            pnlAgregarConsultas.Controls.Add(button1);
+            pnlAgregarConsultas.Controls.Add(txtApellidoMaterno);
+            pnlAgregarConsultas.Controls.Add(label14);
+            pnlAgregarConsultas.Controls.Add(txtTipo);
+            pnlAgregarConsultas.Controls.Add(txtGrado);
+            pnlAgregarConsultas.Controls.Add(txtCarrera);
+            pnlAgregarConsultas.Controls.Add(label5);
+            pnlAgregarConsultas.Controls.Add(label10);
+            pnlAgregarConsultas.Controls.Add(label9);
             pnlAgregarConsultas.Controls.Add(label8);
-            pnlAgregarConsultas.Controls.Add(cmbSexo);
             pnlAgregarConsultas.Controls.Add(dtmpHoraFinConsulta);
             pnlAgregarConsultas.Controls.Add(dtmpHoraInicioConsulta);
             pnlAgregarConsultas.Controls.Add(dtmpFechaConsulta);
@@ -94,36 +105,146 @@
             pnlAgregarConsultas.Controls.Add(label3);
             pnlAgregarConsultas.Controls.Add(label2);
             pnlAgregarConsultas.Controls.Add(dtmpHoraCita);
-            pnlAgregarConsultas.Controls.Add(dtpckFechaCita);
+            pnlAgregarConsultas.Controls.Add(dtmpFechaCita);
             pnlAgregarConsultas.Controls.Add(label13);
             pnlAgregarConsultas.Controls.Add(label12);
             pnlAgregarConsultas.Controls.Add(label11);
             pnlAgregarConsultas.Controls.Add(label1);
-            pnlAgregarConsultas.Controls.Add(chcbxCita);
+            pnlAgregarConsultas.Controls.Add(chkCita);
             pnlAgregarConsultas.Controls.Add(label6);
-            pnlAgregarConsultas.Controls.Add(richTextBox1);
-            pnlAgregarConsultas.Controls.Add(cbxCIR);
+            pnlAgregarConsultas.Controls.Add(rchtxtTratamiento);
+            pnlAgregarConsultas.Controls.Add(chkCIR);
             pnlAgregarConsultas.Controls.Add(cmbDiagnostico);
-            pnlAgregarConsultas.Controls.Add(label5);
-            pnlAgregarConsultas.Controls.Add(pictureBox1);
+            pnlAgregarConsultas.Controls.Add(pcbIconBuscar);
             pnlAgregarConsultas.Controls.Add(lblhoraYfcha);
             pnlAgregarConsultas.Controls.Add(pcbFotoPaciente);
             pnlAgregarConsultas.Controls.Add(btnVaciarCampos);
-            pnlAgregarConsultas.Controls.Add(btnGuardar);
+            pnlAgregarConsultas.Controls.Add(btnGenerarReceta);
             pnlAgregarConsultas.Controls.Add(label4);
             pnlAgregarConsultas.Controls.Add(lblSubTituloPaciente);
-            pnlAgregarConsultas.Controls.Add(lblSexo);
             pnlAgregarConsultas.Controls.Add(txtGrupo);
-            pnlAgregarConsultas.Controls.Add(cmbGrado);
-            pnlAgregarConsultas.Controls.Add(cmbCarrera);
-            pnlAgregarConsultas.Controls.Add(txtPacienteApellidoPaterno);
+            pnlAgregarConsultas.Controls.Add(txtApellidoPaterno);
             pnlAgregarConsultas.Controls.Add(txtNombre);
-            pnlAgregarConsultas.Controls.Add(cmbTipoPaciente);
             pnlAgregarConsultas.Controls.Add(txtMatriculaPaciente);
             pnlAgregarConsultas.Location = new Point(39, 80);
             pnlAgregarConsultas.Name = "pnlAgregarConsultas";
-            pnlAgregarConsultas.Size = new Size(1619, 639);
+            pnlAgregarConsultas.Size = new Size(1619, 665);
             pnlAgregarConsultas.TabIndex = 13;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(58, 154, 138);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.FromArgb(239, 239, 239);
+            button1.Location = new Point(1189, 431);
+            button1.Margin = new Padding(0);
+            button1.Name = "button1";
+            button1.Size = new Size(160, 35);
+            button1.TabIndex = 96;
+            button1.Text = "Guardar";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += btnGuardar_Click;
+            // 
+            // txtApellidoMaterno
+            // 
+            txtApellidoMaterno.BackColor = Color.FromArgb(239, 239, 239);
+            txtApellidoMaterno.BorderStyle = BorderStyle.FixedSingle;
+            txtApellidoMaterno.Enabled = false;
+            txtApellidoMaterno.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtApellidoMaterno.ForeColor = Color.FromArgb(239, 239, 239);
+            txtApellidoMaterno.Location = new Point(172, 324);
+            txtApellidoMaterno.MaxLength = 50;
+            txtApellidoMaterno.Name = "txtApellidoMaterno";
+            txtApellidoMaterno.Size = new Size(270, 33);
+            txtApellidoMaterno.TabIndex = 95;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.BackColor = Color.Transparent;
+            label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.FromArgb(23, 147, 209);
+            label14.Location = new Point(76, 326);
+            label14.Name = "label14";
+            label14.Size = new Size(70, 25);
+            label14.TabIndex = 94;
+            label14.Text = "Ap M.:";
+            // 
+            // txtTipo
+            // 
+            txtTipo.BackColor = Color.FromArgb(239, 239, 239);
+            txtTipo.BorderStyle = BorderStyle.FixedSingle;
+            txtTipo.Enabled = false;
+            txtTipo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTipo.ForeColor = Color.FromArgb(239, 239, 239);
+            txtTipo.Location = new Point(172, 150);
+            txtTipo.MaxLength = 50;
+            txtTipo.Name = "txtTipo";
+            txtTipo.Size = new Size(270, 33);
+            txtTipo.TabIndex = 93;
+            // 
+            // txtGrado
+            // 
+            txtGrado.BackColor = Color.FromArgb(239, 239, 239);
+            txtGrado.BorderStyle = BorderStyle.FixedSingle;
+            txtGrado.Enabled = false;
+            txtGrado.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtGrado.ForeColor = Color.FromArgb(239, 239, 239);
+            txtGrado.Location = new Point(171, 439);
+            txtGrado.MaxLength = 1;
+            txtGrado.Name = "txtGrado";
+            txtGrado.Size = new Size(270, 33);
+            txtGrado.TabIndex = 92;
+            // 
+            // txtCarrera
+            // 
+            txtCarrera.BackColor = Color.FromArgb(239, 239, 239);
+            txtCarrera.BorderStyle = BorderStyle.FixedSingle;
+            txtCarrera.Enabled = false;
+            txtCarrera.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCarrera.ForeColor = Color.FromArgb(239, 239, 239);
+            txtCarrera.Location = new Point(171, 383);
+            txtCarrera.MaxLength = 1;
+            txtCarrera.Name = "txtCarrera";
+            txtCarrera.Size = new Size(270, 33);
+            txtCarrera.TabIndex = 91;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(23, 147, 209);
+            label5.Location = new Point(76, 497);
+            label5.Name = "label5";
+            label5.Size = new Size(70, 25);
+            label5.TabIndex = 89;
+            label5.Text = "Grupo";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.FromArgb(23, 147, 209);
+            label10.Location = new Point(75, 270);
+            label10.Name = "label10";
+            label10.Size = new Size(64, 25);
+            label10.TabIndex = 88;
+            label10.Text = "Ap. P:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.FromArgb(23, 147, 209);
+            label9.Location = new Point(75, 211);
+            label9.Name = "label9";
+            label9.Size = new Size(91, 25);
+            label9.TabIndex = 87;
+            label9.Text = "Nombre:";
             // 
             // label8
             // 
@@ -131,41 +252,33 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(23, 147, 209);
-            label8.Location = new Point(520, 495);
+            label8.Location = new Point(518, 551);
             label8.Name = "label8";
             label8.Size = new Size(94, 25);
             label8.TabIndex = 86;
             label8.Text = "Hora Fin:";
             // 
-            // cmbSexo
-            // 
-            cmbSexo.BackColor = Color.FromArgb(239, 239, 239);
-            cmbSexo.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbSexo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbSexo.ForeColor = Color.FromArgb(239, 239, 239);
-            cmbSexo.FormattingEnabled = true;
-            cmbSexo.Location = new Point(171, 327);
-            cmbSexo.Name = "cmbSexo";
-            cmbSexo.Size = new Size(270, 33);
-            cmbSexo.TabIndex = 85;
-            // 
             // dtmpHoraFinConsulta
             // 
             dtmpHoraFinConsulta.CalendarMonthBackground = Color.FromArgb(239, 239, 239);
+            dtmpHoraFinConsulta.CustomFormat = "HH:mm";
             dtmpHoraFinConsulta.Font = new Font("Segoe UI", 14F);
-            dtmpHoraFinConsulta.Format = DateTimePickerFormat.Time;
-            dtmpHoraFinConsulta.Location = new Point(651, 489);
+            dtmpHoraFinConsulta.Format = DateTimePickerFormat.Custom;
+            dtmpHoraFinConsulta.Location = new Point(649, 545);
             dtmpHoraFinConsulta.Name = "dtmpHoraFinConsulta";
+            dtmpHoraFinConsulta.ShowUpDown = true;
             dtmpHoraFinConsulta.Size = new Size(213, 32);
             dtmpHoraFinConsulta.TabIndex = 84;
             // 
             // dtmpHoraInicioConsulta
             // 
             dtmpHoraInicioConsulta.CalendarMonthBackground = Color.FromArgb(239, 239, 239);
+            dtmpHoraInicioConsulta.CustomFormat = "HH:mm";
             dtmpHoraInicioConsulta.Font = new Font("Segoe UI", 14F);
-            dtmpHoraInicioConsulta.Format = DateTimePickerFormat.Time;
-            dtmpHoraInicioConsulta.Location = new Point(651, 435);
+            dtmpHoraInicioConsulta.Format = DateTimePickerFormat.Custom;
+            dtmpHoraInicioConsulta.Location = new Point(649, 491);
             dtmpHoraInicioConsulta.Name = "dtmpHoraInicioConsulta";
+            dtmpHoraInicioConsulta.ShowUpDown = true;
             dtmpHoraInicioConsulta.Size = new Size(213, 32);
             dtmpHoraInicioConsulta.TabIndex = 83;
             // 
@@ -174,7 +287,7 @@
             dtmpFechaConsulta.CalendarMonthBackground = Color.FromArgb(239, 239, 239);
             dtmpFechaConsulta.Font = new Font("Segoe UI", 14F);
             dtmpFechaConsulta.Format = DateTimePickerFormat.Short;
-            dtmpFechaConsulta.Location = new Point(651, 379);
+            dtmpFechaConsulta.Location = new Point(649, 435);
             dtmpFechaConsulta.Name = "dtmpFechaConsulta";
             dtmpFechaConsulta.Size = new Size(213, 32);
             dtmpFechaConsulta.TabIndex = 81;
@@ -185,7 +298,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(23, 147, 209);
-            label7.Location = new Point(520, 441);
+            label7.Location = new Point(518, 497);
             label7.Name = "label7";
             label7.Size = new Size(115, 25);
             label7.TabIndex = 80;
@@ -218,22 +331,26 @@
             // dtmpHoraCita
             // 
             dtmpHoraCita.CalendarMonthBackground = Color.FromArgb(239, 239, 239);
+            dtmpHoraCita.CustomFormat = "HH:mm";
+            dtmpHoraCita.Enabled = false;
             dtmpHoraCita.Font = new Font("Segoe UI", 14F);
-            dtmpHoraCita.Format = DateTimePickerFormat.Time;
+            dtmpHoraCita.Format = DateTimePickerFormat.Custom;
             dtmpHoraCita.Location = new Point(1074, 155);
             dtmpHoraCita.Name = "dtmpHoraCita";
+            dtmpHoraCita.ShowUpDown = true;
             dtmpHoraCita.Size = new Size(213, 32);
             dtmpHoraCita.TabIndex = 77;
             // 
-            // dtpckFechaCita
+            // dtmpFechaCita
             // 
-            dtpckFechaCita.CalendarMonthBackground = Color.FromArgb(239, 239, 239);
-            dtpckFechaCita.Font = new Font("Segoe UI", 14F);
-            dtpckFechaCita.Format = DateTimePickerFormat.Short;
-            dtpckFechaCita.Location = new Point(1074, 91);
-            dtpckFechaCita.Name = "dtpckFechaCita";
-            dtpckFechaCita.Size = new Size(213, 32);
-            dtpckFechaCita.TabIndex = 76;
+            dtmpFechaCita.CalendarMonthBackground = Color.FromArgb(239, 239, 239);
+            dtmpFechaCita.Enabled = false;
+            dtmpFechaCita.Font = new Font("Segoe UI", 14F);
+            dtmpFechaCita.Format = DateTimePickerFormat.Short;
+            dtmpFechaCita.Location = new Point(1074, 91);
+            dtmpFechaCita.Name = "dtmpFechaCita";
+            dtmpFechaCita.Size = new Size(213, 32);
+            dtmpFechaCita.TabIndex = 76;
             // 
             // label13
             // 
@@ -253,7 +370,7 @@
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.FromArgb(23, 147, 209);
-            label12.Location = new Point(82, 443);
+            label12.Location = new Point(75, 443);
             label12.Name = "label12";
             label12.Size = new Size(73, 25);
             label12.TabIndex = 74;
@@ -265,7 +382,7 @@
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.FromArgb(23, 147, 209);
-            label11.Location = new Point(81, 386);
+            label11.Location = new Point(76, 386);
             label11.Name = "label11";
             label11.Size = new Size(83, 25);
             label11.TabIndex = 73;
@@ -277,24 +394,25 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(23, 147, 209);
-            label1.Location = new Point(63, 152);
+            label1.Location = new Point(75, 152);
             label1.Name = "label1";
             label1.Size = new Size(57, 25);
             label1.TabIndex = 72;
             label1.Text = "Tipo:";
             // 
-            // chcbxCita
+            // chkCita
             // 
-            chcbxCita.AutoSize = true;
-            chcbxCita.FlatStyle = FlatStyle.Flat;
-            chcbxCita.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            chcbxCita.ForeColor = Color.FromArgb(23, 147, 209);
-            chcbxCita.Location = new Point(997, 33);
-            chcbxCita.Name = "chcbxCita";
-            chcbxCita.Size = new Size(377, 36);
-            chcbxCita.TabIndex = 63;
-            chcbxCita.Text = "Cita (si se programo cita o no)";
-            chcbxCita.UseVisualStyleBackColor = true;
+            chkCita.AutoSize = true;
+            chkCita.FlatStyle = FlatStyle.Flat;
+            chkCita.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            chkCita.ForeColor = Color.FromArgb(23, 147, 209);
+            chkCita.Location = new Point(997, 33);
+            chkCita.Name = "chkCita";
+            chkCita.Size = new Size(377, 36);
+            chkCita.TabIndex = 63;
+            chkCita.Text = "Cita (si se programo cita o no)";
+            chkCita.UseVisualStyleBackColor = true;
+            chkCita.CheckedChanged += chcbxCita_CheckedChanged;
             // 
             // label6
             // 
@@ -308,30 +426,30 @@
             label6.TabIndex = 62;
             label6.Text = "Tratamiento:";
             // 
-            // richTextBox1
+            // rchtxtTratamiento
             // 
-            richTextBox1.BackColor = Color.FromArgb(239, 239, 239);
-            richTextBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox1.ForeColor = Color.FromArgb(239, 239, 239);
-            richTextBox1.Location = new Point(651, 208);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(270, 152);
-            richTextBox1.TabIndex = 61;
-            richTextBox1.Tag = "Tratamiento";
-            richTextBox1.Text = "";
+            rchtxtTratamiento.BackColor = Color.FromArgb(239, 239, 239);
+            rchtxtTratamiento.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rchtxtTratamiento.ForeColor = Color.Black;
+            rchtxtTratamiento.Location = new Point(651, 208);
+            rchtxtTratamiento.Name = "rchtxtTratamiento";
+            rchtxtTratamiento.Size = new Size(270, 111);
+            rchtxtTratamiento.TabIndex = 61;
+            rchtxtTratamiento.Tag = "Tratamiento";
+            rchtxtTratamiento.Text = "";
             // 
-            // cbxCIR
+            // chkCIR
             // 
-            cbxCIR.AutoSize = true;
-            cbxCIR.FlatStyle = FlatStyle.Flat;
-            cbxCIR.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cbxCIR.ForeColor = Color.FromArgb(23, 147, 209);
-            cbxCIR.Location = new Point(522, 153);
-            cbxCIR.Name = "cbxCIR";
-            cbxCIR.Size = new Size(242, 29);
-            cbxCIR.TabIndex = 58;
-            cbxCIR.Text = "CIR (si llevó receta o no)";
-            cbxCIR.UseVisualStyleBackColor = true;
+            chkCIR.AutoSize = true;
+            chkCIR.FlatStyle = FlatStyle.Flat;
+            chkCIR.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            chkCIR.ForeColor = Color.FromArgb(23, 147, 209);
+            chkCIR.Location = new Point(522, 153);
+            chkCIR.Name = "chkCIR";
+            chkCIR.Size = new Size(242, 29);
+            chkCIR.TabIndex = 58;
+            chkCIR.Text = "CIR (si llevó receta o no)";
+            chkCIR.UseVisualStyleBackColor = true;
             // 
             // cmbDiagnostico
             // 
@@ -345,25 +463,16 @@
             cmbDiagnostico.Size = new Size(270, 33);
             cmbDiagnostico.TabIndex = 46;
             // 
-            // label5
+            // pcbIconBuscar
             // 
-            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.FromArgb(158, 158, 158);
-            label5.Location = new Point(651, 524);
-            label5.Name = "label5";
-            label5.Size = new Size(270, 33);
-            label5.TabIndex = 57;
-            label5.Text = "Formato 24hrs";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.IconoBuscar;
-            pictureBox1.Location = new Point(448, 95);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(33, 33);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 48;
-            pictureBox1.TabStop = false;
+            pcbIconBuscar.Image = Properties.Resources.IconoBuscar;
+            pcbIconBuscar.Location = new Point(448, 95);
+            pcbIconBuscar.Name = "pcbIconBuscar";
+            pcbIconBuscar.Size = new Size(33, 33);
+            pcbIconBuscar.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcbIconBuscar.TabIndex = 48;
+            pcbIconBuscar.TabStop = false;
+            pcbIconBuscar.Click += pcbIconBuscar_Click;
             // 
             // lblhoraYfcha
             // 
@@ -371,7 +480,7 @@
             lblhoraYfcha.BackColor = Color.Transparent;
             lblhoraYfcha.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblhoraYfcha.ForeColor = Color.FromArgb(23, 147, 209);
-            lblhoraYfcha.Location = new Point(522, 385);
+            lblhoraYfcha.Location = new Point(520, 441);
             lblhoraYfcha.Name = "lblhoraYfcha";
             lblhoraYfcha.Size = new Size(67, 25);
             lblhoraYfcha.TabIndex = 47;
@@ -393,7 +502,7 @@
             btnVaciarCampos.FlatAppearance.BorderSize = 0;
             btnVaciarCampos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVaciarCampos.ForeColor = Color.FromArgb(239, 239, 239);
-            btnVaciarCampos.Location = new Point(1189, 465);
+            btnVaciarCampos.Location = new Point(1189, 492);
             btnVaciarCampos.Margin = new Padding(0);
             btnVaciarCampos.Name = "btnVaciarCampos";
             btnVaciarCampos.Size = new Size(160, 35);
@@ -402,19 +511,19 @@
             btnVaciarCampos.UseVisualStyleBackColor = false;
             btnVaciarCampos.Click += btnVaciarCampos_Click;
             // 
-            // btnGuardar
+            // btnGenerarReceta
             // 
-            btnGuardar.BackColor = Color.FromArgb(58, 154, 138);
-            btnGuardar.FlatAppearance.BorderSize = 0;
-            btnGuardar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGuardar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnGuardar.Location = new Point(997, 465);
-            btnGuardar.Margin = new Padding(0);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(160, 35);
-            btnGuardar.TabIndex = 36;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = false;
+            btnGenerarReceta.BackColor = Color.FromArgb(10, 64, 88);
+            btnGenerarReceta.FlatAppearance.BorderSize = 0;
+            btnGenerarReceta.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGenerarReceta.ForeColor = Color.FromArgb(239, 239, 239);
+            btnGenerarReceta.Location = new Point(1189, 546);
+            btnGenerarReceta.Margin = new Padding(0);
+            btnGenerarReceta.Name = "btnGenerarReceta";
+            btnGenerarReceta.Size = new Size(160, 35);
+            btnGenerarReceta.TabIndex = 36;
+            btnGenerarReceta.Text = "Generar receta";
+            btnGenerarReceta.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -440,98 +549,51 @@
             lblSubTituloPaciente.TabIndex = 29;
             lblSubTituloPaciente.Text = "Paciente:";
             // 
-            // lblSexo
-            // 
-            lblSexo.AutoSize = true;
-            lblSexo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblSexo.ForeColor = Color.FromArgb(23, 147, 209);
-            lblSexo.Location = new Point(81, 335);
-            lblSexo.Name = "lblSexo";
-            lblSexo.Size = new Size(61, 25);
-            lblSexo.TabIndex = 26;
-            lblSexo.Text = "Sexo:";
-            // 
             // txtGrupo
             // 
             txtGrupo.BackColor = Color.FromArgb(239, 239, 239);
             txtGrupo.BorderStyle = BorderStyle.FixedSingle;
+            txtGrupo.Enabled = false;
             txtGrupo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtGrupo.ForeColor = Color.FromArgb(239, 239, 239);
             txtGrupo.Location = new Point(171, 495);
             txtGrupo.MaxLength = 1;
             txtGrupo.Name = "txtGrupo";
-            txtGrupo.PlaceholderText = "Grupo";
             txtGrupo.Size = new Size(270, 33);
             txtGrupo.TabIndex = 25;
             // 
-            // cmbGrado
+            // txtApellidoPaterno
             // 
-            cmbGrado.BackColor = Color.FromArgb(239, 239, 239);
-            cmbGrado.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbGrado.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbGrado.ForeColor = Color.FromArgb(239, 239, 239);
-            cmbGrado.FormattingEnabled = true;
-            cmbGrado.Location = new Point(171, 440);
-            cmbGrado.Name = "cmbGrado";
-            cmbGrado.Size = new Size(270, 33);
-            cmbGrado.TabIndex = 24;
-            // 
-            // cmbCarrera
-            // 
-            cmbCarrera.BackColor = Color.FromArgb(239, 239, 239);
-            cmbCarrera.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbCarrera.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbCarrera.ForeColor = Color.FromArgb(239, 239, 239);
-            cmbCarrera.FormattingEnabled = true;
-            cmbCarrera.Location = new Point(171, 383);
-            cmbCarrera.Name = "cmbCarrera";
-            cmbCarrera.Size = new Size(270, 33);
-            cmbCarrera.TabIndex = 23;
-            // 
-            // txtPacienteApellidoPaterno
-            // 
-            txtPacienteApellidoPaterno.BackColor = Color.FromArgb(239, 239, 239);
-            txtPacienteApellidoPaterno.BorderStyle = BorderStyle.FixedSingle;
-            txtPacienteApellidoPaterno.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPacienteApellidoPaterno.ForeColor = Color.FromArgb(239, 239, 239);
-            txtPacienteApellidoPaterno.Location = new Point(172, 268);
-            txtPacienteApellidoPaterno.MaxLength = 50;
-            txtPacienteApellidoPaterno.Name = "txtPacienteApellidoPaterno";
-            txtPacienteApellidoPaterno.PlaceholderText = "Apellido paterno";
-            txtPacienteApellidoPaterno.Size = new Size(270, 33);
-            txtPacienteApellidoPaterno.TabIndex = 19;
+            txtApellidoPaterno.BackColor = Color.FromArgb(239, 239, 239);
+            txtApellidoPaterno.BorderStyle = BorderStyle.FixedSingle;
+            txtApellidoPaterno.Enabled = false;
+            txtApellidoPaterno.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtApellidoPaterno.ForeColor = Color.FromArgb(239, 239, 239);
+            txtApellidoPaterno.Location = new Point(172, 268);
+            txtApellidoPaterno.MaxLength = 50;
+            txtApellidoPaterno.Name = "txtApellidoPaterno";
+            txtApellidoPaterno.Size = new Size(270, 33);
+            txtApellidoPaterno.TabIndex = 19;
             // 
             // txtNombre
             // 
             txtNombre.BackColor = Color.FromArgb(239, 239, 239);
             txtNombre.BorderStyle = BorderStyle.FixedSingle;
+            txtNombre.Enabled = false;
             txtNombre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNombre.ForeColor = Color.FromArgb(239, 239, 239);
-            txtNombre.Location = new Point(172, 208);
+            txtNombre.Location = new Point(171, 206);
             txtNombre.MaxLength = 50;
             txtNombre.Name = "txtNombre";
-            txtNombre.PlaceholderText = "Nombre(s)";
             txtNombre.Size = new Size(270, 33);
             txtNombre.TabIndex = 18;
-            // 
-            // cmbTipoPaciente
-            // 
-            cmbTipoPaciente.BackColor = Color.FromArgb(239, 239, 239);
-            cmbTipoPaciente.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbTipoPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbTipoPaciente.ForeColor = Color.FromArgb(239, 239, 239);
-            cmbTipoPaciente.FormattingEnabled = true;
-            cmbTipoPaciente.Location = new Point(172, 149);
-            cmbTipoPaciente.Name = "cmbTipoPaciente";
-            cmbTipoPaciente.Size = new Size(270, 33);
-            cmbTipoPaciente.TabIndex = 17;
             // 
             // txtMatriculaPaciente
             // 
             txtMatriculaPaciente.BackColor = Color.FromArgb(239, 239, 239);
             txtMatriculaPaciente.BorderStyle = BorderStyle.FixedSingle;
             txtMatriculaPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtMatriculaPaciente.ForeColor = Color.FromArgb(239, 239, 239);
+            txtMatriculaPaciente.ForeColor = Color.Black;
             txtMatriculaPaciente.Location = new Point(172, 95);
             txtMatriculaPaciente.MaxLength = 8;
             txtMatriculaPaciente.Name = "txtMatriculaPaciente";
@@ -551,7 +613,7 @@
             Text = "frmAgregarConsulta";
             pnlAgregarConsultas.ResumeLayout(false);
             pnlAgregarConsultas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcbIconBuscar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).EndInit();
             ResumeLayout(false);
         }
@@ -565,26 +627,24 @@
         private Button btnGuardar;
         private Label label4;
         private Label lblSubTituloPaciente;
-        private Label lblSexo;
         private TextBox txtGrupo;
         private ComboBox cmbGrado;
         private ComboBox cmbCarrera;
-        private TextBox txtPacienteApellidoPaterno;
+        private TextBox txtApellidoPaterno;
         private TextBox txtNombre;
         private ComboBox cmbTipoPaciente;
         private TextBox txtMatriculaPaciente;
         private Label lblhoraYfcha;
-        private PictureBox pictureBox1;
-        private Label label5;
+        private PictureBox pcbIconBuscar;
         private ComboBox cmbDiagnostico;
-        private CheckBox cbxCIR;
-        private RichTextBox richTextBox1;
+        private CheckBox chkCIR;
+        private RichTextBox rchtxtTratamiento;
         private Label label6;
-        private CheckBox chcbxCita;
+        private CheckBox chkCita;
         private Label label12;
         private Label label11;
         private Label label13;
-        private DateTimePicker dtpckFechaCita;
+        private DateTimePicker dtmpFechaCita;
         private Label label3;
         private Label label2;
         private DateTimePicker dtmpHoraCita;
@@ -595,5 +655,15 @@
         private Label label7;
         private ComboBox cmbSexo;
         private Label label8;
+        private Label label5;
+        private Label label10;
+        private Label label9;
+        private TextBox txtTipo;
+        private TextBox txtGrado;
+        private TextBox txtCarrera;
+        private TextBox txtApellidoMaterno;
+        private Label label14;
+        private Button button1;
+        private Button btnGenerarReceta;
     }
 }

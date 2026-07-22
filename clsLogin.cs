@@ -17,13 +17,15 @@ namespace Vitalis
         public string Password { get => password; set => password = value; }
 
         //atributo estatico.
-        public static string perfil;
+        
         private static bool esEnfermero;
         private static bool esDoctor;
         private static bool esAdministrador;
         public static string nombreUsuarioLogeado;
         public static string apellidoPaUsuarioLogeado;
-        public static string apellidoMaUsuarioLogeado;        
+        public static string apellidoMaUsuarioLogeado;
+        public static string perfil;
+        public static int idUsuarioLogeado;
 
         //Propiedad estatica
         public static bool EsEnfermero { get => esEnfermero; private set => esEnfermero = value; }
@@ -39,7 +41,7 @@ namespace Vitalis
                     esDoctor = false;
                     esAdministrador = false;
                     break;
-                case "Doctor":
+                case "Medico":
                     esEnfermero = false;
                     esDoctor = true;
                     esAdministrador = false;
@@ -79,9 +81,10 @@ namespace Vitalis
                             if (resultado.Read())
                             {
                                 perfil = resultado.GetString("perfil");
+                                idUsuarioLogeado = resultado.GetInt32("id_ServicioMedico");
                                 nombreUsuarioLogeado = resultado.GetString("nombre");
                                 apellidoPaUsuarioLogeado = resultado.GetString("apellidoPaterno");
-                                apellidoMaUsuarioLogeado = resultado.GetString("apellidoMaterno");                                
+                                apellidoMaUsuarioLogeado = resultado.GetString("apellidoMaterno");
                                 asignarPermisos();
 
                                 if (!esEnfermero && !esDoctor && !esAdministrador)

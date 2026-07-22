@@ -106,6 +106,7 @@
             cmbSexo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbSexo.ForeColor = Color.Black;
             cmbSexo.FormattingEnabled = true;
+            cmbSexo.Items.AddRange(new object[] { " ", "Masculino", "Femenino" });
             cmbSexo.Location = new Point(544, 167);
             cmbSexo.Name = "cmbSexo";
             cmbSexo.Size = new Size(270, 33);
@@ -341,6 +342,7 @@
             cmbGrado.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbGrado.ForeColor = Color.Black;
             cmbGrado.FormattingEnabled = true;
+            cmbGrado.Items.AddRange(new object[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
             cmbGrado.Location = new Point(1010, 164);
             cmbGrado.Name = "cmbGrado";
             cmbGrado.Size = new Size(270, 33);
@@ -425,6 +427,7 @@
             cmbTipoPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbTipoPaciente.ForeColor = Color.Black;
             cmbTipoPaciente.FormattingEnabled = true;
+            cmbTipoPaciente.Items.AddRange(new object[] { " ", "Alumno", "Trabajador" });
             cmbTipoPaciente.Location = new Point(145, 101);
             cmbTipoPaciente.Name = "cmbTipoPaciente";
             cmbTipoPaciente.Size = new Size(270, 33);

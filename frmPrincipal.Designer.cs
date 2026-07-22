@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnlSideBar = new Panel();
+            btnReortes = new Button();
             pnlPerfilUsuarioSideBar = new Panel();
             pictureBox1 = new PictureBox();
             btnCerrarSesionSideBar = new Button();
@@ -53,6 +54,7 @@
             // pnlSideBar
             // 
             pnlSideBar.BackColor = Color.FromArgb(58, 154, 138);
+            pnlSideBar.Controls.Add(btnReortes);
             pnlSideBar.Controls.Add(pnlPerfilUsuarioSideBar);
             pnlSideBar.Controls.Add(btnAdministracionSideBar);
             pnlSideBar.Controls.Add(btnConsultasSideBar);
@@ -64,6 +66,24 @@
             pnlSideBar.Name = "pnlSideBar";
             pnlSideBar.Size = new Size(200, 1009);
             pnlSideBar.TabIndex = 0;
+            // 
+            // btnReortes
+            // 
+            btnReortes.BackColor = Color.FromArgb(58, 154, 138);
+            btnReortes.Dock = DockStyle.Top;
+            btnReortes.FlatAppearance.BorderSize = 0;
+            btnReortes.FlatStyle = FlatStyle.Flat;
+            btnReortes.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReortes.ForeColor = Color.FromArgb(239, 239, 239);
+            btnReortes.Location = new Point(0, 421);
+            btnReortes.Margin = new Padding(0);
+            btnReortes.Name = "btnReortes";
+            btnReortes.Size = new Size(200, 70);
+            btnReortes.TabIndex = 6;
+            btnReortes.Text = "Reportes";
+            btnReortes.TextAlign = ContentAlignment.MiddleLeft;
+            btnReortes.UseVisualStyleBackColor = false;
+            btnReortes.Click += btnReortes_Click;
             // 
             // pnlPerfilUsuarioSideBar
             // 
@@ -287,5 +307,6 @@
         private Button btnCerrarSesionSideBar;
         private PictureBox pictureBox1;
         private Panel pnlContenedor;
+        private Button btnReortes;
     }
 }
