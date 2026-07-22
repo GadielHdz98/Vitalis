@@ -36,8 +36,8 @@ namespace Vitalis
                                  "E.temperatura AS Temperatura, " +
                                  "E.presionArterial as 'Presion' " +
                                  "FROM pacientes P " +
-                                 "INNER JOIN expediente E ON P.Matricula = E.Matricula " +
-                                 "INNER JOIN carreras C ON P.id_carrera = C.id_carrera;";
+                                 "LEFT JOIN expediente E ON P.Matricula = E.Matricula " +
+                                 "LEFT JOIN carreras C ON P.id_carrera = C.id_carrera;";
                     using (consulta = new MySqlDataAdapter(sql, conexion))
                     {
                         consulta.Fill(tabla);
