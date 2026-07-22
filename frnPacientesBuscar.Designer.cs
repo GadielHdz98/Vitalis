@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             pnlBuscarPaciente = new Panel();
             button1 = new Button();
             rbtnFemenino = new RadioButton();
@@ -189,7 +189,6 @@
             btnVaciarCampos.Anchor = AnchorStyles.None;
             btnVaciarCampos.BackColor = Color.Orange;
             btnVaciarCampos.FlatAppearance.BorderSize = 0;
-            btnVaciarCampos.FlatStyle = FlatStyle.Flat;
             btnVaciarCampos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVaciarCampos.ForeColor = Color.FromArgb(239, 239, 239);
             btnVaciarCampos.Location = new Point(854, 184);
@@ -206,7 +205,6 @@
             btnBuscarPaciente.Anchor = AnchorStyles.None;
             btnBuscarPaciente.BackColor = Color.FromArgb(10, 64, 88);
             btnBuscarPaciente.FlatAppearance.BorderSize = 0;
-            btnBuscarPaciente.FlatStyle = FlatStyle.Flat;
             btnBuscarPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBuscarPaciente.ForeColor = Color.FromArgb(239, 239, 239);
             btnBuscarPaciente.Location = new Point(854, 118);
@@ -258,7 +256,7 @@
             txtApellidoMaternoPaciente.BackColor = Color.FromArgb(239, 239, 239);
             txtApellidoMaternoPaciente.BorderStyle = BorderStyle.FixedSingle;
             txtApellidoMaternoPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtApellidoMaternoPaciente.Location = new Point(76, 187);
+            txtApellidoMaternoPaciente.Location = new Point(125, 187);
             txtApellidoMaternoPaciente.Name = "txtApellidoMaternoPaciente";
             txtApellidoMaternoPaciente.PlaceholderText = "Apellido Materno";
             txtApellidoMaternoPaciente.Size = new Size(300, 33);
@@ -269,7 +267,7 @@
             txtApellidoPaternoPaciente.BackColor = Color.FromArgb(239, 239, 239);
             txtApellidoPaternoPaciente.BorderStyle = BorderStyle.FixedSingle;
             txtApellidoPaternoPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtApellidoPaternoPaciente.Location = new Point(76, 121);
+            txtApellidoPaternoPaciente.Location = new Point(125, 118);
             txtApellidoPaternoPaciente.Name = "txtApellidoPaternoPaciente";
             txtApellidoPaternoPaciente.PlaceholderText = "Apellido paterno";
             txtApellidoPaternoPaciente.Size = new Size(300, 33);
@@ -280,7 +278,7 @@
             txtNombrePaciente.BackColor = Color.FromArgb(239, 239, 239);
             txtNombrePaciente.BorderStyle = BorderStyle.FixedSingle;
             txtNombrePaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombrePaciente.Location = new Point(76, 54);
+            txtNombrePaciente.Location = new Point(125, 54);
             txtNombrePaciente.Name = "txtNombrePaciente";
             txtNombrePaciente.PlaceholderText = "Nombre(s)";
             txtNombrePaciente.Size = new Size(300, 33);
@@ -324,22 +322,22 @@
             dgvPacientesRegistradosRecientemente.AllowUserToDeleteRows = false;
             dgvPacientesRegistradosRecientemente.AllowUserToResizeColumns = false;
             dgvPacientesRegistradosRecientemente.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(239, 239, 239);
-            dgvPacientesRegistradosRecientemente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(239, 239, 239);
+            dgvPacientesRegistradosRecientemente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvPacientesRegistradosRecientemente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvPacientesRegistradosRecientemente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPacientesRegistradosRecientemente.BackgroundColor = Color.White;
             dgvPacientesRegistradosRecientemente.BorderStyle = BorderStyle.None;
             dgvPacientesRegistradosRecientemente.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvPacientesRegistradosRecientemente.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvPacientesRegistradosRecientemente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvPacientesRegistradosRecientemente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvPacientesRegistradosRecientemente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPacientesRegistradosRecientemente.EnableHeadersVisualStyles = false;
             dgvPacientesRegistradosRecientemente.GridColor = Color.White;
@@ -348,8 +346,8 @@
             dgvPacientesRegistradosRecientemente.Name = "dgvPacientesRegistradosRecientemente";
             dgvPacientesRegistradosRecientemente.ReadOnly = true;
             dgvPacientesRegistradosRecientemente.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dgvPacientesRegistradosRecientemente.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dgvPacientesRegistradosRecientemente.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dgvPacientesRegistradosRecientemente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPacientesRegistradosRecientemente.Size = new Size(1657, 527);
             dgvPacientesRegistradosRecientemente.TabIndex = 10;
