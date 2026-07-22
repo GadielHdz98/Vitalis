@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             pnlBuscarPaciente = new Panel();
             button1 = new Button();
             rbtnFemenino = new RadioButton();
@@ -52,6 +52,9 @@
             txtBuscarMatricula = new TextBox();
             pictureBox1 = new PictureBox();
             dgvPacientesRegistradosRecientemente = new DataGridView();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             pnlBuscarPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -61,6 +64,9 @@
             // pnlBuscarPaciente
             // 
             pnlBuscarPaciente.BackColor = Color.White;
+            pnlBuscarPaciente.Controls.Add(label3);
+            pnlBuscarPaciente.Controls.Add(label2);
+            pnlBuscarPaciente.Controls.Add(label1);
             pnlBuscarPaciente.Controls.Add(button1);
             pnlBuscarPaciente.Controls.Add(rbtnFemenino);
             pnlBuscarPaciente.Controls.Add(rbtnMasculino);
@@ -222,7 +228,7 @@
             cmbTipoPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbTipoPaciente.ForeColor = Color.Black;
             cmbTipoPaciente.FormattingEnabled = true;
-            cmbTipoPaciente.Location = new Point(467, 54);
+            cmbTipoPaciente.Location = new Point(518, 54);
             cmbTipoPaciente.Name = "cmbTipoPaciente";
             cmbTipoPaciente.Size = new Size(300, 33);
             cmbTipoPaciente.TabIndex = 8;
@@ -234,7 +240,7 @@
             cmbCarrera.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbCarrera.ForeColor = Color.Black;
             cmbCarrera.FormattingEnabled = true;
-            cmbCarrera.Location = new Point(467, 120);
+            cmbCarrera.Location = new Point(518, 120);
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(300, 33);
             cmbCarrera.TabIndex = 7;
@@ -246,7 +252,7 @@
             cmbCuatri.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbCuatri.ForeColor = Color.Black;
             cmbCuatri.FormattingEnabled = true;
-            cmbCuatri.Location = new Point(467, 186);
+            cmbCuatri.Location = new Point(518, 186);
             cmbCuatri.Name = "cmbCuatri";
             cmbCuatri.Size = new Size(300, 33);
             cmbCuatri.TabIndex = 6;
@@ -256,7 +262,7 @@
             txtApellidoMaternoPaciente.BackColor = Color.FromArgb(239, 239, 239);
             txtApellidoMaternoPaciente.BorderStyle = BorderStyle.FixedSingle;
             txtApellidoMaternoPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtApellidoMaternoPaciente.Location = new Point(125, 187);
+            txtApellidoMaternoPaciente.Location = new Point(175, 187);
             txtApellidoMaternoPaciente.Name = "txtApellidoMaternoPaciente";
             txtApellidoMaternoPaciente.PlaceholderText = "Apellido Materno";
             txtApellidoMaternoPaciente.Size = new Size(300, 33);
@@ -267,7 +273,7 @@
             txtApellidoPaternoPaciente.BackColor = Color.FromArgb(239, 239, 239);
             txtApellidoPaternoPaciente.BorderStyle = BorderStyle.FixedSingle;
             txtApellidoPaternoPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtApellidoPaternoPaciente.Location = new Point(125, 118);
+            txtApellidoPaternoPaciente.Location = new Point(175, 118);
             txtApellidoPaternoPaciente.Name = "txtApellidoPaternoPaciente";
             txtApellidoPaternoPaciente.PlaceholderText = "Apellido paterno";
             txtApellidoPaternoPaciente.Size = new Size(300, 33);
@@ -278,7 +284,7 @@
             txtNombrePaciente.BackColor = Color.FromArgb(239, 239, 239);
             txtNombrePaciente.BorderStyle = BorderStyle.FixedSingle;
             txtNombrePaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombrePaciente.Location = new Point(125, 54);
+            txtNombrePaciente.Location = new Point(175, 54);
             txtNombrePaciente.Name = "txtNombrePaciente";
             txtNombrePaciente.PlaceholderText = "Nombre(s)";
             txtNombrePaciente.Size = new Size(300, 33);
@@ -322,22 +328,22 @@
             dgvPacientesRegistradosRecientemente.AllowUserToDeleteRows = false;
             dgvPacientesRegistradosRecientemente.AllowUserToResizeColumns = false;
             dgvPacientesRegistradosRecientemente.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(239, 239, 239);
-            dgvPacientesRegistradosRecientemente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(239, 239, 239);
+            dgvPacientesRegistradosRecientemente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             dgvPacientesRegistradosRecientemente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvPacientesRegistradosRecientemente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPacientesRegistradosRecientemente.BackgroundColor = Color.White;
             dgvPacientesRegistradosRecientemente.BorderStyle = BorderStyle.None;
             dgvPacientesRegistradosRecientemente.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvPacientesRegistradosRecientemente.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvPacientesRegistradosRecientemente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle11.ForeColor = Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle11.SelectionForeColor = Color.White;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            dgvPacientesRegistradosRecientemente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             dgvPacientesRegistradosRecientemente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPacientesRegistradosRecientemente.EnableHeadersVisualStyles = false;
             dgvPacientesRegistradosRecientemente.GridColor = Color.White;
@@ -346,11 +352,44 @@
             dgvPacientesRegistradosRecientemente.Name = "dgvPacientesRegistradosRecientemente";
             dgvPacientesRegistradosRecientemente.ReadOnly = true;
             dgvPacientesRegistradosRecientemente.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dgvPacientesRegistradosRecientemente.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.BackColor = Color.White;
+            dgvPacientesRegistradosRecientemente.RowsDefaultCellStyle = dataGridViewCellStyle12;
             dgvPacientesRegistradosRecientemente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPacientesRegistradosRecientemente.Size = new Size(1657, 527);
             dgvPacientesRegistradosRecientemente.TabIndex = 10;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(23, 147, 209);
+            label1.Location = new Point(46, 57);
+            label1.Name = "label1";
+            label1.Size = new Size(65, 25);
+            label1.TabIndex = 48;
+            label1.Text = "label1";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(23, 147, 209);
+            label2.Location = new Point(46, 126);
+            label2.Name = "label2";
+            label2.Size = new Size(65, 25);
+            label2.TabIndex = 49;
+            label2.Text = "label2";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(23, 147, 209);
+            label3.Location = new Point(46, 194);
+            label3.Name = "label3";
+            label3.Size = new Size(65, 25);
+            label3.TabIndex = 50;
+            label3.Text = "label3";
             // 
             // frnPacientesBuscar
             // 
@@ -397,5 +436,8 @@
         private Label lblSexo;
         private Button button1;
         private DataGridView dgvPacientesRegistradosRecientemente;
+        private Label label1;
+        private Label label3;
+        private Label label2;
     }
 }
