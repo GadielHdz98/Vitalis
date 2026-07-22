@@ -149,6 +149,7 @@ namespace Vitalis
 
                     //se guardan los valores de cada campo en las propiedades de pacientes.
                     paciente.Matricula = Convert.ToInt32(txtMatriculaNoTrab.Text);
+                    //uso el trim() para que se guarde sin espacios en blanco.
                     paciente.Nombre = txtNombre.Text.Trim();
                     paciente.ApellidoPaterno = txtPacienteApellidoPaterno.Text.Trim();
                     paciente.ApellidoMaterno = txtPacienteApellidoMaterno.Text.Trim();

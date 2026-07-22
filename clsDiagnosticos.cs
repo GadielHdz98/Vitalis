@@ -180,6 +180,31 @@ namespace Vitalis
 
             return msg;
         }
+        public DataTable CargarCombo()
+        {
+            tabla = new DataTable();
+
+            try
+            {
+                clsConexion conexionBD = new clsConexion();
+
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    string sql = "SELECT id_Diagnostico, nombreDiagnostico FROM diagnosticos ORDER BY nombreDiagnostico;";
+
+                    using (consulta = new MySqlDataAdapter(sql, conexion))
+                    {
+                        consulta.Fill(tabla);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al cargar los diagnósticos: " + ex.Message);
+            }
+
+            return tabla;
+        }
 
 
     }
