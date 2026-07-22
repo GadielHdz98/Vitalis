@@ -157,16 +157,16 @@ namespace Vitalis
                     MessageBox.Show("No se pudo guardar la consulta: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
+
         }
         public bool ValidarCamposVacios()
         {
             string mensajeError = "Asegurese de llenar todos los campos correctamente.";
             bool esValido = true;
 
-           
+
             //Uso un linq en este foreach para pasar unicamente por los controles de tipo comboBox 
-            foreach (ComboBox combo in pnlAgregarConsultas .Controls.OfType<ComboBox>())
+            foreach (ComboBox combo in pnlAgregarConsultas.Controls.OfType<ComboBox>())
             {
                 //solo aplica para comboBox que esten enabled=true y combo.
                 if (combo.SelectedIndex < 1)
