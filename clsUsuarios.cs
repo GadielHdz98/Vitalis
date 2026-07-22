@@ -63,6 +63,35 @@ namespace Vitalis
             return tabla;
         }
 
+        public int ObtenerSiguienteID()
+        {
+            int siguienteID = 1;
+
+            clsConexion conexionBD = new clsConexion();
+
+            try
+            {
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    string sql = @"SELECT AUTO_INCREMENT
+                           FROM INFORMATION_SCHEMA.TABLES
+                           WHERE TABLE_SCHEMA = DATABASE()
+                           AND TABLE_NAME = 'serviciosmedicos';";
+
+                    using (MySqlCommand comando = new MySqlCommand(sql, conexion))
+                    {
+                        siguienteID = Convert.ToInt32(comando.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el siguiente ID: " + ex.Message);
+            }
+
+            return siguienteID;
+        }
+
         // Método para consultar por coincidencias (Búsqueda en tiempo real, Busqueda tipo Like)
         public DataTable Consultar()
         {
