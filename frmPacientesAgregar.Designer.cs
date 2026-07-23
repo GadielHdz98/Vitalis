@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             pnlAgregarPacientes = new Panel();
+            label15 = new Label();
+            txtNombre = new TextBox();
+            label14 = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
             cmbSexo = new ComboBox();
             label5 = new Label();
             label3 = new Label();
@@ -54,19 +64,12 @@
             dtmpFechaNaciPaciente = new DateTimePicker();
             txtPacienteApellidoMaterno = new TextBox();
             txtPacienteApellidoPaterno = new TextBox();
-            txtNombre = new TextBox();
             cmbTipoPaciente = new ComboBox();
             txtMatriculaNoTrab = new TextBox();
             lblConsultasBuscarTitulo = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
+            label10 = new Label();
+            label16 = new Label();
+            label17 = new Label();
             pnlAgregarPacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
             SuspendLayout();
@@ -75,6 +78,9 @@
             // 
             pnlAgregarPacientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnlAgregarPacientes.BackColor = Color.White;
+            pnlAgregarPacientes.Controls.Add(label17);
+            pnlAgregarPacientes.Controls.Add(label16);
+            pnlAgregarPacientes.Controls.Add(label10);
             pnlAgregarPacientes.Controls.Add(label15);
             pnlAgregarPacientes.Controls.Add(txtNombre);
             pnlAgregarPacientes.Controls.Add(label14);
@@ -116,6 +122,122 @@
             pnlAgregarPacientes.Name = "pnlAgregarPacientes";
             pnlAgregarPacientes.Size = new Size(1635, 716);
             pnlAgregarPacientes.TabIndex = 0;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.Transparent;
+            label15.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.FromArgb(23, 147, 209);
+            label15.Location = new Point(966, 251);
+            label15.Name = "label15";
+            label15.Size = new Size(75, 25);
+            label15.TabIndex = 57;
+            label15.Text = "Grupo:";
+            // 
+            // txtNombre
+            // 
+            txtNombre.BackColor = Color.FromArgb(239, 239, 239);
+            txtNombre.BorderStyle = BorderStyle.FixedSingle;
+            txtNombre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNombre.Location = new Point(203, 254);
+            txtNombre.MaxLength = 50;
+            txtNombre.Name = "txtNombre";
+            txtNombre.PlaceholderText = "Ingresa él(los) nombres";
+            txtNombre.Size = new Size(270, 33);
+            txtNombre.TabIndex = 18;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label14.ForeColor = Color.FromArgb(23, 147, 209);
+            label14.Location = new Point(506, 395);
+            label14.Name = "label14";
+            label14.Size = new Size(130, 25);
+            label14.TabIndex = 56;
+            label14.Text = "Temperatura:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label13.ForeColor = Color.FromArgb(23, 147, 209);
+            label13.Location = new Point(506, 324);
+            label13.Name = "label13";
+            label13.Size = new Size(135, 25);
+            label13.TabIndex = 55;
+            label13.Text = "Presion (X/Y):";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label12.ForeColor = Color.FromArgb(23, 147, 209);
+            label12.Location = new Point(506, 254);
+            label12.Name = "label12";
+            label12.Size = new Size(117, 25);
+            label12.TabIndex = 54;
+            label12.Text = "Altura (cm):";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label11.ForeColor = Color.FromArgb(23, 147, 209);
+            label11.Location = new Point(506, 187);
+            label11.Name = "label11";
+            label11.Size = new Size(100, 25);
+            label11.TabIndex = 53;
+            label11.Text = "Peso (kg):";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.FromArgb(23, 147, 209);
+            label9.Location = new Point(82, 392);
+            label9.Name = "label9";
+            label9.Size = new Size(65, 25);
+            label9.TabIndex = 51;
+            label9.Text = "Ap M:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.FromArgb(23, 147, 209);
+            label8.Location = new Point(82, 323);
+            label8.Name = "label8";
+            label8.Size = new Size(64, 25);
+            label8.TabIndex = 50;
+            label8.Text = "Ap. P:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(23, 147, 209);
+            label7.Location = new Point(82, 253);
+            label7.Name = "label7";
+            label7.Size = new Size(113, 25);
+            label7.TabIndex = 49;
+            label7.Text = "Nombre(s):";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.FromArgb(23, 147, 209);
+            label6.Location = new Point(82, 187);
+            label6.Name = "label6";
+            label6.Size = new Size(101, 25);
+            label6.TabIndex = 48;
+            label6.Text = "Matricula:";
             // 
             // cmbSexo
             // 
@@ -222,7 +344,7 @@
             btnVaciarCampos.FlatAppearance.BorderSize = 0;
             btnVaciarCampos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVaciarCampos.ForeColor = Color.FromArgb(239, 239, 239);
-            btnVaciarCampos.Location = new Point(1393, 657);
+            btnVaciarCampos.Location = new Point(1393, 617);
             btnVaciarCampos.Margin = new Padding(0);
             btnVaciarCampos.Name = "btnVaciarCampos";
             btnVaciarCampos.Size = new Size(160, 35);
@@ -237,7 +359,7 @@
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnGuardar.Location = new Point(1204, 657);
+            btnGuardar.Location = new Point(1199, 617);
             btnGuardar.Margin = new Padding(0);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(160, 35);
@@ -426,18 +548,6 @@
             txtPacienteApellidoPaterno.Size = new Size(270, 33);
             txtPacienteApellidoPaterno.TabIndex = 19;
             // 
-            // txtNombre
-            // 
-            txtNombre.BackColor = Color.FromArgb(239, 239, 239);
-            txtNombre.BorderStyle = BorderStyle.FixedSingle;
-            txtNombre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombre.Location = new Point(203, 254);
-            txtNombre.MaxLength = 50;
-            txtNombre.Name = "txtNombre";
-            txtNombre.PlaceholderText = "Ingresa él(los) nombres";
-            txtNombre.Size = new Size(270, 33);
-            txtNombre.TabIndex = 18;
-            // 
             // cmbTipoPaciente
             // 
             cmbTipoPaciente.BackColor = Color.FromArgb(239, 239, 239);
@@ -475,109 +585,39 @@
             lblConsultasBuscarTitulo.TabIndex = 12;
             lblConsultasBuscarTitulo.Text = "Datos para agregar pacientes";
             // 
-            // label6
+            // label10
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.FromArgb(23, 147, 209);
-            label6.Location = new Point(82, 187);
-            label6.Name = "label6";
-            label6.Size = new Size(101, 25);
-            label6.TabIndex = 48;
-            label6.Text = "Matricula:";
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label10.ForeColor = SystemColors.ControlDark;
+            label10.Location = new Point(1045, 673);
+            label10.Name = "label10";
+            label10.Size = new Size(572, 25);
+            label10.TabIndex = 58;
+            label10.Text = "Asegurese de llenar todos los campos correctamente antes de buscar.";
             // 
-            // label7
+            // label16
             // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.FromArgb(23, 147, 209);
-            label7.Location = new Point(82, 253);
-            label7.Name = "label7";
-            label7.Size = new Size(113, 25);
-            label7.TabIndex = 49;
-            label7.Text = "Nombre(s):";
+            label16.BackColor = Color.Transparent;
+            label16.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label16.ForeColor = SystemColors.ControlDark;
+            label16.Location = new Point(82, 560);
+            label16.Name = "label16";
+            label16.Size = new Size(408, 78);
+            label16.TabIndex = 59;
+            label16.Text = "Presione directamente el campo de fecha para editar con el teclado. No se permirte backspace.";
             // 
-            // label8
+            // label17
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.FromArgb(23, 147, 209);
-            label8.Location = new Point(82, 323);
-            label8.Name = "label8";
-            label8.Size = new Size(64, 25);
-            label8.TabIndex = 50;
-            label8.Text = "Ap. P:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.FromArgb(23, 147, 209);
-            label9.Location = new Point(82, 392);
-            label9.Name = "label9";
-            label9.Size = new Size(65, 25);
-            label9.TabIndex = 51;
-            label9.Text = "Ap M:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label11.ForeColor = Color.FromArgb(23, 147, 209);
-            label11.Location = new Point(506, 187);
-            label11.Name = "label11";
-            label11.Size = new Size(100, 25);
-            label11.TabIndex = 53;
-            label11.Text = "Peso (kg):";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label12.ForeColor = Color.FromArgb(23, 147, 209);
-            label12.Location = new Point(506, 254);
-            label12.Name = "label12";
-            label12.Size = new Size(117, 25);
-            label12.TabIndex = 54;
-            label12.Text = "Altura (cm):";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label13.ForeColor = Color.FromArgb(23, 147, 209);
-            label13.Location = new Point(506, 324);
-            label13.Name = "label13";
-            label13.Size = new Size(135, 25);
-            label13.TabIndex = 55;
-            label13.Text = "Presion (X/Y):";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label14.ForeColor = Color.FromArgb(23, 147, 209);
-            label14.Location = new Point(506, 395);
-            label14.Name = "label14";
-            label14.Size = new Size(130, 25);
-            label14.TabIndex = 56;
-            label14.Text = "Temperatura:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.BackColor = Color.Transparent;
-            label15.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.FromArgb(23, 147, 209);
-            label15.Location = new Point(966, 251);
-            label15.Name = "label15";
-            label15.Size = new Size(75, 25);
-            label15.TabIndex = 57;
-            label15.Text = "Grupo:";
+            label17.BackColor = Color.Transparent;
+            label17.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label17.ForeColor = SystemColors.ControlDark;
+            label17.Location = new Point(966, 309);
+            label17.Name = "label17";
+            label17.Size = new Size(366, 60);
+            label17.TabIndex = 60;
+            label17.Text = "Datos exclusivos para pacientes de tipo alumno.";
             // 
             // frmPacientesAgregar
             // 
@@ -636,5 +676,8 @@
         private Label label8;
         private Label label7;
         private Label label15;
+        private Label label16;
+        private Label label10;
+        private Label label17;
     }
 }
