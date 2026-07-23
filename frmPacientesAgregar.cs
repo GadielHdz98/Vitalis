@@ -26,8 +26,7 @@ namespace Vitalis
         private void btnVaciarCampos_Click(object sender, EventArgs e)
         {
             VaciarCampos();
-        }       
-       
+        }
         //Metodo para cargar carreras en comboBox
         public void CargarCarreras()
         {
@@ -42,12 +41,12 @@ namespace Vitalis
                     MySqlDataAdapter consulta = new MySqlDataAdapter(sql, conexion);
                     DataTable tabla = new DataTable();
                     consulta.Fill(tabla);
-
+                    //
                     DataRow fila = tabla.NewRow();
                     fila["id_carrera"] = DBNull.Value;
                     fila["nombreCarrera"] = "";
                     tabla.Rows.InsertAt(fila, 0);
-
+                    //
                     cmbCarrera.DataSource = tabla;
                     cmbCarrera.DisplayMember = "nombreCarrera";
                     cmbCarrera.ValueMember = "id_carrera";
@@ -112,7 +111,6 @@ namespace Vitalis
                 txtGrupo.Clear();
             }
         }
-
         private void cmbTipoPaciente_SelectedIndexChanged(object sender, EventArgs e)
         {
             HabilitarControles();
@@ -137,7 +135,6 @@ namespace Vitalis
             }
             HabilitarControles();
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -166,7 +163,7 @@ namespace Vitalis
                     {
                         paciente.IdCarrera = Convert.ToInt32(cmbCarrera.SelectedValue);
                         paciente.Grado = cmbGrado.Text;
-                        paciente.Grupo = txtGrupo.Text.Trim();
+                        paciente.Grupo = txtGrupo.Text.Trim().ToUpper();
                     }
                     //de no ser alumno, datos academicos exclusivos de alumno seran null
                     else

@@ -164,18 +164,6 @@ namespace Vitalis
             string mensajeError = "Asegurese de llenar todos los campos correctamente.";
             bool esValido = true;
 
-
-            //Uso un linq en este foreach para pasar unicamente por los controles de tipo comboBox 
-            foreach (ComboBox combo in pnlAgregarConsultas.Controls.OfType<ComboBox>())
-            {
-                //solo aplica para comboBox que esten enabled=true y combo.
-                if (combo.SelectedIndex < 1)
-                {
-                    combo.Focus();
-                    esValido = false;
-                    break;
-                }
-            }
             //Uso un linq en este foreach para pasar unicamente por los controles de tipo textBox
             foreach (TextBox txt in pnlAgregarConsultas.Controls.OfType<TextBox>())
             {
@@ -185,6 +173,20 @@ namespace Vitalis
                     txt.Focus();
                     esValido = false;
                     break;
+                }
+            }
+            if (esValido)
+            {
+                //Uso un linq en este foreach para pasar unicamente por los controles de tipo comboBox 
+                foreach (ComboBox combo in pnlAgregarConsultas.Controls.OfType<ComboBox>())
+                {
+                    //solo aplica para comboBox que esten enabled=true y combo.
+                    if (combo.SelectedIndex < 1)
+                    {
+                        combo.Focus();
+                        esValido = false;
+                        break;
+                    }
                 }
             }
             if (!esValido)

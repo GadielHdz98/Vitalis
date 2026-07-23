@@ -30,6 +30,8 @@
         {
             lblConsultasBuscarTitulo = new Label();
             pnlAgregarConsultas = new Panel();
+            label16 = new Label();
+            label15 = new Label();
             button1 = new Button();
             txtApellidoMaterno = new TextBox();
             label14 = new Label();
@@ -61,15 +63,14 @@
             lblhoraYfcha = new Label();
             pcbFotoPaciente = new PictureBox();
             btnVaciarCampos = new Button();
-            btnGenerarReceta = new Button();
             label4 = new Label();
             lblSubTituloPaciente = new Label();
             txtGrupo = new TextBox();
             txtApellidoPaterno = new TextBox();
             txtNombre = new TextBox();
             txtMatriculaPaciente = new TextBox();
-            label15 = new Label();
-            label16 = new Label();
+            label17 = new Label();
+            label18 = new Label();
             pnlAgregarConsultas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbIconBuscar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
@@ -90,6 +91,8 @@
             // 
             pnlAgregarConsultas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnlAgregarConsultas.BackColor = Color.White;
+            pnlAgregarConsultas.Controls.Add(label18);
+            pnlAgregarConsultas.Controls.Add(label17);
             pnlAgregarConsultas.Controls.Add(label16);
             pnlAgregarConsultas.Controls.Add(label15);
             pnlAgregarConsultas.Controls.Add(button1);
@@ -123,7 +126,6 @@
             pnlAgregarConsultas.Controls.Add(lblhoraYfcha);
             pnlAgregarConsultas.Controls.Add(pcbFotoPaciente);
             pnlAgregarConsultas.Controls.Add(btnVaciarCampos);
-            pnlAgregarConsultas.Controls.Add(btnGenerarReceta);
             pnlAgregarConsultas.Controls.Add(label4);
             pnlAgregarConsultas.Controls.Add(lblSubTituloPaciente);
             pnlAgregarConsultas.Controls.Add(txtGrupo);
@@ -135,13 +137,35 @@
             pnlAgregarConsultas.Size = new Size(1619, 665);
             pnlAgregarConsultas.TabIndex = 13;
             // 
+            // label16
+            // 
+            label16.BackColor = Color.Transparent;
+            label16.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic);
+            label16.ForeColor = Color.DarkGray;
+            label16.Location = new Point(997, 206);
+            label16.Name = "label16";
+            label16.Size = new Size(306, 64);
+            label16.TabIndex = 98;
+            label16.Text = "En caso de no programar una cita, mantener la opcion desmarcada.";
+            // 
+            // label15
+            // 
+            label15.BackColor = Color.Transparent;
+            label15.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic);
+            label15.ForeColor = Color.DarkGray;
+            label15.Location = new Point(522, 537);
+            label15.Name = "label15";
+            label15.Size = new Size(407, 66);
+            label15.TabIndex = 97;
+            label15.Text = "Presiona el campo para editar directamente la fecha con el teclado, no se permite backspace.";
+            // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(58, 154, 138);
             button1.FlatAppearance.BorderSize = 0;
             button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(239, 239, 239);
-            button1.Location = new Point(1108, 375);
+            button1.Location = new Point(1397, 477);
             button1.Margin = new Padding(0);
             button1.Name = "button1";
             button1.Size = new Size(160, 35);
@@ -506,7 +530,7 @@
             btnVaciarCampos.FlatAppearance.BorderSize = 0;
             btnVaciarCampos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVaciarCampos.ForeColor = Color.FromArgb(239, 239, 239);
-            btnVaciarCampos.Location = new Point(1108, 435);
+            btnVaciarCampos.Location = new Point(1397, 545);
             btnVaciarCampos.Margin = new Padding(0);
             btnVaciarCampos.Name = "btnVaciarCampos";
             btnVaciarCampos.Size = new Size(160, 35);
@@ -514,20 +538,6 @@
             btnVaciarCampos.Text = "Vaciar campos";
             btnVaciarCampos.UseVisualStyleBackColor = false;
             btnVaciarCampos.Click += btnVaciarCampos_Click;
-            // 
-            // btnGenerarReceta
-            // 
-            btnGenerarReceta.BackColor = Color.FromArgb(10, 64, 88);
-            btnGenerarReceta.FlatAppearance.BorderSize = 0;
-            btnGenerarReceta.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGenerarReceta.ForeColor = Color.FromArgb(239, 239, 239);
-            btnGenerarReceta.Location = new Point(1108, 492);
-            btnGenerarReceta.Margin = new Padding(0);
-            btnGenerarReceta.Name = "btnGenerarReceta";
-            btnGenerarReceta.Size = new Size(160, 35);
-            btnGenerarReceta.TabIndex = 36;
-            btnGenerarReceta.Text = "Generar receta";
-            btnGenerarReceta.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -605,27 +615,27 @@
             txtMatriculaPaciente.Size = new Size(270, 33);
             txtMatriculaPaciente.TabIndex = 13;
             // 
-            // label15
+            // label17
             // 
-            label15.BackColor = Color.Transparent;
-            label15.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.DarkGray;
-            label15.Location = new Point(522, 537);
-            label15.Name = "label15";
-            label15.Size = new Size(407, 54);
-            label15.TabIndex = 97;
-            label15.Text = "Presiona el campo para editar directamente la fecha, no se permite backspace.";
+            label17.BackColor = Color.Transparent;
+            label17.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic);
+            label17.ForeColor = Color.DarkGray;
+            label17.Location = new Point(77, 550);
+            label17.Name = "label17";
+            label17.Size = new Size(365, 66);
+            label17.TabIndex = 99;
+            label17.Text = "Datos cargados automaticamente con la matricula. Solo lectura.";
             // 
-            // label16
+            // label18
             // 
-            label16.BackColor = Color.Transparent;
-            label16.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.ForeColor = Color.DarkGray;
-            label16.Location = new Point(997, 208);
-            label16.Name = "label16";
-            label16.Size = new Size(306, 64);
-            label16.TabIndex = 98;
-            label16.Text = "En caso de no programar una cita, mantener la opcion desmarcada.";
+            label18.BackColor = Color.Transparent;
+            label18.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label18.ForeColor = SystemColors.ControlDark;
+            label18.Location = new Point(1161, 590);
+            label18.Name = "label18";
+            label18.Size = new Size(443, 62);
+            label18.TabIndex = 100;
+            label18.Text = "Asegurese de llenar todos los campos correctamente antes de guardar.";
             // 
             // frmAgregarConsulta
             // 
@@ -690,8 +700,9 @@
         private TextBox txtApellidoMaterno;
         private Label label14;
         private Button button1;
-        private Button btnGenerarReceta;
         private Label label15;
         private Label label16;
+        private Label label17;
+        private Label label18;
     }
 }
