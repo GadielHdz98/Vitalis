@@ -142,14 +142,16 @@ namespace Vitalis
                     consultas.HoraFinal = dtmpHoraFinConsulta.Value.TimeOfDay;
                     consultas.IdDiagnostico = Convert.ToInt32(cmbDiagnostico.SelectedValue);
                     consultas.FechaConsulta = dtmpFechaConsulta.Value.Date;
+                    
 
                     if (chkCita.Checked)
                     {
                         consultas.CitaProgramada = dtmpFechaCita.Value.Date;
                         consultas.CitaHora = dtmpHoraCita.Value.TimeOfDay;
                     }
+                    
 
-                    string msg = consultas.GuardarActualizar(tipoOperacion);
+                        string msg = consultas.GuardarActualizar(tipoOperacion);
                     MessageBox.Show(msg, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)

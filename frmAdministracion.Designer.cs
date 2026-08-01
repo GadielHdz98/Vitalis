@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pnlContenedorAdministracion = new Panel();
             pnlAdministracionTopBar = new Panel();
             BtnCarreras = new Button();
             btnUsuarios = new Button();
             btnDiagnosticos = new Button();
+            tipAdministracion = new ToolTip(components);
             pnlAdministracionTopBar.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,6 +73,7 @@
             BtnCarreras.Size = new Size(185, 70);
             BtnCarreras.TabIndex = 3;
             BtnCarreras.Text = "Carreras";
+            tipAdministracion.SetToolTip(BtnCarreras, "Agregar nueva carrera.");
             BtnCarreras.UseVisualStyleBackColor = false;
             BtnCarreras.Click += BtnCarreras_Click;
             // 
@@ -87,6 +90,7 @@
             btnUsuarios.Size = new Size(185, 70);
             btnUsuarios.TabIndex = 4;
             btnUsuarios.Text = "Usuarios";
+            tipAdministracion.SetToolTip(btnUsuarios, "Agregar un nuevo usuario.");
             btnUsuarios.UseVisualStyleBackColor = false;
             btnUsuarios.Click += btnUsuarios_Click;
             // 
@@ -103,6 +107,7 @@
             btnDiagnosticos.Size = new Size(185, 70);
             btnDiagnosticos.TabIndex = 2;
             btnDiagnosticos.Text = "Diagnosticos";
+            tipAdministracion.SetToolTip(btnDiagnosticos, "Agregar nuevo diagnostico.");
             btnDiagnosticos.UseVisualStyleBackColor = false;
             btnDiagnosticos.Click += btnDiagnosticos_Click;
             // 
@@ -126,5 +131,6 @@
         private Button BtnCarreras;
         private Button btnUsuarios;
         private Button btnDiagnosticos;
+        private ToolTip tipAdministracion;
     }
 }

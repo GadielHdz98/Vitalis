@@ -19,17 +19,17 @@ namespace Vitalis
         public frmReportes()
         {
             InitializeComponent();
-            rbReporteCantDiagnostico.Checked = true;
         }
 
-        public void cargarGridAlumnosRiesgo()
+        public void cargarGridCantDiagnostico()
         {
             reportes = new clsReportes();
             dgvReportes.DataSource = null;
             dgvReportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             try
             {
-                tabla = reportes.ConsultarPorCantDiagnostio();
+                tabla = reportes.ConsultarPorCantDiagnostico();
+                dgvReportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvReportes.DataSource = tabla;
             }
             catch (Exception ex)
@@ -38,25 +38,35 @@ namespace Vitalis
             }
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
+        public void cargarGridMensual()
         {
-
-        }
-
-        private void lblVitalisInicio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGenerar_Click(object sender, EventArgs e)
-        {
-
+            reportes = new clsReportes();
+            dgvReportes.DataSource = null;
+            dgvReportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            try
+            {
+                tabla = reportes.ConsultarConsultasMensuales();
+                dgvReportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvReportes.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void rbReporteCantDiagnostico_CheckedChanged(object sender, EventArgs e)
         {
-            cargarGridAlumnosRiesgo();
+            cargarGridCantDiagnostico();
+        }
+
+        private void dgvReportes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void rbReportePacientesSemanales_CheckedChanged(object sender, EventArgs e)
+        {
+            cargarGridMensual();
         }
 
         /*private void btnGenerar_Click(object sender, EventArgs e)

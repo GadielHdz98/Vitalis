@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pnlSideBar = new Panel();
             btnReortes = new Button();
             pnlPerfilUsuarioSideBar = new Panel();
@@ -43,6 +44,7 @@
             pnlLogoVitalisSideBar = new Panel();
             pcbLogoVitalisSideBar = new PictureBox();
             pnlContenedor = new Panel();
+            tipPrincipal = new ToolTip(components);
             pnlSideBar.SuspendLayout();
             pnlPerfilUsuarioSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -82,6 +84,7 @@
             btnReortes.TabIndex = 6;
             btnReortes.Text = "Reportes";
             btnReortes.TextAlign = ContentAlignment.MiddleLeft;
+            tipPrincipal.SetToolTip(btnReortes, "Apartado de reportes.");
             btnReortes.UseVisualStyleBackColor = false;
             btnReortes.Click += btnReortes_Click;
             // 
@@ -174,6 +177,7 @@
             btnAdministracionSideBar.TabIndex = 4;
             btnAdministracionSideBar.Text = "Administracion";
             btnAdministracionSideBar.TextAlign = ContentAlignment.MiddleLeft;
+            tipPrincipal.SetToolTip(btnAdministracionSideBar, "Apartado de administracion.");
             btnAdministracionSideBar.UseVisualStyleBackColor = false;
             btnAdministracionSideBar.Click += btnAdministracionSideBar_Click;
             // 
@@ -192,6 +196,7 @@
             btnConsultasSideBar.TabIndex = 3;
             btnConsultasSideBar.Text = "Consultas";
             btnConsultasSideBar.TextAlign = ContentAlignment.MiddleLeft;
+            tipPrincipal.SetToolTip(btnConsultasSideBar, "Apartado de consultas.");
             btnConsultasSideBar.UseVisualStyleBackColor = false;
             btnConsultasSideBar.Click += btnConsultasSideBar_Click;
             // 
@@ -210,6 +215,7 @@
             btnPacientesSideBar.TabIndex = 2;
             btnPacientesSideBar.Text = "Pacientes";
             btnPacientesSideBar.TextAlign = ContentAlignment.MiddleLeft;
+            tipPrincipal.SetToolTip(btnPacientesSideBar, "Apartado de pacientes.");
             btnPacientesSideBar.UseVisualStyleBackColor = false;
             btnPacientesSideBar.Click += btnPacientesSideBar_Click;
             // 
@@ -228,6 +234,7 @@
             btnInicioSideBar.TabIndex = 1;
             btnInicioSideBar.Text = "Inicio";
             btnInicioSideBar.TextAlign = ContentAlignment.MiddleLeft;
+            tipPrincipal.SetToolTip(btnInicioSideBar, "Volver al formulario principal");
             btnInicioSideBar.UseVisualStyleBackColor = false;
             btnInicioSideBar.Click += btnInicioSideBar_Click;
             // 
@@ -308,5 +315,6 @@
         private PictureBox pictureBox1;
         private Panel pnlContenedor;
         private Button btnReortes;
+        private ToolTip tipPrincipal;
     }
 }

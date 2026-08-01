@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pnlAgregarPacientes = new Panel();
+            label17 = new Label();
+            label16 = new Label();
+            label10 = new Label();
             label15 = new Label();
             txtNombre = new TextBox();
             label14 = new Label();
@@ -67,9 +71,7 @@
             cmbTipoPaciente = new ComboBox();
             txtMatriculaNoTrab = new TextBox();
             lblConsultasBuscarTitulo = new Label();
-            label10 = new Label();
-            label16 = new Label();
-            label17 = new Label();
+            tipPacientesAgregar = new ToolTip(components);
             pnlAgregarPacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
             SuspendLayout();
@@ -123,6 +125,40 @@
             pnlAgregarPacientes.Size = new Size(1635, 716);
             pnlAgregarPacientes.TabIndex = 0;
             // 
+            // label17
+            // 
+            label17.BackColor = Color.Transparent;
+            label17.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label17.ForeColor = SystemColors.ControlDark;
+            label17.Location = new Point(966, 309);
+            label17.Name = "label17";
+            label17.Size = new Size(366, 60);
+            label17.TabIndex = 60;
+            label17.Text = "Datos exclusivos para pacientes de tipo alumno.";
+            // 
+            // label16
+            // 
+            label16.BackColor = Color.Transparent;
+            label16.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label16.ForeColor = SystemColors.ControlDark;
+            label16.Location = new Point(82, 560);
+            label16.Name = "label16";
+            label16.Size = new Size(408, 78);
+            label16.TabIndex = 59;
+            label16.Text = "Presione directamente el campo de fecha para editar con el teclado. No se permirte backspace.";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label10.ForeColor = SystemColors.ControlDark;
+            label10.Location = new Point(1045, 673);
+            label10.Name = "label10";
+            label10.Size = new Size(572, 25);
+            label10.TabIndex = 58;
+            label10.Text = "Asegurese de llenar todos los campos correctamente antes de buscar.";
+            // 
             // label15
             // 
             label15.AutoSize = true;
@@ -146,6 +182,7 @@
             txtNombre.PlaceholderText = "Ingresa él(los) nombres";
             txtNombre.Size = new Size(270, 33);
             txtNombre.TabIndex = 18;
+            tipPacientesAgregar.SetToolTip(txtNombre, "Ingrese el nombre del paciente.");
             // 
             // label14
             // 
@@ -251,6 +288,7 @@
             cmbSexo.Name = "cmbSexo";
             cmbSexo.Size = new Size(270, 33);
             cmbSexo.TabIndex = 47;
+            tipPacientesAgregar.SetToolTip(cmbSexo, "Seleccione el sexo del paciente.");
             // 
             // label5
             // 
@@ -337,6 +375,7 @@
             pcbFotoPaciente.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbFotoPaciente.TabIndex = 38;
             pcbFotoPaciente.TabStop = false;
+            tipPacientesAgregar.SetToolTip(pcbFotoPaciente, "Fotografia del paciente.");
             // 
             // btnVaciarCampos
             // 
@@ -350,6 +389,7 @@
             btnVaciarCampos.Size = new Size(160, 35);
             btnVaciarCampos.TabIndex = 37;
             btnVaciarCampos.Text = "Vaciar campos";
+            tipPacientesAgregar.SetToolTip(btnVaciarCampos, "Vaciar todos los campos.");
             btnVaciarCampos.UseVisualStyleBackColor = false;
             btnVaciarCampos.Click += btnVaciarCampos_Click;
             // 
@@ -365,6 +405,7 @@
             btnGuardar.Size = new Size(160, 35);
             btnGuardar.TabIndex = 36;
             btnGuardar.Text = "Guardar";
+            tipPacientesAgregar.SetToolTip(btnGuardar, "Guardar paciente.");
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
@@ -379,6 +420,7 @@
             txtUltimaTemperatura.PlaceholderText = "Ultima temperatura (°C) ";
             txtUltimaTemperatura.Size = new Size(270, 33);
             txtUltimaTemperatura.TabIndex = 35;
+            tipPacientesAgregar.SetToolTip(txtUltimaTemperatura, "Ingrese la temperatura actual del paciente.");
             // 
             // txtUltimaPresionArt
             // 
@@ -391,6 +433,7 @@
             txtUltimaPresionArt.PlaceholderText = "Ultima presion arterial (x/y)";
             txtUltimaPresionArt.Size = new Size(270, 33);
             txtUltimaPresionArt.TabIndex = 34;
+            tipPacientesAgregar.SetToolTip(txtUltimaPresionArt, "Ingrese la presion actual del paciente.");
             // 
             // txtAltura
             // 
@@ -403,6 +446,7 @@
             txtAltura.PlaceholderText = "Altura (cm)";
             txtAltura.Size = new Size(270, 33);
             txtAltura.TabIndex = 33;
+            txtAltura.Text = "Ingrese la altura actual del paciente.";
             // 
             // txtPeso
             // 
@@ -415,6 +459,7 @@
             txtPeso.PlaceholderText = "Peso (kg)";
             txtPeso.Size = new Size(270, 33);
             txtPeso.TabIndex = 32;
+            txtPeso.Text = "Ingrese el peso actual del paciente.";
             // 
             // lblSubTituloFisiologicos
             // 
@@ -474,6 +519,7 @@
             txtGrupo.PlaceholderText = "Grupo";
             txtGrupo.Size = new Size(270, 33);
             txtGrupo.TabIndex = 25;
+            tipPacientesAgregar.SetToolTip(txtGrupo, "Ingrese el grupo al que pertenece el paciente.");
             // 
             // cmbGrado
             // 
@@ -487,6 +533,7 @@
             cmbGrado.Name = "cmbGrado";
             cmbGrado.Size = new Size(270, 33);
             cmbGrado.TabIndex = 24;
+            tipPacientesAgregar.SetToolTip(cmbGrado, "Ingrese el grado al que pertenece el paciente.");
             // 
             // cmbCarrera
             // 
@@ -499,6 +546,7 @@
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(270, 33);
             cmbCarrera.TabIndex = 23;
+            tipPacientesAgregar.SetToolTip(cmbCarrera, "Ingrese la carrera a la que pertenece el paciente.");
             // 
             // lblPacienteFechaNaci
             // 
@@ -523,6 +571,7 @@
             dtmpFechaNaciPaciente.Name = "dtmpFechaNaciPaciente";
             dtmpFechaNaciPaciente.Size = new Size(270, 33);
             dtmpFechaNaciPaciente.TabIndex = 21;
+            tipPacientesAgregar.SetToolTip(dtmpFechaNaciPaciente, "Seleccione la fecha de nacimiento del paciente.");
             // 
             // txtPacienteApellidoMaterno
             // 
@@ -535,6 +584,7 @@
             txtPacienteApellidoMaterno.PlaceholderText = "Ingresa él apellido materno";
             txtPacienteApellidoMaterno.Size = new Size(270, 33);
             txtPacienteApellidoMaterno.TabIndex = 20;
+            tipPacientesAgregar.SetToolTip(txtPacienteApellidoMaterno, "Ingrese el apellido materno del paciente.");
             // 
             // txtPacienteApellidoPaterno
             // 
@@ -547,6 +597,7 @@
             txtPacienteApellidoPaterno.PlaceholderText = "Ingresa él apellido paterno";
             txtPacienteApellidoPaterno.Size = new Size(270, 33);
             txtPacienteApellidoPaterno.TabIndex = 19;
+            tipPacientesAgregar.SetToolTip(txtPacienteApellidoPaterno, "Ingrese el apellido paterno del paciente.");
             // 
             // cmbTipoPaciente
             // 
@@ -560,6 +611,7 @@
             cmbTipoPaciente.Name = "cmbTipoPaciente";
             cmbTipoPaciente.Size = new Size(270, 33);
             cmbTipoPaciente.TabIndex = 17;
+            tipPacientesAgregar.SetToolTip(cmbTipoPaciente, "Seleccione el tipo de paciente.");
             cmbTipoPaciente.SelectedIndexChanged += cmbTipoPaciente_SelectedIndexChanged;
             // 
             // txtMatriculaNoTrab
@@ -573,6 +625,7 @@
             txtMatriculaNoTrab.PlaceholderText = "Ingresa la matricula";
             txtMatriculaNoTrab.Size = new Size(270, 33);
             txtMatriculaNoTrab.TabIndex = 13;
+            tipPacientesAgregar.SetToolTip(txtMatriculaNoTrab, "Ingrese la matricula del paciente.");
             // 
             // lblConsultasBuscarTitulo
             // 
@@ -584,40 +637,6 @@
             lblConsultasBuscarTitulo.Size = new Size(727, 68);
             lblConsultasBuscarTitulo.TabIndex = 12;
             lblConsultasBuscarTitulo.Text = "Datos para agregar pacientes";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.Transparent;
-            label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label10.ForeColor = SystemColors.ControlDark;
-            label10.Location = new Point(1045, 673);
-            label10.Name = "label10";
-            label10.Size = new Size(572, 25);
-            label10.TabIndex = 58;
-            label10.Text = "Asegurese de llenar todos los campos correctamente antes de buscar.";
-            // 
-            // label16
-            // 
-            label16.BackColor = Color.Transparent;
-            label16.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label16.ForeColor = SystemColors.ControlDark;
-            label16.Location = new Point(82, 560);
-            label16.Name = "label16";
-            label16.Size = new Size(408, 78);
-            label16.TabIndex = 59;
-            label16.Text = "Presione directamente el campo de fecha para editar con el teclado. No se permirte backspace.";
-            // 
-            // label17
-            // 
-            label17.BackColor = Color.Transparent;
-            label17.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label17.ForeColor = SystemColors.ControlDark;
-            label17.Location = new Point(966, 309);
-            label17.Name = "label17";
-            label17.Size = new Size(366, 60);
-            label17.TabIndex = 60;
-            label17.Text = "Datos exclusivos para pacientes de tipo alumno.";
             // 
             // frmPacientesAgregar
             // 
@@ -679,5 +698,6 @@
         private Label label16;
         private Label label10;
         private Label label17;
+        private ToolTip tipPacientesAgregar;
     }
 }
