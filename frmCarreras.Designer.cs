@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
             dgvCarreras = new DataGridView();
             pcbBuscar = new PictureBox();
             txtBuscarCarrera = new TextBox();
@@ -44,6 +45,7 @@
             rchtxtDescripcionCarrera = new RichTextBox();
             txtNombreCarrera = new TextBox();
             btnGuardar = new Button();
+            tipCarrera = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)dgvCarreras).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbBuscar).BeginInit();
             pnlDiagnosticos.SuspendLayout();
@@ -55,31 +57,31 @@
             dgvCarreras.AllowUserToDeleteRows = false;
             dgvCarreras.AllowUserToResizeColumns = false;
             dgvCarreras.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(239, 239, 239);
-            dgvCarreras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = Color.FromArgb(239, 239, 239);
+            dgvCarreras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             dgvCarreras.Anchor = AnchorStyles.None;
             dgvCarreras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCarreras.BackgroundColor = Color.White;
             dgvCarreras.BorderStyle = BorderStyle.None;
             dgvCarreras.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvCarreras.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvCarreras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle14.ForeColor = Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle14.SelectionForeColor = Color.White;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
+            dgvCarreras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             dgvCarreras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvCarreras.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = SystemColors.Window;
+            dataGridViewCellStyle15.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle15.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.False;
+            dgvCarreras.DefaultCellStyle = dataGridViewCellStyle15;
             dgvCarreras.EnableHeadersVisualStyles = false;
             dgvCarreras.GridColor = Color.White;
             dgvCarreras.Location = new Point(764, 187);
@@ -87,8 +89,8 @@
             dgvCarreras.Name = "dgvCarreras";
             dgvCarreras.ReadOnly = true;
             dgvCarreras.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dgvCarreras.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.BackColor = Color.White;
+            dgvCarreras.RowsDefaultCellStyle = dataGridViewCellStyle16;
             dgvCarreras.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCarreras.Size = new Size(885, 593);
             dgvCarreras.TabIndex = 15;
@@ -115,6 +117,7 @@
             txtBuscarCarrera.PlaceholderText = "Buscar carrera";
             txtBuscarCarrera.Size = new Size(270, 33);
             txtBuscarCarrera.TabIndex = 13;
+            tipCarrera.SetToolTip(txtBuscarCarrera, "Escribe el nombre de la carrera que deseas buscar");
             txtBuscarCarrera.TextChanged += txtNombreCarrera_TextChanged;
             // 
             // lblDiagnostico
@@ -154,6 +157,7 @@
             btnNuevo.Size = new Size(160, 35);
             btnNuevo.TabIndex = 69;
             btnNuevo.Text = "Nuevo";
+            tipCarrera.SetToolTip(btnNuevo, "Agregar un nueva carrera.");
             btnNuevo.UseVisualStyleBackColor = false;
             btnNuevo.Click += btnNuevo_Click;
             // 
@@ -190,6 +194,7 @@
             btnEliminar.Size = new Size(160, 35);
             btnEliminar.TabIndex = 66;
             btnEliminar.Text = "Eliminar";
+            tipCarrera.SetToolTip(btnEliminar, "Eliminar la carrera actual.");
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnBorrar_Click;
             // 
@@ -204,6 +209,7 @@
             rchtxtDescripcionCarrera.TabIndex = 62;
             rchtxtDescripcionCarrera.Tag = "Tratamiento";
             rchtxtDescripcionCarrera.Text = "";
+            tipCarrera.SetToolTip(rchtxtDescripcionCarrera, "Ingrese una descripcion breve de la carrera que se desea agregar");
             // 
             // txtNombreCarrera
             // 
@@ -216,6 +222,7 @@
             txtNombreCarrera.PlaceholderText = "Nombre carrera";
             txtNombreCarrera.Size = new Size(270, 33);
             txtNombreCarrera.TabIndex = 2;
+            tipCarrera.SetToolTip(txtNombreCarrera, "Ingresa el nombre de la carrera que deseas agregar");
             // 
             // btnGuardar
             // 
@@ -228,6 +235,7 @@
             btnGuardar.Size = new Size(160, 35);
             btnGuardar.TabIndex = 65;
             btnGuardar.Text = "Guardar";
+            tipCarrera.SetToolTip(btnGuardar, "Guardar / Actualizar");
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
@@ -265,5 +273,6 @@
         private RichTextBox rchtxtDescripcionCarrera;
         private TextBox txtNombreCarrera;
         private Button btnGuardar;
+        private ToolTip tipCarrera;
     }
 }

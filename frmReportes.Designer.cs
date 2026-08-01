@@ -47,22 +47,22 @@
             lblReportes.BackColor = Color.Transparent;
             lblReportes.Font = new Font("Segoe UI", 38.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblReportes.ForeColor = Color.FromArgb(23, 147, 209);
-            lblReportes.Location = new Point(69, 115);
+            lblReportes.Location = new Point(60, 86);
             lblReportes.Name = "lblReportes";
-            lblReportes.Size = new Size(1001, 91);
+            lblReportes.Size = new Size(876, 68);
             lblReportes.TabIndex = 7;
             lblReportes.Text = "Reportes";
-            lblReportes.Click += lblVitalisInicio_Click;
             // 
             // dgvReportes
             // 
+            dgvReportes.BackgroundColor = SystemColors.Control;
             dgvReportes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvReportes.Location = new Point(119, 237);
-            dgvReportes.Margin = new Padding(3, 4, 3, 4);
+            dgvReportes.Location = new Point(60, 178);
             dgvReportes.Name = "dgvReportes";
             dgvReportes.RowHeadersWidth = 51;
-            dgvReportes.Size = new Size(1120, 843);
+            dgvReportes.Size = new Size(980, 632);
             dgvReportes.TabIndex = 8;
+            dgvReportes.CellContentClick += dgvReportes_CellContentClick;
             // 
             // panel1
             // 
@@ -71,19 +71,17 @@
             panel1.Controls.Add(rbReporteCantDiagnostico);
             panel1.Controls.Add(rbReporteRecetaMedica);
             panel1.Controls.Add(rbReportePacientesSemanales);
-            panel1.Location = new Point(1275, 237);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(1116, 178);
             panel1.Name = "panel1";
-            panel1.Size = new Size(617, 627);
+            panel1.Size = new Size(540, 470);
             panel1.TabIndex = 10;
             // 
             // btnVer
             // 
             btnVer.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            btnVer.Location = new Point(213, 500);
-            btnVer.Margin = new Padding(3, 4, 3, 4);
+            btnVer.Location = new Point(186, 375);
             btnVer.Name = "btnVer";
-            btnVer.Size = new Size(209, 69);
+            btnVer.Size = new Size(183, 52);
             btnVer.TabIndex = 15;
             btnVer.Text = "Ver";
             btnVer.UseVisualStyleBackColor = true;
@@ -91,23 +89,20 @@
             // btnGenerar
             // 
             btnGenerar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            btnGenerar.Location = new Point(213, 383);
-            btnGenerar.Margin = new Padding(3, 4, 3, 4);
+            btnGenerar.Location = new Point(186, 287);
             btnGenerar.Name = "btnGenerar";
-            btnGenerar.Size = new Size(209, 69);
+            btnGenerar.Size = new Size(183, 52);
             btnGenerar.TabIndex = 0;
             btnGenerar.Text = "Generar";
             btnGenerar.UseVisualStyleBackColor = true;
-            btnGenerar.Click += btnGenerar_Click;
             // 
             // rbReporteCantDiagnostico
             // 
             rbReporteCantDiagnostico.AutoSize = true;
             rbReporteCantDiagnostico.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            rbReporteCantDiagnostico.Location = new Point(95, 268);
-            rbReporteCantDiagnostico.Margin = new Padding(3, 4, 3, 4);
+            rbReporteCantDiagnostico.Location = new Point(83, 201);
             rbReporteCantDiagnostico.Name = "rbReporteCantDiagnostico";
-            rbReporteCantDiagnostico.Size = new Size(455, 36);
+            rbReporteCantDiagnostico.Size = new Size(357, 29);
             rbReporteCantDiagnostico.TabIndex = 14;
             rbReporteCantDiagnostico.TabStop = true;
             rbReporteCantDiagnostico.Text = "Reporte por cantidad de diagnostico";
@@ -118,10 +113,9 @@
             // 
             rbReporteRecetaMedica.AutoSize = true;
             rbReporteRecetaMedica.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            rbReporteRecetaMedica.Location = new Point(95, 183);
-            rbReporteRecetaMedica.Margin = new Padding(3, 4, 3, 4);
+            rbReporteRecetaMedica.Location = new Point(83, 137);
             rbReporteRecetaMedica.Name = "rbReporteRecetaMedica";
-            rbReporteRecetaMedica.Size = new Size(401, 36);
+            rbReporteRecetaMedica.Size = new Size(312, 29);
             rbReporteRecetaMedica.TabIndex = 13;
             rbReporteRecetaMedica.TabStop = true;
             rbReporteRecetaMedica.Text = "Reporte de consultas semanales";
@@ -131,36 +125,34 @@
             // 
             rbReportePacientesSemanales.AutoSize = true;
             rbReportePacientesSemanales.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            rbReportePacientesSemanales.Location = new Point(95, 89);
-            rbReportePacientesSemanales.Margin = new Padding(3, 4, 3, 4);
+            rbReportePacientesSemanales.Location = new Point(83, 67);
             rbReportePacientesSemanales.Name = "rbReportePacientesSemanales";
-            rbReportePacientesSemanales.Size = new Size(274, 36);
+            rbReportePacientesSemanales.Size = new Size(214, 29);
             rbReportePacientesSemanales.TabIndex = 12;
             rbReportePacientesSemanales.TabStop = true;
             rbReportePacientesSemanales.Text = "Consultas Mensuales";
             rbReportePacientesSemanales.UseVisualStyleBackColor = true;
+            rbReportePacientesSemanales.CheckedChanged += rbReportePacientesSemanales_CheckedChanged;
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.FromArgb(58, 154, 138);
             pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1924, 93);
+            pictureBox1.Size = new Size(1684, 70);
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
             // frmReportes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1924, 1055);
+            ClientSize = new Size(1684, 791);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Controls.Add(dgvReportes);
             Controls.Add(lblReportes);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "frmReportes";
             Text = "frmReportes";
             ((System.ComponentModel.ISupportInitialize)dgvReportes).EndInit();

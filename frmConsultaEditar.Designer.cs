@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblEditarConsultaTitulo = new Label();
             label1 = new Label();
             cmbDiagnostico = new ComboBox();
@@ -50,6 +51,7 @@
             btnVaciarCampos = new Button();
             btnGuardar = new Button();
             btnCancelar = new Button();
+            tipConsultaEditar = new ToolTip(components);
             pnlEditarConsulta.SuspendLayout();
             SuspendLayout();
             // 
@@ -88,6 +90,7 @@
             cmbDiagnostico.Name = "cmbDiagnostico";
             cmbDiagnostico.Size = new Size(270, 33);
             cmbDiagnostico.TabIndex = 47;
+            tipConsultaEditar.SetToolTip(cmbDiagnostico, "Seleccione el diagnostico.");
             // 
             // cbxCIR
             // 
@@ -99,6 +102,7 @@
             cbxCIR.Size = new Size(245, 29);
             cbxCIR.TabIndex = 59;
             cbxCIR.Text = "CIR (si llevó receta o no)";
+            tipConsultaEditar.SetToolTip(cbxCIR, "Marcar en caso de haber llevado cita.");
             cbxCIR.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -123,6 +127,7 @@
             rchtxtTratamiento.TabIndex = 64;
             rchtxtTratamiento.Tag = "Tratamiento";
             rchtxtTratamiento.Text = "";
+            tipConsultaEditar.SetToolTip(rchtxtTratamiento, "Ingrese el tratamiento dado al paciente.");
             // 
             // label4
             // 
@@ -175,6 +180,7 @@
             chcbxCita.Size = new Size(377, 36);
             chcbxCita.TabIndex = 97;
             chcbxCita.Text = "Cita (si se programo cita o no)";
+            tipConsultaEditar.SetToolTip(chcbxCita, "Marcar en caso de haber programado una cita.");
             chcbxCita.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -210,6 +216,7 @@
             dtmpHoraCita.Name = "dtmpHoraCita";
             dtmpHoraCita.Size = new Size(213, 32);
             dtmpHoraCita.TabIndex = 94;
+            tipConsultaEditar.SetToolTip(dtmpHoraCita, "Hora de la cita..");
             // 
             // dtpckFechaCita
             // 
@@ -220,6 +227,7 @@
             dtpckFechaCita.Name = "dtpckFechaCita";
             dtpckFechaCita.Size = new Size(213, 32);
             dtpckFechaCita.TabIndex = 93;
+            tipConsultaEditar.SetToolTip(dtpckFechaCita, "Fecha de la cita.");
             // 
             // label8
             // 
@@ -242,6 +250,7 @@
             dtmpHoraFinConsulta.Name = "dtmpHoraFinConsulta";
             dtmpHoraFinConsulta.Size = new Size(213, 32);
             dtmpHoraFinConsulta.TabIndex = 91;
+            tipConsultaEditar.SetToolTip(dtmpHoraFinConsulta, "Ingresa la hora en la que finalizo la consulta.");
             // 
             // dtmpHoraInicioConsulta
             // 
@@ -252,6 +261,7 @@
             dtmpHoraInicioConsulta.Name = "dtmpHoraInicioConsulta";
             dtmpHoraInicioConsulta.Size = new Size(213, 32);
             dtmpHoraInicioConsulta.TabIndex = 90;
+            tipConsultaEditar.SetToolTip(dtmpHoraInicioConsulta, "Ingresa la hora en la que se inicio la consulta.");
             // 
             // dtmpFechaConsulta
             // 
@@ -262,6 +272,7 @@
             dtmpFechaConsulta.Name = "dtmpFechaConsulta";
             dtmpFechaConsulta.Size = new Size(213, 32);
             dtmpFechaConsulta.TabIndex = 89;
+            tipConsultaEditar.SetToolTip(dtmpFechaConsulta, "Ingrese la fecha de la consulta.");
             // 
             // label7
             // 
@@ -299,6 +310,7 @@
             btnVaciarCampos.Size = new Size(160, 33);
             btnVaciarCampos.TabIndex = 76;
             btnVaciarCampos.Text = "Vaciar campos";
+            tipConsultaEditar.SetToolTip(btnVaciarCampos, "Vaciar todos los campos");
             btnVaciarCampos.UseVisualStyleBackColor = false;
             btnVaciarCampos.Click += btnVaciarCampos_Click;
             // 
@@ -314,6 +326,7 @@
             btnGuardar.Size = new Size(160, 33);
             btnGuardar.TabIndex = 75;
             btnGuardar.Text = "Guardar";
+            tipConsultaEditar.SetToolTip(btnGuardar, "Guardar cambios");
             btnGuardar.UseVisualStyleBackColor = false;
             // 
             // btnCancelar
@@ -328,6 +341,7 @@
             btnCancelar.Size = new Size(160, 33);
             btnCancelar.TabIndex = 74;
             btnCancelar.Text = "Cancelar";
+            tipConsultaEditar.SetToolTip(btnCancelar, "Cancelar la edicion.");
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
@@ -373,5 +387,6 @@
         private DateTimePicker dtmpHoraCita;
         private DateTimePicker dtpckFechaCita;
         private CheckBox chcbxCita;
+        private ToolTip tipConsultaEditar;
     }
 }

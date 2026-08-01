@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblConsultasBuscarTitulo = new Label();
             pnlAgregarConsultas = new Panel();
+            label18 = new Label();
+            label17 = new Label();
             label16 = new Label();
             label15 = new Label();
             button1 = new Button();
@@ -69,8 +72,7 @@
             txtApellidoPaterno = new TextBox();
             txtNombre = new TextBox();
             txtMatriculaPaciente = new TextBox();
-            label17 = new Label();
-            label18 = new Label();
+            tipAgregarConsulta = new ToolTip(components);
             pnlAgregarConsultas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbIconBuscar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
@@ -137,6 +139,28 @@
             pnlAgregarConsultas.Size = new Size(1619, 665);
             pnlAgregarConsultas.TabIndex = 13;
             // 
+            // label18
+            // 
+            label18.BackColor = Color.Transparent;
+            label18.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label18.ForeColor = SystemColors.ControlDark;
+            label18.Location = new Point(1161, 590);
+            label18.Name = "label18";
+            label18.Size = new Size(443, 62);
+            label18.TabIndex = 100;
+            label18.Text = "Asegurese de llenar todos los campos correctamente antes de guardar.";
+            // 
+            // label17
+            // 
+            label17.BackColor = Color.Transparent;
+            label17.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic);
+            label17.ForeColor = Color.DarkGray;
+            label17.Location = new Point(77, 550);
+            label17.Name = "label17";
+            label17.Size = new Size(365, 66);
+            label17.TabIndex = 99;
+            label17.Text = "Datos cargados automaticamente con la matricula. Solo lectura.";
+            // 
             // label16
             // 
             label16.BackColor = Color.Transparent;
@@ -171,6 +195,7 @@
             button1.Size = new Size(160, 35);
             button1.TabIndex = 96;
             button1.Text = "Guardar";
+            tipAgregarConsulta.SetToolTip(button1, "Guardar la consulta.");
             button1.UseVisualStyleBackColor = false;
             button1.Click += btnGuardar_Click;
             // 
@@ -297,6 +322,7 @@
             dtmpHoraFinConsulta.ShowUpDown = true;
             dtmpHoraFinConsulta.Size = new Size(213, 32);
             dtmpHoraFinConsulta.TabIndex = 84;
+            tipAgregarConsulta.SetToolTip(dtmpHoraFinConsulta, "Ingresa la hora en la que finalizo la consulta.");
             // 
             // dtmpHoraInicioConsulta
             // 
@@ -309,6 +335,7 @@
             dtmpHoraInicioConsulta.ShowUpDown = true;
             dtmpHoraInicioConsulta.Size = new Size(213, 32);
             dtmpHoraInicioConsulta.TabIndex = 83;
+            tipAgregarConsulta.SetToolTip(dtmpHoraInicioConsulta, "Ingresa la hora en la que se inicio la consulta.");
             // 
             // dtmpFechaConsulta
             // 
@@ -319,6 +346,7 @@
             dtmpFechaConsulta.Name = "dtmpFechaConsulta";
             dtmpFechaConsulta.Size = new Size(213, 32);
             dtmpFechaConsulta.TabIndex = 81;
+            tipAgregarConsulta.SetToolTip(dtmpFechaConsulta, "Ingrese la fecha de la consulta.");
             // 
             // label7
             // 
@@ -368,6 +396,7 @@
             dtmpHoraCita.ShowUpDown = true;
             dtmpHoraCita.Size = new Size(213, 32);
             dtmpHoraCita.TabIndex = 77;
+            tipAgregarConsulta.SetToolTip(dtmpHoraCita, "Hora de la cita.");
             // 
             // dtmpFechaCita
             // 
@@ -379,6 +408,7 @@
             dtmpFechaCita.Name = "dtmpFechaCita";
             dtmpFechaCita.Size = new Size(213, 32);
             dtmpFechaCita.TabIndex = 76;
+            tipAgregarConsulta.SetToolTip(dtmpFechaCita, "Fecha de la cita.");
             // 
             // label13
             // 
@@ -439,6 +469,7 @@
             chkCita.Size = new Size(377, 36);
             chkCita.TabIndex = 63;
             chkCita.Text = "Cita (si se programo cita o no)";
+            tipAgregarConsulta.SetToolTip(chkCita, "Marcar en caso de haber programado una cita.");
             chkCita.UseVisualStyleBackColor = true;
             chkCita.CheckedChanged += chcbxCita_CheckedChanged;
             // 
@@ -465,6 +496,7 @@
             rchtxtTratamiento.TabIndex = 61;
             rchtxtTratamiento.Tag = "Tratamiento";
             rchtxtTratamiento.Text = "";
+            tipAgregarConsulta.SetToolTip(rchtxtTratamiento, "Ingrese el tratamiento dado al paciente.");
             // 
             // chkCIR
             // 
@@ -477,6 +509,7 @@
             chkCIR.Size = new Size(242, 29);
             chkCIR.TabIndex = 58;
             chkCIR.Text = "CIR (si llevó receta o no)";
+            tipAgregarConsulta.SetToolTip(chkCIR, "Marcar en caso de haber llevado cita.");
             chkCIR.UseVisualStyleBackColor = true;
             // 
             // cmbDiagnostico
@@ -490,6 +523,7 @@
             cmbDiagnostico.Name = "cmbDiagnostico";
             cmbDiagnostico.Size = new Size(270, 33);
             cmbDiagnostico.TabIndex = 46;
+            tipAgregarConsulta.SetToolTip(cmbDiagnostico, "Selecciona el diagnostico del paciente.");
             // 
             // pcbIconBuscar
             // 
@@ -500,6 +534,7 @@
             pcbIconBuscar.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbIconBuscar.TabIndex = 48;
             pcbIconBuscar.TabStop = false;
+            tipAgregarConsulta.SetToolTip(pcbIconBuscar, "Buscar al paciente");
             pcbIconBuscar.Click += pcbIconBuscar_Click;
             // 
             // lblhoraYfcha
@@ -523,6 +558,7 @@
             pcbFotoPaciente.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbFotoPaciente.TabIndex = 38;
             pcbFotoPaciente.TabStop = false;
+            tipAgregarConsulta.SetToolTip(pcbFotoPaciente, "Fotografia del paciente");
             // 
             // btnVaciarCampos
             // 
@@ -536,6 +572,7 @@
             btnVaciarCampos.Size = new Size(160, 35);
             btnVaciarCampos.TabIndex = 37;
             btnVaciarCampos.Text = "Vaciar campos";
+            tipAgregarConsulta.SetToolTip(btnVaciarCampos, "Vaciar todos los campos.");
             btnVaciarCampos.UseVisualStyleBackColor = false;
             btnVaciarCampos.Click += btnVaciarCampos_Click;
             // 
@@ -614,28 +651,7 @@
             txtMatriculaPaciente.PlaceholderText = "Buscar por matricula";
             txtMatriculaPaciente.Size = new Size(270, 33);
             txtMatriculaPaciente.TabIndex = 13;
-            // 
-            // label17
-            // 
-            label17.BackColor = Color.Transparent;
-            label17.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic);
-            label17.ForeColor = Color.DarkGray;
-            label17.Location = new Point(77, 550);
-            label17.Name = "label17";
-            label17.Size = new Size(365, 66);
-            label17.TabIndex = 99;
-            label17.Text = "Datos cargados automaticamente con la matricula. Solo lectura.";
-            // 
-            // label18
-            // 
-            label18.BackColor = Color.Transparent;
-            label18.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label18.ForeColor = SystemColors.ControlDark;
-            label18.Location = new Point(1161, 590);
-            label18.Name = "label18";
-            label18.Size = new Size(443, 62);
-            label18.TabIndex = 100;
-            label18.Text = "Asegurese de llenar todos los campos correctamente antes de guardar.";
+            tipAgregarConsulta.SetToolTip(txtMatriculaPaciente, "Ingresa la matricula del paciente.");
             // 
             // frmAgregarConsulta
             // 
@@ -704,5 +720,6 @@
         private Label label16;
         private Label label17;
         private Label label18;
+        private ToolTip tipAgregarConsulta;
     }
 }

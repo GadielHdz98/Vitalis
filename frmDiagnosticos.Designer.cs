@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             pnlDiagnosticos = new Panel();
             btnNuevo = new Button();
             label2 = new Label();
@@ -44,6 +45,7 @@
             txtBuscarDiagnostico = new TextBox();
             pictureBox1 = new PictureBox();
             dgvDiagnosticos = new DataGridView();
+            tipDiagnosticos = new ToolTip(components);
             pnlDiagnosticos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDiagnosticos).BeginInit();
@@ -75,6 +77,7 @@
             btnNuevo.Size = new Size(160, 35);
             btnNuevo.TabIndex = 69;
             btnNuevo.Text = "Nuevo";
+            tipDiagnosticos.SetToolTip(btnNuevo, "Crear nuevo diagnostico");
             btnNuevo.UseVisualStyleBackColor = false;
             btnNuevo.Click += btnNuevo_Click;
             // 
@@ -111,6 +114,7 @@
             btnEliminar.Size = new Size(160, 35);
             btnEliminar.TabIndex = 66;
             btnEliminar.Text = "Eliminar";
+            tipDiagnosticos.SetToolTip(btnEliminar, "Eliminar diagnostico actual");
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
@@ -125,6 +129,7 @@
             rchtxtSintomas.TabIndex = 62;
             rchtxtSintomas.Tag = "Tratamiento";
             rchtxtSintomas.Text = "";
+            tipDiagnosticos.SetToolTip(rchtxtSintomas, "Ingrese los sintomas del diagnostico.");
             // 
             // txtNombreDiagnostico
             // 
@@ -137,6 +142,7 @@
             txtNombreDiagnostico.PlaceholderText = "Nombre diagnostico.";
             txtNombreDiagnostico.Size = new Size(270, 33);
             txtNombreDiagnostico.TabIndex = 2;
+            tipDiagnosticos.SetToolTip(txtNombreDiagnostico, "Ingrese el nombre del diagnostico.");
             // 
             // btnGuardar
             // 
@@ -149,6 +155,7 @@
             btnGuardar.Size = new Size(160, 35);
             btnGuardar.TabIndex = 65;
             btnGuardar.Text = "Guardar";
+            tipDiagnosticos.SetToolTip(btnGuardar, "Guardar / Actualizar");
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
@@ -174,6 +181,7 @@
             txtBuscarDiagnostico.PlaceholderText = "Buscar diagnostico";
             txtBuscarDiagnostico.Size = new Size(270, 33);
             txtBuscarDiagnostico.TabIndex = 3;
+            tipDiagnosticos.SetToolTip(txtBuscarDiagnostico, "Buscar diagnostico por nombre.");
             txtBuscarDiagnostico.TextChanged += txtBuscarDiagnostico_TextChanged;
             // 
             // pictureBox1
@@ -192,30 +200,30 @@
             dgvDiagnosticos.AllowUserToDeleteRows = false;
             dgvDiagnosticos.AllowUserToResizeColumns = false;
             dgvDiagnosticos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(239, 239, 239);
-            dgvDiagnosticos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(239, 239, 239);
+            dgvDiagnosticos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvDiagnosticos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDiagnosticos.BackgroundColor = Color.White;
             dgvDiagnosticos.BorderStyle = BorderStyle.None;
             dgvDiagnosticos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvDiagnosticos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvDiagnosticos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvDiagnosticos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvDiagnosticos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvDiagnosticos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.Window;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dgvDiagnosticos.DefaultCellStyle = dataGridViewCellStyle7;
             dgvDiagnosticos.EnableHeadersVisualStyles = false;
             dgvDiagnosticos.GridColor = Color.White;
             dgvDiagnosticos.Location = new Point(769, 186);
@@ -223,8 +231,8 @@
             dgvDiagnosticos.Name = "dgvDiagnosticos";
             dgvDiagnosticos.ReadOnly = true;
             dgvDiagnosticos.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dgvDiagnosticos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dgvDiagnosticos.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dgvDiagnosticos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvDiagnosticos.Size = new Size(885, 593);
             dgvDiagnosticos.TabIndex = 10;
@@ -265,5 +273,6 @@
         private Button btnEliminar;
         private Button btnGuardar;
         private DataGridView dgvDiagnosticos;
+        private ToolTip tipDiagnosticos;
     }
 }

@@ -9,7 +9,6 @@ namespace Vitalis
 {
     internal class clsLogin
     {
-        
         private string usuario;
         private string password;
 
