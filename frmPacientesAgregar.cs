@@ -13,134 +13,34 @@ namespace Vitalis
 {
     public partial class frmPacientesAgregar : Form
     {
-
         clsPacientes paciente = new clsPacientes();
         clsCarreras carreras = new clsCarreras();
 
         public frmPacientesAgregar()
         {
             InitializeComponent();
-            CargarCarreras();           
-            HabilitarControles();
+            paciente.CargarCarreras(cmbCarrera);
+            paciente.HabilitarControles(cmbTipoPaciente, cmbCarrera, cmbGrado, txtGrupo);
         }
         private void btnVaciarCampos_Click(object sender, EventArgs e)
         {
-            VaciarCampos();
+            paciente.VaciarCampos(pnlAgregarPacientes);
+            paciente.HabilitarControles(cmbTipoPaciente, cmbCarrera, cmbGrado, txtGrupo);
         }
         //Metodo para cargar carreras en comboBox
-        public void CargarCarreras()
-        {
-            try
-            {
-                clsConexion conexionBD = new clsConexion();
-
-                using (var conexion = conexionBD.AbrirConexion())
-                {
-                    string sql = "SELECT id_carrera, nombreCarrera FROM carreras ORDER BY nombreCarrera;";
-
-                    MySqlDataAdapter consulta = new MySqlDataAdapter(sql, conexion);
-                    DataTable tabla = new DataTable();
-                    consulta.Fill(tabla);
-                    //
-                    DataRow fila = tabla.NewRow();
-                    fila["id_carrera"] = DBNull.Value;
-                    fila["nombreCarrera"] = "";
-                    tabla.Rows.InsertAt(fila, 0);
-                    //
-                    cmbCarrera.DataSource = tabla;
-                    cmbCarrera.DisplayMember = "nombreCarrera";
-                    cmbCarrera.ValueMember = "id_carrera";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar las carreras.  " + ex.Message);
-            }
-        }
-        //metodo para ver que no se vaya ningun campo requerido vacio
-        public bool ValidarCamposVacios()
-        {
-            string mensajeError = "Asegurese de llenar todos los campos correctamente.";
-            bool esValido = true;
-
-            //Uso un linq en este foreach para pasar unicamente por los controles de tipo textBox
-            foreach (TextBox txt in pnlAgregarPacientes.Controls.OfType<TextBox>())
-            {
-                //solo aplica a txt que esten en enabled=true y vacios.
-                if (txt.Enabled && txt.Text.Trim() == "")
-                {
-                    txt.Focus();
-                    esValido = false;
-                    break;
-                }
-            }
-            //Uso un linq en este foreach para pasar unicamente por los controles de tipo comboBox 
-            foreach (ComboBox combo in pnlAgregarPacientes.Controls.OfType<ComboBox>())
-            {
-                //solo aplica para comboBox que esten enabled=true y combo.
-                if (combo.Enabled && combo.SelectedIndex < 1)
-                {
-                    combo.Focus();
-                    esValido = false;
-                    break;
-                }
-            }
-
-            if (!esValido)
-            {
-                MessageBox.Show(mensajeError, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            return esValido;
-        }        
-
-        public void HabilitarControles()
-        { 
-            //Variable de tipo bool que depende de si se ha seleccionado a un alumno o no.
-            bool esAlumno = cmbTipoPaciente.Text == "Alumno";
-
-            //dependiendo de si es bool o no
-            cmbCarrera.Enabled = esAlumno;
-            cmbGrado.Enabled = esAlumno;
-            txtGrupo.Enabled = esAlumno;
-
-            //si no es alumno, los campos academicos de desactivan.
-            if (!esAlumno)
-            {
-                cmbCarrera.SelectedIndex = 0;
-                cmbGrado.SelectedIndex = 0;
-                txtGrupo.Clear();
-            }
-        }
+        
+        //metodo para ver que no se vaya ningun campo requerido vacio 
         private void cmbTipoPaciente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HabilitarControles();
+            paciente.HabilitarControles(cmbTipoPaciente, cmbCarrera, cmbGrado,txtGrupo);
         }
-        public void VaciarCampos()
-        {
-            //  Vacia los campos
-            foreach (Control c in pnlAgregarPacientes.Controls)
-            {
-                if (c is TextBox)
-                {
-                    c.Text = string.Empty;
-                }
-                else if (c is ComboBox combo)
-                {
-                    combo.SelectedIndex = 0;
-                }
-                else if (c is DateTimePicker datePicker)
-                {
-                    datePicker.Value = DateTime.Now;
-                }                
-            }
-            HabilitarControles();
-        }
+        
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 //Primero se valida si hay campos vacios
-                if (ValidarCamposVacios())
+                if (paciente.ValidarCamposVacios(pnlAgregarPacientes))
                 {
                     paciente = new clsPacientes();
 
@@ -169,15 +69,15 @@ namespace Vitalis
                     else
                     {
                         paciente.IdCarrera = null;
-                        paciente.Grado = "";
-                        paciente.Grupo = "";
+                        paciente.Grado = string.Empty;
+                        paciente.Grupo = string.Empty;
                     }
                     //se inicia el metodo de guardar datos y en caso de no funcionar los datos se manda un mensaje
                     string msg = paciente.GuardarPaciente();
                     //Se muestra el mensaje diciendo el resultado.
                     MessageBox.Show(msg);
                     //se vacian los campos para un nuevo registro
-                    VaciarCampos();
+                    paciente.VaciarCampos(pnlAgregarPacientes);
                 }
             }
             catch (Exception ex)

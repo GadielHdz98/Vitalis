@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             pnlAgregarPacientes = new Panel();
+            label17 = new Label();
+            label16 = new Label();
+            label10 = new Label();
             label15 = new Label();
             txtNombre = new TextBox();
             label14 = new Label();
@@ -67,9 +70,6 @@
             cmbTipoPaciente = new ComboBox();
             txtMatriculaNoTrab = new TextBox();
             lblConsultasBuscarTitulo = new Label();
-            label10 = new Label();
-            label16 = new Label();
-            label17 = new Label();
             pnlAgregarPacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
             SuspendLayout();
@@ -122,6 +122,40 @@
             pnlAgregarPacientes.Name = "pnlAgregarPacientes";
             pnlAgregarPacientes.Size = new Size(1635, 716);
             pnlAgregarPacientes.TabIndex = 0;
+            // 
+            // label17
+            // 
+            label17.BackColor = Color.Transparent;
+            label17.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label17.ForeColor = SystemColors.ControlDark;
+            label17.Location = new Point(966, 309);
+            label17.Name = "label17";
+            label17.Size = new Size(366, 60);
+            label17.TabIndex = 60;
+            label17.Text = "Datos exclusivos para pacientes de tipo alumno.";
+            // 
+            // label16
+            // 
+            label16.BackColor = Color.Transparent;
+            label16.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label16.ForeColor = SystemColors.ControlDark;
+            label16.Location = new Point(82, 549);
+            label16.Name = "label16";
+            label16.Size = new Size(408, 78);
+            label16.TabIndex = 59;
+            label16.Text = "Presione directamente el campo de fecha para editar con el teclado. No se permirte backspace.";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label10.ForeColor = SystemColors.ControlDark;
+            label10.Location = new Point(1045, 673);
+            label10.Name = "label10";
+            label10.Size = new Size(572, 25);
+            label10.TabIndex = 58;
+            label10.Text = "Asegurese de llenar todos los campos correctamente antes de buscar.";
             // 
             // label15
             // 
@@ -517,7 +551,7 @@
             dtmpFechaNaciPaciente.CalendarFont = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtmpFechaNaciPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtmpFechaNaciPaciente.Format = DateTimePickerFormat.Short;
-            dtmpFechaNaciPaciente.Location = new Point(203, 504);
+            dtmpFechaNaciPaciente.Location = new Point(203, 498);
             dtmpFechaNaciPaciente.MaximumSize = new Size(300, 33);
             dtmpFechaNaciPaciente.MinimumSize = new Size(250, 33);
             dtmpFechaNaciPaciente.Name = "dtmpFechaNaciPaciente";
@@ -584,40 +618,6 @@
             lblConsultasBuscarTitulo.Size = new Size(727, 68);
             lblConsultasBuscarTitulo.TabIndex = 12;
             lblConsultasBuscarTitulo.Text = "Datos para agregar pacientes";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.Transparent;
-            label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label10.ForeColor = SystemColors.ControlDark;
-            label10.Location = new Point(1045, 673);
-            label10.Name = "label10";
-            label10.Size = new Size(572, 25);
-            label10.TabIndex = 58;
-            label10.Text = "Asegurese de llenar todos los campos correctamente antes de buscar.";
-            // 
-            // label16
-            // 
-            label16.BackColor = Color.Transparent;
-            label16.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label16.ForeColor = SystemColors.ControlDark;
-            label16.Location = new Point(82, 560);
-            label16.Name = "label16";
-            label16.Size = new Size(408, 78);
-            label16.TabIndex = 59;
-            label16.Text = "Presione directamente el campo de fecha para editar con el teclado. No se permirte backspace.";
-            // 
-            // label17
-            // 
-            label17.BackColor = Color.Transparent;
-            label17.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label17.ForeColor = SystemColors.ControlDark;
-            label17.Location = new Point(966, 309);
-            label17.Name = "label17";
-            label17.Size = new Size(366, 60);
-            label17.TabIndex = 60;
-            label17.Text = "Datos exclusivos para pacientes de tipo alumno.";
             // 
             // frmPacientesAgregar
             // 

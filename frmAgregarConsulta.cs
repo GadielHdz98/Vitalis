@@ -73,7 +73,7 @@ namespace Vitalis
             {
                 pacientes.Matricula = int.Parse(txtMatriculaPaciente.Text);
 
-                DataTable tabla = pacientes.Consultar();
+                DataTable tabla = pacientes.ConsultarPacienteConsulta();
 
                 if (tabla.Rows.Count == 0)
                 {
@@ -167,8 +167,8 @@ namespace Vitalis
             //Uso un linq en este foreach para pasar unicamente por los controles de tipo textBox
             foreach (TextBox txt in pnlAgregarConsultas.Controls.OfType<TextBox>())
             {
-                //solo aplica a txt que esten en enabled=true y vacios.
-                if (txt.Text.Trim() == "")
+                
+                if (txt.Text.Trim() == "") //solo aplica a txt que esten en enabled=true y vacios.
                 {
                     txt.Focus();
                     esValido = false;
