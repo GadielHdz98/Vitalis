@@ -16,10 +16,10 @@ namespace Vitalis
             {
                 if (login.ShowDialog() == DialogResult.OK)
                 {
+                    QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
                     Application.Run(new frmPrincipal());
                 }
             }
-
             //Application.Run(new frmLogin());
             //Application.Run(new frmPrincipal());
             //Application.Run(new frmConsultasRecientes());

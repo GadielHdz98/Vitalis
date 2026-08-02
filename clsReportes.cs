@@ -7,9 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static QuestPDF.Helpers.Colors;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 
@@ -24,6 +26,8 @@ namespace Vitalis
         //Usamos command para insertar o actualizar
         private MySqlCommand comando;
 
+        private string mes;
+
         public DataTable ConsultarPorCantDiagnostico()
         {
             tabla = new DataTable();
@@ -32,12 +36,18 @@ namespace Vitalis
                 clsConexion conexionBD = new clsConexion();
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = "SELECT D.nombreDiagnostico AS 'Nombre Diagnostico', " +
-                                 "COUNT(*) AS Total " +
-                                 "FROM consultas C " +
-                                 "INNER JOIN diagnosticos D ON C.id_Diagnostico = D.id_Diagnostico " +
-                                 "GROUP BY D.nombreDiagnostico " +
-                                 "ORDER BY Total DESC;";
+                    string sql = "SELECT * FROM ( " +
+                                    "SELECT D.nombreDiagnostico AS Diagnostico, " +
+                                    "CA.nombreCarrera AS Carrera, " +
+                                    "COUNT(*) AS 'Total Casos', " +
+                                    "0 AS Orden " +
+                                    "FROM consultas C " +
+                                    "INNER JOIN diagnosticos D ON C.id_Diagnostico = D.id_Diagnostico " +
+                                    "INNER JOIN pacientes P ON C.Matricula = P.Matricula " +
+                                    "INNER JOIN carreras CA ON P.id_carrera = CA.id_carrera " +
+                                    "GROUP BY D.nombreDiagnostico, CA.nombreCarrera " +
+                                    "UNION ALL SELECT 'TOTAL GENERAL', '', COUNT(*), 1 FROM consultas " +
+                                  " ) AS Reporte ORDER BY Orden, Diagnostico, Carrera;";
                     using (consulta = new MySqlDataAdapter(sql, conexion))
                     {
                         consulta.Fill(tabla);
@@ -52,7 +62,8 @@ namespace Vitalis
             return tabla;
         }
 
-        public DataTable ConsultarConsultasMensuales()
+        // Reporte de consultas mensuales.
+        public DataTable ConsultarConsultasMensuales(int mes)
         {
             tabla = new DataTable();
             try
@@ -60,27 +71,63 @@ namespace Vitalis
                 clsConexion conexionBD = new clsConexion();
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = "SELECT C.id_Consulta AS 'No. Consulta', " +
-                                 "C.FechaConsulta AS 'Fecha', " +
-                                 "C.horaInicio AS 'Hora Inicio', " +
-                                 "C.horaFinal AS 'Hora Final', " +
+                    string sql = "SELECT C.FechaConsulta AS 'Fecha', " +
                                  "P.Matricula AS 'Matrícula', " +
                                  "CONCAT(P.nombre, ' ', P.apellidoPaterno, ' ', P.apellidoMaterno) AS 'Paciente', " +
+                                 "P.tipoPaciente AS 'Tipo Paciente', " +
                                  "CA.nombreCarrera AS 'Carrera', " +
                                  "P.grado AS 'Grado', " +
                                  "P.grupo AS 'Grupo', " +
-                                 "P.tipoPaciente AS 'Tipo de Paciente', " +
                                  "D.nombreDiagnostico AS 'Diagnóstico', " +
-                                 "C.tratamiento AS 'Tratamiento', " +
-                                 "CONCAT(SM.nombre, ' ', SM.apellidoPaterno, ' ', SM.apellidoMaterno) AS 'Atendido por', " +
-                                 "SM.perfil AS 'Perfil' " +
+                                 "CONCAT(SM.nombre, ' ', SM.apellidoPaterno, ' ', SM.apellidoMaterno) AS 'Atendido por' " +
                                  "FROM consultas C " +
                                  "INNER JOIN pacientes P ON C.Matricula = P.Matricula " +
                                  "INNER JOIN carreras CA ON P.id_carrera = CA.id_carrera " +
                                  "INNER JOIN diagnosticos D ON C.id_Diagnostico = D.id_Diagnostico " +
                                  "INNER JOIN serviciosmedicos SM ON C.id_ServicioMedico = SM.id_ServicioMedico " +
-                                 "WHERE MONTH(C.FechaConsulta) = MONTH(CURDATE()) AND YEAR(C.FechaConsulta) = YEAR(CURDATE()) " +
+                                 "WHERE MONTH(C.FechaConsulta) = @mes " +
+                                 "AND YEAR(C.FechaConsulta) = YEAR(CURDATE()) " +
                                  "ORDER BY C.FechaConsulta DESC, C.horaInicio DESC; ";
+
+                    using (consulta = new MySqlDataAdapter(sql, conexion))
+                    {
+                        consulta.SelectCommand.Parameters.AddWithValue("@mes", mes);
+                        consulta.Fill(tabla);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar las consultas mensuales" + ex.Message);
+            }
+            return tabla;
+        }
+
+        public DataTable ReporteSemanaActual()
+        {
+            tabla = new DataTable();
+            try
+            {
+                clsConexion conexionBD = new clsConexion();
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    string sql = "SELECT C.FechaConsulta AS 'Fecha', " +
+                                 "P.Matricula AS 'Matrícula', " +
+                                 "CONCAT(P.nombre, ' ', P.apellidoPaterno, ' ', P.apellidoMaterno) AS 'Paciente', " +
+                                 "P.tipoPaciente AS 'Tipo Paciente', " +
+                                 "CA.nombreCarrera AS 'Carrera', " +
+                                 "P.grado AS 'Grado', " +
+                                 "P.grupo AS 'Grupo', " +
+                                 "D.nombreDiagnostico AS 'Diagnóstico', " +
+                                 "CONCAT(SM.nombre, ' ', SM.apellidoPaterno, ' ', SM.apellidoMaterno) AS 'Atendido por' " +
+                                 "FROM consultas C " +
+                                 "INNER JOIN pacientes P ON C.Matricula = P.Matricula " +
+                                 "INNER JOIN carreras CA ON P.id_carrera = CA.id_carrera " +
+                                 "INNER JOIN diagnosticos D ON C.id_Diagnostico = D.id_Diagnostico " +
+                                 "INNER JOIN serviciosmedicos SM ON C.id_ServicioMedico = SM.id_ServicioMedico " +
+                                 "WHERE C.FechaConsulta BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE() " +
+                                 "ORDER BY C.FechaConsulta DESC, C.horaInicio DESC;";
                     using (consulta = new MySqlDataAdapter(sql, conexion))
                     {
                         consulta.Fill(tabla);
@@ -90,7 +137,7 @@ namespace Vitalis
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al consultar las consultas mensuales" + ex.Message);
+                throw new Exception("Error al mostrar el total de diagnosticos por consulta" + ex.Message);
             }
             return tabla;
         }
@@ -206,7 +253,7 @@ namespace Vitalis
                         });
                     }).GeneratePdf(guardarArchivo.FileName);
 
-                    MessageBox.Show("Reporte institucional generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Reporte generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
