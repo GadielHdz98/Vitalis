@@ -141,7 +141,7 @@
             label16.BackColor = Color.Transparent;
             label16.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label16.ForeColor = SystemColors.ControlDark;
-            label16.Location = new Point(82, 560);
+            label16.Location = new Point(82, 549);
             label16.Name = "label16";
             label16.Size = new Size(408, 78);
             label16.TabIndex = 59;
@@ -565,7 +565,7 @@
             dtmpFechaNaciPaciente.CalendarFont = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtmpFechaNaciPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtmpFechaNaciPaciente.Format = DateTimePickerFormat.Short;
-            dtmpFechaNaciPaciente.Location = new Point(203, 504);
+            dtmpFechaNaciPaciente.Location = new Point(203, 498);
             dtmpFechaNaciPaciente.MaximumSize = new Size(300, 33);
             dtmpFechaNaciPaciente.MinimumSize = new Size(250, 33);
             dtmpFechaNaciPaciente.Name = "dtmpFechaNaciPaciente";
