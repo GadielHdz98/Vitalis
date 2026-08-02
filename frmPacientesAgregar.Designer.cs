@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pnlAgregarPacientes = new Panel();
             label17 = new Label();
             label16 = new Label();
@@ -70,6 +71,7 @@
             cmbTipoPaciente = new ComboBox();
             txtMatriculaNoTrab = new TextBox();
             lblConsultasBuscarTitulo = new Label();
+            tipPacientesAgregar = new ToolTip(components);
             pnlAgregarPacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
             SuspendLayout();
@@ -180,6 +182,7 @@
             txtNombre.PlaceholderText = "Ingresa él(los) nombres";
             txtNombre.Size = new Size(270, 33);
             txtNombre.TabIndex = 18;
+            tipPacientesAgregar.SetToolTip(txtNombre, "Ingrese el nombre del paciente.");
             // 
             // label14
             // 
@@ -285,6 +288,7 @@
             cmbSexo.Name = "cmbSexo";
             cmbSexo.Size = new Size(270, 33);
             cmbSexo.TabIndex = 47;
+            tipPacientesAgregar.SetToolTip(cmbSexo, "Seleccione el sexo del paciente.");
             // 
             // label5
             // 
@@ -371,6 +375,7 @@
             pcbFotoPaciente.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbFotoPaciente.TabIndex = 38;
             pcbFotoPaciente.TabStop = false;
+            tipPacientesAgregar.SetToolTip(pcbFotoPaciente, "Fotografia del paciente.");
             // 
             // btnVaciarCampos
             // 
@@ -384,6 +389,7 @@
             btnVaciarCampos.Size = new Size(160, 35);
             btnVaciarCampos.TabIndex = 37;
             btnVaciarCampos.Text = "Vaciar campos";
+            tipPacientesAgregar.SetToolTip(btnVaciarCampos, "Vaciar todos los campos.");
             btnVaciarCampos.UseVisualStyleBackColor = false;
             btnVaciarCampos.Click += btnVaciarCampos_Click;
             // 
@@ -399,6 +405,7 @@
             btnGuardar.Size = new Size(160, 35);
             btnGuardar.TabIndex = 36;
             btnGuardar.Text = "Guardar";
+            tipPacientesAgregar.SetToolTip(btnGuardar, "Guardar paciente.");
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
@@ -413,6 +420,7 @@
             txtUltimaTemperatura.PlaceholderText = "Ultima temperatura (°C) ";
             txtUltimaTemperatura.Size = new Size(270, 33);
             txtUltimaTemperatura.TabIndex = 35;
+            tipPacientesAgregar.SetToolTip(txtUltimaTemperatura, "Ingrese la temperatura actual del paciente.");
             // 
             // txtUltimaPresionArt
             // 
@@ -425,6 +433,7 @@
             txtUltimaPresionArt.PlaceholderText = "Ultima presion arterial (x/y)";
             txtUltimaPresionArt.Size = new Size(270, 33);
             txtUltimaPresionArt.TabIndex = 34;
+            tipPacientesAgregar.SetToolTip(txtUltimaPresionArt, "Ingrese la presion actual del paciente.");
             // 
             // txtAltura
             // 
@@ -437,6 +446,7 @@
             txtAltura.PlaceholderText = "Altura (cm)";
             txtAltura.Size = new Size(270, 33);
             txtAltura.TabIndex = 33;
+            txtAltura.Text = "Ingrese la altura actual del paciente.";
             // 
             // txtPeso
             // 
@@ -449,6 +459,7 @@
             txtPeso.PlaceholderText = "Peso (kg)";
             txtPeso.Size = new Size(270, 33);
             txtPeso.TabIndex = 32;
+            txtPeso.Text = "Ingrese el peso actual del paciente.";
             // 
             // lblSubTituloFisiologicos
             // 
@@ -508,6 +519,7 @@
             txtGrupo.PlaceholderText = "Grupo";
             txtGrupo.Size = new Size(270, 33);
             txtGrupo.TabIndex = 25;
+            tipPacientesAgregar.SetToolTip(txtGrupo, "Ingrese el grupo al que pertenece el paciente.");
             // 
             // cmbGrado
             // 
@@ -521,6 +533,7 @@
             cmbGrado.Name = "cmbGrado";
             cmbGrado.Size = new Size(270, 33);
             cmbGrado.TabIndex = 24;
+            tipPacientesAgregar.SetToolTip(cmbGrado, "Ingrese el grado al que pertenece el paciente.");
             // 
             // cmbCarrera
             // 
@@ -533,6 +546,7 @@
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(270, 33);
             cmbCarrera.TabIndex = 23;
+            tipPacientesAgregar.SetToolTip(cmbCarrera, "Ingrese la carrera a la que pertenece el paciente.");
             // 
             // lblPacienteFechaNaci
             // 
@@ -557,6 +571,7 @@
             dtmpFechaNaciPaciente.Name = "dtmpFechaNaciPaciente";
             dtmpFechaNaciPaciente.Size = new Size(270, 33);
             dtmpFechaNaciPaciente.TabIndex = 21;
+            tipPacientesAgregar.SetToolTip(dtmpFechaNaciPaciente, "Seleccione la fecha de nacimiento del paciente.");
             // 
             // txtPacienteApellidoMaterno
             // 
@@ -569,6 +584,7 @@
             txtPacienteApellidoMaterno.PlaceholderText = "Ingresa él apellido materno";
             txtPacienteApellidoMaterno.Size = new Size(270, 33);
             txtPacienteApellidoMaterno.TabIndex = 20;
+            tipPacientesAgregar.SetToolTip(txtPacienteApellidoMaterno, "Ingrese el apellido materno del paciente.");
             // 
             // txtPacienteApellidoPaterno
             // 
@@ -581,6 +597,7 @@
             txtPacienteApellidoPaterno.PlaceholderText = "Ingresa él apellido paterno";
             txtPacienteApellidoPaterno.Size = new Size(270, 33);
             txtPacienteApellidoPaterno.TabIndex = 19;
+            tipPacientesAgregar.SetToolTip(txtPacienteApellidoPaterno, "Ingrese el apellido paterno del paciente.");
             // 
             // cmbTipoPaciente
             // 
@@ -594,6 +611,7 @@
             cmbTipoPaciente.Name = "cmbTipoPaciente";
             cmbTipoPaciente.Size = new Size(270, 33);
             cmbTipoPaciente.TabIndex = 17;
+            tipPacientesAgregar.SetToolTip(cmbTipoPaciente, "Seleccione el tipo de paciente.");
             cmbTipoPaciente.SelectedIndexChanged += cmbTipoPaciente_SelectedIndexChanged;
             // 
             // txtMatriculaNoTrab
@@ -607,6 +625,7 @@
             txtMatriculaNoTrab.PlaceholderText = "Ingresa la matricula";
             txtMatriculaNoTrab.Size = new Size(270, 33);
             txtMatriculaNoTrab.TabIndex = 13;
+            tipPacientesAgregar.SetToolTip(txtMatriculaNoTrab, "Ingrese la matricula del paciente.");
             // 
             // lblConsultasBuscarTitulo
             // 
@@ -679,5 +698,6 @@
         private Label label16;
         private Label label10;
         private Label label17;
+        private ToolTip tipPacientesAgregar;
     }
 }

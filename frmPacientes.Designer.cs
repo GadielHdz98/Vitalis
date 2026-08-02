@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pnlBuscarPacientes = new Panel();
             pnlContenedorPacientes = new Panel();
             pnlPacientesTopBar = new Panel();
             btnBuscarPacientesTopBar = new Button();
             btnAgregarPacientesTopBar = new Button();
             btnPacientesRecientesTopBar = new Button();
+            tipPacientes = new ToolTip(components);
             pnlBuscarPacientes.SuspendLayout();
             pnlPacientesTopBar.SuspendLayout();
             SuspendLayout();
@@ -83,6 +85,7 @@
             btnBuscarPacientesTopBar.Size = new Size(185, 70);
             btnBuscarPacientesTopBar.TabIndex = 3;
             btnBuscarPacientesTopBar.Text = "Buscar";
+            tipPacientes.SetToolTip(btnBuscarPacientesTopBar, "Buscar paciente.");
             btnBuscarPacientesTopBar.UseVisualStyleBackColor = false;
             btnBuscarPacientesTopBar.Click += btnBuscarPacientesTopBar_Click;
             // 
@@ -99,6 +102,7 @@
             btnAgregarPacientesTopBar.Size = new Size(185, 70);
             btnAgregarPacientesTopBar.TabIndex = 4;
             btnAgregarPacientesTopBar.Text = "Agregar";
+            tipPacientes.SetToolTip(btnAgregarPacientesTopBar, "Agregar nuevo paciente.");
             btnAgregarPacientesTopBar.UseVisualStyleBackColor = false;
             btnAgregarPacientesTopBar.Click += btnAgregarPacientesTopBar_Click;
             // 
@@ -115,6 +119,7 @@
             btnPacientesRecientesTopBar.Size = new Size(185, 70);
             btnPacientesRecientesTopBar.TabIndex = 2;
             btnPacientesRecientesTopBar.Text = "Recientes";
+            tipPacientes.SetToolTip(btnPacientesRecientesTopBar, "Pacientes recientes.");
             btnPacientesRecientesTopBar.UseVisualStyleBackColor = false;
             btnPacientesRecientesTopBar.Click += btnPacientesRecientesTopBar_Click;
             // 
@@ -139,5 +144,6 @@
         private Button btnBuscarPacientesTopBar;
         private Button btnAgregarPacientesTopBar;
         private Button btnPacientesRecientesTopBar;
+        private ToolTip tipPacientes;
     }
 }

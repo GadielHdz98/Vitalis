@@ -23,6 +23,7 @@ namespace Vitalis
         private int? idCarrera;
         private string grado;
         private string grupo;
+        private DateTime fechaIngresado;
 
         private string sexo;
         private double peso;
@@ -96,7 +97,8 @@ namespace Vitalis
                         tipoPaciente,
                         id_carrera,
                         grado,
-                        grupo
+                        grupo,
+                        fechaIngresado
                     )
                     VALUES
                     (
@@ -107,7 +109,8 @@ namespace Vitalis
                         @TipoPaciente,
                         @IdCarrera,
                         @Grado,
-                        @Grupo
+                        @Grupo,
+                        @FechaIngresado
                     );";
                     using (comando = new MySqlCommand(sqlPaciente, conexion, transaccion))
                     {
@@ -116,6 +119,7 @@ namespace Vitalis
                         comando.Parameters.AddWithValue("@ApellidoPaterno", apellidoPaterno);
                         comando.Parameters.AddWithValue("@ApellidoMaterno", apellidoMaterno);
                         comando.Parameters.AddWithValue("@TipoPaciente", tipoPaciente);
+                        comando.Parameters.AddWithValue("@FechaIngresado", DateTime.Now);
 
                         if (idCarrera.HasValue)
                         {

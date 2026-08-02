@@ -134,6 +134,7 @@
             cmbSexo.Name = "cmbSexo";
             cmbSexo.Size = new Size(270, 33);
             cmbSexo.TabIndex = 87;
+            toolTip1.SetToolTip(cmbSexo, "Seleccione el sexo del paciente.");
             // 
             // lblSexo
             // 
@@ -224,6 +225,7 @@
             btnEliminar.Size = new Size(160, 35);
             btnEliminar.TabIndex = 48;
             btnEliminar.Text = "Eliminar";
+            toolTip1.SetToolTip(btnEliminar, "Eliminar consulta actual.");
             btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnEditar
@@ -238,6 +240,7 @@
             btnEditar.Size = new Size(160, 35);
             btnEditar.TabIndex = 47;
             btnEditar.Text = "Editar";
+            toolTip1.SetToolTip(btnEditar, "Editar consulta actual.");
             btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
             // 
@@ -284,6 +287,7 @@
             txtDia.PlaceholderText = "Día";
             txtDia.Size = new Size(67, 33);
             txtDia.TabIndex = 30;
+            toolTip1.SetToolTip(txtDia, "Dia de la consulta.");
             // 
             // txtMes
             // 
@@ -296,6 +300,7 @@
             txtMes.PlaceholderText = "Més";
             txtMes.Size = new Size(67, 33);
             txtMes.TabIndex = 29;
+            toolTip1.SetToolTip(txtMes, "Mes de la consulta.");
             // 
             // lblConsultasBuscarAvisoFecha
             // 
@@ -318,6 +323,7 @@
             txtAnio.PlaceholderText = "Año";
             txtAnio.Size = new Size(67, 33);
             txtAnio.TabIndex = 27;
+            toolTip1.SetToolTip(txtAnio, "Año de la consulta.");
             // 
             // lblConsultasBuscarFecha
             // 
@@ -340,6 +346,7 @@
             cbxCITA.Size = new Size(298, 29);
             cbxCITA.TabIndex = 22;
             cbxCITA.Text = "Cita (si se programo cita o no)";
+            toolTip1.SetToolTip(cbxCITA, "Marcar en caso de haber programado una cita.");
             cbxCITA.UseVisualStyleBackColor = true;
             // 
             // cbxCIR
@@ -352,6 +359,7 @@
             cbxCIR.Size = new Size(245, 29);
             cbxCIR.TabIndex = 21;
             cbxCIR.Text = "CIR (si llevó receta o no)";
+            toolTip1.SetToolTip(cbxCIR, "Marcar en caso de haber llevado cita.");
             cbxCIR.UseVisualStyleBackColor = true;
             // 
             // lblConsultaBuscarConsulta
@@ -387,6 +395,7 @@
             cmbDiagnostico.Name = "cmbDiagnostico";
             cmbDiagnostico.Size = new Size(270, 33);
             cmbDiagnostico.TabIndex = 18;
+            toolTip1.SetToolTip(cmbDiagnostico, "Seleccione el consultor que atendio la consulta.");
             // 
             // cmbTurno
             // 
@@ -434,6 +443,7 @@
             btnVaciarCampos.Size = new Size(160, 35);
             btnVaciarCampos.TabIndex = 11;
             btnVaciarCampos.Text = "Vaciar campos";
+            toolTip1.SetToolTip(btnVaciarCampos, "Vaciar todos los campos.");
             btnVaciarCampos.UseVisualStyleBackColor = false;
             btnVaciarCampos.Click += btnVaciarCampos_Click;
             // 
@@ -448,6 +458,7 @@
             btnBuscarPaciente.Size = new Size(160, 35);
             btnBuscarPaciente.TabIndex = 10;
             btnBuscarPaciente.Text = "Buscar";
+            toolTip1.SetToolTip(btnBuscarPaciente, "Buscar consulta.");
             btnBuscarPaciente.UseVisualStyleBackColor = false;
             // 
             // cmbTipoPaciente
@@ -461,6 +472,7 @@
             cmbTipoPaciente.Name = "cmbTipoPaciente";
             cmbTipoPaciente.Size = new Size(270, 33);
             cmbTipoPaciente.TabIndex = 8;
+            toolTip1.SetToolTip(cmbTipoPaciente, "Seleccione el tipo de paciente.");
             // 
             // cmbCarrera
             // 
@@ -473,6 +485,7 @@
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(270, 33);
             cmbCarrera.TabIndex = 7;
+            toolTip1.SetToolTip(cmbCarrera, "Seleccione la carrera a la que pertenece el paciente.");
             // 
             // cmbCuatri
             // 
@@ -485,6 +498,7 @@
             cmbCuatri.Name = "cmbCuatri";
             cmbCuatri.Size = new Size(270, 33);
             cmbCuatri.TabIndex = 6;
+            toolTip1.SetToolTip(cmbCuatri, "Ingrese el cuatrimestre del paciente.");
             // 
             // txtGrupo
             // 
@@ -497,6 +511,7 @@
             txtGrupo.PlaceholderText = "Grupo";
             txtGrupo.Size = new Size(270, 33);
             txtGrupo.TabIndex = 1;
+            toolTip1.SetToolTip(txtGrupo, "Ingrese el grupo del paciente.");
             // 
             // lblConsultasBuscarTitulo
             // 
@@ -519,6 +534,7 @@
             pcbIconoBuscar.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbIconoBuscar.TabIndex = 17;
             pcbIconoBuscar.TabStop = false;
+            toolTip1.SetToolTip(pcbIconoBuscar, "Buscar consulta.");
             // 
             // txtBuscarPorNumConsul
             // 
@@ -530,6 +546,7 @@
             txtBuscarPorNumConsul.PlaceholderText = "Buscar por Num. consulta";
             txtBuscarPorNumConsul.Size = new Size(267, 33);
             txtBuscarPorNumConsul.TabIndex = 16;
+            toolTip1.SetToolTip(txtBuscarPorNumConsul, "Buscar consulta por numero de matricula.");
             // 
             // frmConsultasBuscar
             // 

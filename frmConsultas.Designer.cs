@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pnlConsultasTopBar = new Panel();
             panel2 = new Panel();
             btnBuscarConsultasTopBar = new Button();
             btnAgregarConsultasTopBar = new Button();
             btnConsultasRecientesTopBar = new Button();
             pnlContenedorConsultas = new Panel();
+            tipConsultas = new ToolTip(components);
             pnlConsultasTopBar.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,6 +73,7 @@
             btnBuscarConsultasTopBar.Size = new Size(185, 70);
             btnBuscarConsultasTopBar.TabIndex = 3;
             btnBuscarConsultasTopBar.Text = "Buscar";
+            tipConsultas.SetToolTip(btnBuscarConsultasTopBar, "Buscar una consulta en especifico.");
             btnBuscarConsultasTopBar.UseVisualStyleBackColor = false;
             btnBuscarConsultasTopBar.Click += btnBuscarConsultasTopBar_Click;
             // 
@@ -87,6 +90,7 @@
             btnAgregarConsultasTopBar.Size = new Size(185, 70);
             btnAgregarConsultasTopBar.TabIndex = 4;
             btnAgregarConsultasTopBar.Text = "Agregar";
+            tipConsultas.SetToolTip(btnAgregarConsultasTopBar, "Agregar nueva consulta.");
             btnAgregarConsultasTopBar.UseVisualStyleBackColor = false;
             btnAgregarConsultasTopBar.Click += btnAgregarConsultasTopBar_Click;
             // 
@@ -103,6 +107,7 @@
             btnConsultasRecientesTopBar.Size = new Size(185, 70);
             btnConsultasRecientesTopBar.TabIndex = 2;
             btnConsultasRecientesTopBar.Text = "Recientes";
+            tipConsultas.SetToolTip(btnConsultasRecientesTopBar, "Ver consultas recientes.");
             btnConsultasRecientesTopBar.UseVisualStyleBackColor = false;
             btnConsultasRecientesTopBar.Click += btnConsultasRecientesTopBar_Click;
             // 
@@ -134,5 +139,6 @@
         private Button btnConsultasRecientesTopBar;
         private Panel panel2;
         private Panel pnlContenedorConsultas;
+        private ToolTip tipConsultas;
     }
 }

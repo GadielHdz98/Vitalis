@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             dgvServiciosMedicos = new DataGridView();
             pcbIconoBuscarServicio = new PictureBox();
             txtBuscarServicioMedico = new TextBox();
@@ -53,6 +54,7 @@
             btnEliminar = new Button();
             txtNombreServicioMedico = new TextBox();
             btnGuardar = new Button();
+            totAyuda = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)dgvServiciosMedicos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbIconoBuscarServicio).BeginInit();
             pnlDiagnosticos.SuspendLayout();
@@ -64,21 +66,21 @@
             dgvServiciosMedicos.AllowUserToDeleteRows = false;
             dgvServiciosMedicos.AllowUserToResizeColumns = false;
             dgvServiciosMedicos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(239, 239, 239);
-            dgvServiciosMedicos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(239, 239, 239);
+            dgvServiciosMedicos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvServiciosMedicos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvServiciosMedicos.BackgroundColor = Color.White;
             dgvServiciosMedicos.BorderStyle = BorderStyle.None;
             dgvServiciosMedicos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvServiciosMedicos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvServiciosMedicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvServiciosMedicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvServiciosMedicos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvServiciosMedicos.EnableHeadersVisualStyles = false;
             dgvServiciosMedicos.GridColor = Color.White;
@@ -87,8 +89,9 @@
             dgvServiciosMedicos.Name = "dgvServiciosMedicos";
             dgvServiciosMedicos.ReadOnly = true;
             dgvServiciosMedicos.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dgvServiciosMedicos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dgvServiciosMedicos.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dgvServiciosMedicos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dgvServiciosMedicos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvServiciosMedicos.Size = new Size(885, 593);
             dgvServiciosMedicos.TabIndex = 15;
@@ -115,6 +118,7 @@
             txtBuscarServicioMedico.PlaceholderText = "Buscar por nombre";
             txtBuscarServicioMedico.Size = new Size(270, 33);
             txtBuscarServicioMedico.TabIndex = 13;
+            totAyuda.SetToolTip(txtBuscarServicioMedico, "Buscar el usuario por medio de su nombre.");
             txtBuscarServicioMedico.TextChanged += txtBuscarServicioMedico_TextChanged;
             // 
             // lblDiagnostico
@@ -173,7 +177,6 @@
             txtNoTrabajador.MaxLength = 50;
             txtNoTrabajador.Name = "txtNoTrabajador";
             txtNoTrabajador.PlaceholderText = "No. Trabajador";
-            txtNoTrabajador.ReadOnly = true;
             txtNoTrabajador.Size = new Size(270, 33);
             txtNoTrabajador.TabIndex = 79;
             // 
@@ -199,6 +202,7 @@
             txtNombreUsuario.PlaceholderText = "Nombre del usuario.";
             txtNombreUsuario.Size = new Size(270, 33);
             txtNombreUsuario.TabIndex = 77;
+            totAyuda.SetToolTip(txtNombreUsuario, "Ingrese el nombre de usuario del trabajador.");
             // 
             // cmbPerfil
             // 
@@ -212,6 +216,7 @@
             cmbPerfil.Name = "cmbPerfil";
             cmbPerfil.Size = new Size(270, 33);
             cmbPerfil.TabIndex = 76;
+            totAyuda.SetToolTip(cmbPerfil, "Ingrese el tipo de perfil del usuario");
             // 
             // label5
             // 
@@ -246,6 +251,7 @@
             txtApellidMaternoServicio.PlaceholderText = "Apellido materno";
             txtApellidMaternoServicio.Size = new Size(270, 33);
             txtApellidMaternoServicio.TabIndex = 73;
+            totAyuda.SetToolTip(txtApellidMaternoServicio, "Ingrese el apellido materno del trabajador.");
             // 
             // label3
             // 
@@ -269,6 +275,7 @@
             txtApellidoPaternoServicio.PlaceholderText = "Apellido paterno";
             txtApellidoPaternoServicio.Size = new Size(270, 33);
             txtApellidoPaternoServicio.TabIndex = 71;
+            totAyuda.SetToolTip(txtApellidoPaternoServicio, "Ingrese el apellido paterno del trabajador.");
             // 
             // txtContrasenia
             // 
@@ -281,6 +288,7 @@
             txtContrasenia.PlaceholderText = "Contraseña";
             txtContrasenia.Size = new Size(270, 33);
             txtContrasenia.TabIndex = 70;
+            totAyuda.SetToolTip(txtContrasenia, "Ingrese la contraseña del paciente.");
             txtContrasenia.UseSystemPasswordChar = true;
             // 
             // btnNuevo
@@ -294,6 +302,7 @@
             btnNuevo.Size = new Size(160, 35);
             btnNuevo.TabIndex = 69;
             btnNuevo.Text = "Nuevo";
+            totAyuda.SetToolTip(btnNuevo, "Crear un nuevo trabajador con su usuario");
             btnNuevo.UseVisualStyleBackColor = false;
             btnNuevo.Click += btnNuevo_Click;
             // 
@@ -330,6 +339,7 @@
             btnEliminar.Size = new Size(160, 35);
             btnEliminar.TabIndex = 66;
             btnEliminar.Text = "Eliminar";
+            totAyuda.SetToolTip(btnEliminar, "Eliminar trabajador");
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
@@ -344,6 +354,7 @@
             txtNombreServicioMedico.PlaceholderText = "Nombre del  trabajador";
             txtNombreServicioMedico.Size = new Size(270, 33);
             txtNombreServicioMedico.TabIndex = 2;
+            totAyuda.SetToolTip(txtNombreServicioMedico, "Ingrese el nombre del trabajador.");
             // 
             // btnGuardar
             // 
@@ -356,6 +367,7 @@
             btnGuardar.Size = new Size(160, 35);
             btnGuardar.TabIndex = 65;
             btnGuardar.Text = "Guardar";
+            totAyuda.SetToolTip(btnGuardar, "Guardar / Actualizar los datos");
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
@@ -363,7 +375,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1719, 970);
+            ClientSize = new Size(1684, 791);
             Controls.Add(dgvServiciosMedicos);
             Controls.Add(pcbIconoBuscarServicio);
             Controls.Add(txtBuscarServicioMedico);
@@ -371,6 +383,7 @@
             Controls.Add(pnlDiagnosticos);
             Name = "frmUsuarios";
             Text = "Usuarios";
+            Load += frmUsuarios_Load;
             ((System.ComponentModel.ISupportInitialize)dgvServiciosMedicos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pcbIconoBuscarServicio).EndInit();
             pnlDiagnosticos.ResumeLayout(false);
@@ -403,5 +416,6 @@
         private TextBox txtNombreUsuario;
         private Label label7;
         private TextBox txtNoTrabajador;
+        private ToolTip totAyuda;
     }
 }

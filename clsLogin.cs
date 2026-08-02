@@ -9,7 +9,6 @@ namespace Vitalis
 {
     internal class clsLogin
     {
-        
         private string usuario;
         private string password;
 
@@ -84,7 +83,7 @@ namespace Vitalis
                                 idUsuarioLogeado = resultado.GetInt32("id_ServicioMedico");
                                 nombreUsuarioLogeado = resultado.GetString("nombre");
                                 apellidoPaUsuarioLogeado = resultado.GetString("apellidoPaterno");
-                                apellidoMaUsuarioLogeado = resultado.GetString("apellidoMaterno");                                
+                                apellidoMaUsuarioLogeado = resultado.GetString("apellidoMaterno");
                                 asignarPermisos();
 
                                 if (!esEnfermero && !esDoctor && !esAdministrador)

@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pnlSideBar = new Panel();
+            btnReortes = new Button();
             pnlPerfilUsuarioSideBar = new Panel();
             pictureBox1 = new PictureBox();
             btnCerrarSesionSideBar = new Button();
@@ -42,6 +44,7 @@
             pnlLogoVitalisSideBar = new Panel();
             pcbLogoVitalisSideBar = new PictureBox();
             pnlContenedor = new Panel();
+            tipPrincipal = new ToolTip(components);
             pnlSideBar.SuspendLayout();
             pnlPerfilUsuarioSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -53,6 +56,7 @@
             // pnlSideBar
             // 
             pnlSideBar.BackColor = Color.FromArgb(58, 154, 138);
+            pnlSideBar.Controls.Add(btnReortes);
             pnlSideBar.Controls.Add(pnlPerfilUsuarioSideBar);
             pnlSideBar.Controls.Add(btnAdministracionSideBar);
             pnlSideBar.Controls.Add(btnConsultasSideBar);
@@ -64,6 +68,25 @@
             pnlSideBar.Name = "pnlSideBar";
             pnlSideBar.Size = new Size(200, 1009);
             pnlSideBar.TabIndex = 0;
+            // 
+            // btnReortes
+            // 
+            btnReortes.BackColor = Color.FromArgb(58, 154, 138);
+            btnReortes.Dock = DockStyle.Top;
+            btnReortes.FlatAppearance.BorderSize = 0;
+            btnReortes.FlatStyle = FlatStyle.Flat;
+            btnReortes.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReortes.ForeColor = Color.FromArgb(239, 239, 239);
+            btnReortes.Location = new Point(0, 421);
+            btnReortes.Margin = new Padding(0);
+            btnReortes.Name = "btnReortes";
+            btnReortes.Size = new Size(200, 70);
+            btnReortes.TabIndex = 6;
+            btnReortes.Text = "Reportes";
+            btnReortes.TextAlign = ContentAlignment.MiddleLeft;
+            tipPrincipal.SetToolTip(btnReortes, "Apartado de reportes.");
+            btnReortes.UseVisualStyleBackColor = false;
+            btnReortes.Click += btnReortes_Click;
             // 
             // pnlPerfilUsuarioSideBar
             // 
@@ -154,6 +177,7 @@
             btnAdministracionSideBar.TabIndex = 4;
             btnAdministracionSideBar.Text = "Administracion";
             btnAdministracionSideBar.TextAlign = ContentAlignment.MiddleLeft;
+            tipPrincipal.SetToolTip(btnAdministracionSideBar, "Apartado de administracion.");
             btnAdministracionSideBar.UseVisualStyleBackColor = false;
             btnAdministracionSideBar.Click += btnAdministracionSideBar_Click;
             // 
@@ -172,6 +196,7 @@
             btnConsultasSideBar.TabIndex = 3;
             btnConsultasSideBar.Text = "Consultas";
             btnConsultasSideBar.TextAlign = ContentAlignment.MiddleLeft;
+            tipPrincipal.SetToolTip(btnConsultasSideBar, "Apartado de consultas.");
             btnConsultasSideBar.UseVisualStyleBackColor = false;
             btnConsultasSideBar.Click += btnConsultasSideBar_Click;
             // 
@@ -190,6 +215,7 @@
             btnPacientesSideBar.TabIndex = 2;
             btnPacientesSideBar.Text = "Pacientes";
             btnPacientesSideBar.TextAlign = ContentAlignment.MiddleLeft;
+            tipPrincipal.SetToolTip(btnPacientesSideBar, "Apartado de pacientes.");
             btnPacientesSideBar.UseVisualStyleBackColor = false;
             btnPacientesSideBar.Click += btnPacientesSideBar_Click;
             // 
@@ -208,6 +234,7 @@
             btnInicioSideBar.TabIndex = 1;
             btnInicioSideBar.Text = "Inicio";
             btnInicioSideBar.TextAlign = ContentAlignment.MiddleLeft;
+            tipPrincipal.SetToolTip(btnInicioSideBar, "Volver al formulario principal");
             btnInicioSideBar.UseVisualStyleBackColor = false;
             btnInicioSideBar.Click += btnInicioSideBar_Click;
             // 
@@ -287,5 +314,7 @@
         private Button btnCerrarSesionSideBar;
         private PictureBox pictureBox1;
         private Panel pnlContenedor;
+        private Button btnReortes;
+        private ToolTip tipPrincipal;
     }
 }

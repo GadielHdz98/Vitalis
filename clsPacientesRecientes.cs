@@ -22,10 +22,9 @@ namespace Vitalis
                 using (var conexion = conexionBD.AbrirConexion())
                 {
                     // Unimos las 4 tablas mediante INNER JOIN para mostrar descripciones claras en el Grid
-                    string sql = "SELECT P.matricula AS Matricula, " +
-                                 "P.nombre AS Nombre, " +
-                                 "P.apellidoPaterno AS 'A. Paterno', " +
-                                 "P.apellidoMaterno AS 'A. Materno', " +
+                    string sql = "SELECT P.fechaIngresado AS 'Fecha Ingresado', " +
+                                 "P.matricula AS Matricula, " +
+                                 "CONCAT (P.nombre, ' ', P.apellidoPaterno, ' ', P.apellidoMaterno) AS Paciente, " +
                                  "C.nombreCarrera AS Carrera, " +
                                  "P.tipoPaciente AS Tipo, " +
                                  "p.grado AS Grado, " +
@@ -36,8 +35,9 @@ namespace Vitalis
                                  "E.temperatura AS Temperatura, " +
                                  "E.presionArterial as 'Presion' " +
                                  "FROM pacientes P " +
-                                 "INNER JOIN expediente E ON P.Matricula = E.Matricula " +
-                                 "INNER JOIN carreras C ON P.id_carrera = C.id_carrera;";
+                                 "LEFT JOIN expediente E ON P.Matricula = E.Matricula " +
+                                 "LEFT JOIN carreras C ON P.id_carrera = C.id_carrera " +
+                                 "ORDER BY P.fechaIngresado DESC;";
                     using (consulta = new MySqlDataAdapter(sql, conexion))
                     {
                         consulta.Fill(tabla);

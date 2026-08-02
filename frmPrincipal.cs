@@ -18,7 +18,7 @@ namespace Vitalis
         {
             InitializeComponent();
             mostrarDatosUsuario(clsLogin.nombreUsuarioLogeado, clsLogin.apellidoPaUsuarioLogeado, clsLogin.apellidoMaUsuarioLogeado, clsLogin.perfil);
-            principal.AgregarAlContenedor(new frmInicio(), pnlContenedor);        
+            principal.AgregarAlContenedor(new frmInicio(), pnlContenedor);
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -46,10 +46,27 @@ namespace Vitalis
             principal.AgregarAlContenedor(new frmAdministracion(), pnlContenedor);
         }
 
-        private void mostrarDatosUsuario(string nombre,string apellidoP, string apellidoM, string perfil)
+        private void mostrarDatosUsuario(string nombre, string apellidoP, string apellidoM, string perfil)
         {
             lblNombreUsuarioSideBar.Text = $"{nombre} {apellidoP} {apellidoM}";
             lblRolUsuarioSideBar.Text = $"{perfil}";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+
+        {
+
+        }
+
+        private void btnCerrarSesionSideBar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnReortes_Click(object sender, EventArgs e)
+        {
+            principal.AgregarAlContenedor(new frmReportes(), pnlContenedor);
+
         }
     }
 }

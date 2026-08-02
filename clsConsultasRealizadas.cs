@@ -24,6 +24,7 @@ namespace Vitalis
                 {
                     // Unimos las 4 tablas mediante INNER JOIN para mostrar descripciones claras en el Grid
                     string sql = "SELECT C.id_Consulta AS 'No. Consulta', " +
+                                 "C.FechaConsulta AS 'Fecha Consulta', " +
                                  "P.Matricula AS Matricula, " +
                                  "CONCAT(P.nombre, ' ', P.apellidoPaterno, ' ', P.apellidoMaterno) AS 'Nombre Completo', " +
                                  "CA.nombreCarrera AS Carrera, " +
@@ -37,14 +38,14 @@ namespace Vitalis
                                  "C.CIR AS CIR, " +                                 
                                  "C.citaProgramada AS Cita, " +
                                  "C.citaHora AS 'Hora Cita', " +
-                                 "C.FechaConsulta AS 'Fecha Consulta', " +
                                  "C.horaInicio AS 'Hora Inicio', " +
                                  "C.horaFinal AS 'Hora Final' " +
                                  "FROM consultas C " +
                                  "INNER JOIN pacientes P ON C.Matricula = P.Matricula " +
                                  "INNER JOIN carreras CA ON P.id_carrera = CA.id_carrera " +
                                  "INNER JOIN serviciosmedicos SM ON C.id_ServicioMedico = SM.id_ServicioMedico " +
-                                 "INNER JOIN diagnosticos D ON C.id_Diagnostico = D.id_Diagnostico;";
+                                 "INNER JOIN diagnosticos D ON C.id_Diagnostico = D.id_Diagnostico " +
+                                 "ORDER BY FechaConsulta DESC;";
                     using (consulta = new MySqlDataAdapter(sql, conexion))
                     {
                         consulta.Fill(tabla);

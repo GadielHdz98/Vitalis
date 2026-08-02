@@ -70,10 +70,9 @@ namespace Vitalis
             try
             {
                 //Esto es para poder saber si es nuevo o vamos a actualizar
-                idServicioM = int.Parse(dgvServiciosMedicos.CurrentRow.Cells["Trabajador"].Value.ToString());
+                txtNoTrabajador.Text = dgvServiciosMedicos.CurrentRow.Cells["Trabajador"].Value.ToString();
 
                 //Esto es para la tabla alumnos
-                txtNoTrabajador.Text = idServicioM.ToString();
                 txtNombreServicioMedico.Text = dgvServiciosMedicos.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtApellidoPaternoServicio.Text = dgvServiciosMedicos.CurrentRow.Cells["ApellidoPaterno"].Value.ToString();
                 txtApellidMaternoServicio.Text = dgvServiciosMedicos.CurrentRow.Cells["ApellidoMaterno"].Value.ToString();
@@ -159,10 +158,20 @@ namespace Vitalis
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
-        {
+        { 
             idServicioM = 0;
 
             trabajador.LimpiarPanel(pnlDiagnosticos);
+
+            txtNoTrabajador.Text = trabajador.ObtenerSiguienteID().ToString();
+
+            txtNoTrabajador.ReadOnly = true;
+
+        }
+
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
