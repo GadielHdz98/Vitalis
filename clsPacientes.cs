@@ -21,6 +21,7 @@ namespace Vitalis
         private int? idCarrera;
         private string grado;
         private string grupo;
+        private DateTime fechaIngresado;
 
         private string sexo;
         private double peso;
@@ -76,6 +77,7 @@ namespace Vitalis
         public double Temperatura { get => temperatura; set => temperatura = value; }
         public string PresionArterial { get => presionArterial; set => presionArterial = value; }
         public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
+        public DateTime FechaIngresado { get => fechaIngresado; set => fechaIngresado = value; }
 
         public string GuardarPaciente()
         {
@@ -96,7 +98,8 @@ namespace Vitalis
                         tipoPaciente,
                         id_carrera,
                         grado,
-                        grupo
+                        grupo,
+                        fechaIngresado
                     )
                     VALUES
                     (
@@ -107,7 +110,8 @@ namespace Vitalis
                         @TipoPaciente,
                         @IdCarrera,
                         @Grado,
-                        @Grupo
+                        @Grupo,
+                        @FechaIngresado
                     );";
                     using (comando = new MySqlCommand(sqlPaciente, conexion, transaccion))
                     {
@@ -116,6 +120,7 @@ namespace Vitalis
                         comando.Parameters.AddWithValue("@ApellidoPaterno", apellidoPaterno);
                         comando.Parameters.AddWithValue("@ApellidoMaterno", apellidoMaterno);
                         comando.Parameters.AddWithValue("@TipoPaciente", tipoPaciente);
+                        comando.Parameters.AddWithValue("@FechaIngresado", DateTime.Now);
 
                         if (idCarrera.HasValue)
                         {

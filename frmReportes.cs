@@ -14,7 +14,7 @@ namespace Vitalis
     public partial class frmReportes : Form
     {
         clsReportes reportes;
-        private object tabla;
+        private DataTable tabla;
 
         public frmReportes()
         {
@@ -31,6 +31,7 @@ namespace Vitalis
                 tabla = reportes.ConsultarPorCantDiagnostico();
                 dgvReportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvReportes.DataSource = tabla;
+                dgvReportes.Columns["Orden"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -40,13 +41,29 @@ namespace Vitalis
 
         public void cargarGridMensual()
         {
+            int mes = cmbReporteMensual.SelectedIndex + 1;
             reportes = new clsReportes();
             dgvReportes.DataSource = null;
             dgvReportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             try
             {
-                tabla = reportes.ConsultarConsultasMensuales();
-                dgvReportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                tabla = reportes.ConsultarConsultasMensuales(mes);
+                dgvReportes.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void cargarGrindSemanal()
+        {
+            reportes = new clsReportes();
+            dgvReportes.DataSource = null;
+            dgvReportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            try
+            {
+                tabla = reportes.ReporteSemanaActual();
                 dgvReportes.DataSource = tabla;
             }
             catch (Exception ex)
@@ -57,6 +74,7 @@ namespace Vitalis
 
         private void rbReporteCantDiagnostico_CheckedChanged(object sender, EventArgs e)
         {
+            cmbReporteMensual.Enabled = false;
             cargarGridCantDiagnostico();
         }
 
@@ -64,21 +82,44 @@ namespace Vitalis
         {
         }
 
-        private void rbReportePacientesSemanales_CheckedChanged(object sender, EventArgs e)
+        private void rbReportePacientesMensuales_CheckedChanged(object sender, EventArgs e)
         {
             cargarGridMensual();
+            cmbReporteMensual.Enabled = true;
+            cmbReporteMensual.SelectedIndex = DateTime.Now.Month - 1; // Selecciona el mes actual
         }
 
-        /*private void btnGenerar_Click(object sender, EventArgs e)
+        private void cmbReporteMensual_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (rb.Checked == true)
+            int mes = cmbReporteMensual.SelectedIndex + 1;
+            clsReportes reporte = new clsReportes();
+            dgvReportes.DataSource = reporte.ConsultarConsultasMensuales(mes);
+        }
+
+        private void rbReporteSemanal_CheckedChanged(object sender, EventArgs e)
+        {
+            cmbReporteMensual.Enabled = false;
+            cargarGrindSemanal();
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            reportes = new clsReportes();
+            if (rbReporteCantDiagnostico.Checked == true)
             {
-                reportes.GenerarPDF(tabla, "Reporte de alumnos con promedio de bachillerato <=8", "AlumnosTuto");
+                reportes.ExportarPDF(tabla, "Reporte de la cantidad de diagnosticos por carrera.", "ReporteCantidadDiagnosticosPorCarrera.pdf");
             }
-            else if (rdbtntAlumBuenaCalif.Checked == true)
+            else if (rbReportePacientesMensuales.Checked == true && cmbReporteMensual.Enabled == true)
             {
-                reportes.GenerarPDF(tabla, "Reporte de alumnos con sus tutores con promedio de bachillerato >=9", "AlumnosEnRiesgo");
+                DataTable tabla = (DataTable)dgvReportes.DataSource;
+
+                reportes.ExportarPDF(tabla, "Reporte de las consultas del mes de " + cmbReporteMensual.Text, "ReporteConsultasMensual.pdf");
             }
-        }*/
+            else if (rbReporteSemanal.Checked == true)
+            {
+                reportes.ExportarPDF(tabla, "Reporte de las consultas de la semana.", "ReporteConsultasSemanal.pdf");
+            }
+
+        }
     }
 }
