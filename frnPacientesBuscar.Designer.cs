@@ -57,6 +57,7 @@
             txtBuscarMatricula = new TextBox();
             pictureBox1 = new PictureBox();
             dgvPacientesRegistradosRecientemente = new DataGridView();
+            label8 = new Label();
             pnlBuscarPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -312,7 +313,7 @@
             btnBuscarPaciente.FlatAppearance.BorderSize = 0;
             btnBuscarPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBuscarPaciente.ForeColor = Color.FromArgb(239, 239, 239);
-            btnBuscarPaciente.Location = new Point(896, 176);
+            btnBuscarPaciente.Location = new Point(907, 176);
             btnBuscarPaciente.Margin = new Padding(0);
             btnBuscarPaciente.Name = "btnBuscarPaciente";
             btnBuscarPaciente.Size = new Size(160, 35);
@@ -369,7 +370,7 @@
             txtBuscarMatricula.BackColor = Color.White;
             txtBuscarMatricula.BorderStyle = BorderStyle.FixedSingle;
             txtBuscarMatricula.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscarMatricula.Location = new Point(1348, 28);
+            txtBuscarMatricula.Location = new Point(1348, 57);
             txtBuscarMatricula.Name = "txtBuscarMatricula";
             txtBuscarMatricula.PlaceholderText = "Buscar por matricula";
             txtBuscarMatricula.Size = new Size(300, 33);
@@ -378,7 +379,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.IconoBuscar;
-            pictureBox1.Location = new Point(1654, 26);
+            pictureBox1.Location = new Point(1654, 55);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(35, 35);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -421,11 +422,24 @@
             dgvPacientesRegistradosRecientemente.Size = new Size(1657, 500);
             dgvPacientesRegistradosRecientemente.TabIndex = 10;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.FromArgb(23, 147, 209);
+            label8.Location = new Point(1010, 60);
+            label8.Name = "label8";
+            label8.Size = new Size(323, 25);
+            label8.TabIndex = 56;
+            label8.Text = "Buscar directamente por matricula:";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // frnPacientesBuscar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1719, 970);
+            Controls.Add(label8);
             Controls.Add(dgvPacientesRegistradosRecientemente);
             Controls.Add(pictureBox1);
             Controls.Add(txtBuscarMatricula);
@@ -471,5 +485,6 @@
         private ComboBox cmbGrado;
         private Label label7;
         private TextBox txtGrupo;
+        private Label label8;
     }
 }
