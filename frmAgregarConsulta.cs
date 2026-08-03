@@ -43,7 +43,6 @@ namespace Vitalis
                 }
             }
         }
-
         private void chcbxCita_CheckedChanged(object sender, EventArgs e)
         {
             if (!chkCita.Checked)

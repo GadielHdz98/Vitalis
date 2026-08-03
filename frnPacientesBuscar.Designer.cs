@@ -31,6 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pnlBuscarPaciente = new Panel();
             cmbTipoPaciente = new ComboBox();
             cmbCarrera = new ComboBox();
@@ -56,12 +57,12 @@
             lblVitalisInicio = new Label();
             txtBuscarMatricula = new TextBox();
             pictureBox1 = new PictureBox();
-            dgvPacientesRegistradosRecientemente = new DataGridView();
+            dgvPacientesBuscar = new DataGridView();
             label8 = new Label();
             pnlBuscarPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvPacientesRegistradosRecientemente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPacientesBuscar).BeginInit();
             SuspendLayout();
             // 
             // pnlBuscarPaciente
@@ -320,6 +321,7 @@
             btnBuscarPaciente.TabIndex = 10;
             btnBuscarPaciente.Text = "Buscar";
             btnBuscarPaciente.UseVisualStyleBackColor = false;
+            btnBuscarPaciente.Click += btnBuscarPaciente_Click;
             // 
             // txtApellidoMaPaciente
             // 
@@ -386,20 +388,20 @@
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
-            // dgvPacientesRegistradosRecientemente
+            // dgvPacientesBuscar
             // 
-            dgvPacientesRegistradosRecientemente.AllowUserToAddRows = false;
-            dgvPacientesRegistradosRecientemente.AllowUserToDeleteRows = false;
-            dgvPacientesRegistradosRecientemente.AllowUserToResizeColumns = false;
-            dgvPacientesRegistradosRecientemente.AllowUserToResizeRows = false;
+            dgvPacientesBuscar.AllowUserToAddRows = false;
+            dgvPacientesBuscar.AllowUserToDeleteRows = false;
+            dgvPacientesBuscar.AllowUserToResizeColumns = false;
+            dgvPacientesBuscar.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(239, 239, 239);
-            dgvPacientesRegistradosRecientemente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvPacientesRegistradosRecientemente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvPacientesRegistradosRecientemente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvPacientesRegistradosRecientemente.BackgroundColor = Color.White;
-            dgvPacientesRegistradosRecientemente.BorderStyle = BorderStyle.None;
-            dgvPacientesRegistradosRecientemente.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvPacientesRegistradosRecientemente.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvPacientesBuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvPacientesBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvPacientesBuscar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPacientesBuscar.BackgroundColor = Color.White;
+            dgvPacientesBuscar.BorderStyle = BorderStyle.None;
+            dgvPacientesBuscar.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvPacientesBuscar.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 154, 138);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -407,20 +409,28 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(58, 154, 138);
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvPacientesRegistradosRecientemente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvPacientesRegistradosRecientemente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPacientesRegistradosRecientemente.EnableHeadersVisualStyles = false;
-            dgvPacientesRegistradosRecientemente.GridColor = Color.White;
-            dgvPacientesRegistradosRecientemente.Location = new Point(32, 415);
-            dgvPacientesRegistradosRecientemente.MultiSelect = false;
-            dgvPacientesRegistradosRecientemente.Name = "dgvPacientesRegistradosRecientemente";
-            dgvPacientesRegistradosRecientemente.ReadOnly = true;
-            dgvPacientesRegistradosRecientemente.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dgvPacientesRegistradosRecientemente.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dgvPacientesRegistradosRecientemente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvPacientesRegistradosRecientemente.Size = new Size(1657, 500);
-            dgvPacientesRegistradosRecientemente.TabIndex = 10;
+            dgvPacientesBuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvPacientesBuscar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvPacientesBuscar.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvPacientesBuscar.EnableHeadersVisualStyles = false;
+            dgvPacientesBuscar.GridColor = Color.White;
+            dgvPacientesBuscar.Location = new Point(32, 415);
+            dgvPacientesBuscar.MultiSelect = false;
+            dgvPacientesBuscar.Name = "dgvPacientesBuscar";
+            dgvPacientesBuscar.ReadOnly = true;
+            dgvPacientesBuscar.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dgvPacientesBuscar.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvPacientesBuscar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPacientesBuscar.Size = new Size(1657, 500);
+            dgvPacientesBuscar.TabIndex = 10;
             // 
             // label8
             // 
@@ -440,7 +450,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1719, 970);
             Controls.Add(label8);
-            Controls.Add(dgvPacientesRegistradosRecientemente);
+            Controls.Add(dgvPacientesBuscar);
             Controls.Add(pictureBox1);
             Controls.Add(txtBuscarMatricula);
             Controls.Add(lblVitalisInicio);
@@ -451,7 +461,7 @@
             pnlBuscarPaciente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvPacientesRegistradosRecientemente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPacientesBuscar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -475,7 +485,7 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private DataGridView dgvPacientesRegistradosRecientemente;
+        private DataGridView dgvPacientesBuscar;
         private Label label1;
         private Label label3;
         private Label label2;

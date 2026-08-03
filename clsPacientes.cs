@@ -240,7 +240,6 @@ namespace Vitalis
                     break;
                 }
             }
-
             if (!esValido)
             {
                 MessageBox.Show(mensajeError, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -283,10 +282,7 @@ namespace Vitalis
                 throw new Exception("Error en la conexion de la base de datos: " + ex.Message);
             }
             return tabla;
-        }
-
-
-        
+        }        
         public void HabilitarControles(ComboBox cmbTipoPaciente, ComboBox cmbCarrera, ComboBox cmbGrado, TextBox txtGrupo)
         {
             //Variable de tipo bool que depende de si se ha seleccionado a un alumno o no.
@@ -332,6 +328,95 @@ namespace Vitalis
             {
                 MessageBox.Show("Error al cargar las carreras.  " + ex.Message);
             }
+        }
+        public DataTable ConsultarFiltros()
+        {
+            tabla = new DataTable();
+
+            try
+            {
+                clsConexion conexionBD = new clsConexion();
+
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    string sql =
+                    @"SELECT
+                P.Matricula AS 'Matrícula',
+                CONCAT(P.nombre,' ',P.apellidoPaterno,' ',P.apellidoMaterno) AS 'Nombre Completo',
+                P.tipoPaciente AS 'Tipo',
+                C.nombreCarrera AS 'Carrera',
+                P.grado AS 'Grado',
+                P.grupo AS 'Grupo',
+                P.fechaIngresado AS 'Fecha Ingresado'
+                FROM pacientes P
+                INNER JOIN expediente E
+                ON P.Matricula = E.Matricula
+                LEFT JOIN carreras C
+                ON P.id_carrera = C.id_carrera                
+                WHERE 1 = 1 "; //Uso condicion que siempre es verdadera oara que no ocurra un cortocircuito
+                               //Facilita la concatenacion de mas informacion para la busqueda por filtros.
+
+                    comando = new MySqlCommand();
+
+                    comando.Connection = conexion;
+
+                    if (!string.IsNullOrWhiteSpace(nombre))
+                    {
+                        sql += " AND P.nombre LIKE @Nombre";
+                        comando.Parameters.AddWithValue("@Nombre", "%" + nombre + "%");
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(apellidoPaterno))
+                    {
+                        sql += " AND P.apellidoPaterno LIKE @ApellidoPaterno";
+                        comando.Parameters.AddWithValue("@ApellidoPaterno", "%" + apellidoPaterno + "%");
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(apellidoMaterno))
+                    {
+                        sql += " AND P.apellidoMaterno LIKE @ApellidoMaterno";
+                        comando.Parameters.AddWithValue("@ApellidoMaterno", "%" + apellidoMaterno + "%");
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(tipoPaciente))
+                    {
+                        sql += " AND P.tipoPaciente = @TipoPaciente";
+                        comando.Parameters.AddWithValue("@TipoPaciente", tipoPaciente);
+                    }
+
+                    if (idCarrera.HasValue)
+                    {
+                        sql += " AND P.id_carrera = @IdCarrera";
+                        comando.Parameters.AddWithValue("@IdCarrera", idCarrera.Value);
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(grado))
+                    {
+                        sql += " AND P.grado = @Grado";
+                        comando.Parameters.AddWithValue("@Grado", grado);
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(grupo))
+                    {
+                        sql += " AND P.grupo = @Grupo";
+                        comando.Parameters.AddWithValue("@Grupo", grupo);
+                    }
+
+                    sql += " ORDER BY P.nombre;";
+
+                    comando.CommandText = sql;
+
+                    consulta = new MySqlDataAdapter(comando);
+
+                    consulta.Fill(tabla);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la conexión de la base de datos: " + ex.Message);
+            }
+
+            return tabla;
         }
     }
 }
