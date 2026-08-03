@@ -129,11 +129,9 @@ namespace Vitalis
                 try
                 {
                     int tipoOperacion = 0;
-
                     clsConsultas consultas = new clsConsultas();
 
                     consultas.Matricula = int.Parse(txtMatriculaPaciente.Text);
-
                     consultas.IdServicioMedico = clsLogin.idUsuarioLogeado;
                     consultas.Tratamiento = rchtxtTratamiento.Text;
                     consultas.CIR = chkCIR.Checked;
@@ -141,17 +139,15 @@ namespace Vitalis
                     consultas.HoraInicio = dtmpHoraInicioConsulta.Value.TimeOfDay;
                     consultas.HoraFinal = dtmpHoraFinConsulta.Value.TimeOfDay;
                     consultas.IdDiagnostico = Convert.ToInt32(cmbDiagnostico.SelectedValue);
-                    consultas.FechaConsulta = dtmpFechaConsulta.Value.Date;
-                    
+                    consultas.FechaConsulta = dtmpFechaConsulta.Value.Date;                    
 
                     if (chkCita.Checked)
                     {
                         consultas.CitaProgramada = dtmpFechaCita.Value.Date;
                         consultas.CitaHora = dtmpHoraCita.Value.TimeOfDay;
-                    }
-                    
+                    }                    
 
-                        string msg = consultas.GuardarActualizar(tipoOperacion);
+                    string msg = consultas.GuardarActualizar(tipoOperacion);
                     MessageBox.Show(msg, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -183,7 +179,7 @@ namespace Vitalis
                 foreach (ComboBox combo in pnlAgregarConsultas.Controls.OfType<ComboBox>())
                 {
                     //solo aplica para comboBox que esten enabled=true y combo.
-                    if (combo.SelectedIndex < 1)
+                    if (combo.SelectedIndex < 0)
                     {
                         combo.Focus();
                         esValido = false;

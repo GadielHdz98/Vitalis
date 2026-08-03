@@ -107,10 +107,11 @@ namespace Vitalis
                                             comando.Parameters.AddWithValue("@horaCita", citaHora);
                                         }
                                         comando.ExecuteNonQuery();
-
                                     }
+
                                     msg = "La consulta se registró correctamente.";
                                     break;
+
                                 case 1:
                                     string sqlUpdate = "UPDATE consultas SET " +
                                                        "Matricula=@matricula," +
