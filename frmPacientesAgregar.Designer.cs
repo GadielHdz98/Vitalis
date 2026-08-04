@@ -446,7 +446,6 @@
             txtAltura.PlaceholderText = "Altura (cm)";
             txtAltura.Size = new Size(270, 33);
             txtAltura.TabIndex = 33;
-            txtAltura.Text = "Ingrese la altura actual del paciente.";
             // 
             // txtPeso
             // 
@@ -459,7 +458,6 @@
             txtPeso.PlaceholderText = "Peso (kg)";
             txtPeso.Size = new Size(270, 33);
             txtPeso.TabIndex = 32;
-            txtPeso.Text = "Ingrese el peso actual del paciente.";
             // 
             // lblSubTituloFisiologicos
             // 

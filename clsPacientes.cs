@@ -18,7 +18,6 @@ namespace Vitalis
         private string apellidoMaterno;
         private string tipoPaciente;
         private string nombreCarrera;
-       
 
         private int? idCarrera;
         private string grado;
@@ -76,8 +75,7 @@ namespace Vitalis
 
             //Mostrar formulario
             formulario.Show();
-        }        
-
+        }
         public string GuardarPaciente()
         {
             string msg = "";
@@ -138,7 +136,6 @@ namespace Vitalis
                         {
                             comando.Parameters.AddWithValue("@Grado", grado);
                         }
-
                         if (string.IsNullOrWhiteSpace(grupo))
                         {
                             comando.Parameters.AddWithValue("@Grupo", DBNull.Value);
@@ -211,7 +208,7 @@ namespace Vitalis
                 {
                     datePicker.Value = DateTime.Now;
                 }
-            }            
+            }
         }
         public bool ValidarCamposVacios(Panel pnlAgregarPacientes)
         {
@@ -282,7 +279,7 @@ namespace Vitalis
                 throw new Exception("Error en la conexion de la base de datos: " + ex.Message);
             }
             return tabla;
-        }        
+        }
         public void HabilitarControles(ComboBox cmbTipoPaciente, ComboBox cmbCarrera, ComboBox cmbGrado, TextBox txtGrupo)
         {
             //Variable de tipo bool que depende de si se ha seleccionado a un alumno o no.
@@ -341,73 +338,69 @@ namespace Vitalis
                 {
                     string sql =
                     @"SELECT
-                P.Matricula AS 'Matrícula',
-                CONCAT(P.nombre,' ',P.apellidoPaterno,' ',P.apellidoMaterno) AS 'Nombre Completo',
-                P.tipoPaciente AS 'Tipo',
-                C.nombreCarrera AS 'Carrera',
-                P.grado AS 'Grado',
-                P.grupo AS 'Grupo',
-                P.fechaIngresado AS 'Fecha Ingresado'
-                FROM pacientes P
-                INNER JOIN expediente E
-                ON P.Matricula = E.Matricula
-                LEFT JOIN carreras C
-                ON P.id_carrera = C.id_carrera                
-                WHERE 1 = 1 "; //Uso condicion que siempre es verdadera oara que no ocurra un cortocircuito
-                               //Facilita la concatenacion de mas informacion para la busqueda por filtros.
+                    P.Matricula AS 'Matrícula',
+                    CONCAT(P.nombre,' ',P.apellidoPaterno,' ',P.apellidoMaterno) AS 'Nombre Completo',
+                    P.tipoPaciente AS 'Tipo',
+                    C.nombreCarrera AS 'Carrera',
+                    P.grado AS 'Grado',
+                    P.grupo AS 'Grupo',
+                    E.sexo AS 'Sexo',
+                    TIMESTAMPDIFF(YEAR, E.fechaNacimiento, CURDATE()) AS 'Edad',
+                    E.peso AS 'Peso (kg)',
+                    E.altura AS 'Estatura (m)',
+                    E.temperatura AS 'Temperatura (°C)',
+                    E.presionArterial AS 'Presión Arterial',
+                    P.fechaIngresado AS 'Fecha Ingresado'
+                    FROM pacientes P
+                    INNER JOIN expediente E
+                    ON P.Matricula = E.Matricula
+                    LEFT JOIN carreras C
+                    ON P.id_carrera = C.id_carrera
+                    WHERE 1 = 1 ";   //Uso condicion que siempre es verdadera oara que no ocurra un cortocircuito
+                                     //Facilita la concatenacion de mas informacion para la busqueda por filtros.
+
 
                     comando = new MySqlCommand();
-
                     comando.Connection = conexion;
 
                     if (!string.IsNullOrWhiteSpace(nombre))
                     {
-                        sql += " AND P.nombre LIKE @Nombre";
+                        sql += " AND P.nombre LIKE @Nombre"; //se concatena a la consulta sql.
                         comando.Parameters.AddWithValue("@Nombre", "%" + nombre + "%");
                     }
-
                     if (!string.IsNullOrWhiteSpace(apellidoPaterno))
                     {
                         sql += " AND P.apellidoPaterno LIKE @ApellidoPaterno";
                         comando.Parameters.AddWithValue("@ApellidoPaterno", "%" + apellidoPaterno + "%");
                     }
-
                     if (!string.IsNullOrWhiteSpace(apellidoMaterno))
                     {
                         sql += " AND P.apellidoMaterno LIKE @ApellidoMaterno";
                         comando.Parameters.AddWithValue("@ApellidoMaterno", "%" + apellidoMaterno + "%");
                     }
-
                     if (!string.IsNullOrWhiteSpace(tipoPaciente))
                     {
                         sql += " AND P.tipoPaciente = @TipoPaciente";
                         comando.Parameters.AddWithValue("@TipoPaciente", tipoPaciente);
                     }
-
                     if (idCarrera.HasValue)
                     {
                         sql += " AND P.id_carrera = @IdCarrera";
                         comando.Parameters.AddWithValue("@IdCarrera", idCarrera.Value);
                     }
-
                     if (!string.IsNullOrWhiteSpace(grado))
                     {
                         sql += " AND P.grado = @Grado";
                         comando.Parameters.AddWithValue("@Grado", grado);
                     }
-
                     if (!string.IsNullOrWhiteSpace(grupo))
                     {
                         sql += " AND P.grupo = @Grupo";
                         comando.Parameters.AddWithValue("@Grupo", grupo);
                     }
-
                     sql += " ORDER BY P.nombre;";
-
                     comando.CommandText = sql;
-
                     consulta = new MySqlDataAdapter(comando);
-
                     consulta.Fill(tabla);
                 }
             }
@@ -415,7 +408,6 @@ namespace Vitalis
             {
                 throw new Exception("Error en la conexión de la base de datos: " + ex.Message);
             }
-
             return tabla;
         }
     }

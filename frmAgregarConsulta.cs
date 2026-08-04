@@ -76,8 +76,9 @@ namespace Vitalis
 
                 if (tabla.Rows.Count == 0)
                 {
+                    //
                     MessageBox.Show("No se encontró ningún paciente con esa matrícula.");
-
+                    //
                     //se limpian los datos que hayan antes de realizar una busqueda fallida.
                     txtTipo.Clear();
                     txtNombre.Clear();
@@ -85,15 +86,15 @@ namespace Vitalis
                     txtCarrera.Clear();
                     txtGrado.Clear();
                     txtGrupo.Clear();
-
+                    //
                     return;
                 }
-
+                //
                 txtTipo.Text = tabla.Rows[0]["Tipo"].ToString();
                 txtNombre.Text = tabla.Rows[0]["Nombre"].ToString();
                 txtApellidoPaterno.Text = tabla.Rows[0]["ApellidoPaterno"].ToString();
                 txtApellidoMaterno.Text = tabla.Rows[0]["ApellidoMaterno"].ToString();
-
+                //
                 txtCarrera.Text = tabla.Rows[0]["Carrera"].ToString();
                 txtGrado.Text = tabla.Rows[0]["Grado"].ToString();
                 txtGrupo.Text = tabla.Rows[0]["Grupo"].ToString();

@@ -58,6 +58,7 @@ namespace Vitalis
                     paciente.PresionArterial = txtUltimaPresionArt.Text;
                     paciente.FechaNacimiento = dtmpFechaNaciPaciente.Value.Date;
 
+
                     //Si es alumno se guardan los datos escolares
                     if (cmbTipoPaciente.Text == "Alumno")
                     {

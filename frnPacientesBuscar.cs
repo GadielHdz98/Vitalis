@@ -17,46 +17,41 @@ namespace Vitalis
         public frnPacientesBuscar()
         {
             InitializeComponent();
-            paciente.CargarCarreras(cmbCarrera);
-            paciente.HabilitarControles(cmbTipoPaciente, cmbCarrera, cmbGrado, txtGrupo);
+            paciente.CargarCarreras(cmbCarrera);           
         }
         private void btnVaciarCampos_Click(object sender, EventArgs e)
         {
-            paciente.VaciarCampos(pnlBuscarPaciente);
-            paciente.HabilitarControles(cmbTipoPaciente, cmbCarrera, cmbGrado, txtGrupo);
+            paciente.VaciarCampos(pnlBuscarPaciente);            
         }
         private void cmbTipoPaciente_SelectedIndexChanged(object sender, EventArgs e)
         {
             paciente.HabilitarControles(cmbTipoPaciente, cmbCarrera, cmbGrado, txtGrupo);
         }
 
-        private void btnBuscarPaciente_Click(object sender, EventArgs e)
+        private void RealizarBusquedaFiltros(object sender, EventArgs e)
         {
             try
             {
+                // uso un constructor y le envio datos a los atributos de paciente.
                 clsPacientes paciente = new clsPacientes();
-
                 paciente.Nombre = txtNombrePaciente.Text.Trim();
-
                 paciente.ApellidoPaterno = txtApellidoPaPaciente.Text.Trim();
-
                 paciente.ApellidoMaterno = txtApellidoMaPaciente.Text.Trim();
-
                 paciente.TipoPaciente = cmbTipoPaciente.Text;
 
+                // si hay algo seleccionado se envia
                 if (cmbCarrera.SelectedIndex > 0)
                 {
                     paciente.IdCarrera = Convert.ToInt32(cmbCarrera.SelectedValue);
                 }
                 else
                 {
-                    paciente.IdCarrera = null;
+                    paciente.IdCarrera = null; //de lo contrario se queda en null.
                 }
-
                 paciente.Grado = cmbGrado.Text;
-
                 paciente.Grupo = txtGrupo.Text.Trim().ToUpper();
 
+                //rellenamos la tabla con los datos obtenidos de la consulta.
                 dgvPacientesBuscar.DataSource = paciente.ConsultarFiltros();
             }
             catch (Exception ex)
