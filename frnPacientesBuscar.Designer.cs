@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             pnlBuscarPaciente = new Panel();
             cmbTipoPaciente = new ComboBox();
             cmbCarrera = new ComboBox();
@@ -287,7 +287,7 @@
             btnVaciarCampos.FlatAppearance.BorderSize = 0;
             btnVaciarCampos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVaciarCampos.ForeColor = Color.FromArgb(239, 239, 239);
-            btnVaciarCampos.Location = new Point(1081, 173);
+            btnVaciarCampos.Location = new Point(1060, 183);
             btnVaciarCampos.Margin = new Padding(0);
             btnVaciarCampos.Name = "btnVaciarCampos";
             btnVaciarCampos.Size = new Size(160, 35);
@@ -371,8 +371,8 @@
             dgvPacientesBuscar.AllowUserToDeleteRows = false;
             dgvPacientesBuscar.AllowUserToResizeColumns = false;
             dgvPacientesBuscar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(239, 239, 239);
-            dgvPacientesBuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(239, 239, 239);
+            dgvPacientesBuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvPacientesBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvPacientesBuscar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPacientesBuscar.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -380,23 +380,23 @@
             dgvPacientesBuscar.BorderStyle = BorderStyle.None;
             dgvPacientesBuscar.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvPacientesBuscar.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvPacientesBuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvPacientesBuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvPacientesBuscar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvPacientesBuscar.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.Window;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dgvPacientesBuscar.DefaultCellStyle = dataGridViewCellStyle7;
             dgvPacientesBuscar.EnableHeadersVisualStyles = false;
             dgvPacientesBuscar.GridColor = Color.White;
             dgvPacientesBuscar.Location = new Point(32, 397);
@@ -404,9 +404,9 @@
             dgvPacientesBuscar.Name = "dgvPacientesBuscar";
             dgvPacientesBuscar.ReadOnly = true;
             dgvPacientesBuscar.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dgvPacientesBuscar.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dgvPacientesBuscar.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dgvPacientesBuscar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPacientesBuscar.Size = new Size(1657, 518);
             dgvPacientesBuscar.TabIndex = 10;
