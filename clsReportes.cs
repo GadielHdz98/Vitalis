@@ -27,6 +27,7 @@ namespace Vitalis
         private MySqlCommand comando;
 
         private string mes;
+        private string fecha;
 
         public DataTable ConsultarPorCantDiagnostico()
         {
@@ -74,12 +75,8 @@ namespace Vitalis
                     string sql = "SELECT C.FechaConsulta AS 'Fecha', " +
                                  "P.Matricula AS 'Matrícula', " +
                                  "CONCAT(P.nombre, ' ', P.apellidoPaterno, ' ', P.apellidoMaterno) AS 'Paciente', " +
-                                 "P.tipoPaciente AS 'Tipo Paciente', " +
-                                 "CA.nombreCarrera AS 'Carrera', " +
-                                 "P.grado AS 'Grado', " +
-                                 "P.grupo AS 'Grupo', " +
-                                 "D.nombreDiagnostico AS 'Diagnóstico', " +
-                                 "CONCAT(SM.nombre, ' ', SM.apellidoPaterno, ' ', SM.apellidoMaterno) AS 'Atendido por' " +
+                                 "CONCAT(P.grado, P.grupo, ' ', CA.nombreCarrera) AS 'Academico', " +
+                                 "D.nombreDiagnostico AS 'Diagnóstico' " +
                                  "FROM consultas C " +
                                  "INNER JOIN pacientes P ON C.Matricula = P.Matricula " +
                                  "INNER JOIN carreras CA ON P.id_carrera = CA.id_carrera " +
@@ -115,12 +112,8 @@ namespace Vitalis
                     string sql = "SELECT C.FechaConsulta AS 'Fecha', " +
                                  "P.Matricula AS 'Matrícula', " +
                                  "CONCAT(P.nombre, ' ', P.apellidoPaterno, ' ', P.apellidoMaterno) AS 'Paciente', " +
-                                 "P.tipoPaciente AS 'Tipo Paciente', " +
-                                 "CA.nombreCarrera AS 'Carrera', " +
-                                 "P.grado AS 'Grado', " +
-                                 "P.grupo AS 'Grupo', " +
-                                 "D.nombreDiagnostico AS 'Diagnóstico', " +
-                                 "CONCAT(SM.nombre, ' ', SM.apellidoPaterno, ' ', SM.apellidoMaterno) AS 'Atendido por' " +
+                                 "CONCAT(P.grado, P.grupo, ' ', CA.nombreCarrera) AS 'Academico', " +
+                                 "D.nombreDiagnostico AS 'Diagnóstico' " +
                                  "FROM consultas C " +
                                  "INNER JOIN pacientes P ON C.Matricula = P.Matricula " +
                                  "INNER JOIN carreras CA ON P.id_carrera = CA.id_carrera " +
@@ -130,6 +123,41 @@ namespace Vitalis
                                  "ORDER BY C.FechaConsulta DESC, C.horaInicio DESC;";
                     using (consulta = new MySqlDataAdapter(sql, conexion))
                     {
+                        consulta.Fill(tabla);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al mostrar el total de diagnosticos por consulta" + ex.Message);
+            }
+            return tabla;
+        }
+
+        public DataTable ReporteDelDia(DateTime fecha)
+        {
+            tabla = new DataTable();
+            try
+            {
+                clsConexion conexionBD = new clsConexion();
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    string sql = "SELECT C.FechaConsulta AS 'Fecha', " +
+                                 "P.Matricula AS 'Matrícula', " +
+                                 "CONCAT(P.nombre, ' ', P.apellidoPaterno, ' ', P.apellidoMaterno) AS 'Paciente', " +
+                                 "CONCAT(P.grado, P.grupo, ' ', CA.nombreCarrera) AS 'Academico', " +
+                                 "D.nombreDiagnostico AS 'Diagnóstico' " +
+                                 "FROM consultas C " +
+                                 "INNER JOIN pacientes P ON C.Matricula = P.Matricula " +
+                                 "INNER JOIN carreras CA ON P.id_carrera = CA.id_carrera " +
+                                 "INNER JOIN diagnosticos D ON C.id_Diagnostico = D.id_Diagnostico " +
+                                 "INNER JOIN serviciosmedicos SM ON C.id_ServicioMedico = SM.id_ServicioMedico " +
+                                 "WHERE DATE(C.FechaConsulta) = @fecha " +
+                                 "ORDER BY C.horaInicio DESC;";
+                    using (consulta = new MySqlDataAdapter(sql, conexion))
+                    {
+                        consulta.SelectCommand.Parameters.AddWithValue("@fecha", fecha.Date);
                         consulta.Fill(tabla);
                     }
                 }

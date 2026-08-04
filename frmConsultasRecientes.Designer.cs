@@ -45,7 +45,7 @@
             lblVitalisInicio.ForeColor = Color.FromArgb(23, 147, 209);
             lblVitalisInicio.Location = new Point(403, 9);
             lblVitalisInicio.Name = "lblVitalisInicio";
-            lblVitalisInicio.Size = new Size(900, 68);
+            lblVitalisInicio.Size = new Size(922, 68);
             lblVitalisInicio.TabIndex = 7;
             lblVitalisInicio.Text = "Consultas registradas recientemente";
             // 
@@ -82,7 +82,7 @@
             dgvConsultasRealizadas.DefaultCellStyle = dataGridViewCellStyle3;
             dgvConsultasRealizadas.EnableHeadersVisualStyles = false;
             dgvConsultasRealizadas.GridColor = Color.White;
-            dgvConsultasRealizadas.Location = new Point(95, 91);
+            dgvConsultasRealizadas.Location = new Point(125, 91);
             dgvConsultasRealizadas.MultiSelect = false;
             dgvConsultasRealizadas.Name = "dgvConsultasRealizadas";
             dgvConsultasRealizadas.ReadOnly = true;
