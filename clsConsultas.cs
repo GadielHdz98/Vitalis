@@ -21,6 +21,7 @@ namespace Vitalis
         private TimeSpan horaInicio;
         private TimeSpan horaFinal;
         private int idDiagnostico;
+        //codigo funcional
         private DateTime fechaConsulta;
         private int idConsulta;
         private string nombre;
@@ -29,7 +30,7 @@ namespace Vitalis
         private string tipoPaciente;
         private int? idCarrera;
         private string grado;
-        //                                      
+        //funciona mejor.   
         private MySqlDataAdapter consulta;
         private DataTable tabla;
         private MySqlCommand comando;
