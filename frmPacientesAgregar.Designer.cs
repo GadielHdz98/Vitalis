@@ -443,10 +443,9 @@
             txtAltura.Location = new Point(647, 252);
             txtAltura.MaxLength = 3;
             txtAltura.Name = "txtAltura";
-            txtAltura.PlaceholderText = "Altura (cm)";
+            txtAltura.PlaceholderText = "Ingrese la altura actual (cm)";
             txtAltura.Size = new Size(270, 33);
             txtAltura.TabIndex = 33;
-            txtAltura.Text = "Ingrese la altura actual del paciente.";
             // 
             // txtPeso
             // 
@@ -456,10 +455,9 @@
             txtPeso.Location = new Point(647, 185);
             txtPeso.MaxLength = 3;
             txtPeso.Name = "txtPeso";
-            txtPeso.PlaceholderText = "Peso (kg)";
+            txtPeso.PlaceholderText = "Ingrese el peso actual en kg";
             txtPeso.Size = new Size(270, 33);
             txtPeso.TabIndex = 32;
-            txtPeso.Text = "Ingrese el peso actual del paciente.";
             // 
             // lblSubTituloFisiologicos
             // 

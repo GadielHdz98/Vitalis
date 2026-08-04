@@ -24,6 +24,11 @@ namespace Vitalis
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             principal.AgregarAlContenedor(new frmInicio(), pnlContenedor);
+
+            btnPacientesSideBar.Enabled = clsLogin.EsDoctor || clsLogin.EsEnfermero;
+            btnConsultasSideBar.Enabled = clsLogin.EsDoctor || clsLogin.EsEnfermero;
+            btnReportes.Enabled = clsLogin.EsDoctor || clsLogin.EsEnfermero;
+            btnAdministracionSideBar.Enabled = clsLogin.EsAdministrador;
         }
 
         private void btnInicioSideBar_Click(object sender, EventArgs e)
@@ -57,16 +62,15 @@ namespace Vitalis
         {
 
         }
-
-        private void btnCerrarSesionSideBar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnReortes_Click(object sender, EventArgs e)
         {
             principal.AgregarAlContenedor(new frmReportes(), pnlContenedor);
 
+        }
+
+        private void btnCerrarSesionSideBar_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
