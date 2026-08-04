@@ -31,6 +31,8 @@ namespace Vitalis
         private string presionArterial;
         private DateTime fechaNacimiento;
 
+        
+
         //Objetos para consultas     
         private MySqlDataAdapter consulta;
         private DataTable tabla;
@@ -246,6 +248,7 @@ namespace Vitalis
 
         public DataTable ConsultarPacienteConsulta()
         {
+                        
             tabla = new DataTable();
             try
             {
@@ -261,7 +264,7 @@ namespace Vitalis
                                  "P.grupo AS Grupo " +
                                  "FROM pacientes P " +
                                  //Usamos left join para cuando llamemos a un paciente de tipo trabajador, se llamen bien todos los datos, sin perder alguno
-                                 //priorizando la tabla izquierda
+                                 //priorizando la tabla izquierda.
                                  "LEFT JOIN carreras C ON P.id_carrera = C.id_carrera " +
                                  "WHERE P.Matricula = @matricula;";
                     using (comando = new MySqlCommand(sql, conexion))
@@ -326,6 +329,63 @@ namespace Vitalis
                 MessageBox.Show("Error al cargar las carreras.  " + ex.Message);
             }
         }
+        public DataTable ConsultarMatricula()
+        {
+            tabla = new DataTable();
+
+            try
+            {
+                clsConexion conexionBD = new clsConexion();
+
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    string sql =
+                    @"SELECT
+                P.Matricula AS 'Matrícula',
+                CONCAT(P.nombre,' ',P.apellidoPaterno,' ',P.apellidoMaterno) AS 'Nombre Completo',
+                P.tipoPaciente AS 'Tipo',
+                C.nombreCarrera AS 'Carrera',
+                P.grado AS 'Grado',
+                P.grupo AS 'Grupo',
+
+                E.sexo AS 'Sexo',
+                TIMESTAMPDIFF(YEAR, E.fechaNacimiento, CURDATE()) AS 'Edad',
+                E.peso AS 'Peso (kg)',
+                E.altura AS 'Estatura (m)',
+                E.temperatura AS 'Temperatura (°C)',
+                E.presionArterial AS 'Presión Arterial',
+
+                P.fechaIngresado AS 'Fecha Ingresado'
+
+            FROM pacientes P
+
+            INNER JOIN expediente E
+                ON P.Matricula = E.Matricula
+
+            LEFT JOIN carreras C
+                ON P.id_carrera = C.id_carrera
+
+            WHERE P.Matricula = @Matricula;";
+
+                    using (comando = new MySqlCommand(sql, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@Matricula", matricula);
+
+                        using (consulta = new MySqlDataAdapter(comando))
+                        {
+                            consulta.Fill(tabla);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la conexión de la base de datos: " + ex.Message);
+            }
+
+            return tabla;
+        }
+
         public DataTable ConsultarFiltros()
         {
             tabla = new DataTable();

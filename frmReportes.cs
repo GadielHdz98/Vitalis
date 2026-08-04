@@ -99,10 +99,6 @@ namespace Vitalis
             cargarGridCantDiagnostico();
         }
 
-        private void dgvReportes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         private void rbReportePacientesMensuales_CheckedChanged(object sender, EventArgs e)
         {
             cargarGridMensual();

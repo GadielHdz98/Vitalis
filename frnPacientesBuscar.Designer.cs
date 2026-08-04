@@ -47,7 +47,6 @@
             button1 = new Button();
             button3 = new Button();
             button2 = new Button();
-            lblAvisoAntesDeBuscar = new Label();
             pcbFotoPaciente = new PictureBox();
             btnVaciarCampos = new Button();
             txtApellidoMaPaciente = new TextBox();
@@ -55,12 +54,12 @@
             txtNombrePaciente = new TextBox();
             lblVitalisInicio = new Label();
             txtBuscarMatricula = new TextBox();
-            pictureBox1 = new PictureBox();
+            pcbBuscarIcon = new PictureBox();
             dgvPacientesBuscar = new DataGridView();
             label8 = new Label();
             pnlBuscarPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcbBuscarIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvPacientesBuscar).BeginInit();
             SuspendLayout();
             // 
@@ -81,7 +80,6 @@
             pnlBuscarPaciente.Controls.Add(button1);
             pnlBuscarPaciente.Controls.Add(button3);
             pnlBuscarPaciente.Controls.Add(button2);
-            pnlBuscarPaciente.Controls.Add(lblAvisoAntesDeBuscar);
             pnlBuscarPaciente.Controls.Add(pcbFotoPaciente);
             pnlBuscarPaciente.Controls.Add(btnVaciarCampos);
             pnlBuscarPaciente.Controls.Add(txtApellidoMaPaciente);
@@ -89,7 +87,7 @@
             pnlBuscarPaciente.Controls.Add(txtNombrePaciente);
             pnlBuscarPaciente.Location = new Point(32, 96);
             pnlBuscarPaciente.Name = "pnlBuscarPaciente";
-            pnlBuscarPaciente.Size = new Size(1657, 286);
+            pnlBuscarPaciente.Size = new Size(1657, 263);
             pnlBuscarPaciente.TabIndex = 1;
             // 
             // cmbTipoPaciente
@@ -100,7 +98,7 @@
             cmbTipoPaciente.ForeColor = Color.Black;
             cmbTipoPaciente.FormattingEnabled = true;
             cmbTipoPaciente.Items.AddRange(new object[] { " ", "Alumno", "Trabajador" });
-            cmbTipoPaciente.Location = new Point(546, 54);
+            cmbTipoPaciente.Location = new Point(545, 55);
             cmbTipoPaciente.Name = "cmbTipoPaciente";
             cmbTipoPaciente.Size = new Size(300, 33);
             cmbTipoPaciente.TabIndex = 8;
@@ -113,7 +111,7 @@
             cmbCarrera.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbCarrera.ForeColor = Color.Black;
             cmbCarrera.FormattingEnabled = true;
-            cmbCarrera.Location = new Point(546, 115);
+            cmbCarrera.Location = new Point(545, 116);
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(300, 33);
             cmbCarrera.TabIndex = 7;
@@ -127,7 +125,7 @@
             cmbGrado.ForeColor = Color.Black;
             cmbGrado.FormattingEnabled = true;
             cmbGrado.Items.AddRange(new object[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
-            cmbGrado.Location = new Point(546, 178);
+            cmbGrado.Location = new Point(545, 179);
             cmbGrado.Name = "cmbGrado";
             cmbGrado.Size = new Size(300, 33);
             cmbGrado.TabIndex = 6;
@@ -234,7 +232,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(239, 239, 239);
-            button1.Location = new Point(1476, 52);
+            button1.Location = new Point(1479, 122);
             button1.Margin = new Padding(0);
             button1.Name = "button1";
             button1.Size = new Size(160, 35);
@@ -249,7 +247,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.FromArgb(239, 239, 239);
-            button3.Location = new Point(1476, 178);
+            button3.Location = new Point(1479, 190);
             button3.Margin = new Padding(0);
             button3.Name = "button3";
             button3.Size = new Size(160, 35);
@@ -264,7 +262,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.FromArgb(239, 239, 239);
-            button2.Location = new Point(1476, 113);
+            button2.Location = new Point(1479, 48);
             button2.Margin = new Padding(0);
             button2.Name = "button2";
             button2.Size = new Size(160, 35);
@@ -272,20 +270,10 @@
             button2.Text = "Editar";
             button2.UseVisualStyleBackColor = false;
             // 
-            // lblAvisoAntesDeBuscar
-            // 
-            lblAvisoAntesDeBuscar.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblAvisoAntesDeBuscar.ForeColor = Color.FromArgb(158, 158, 158);
-            lblAvisoAntesDeBuscar.Location = new Point(745, 240);
-            lblAvisoAntesDeBuscar.Name = "lblAvisoAntesDeBuscar";
-            lblAvisoAntesDeBuscar.Size = new Size(515, 29);
-            lblAvisoAntesDeBuscar.TabIndex = 15;
-            lblAvisoAntesDeBuscar.Text = "Asegurese de llenar por lo menos un campo antes de buscar.";
-            // 
             // pcbFotoPaciente
             // 
             pcbFotoPaciente.Image = Properties.Resources.fotoperfilusuariosinfoto;
-            pcbFotoPaciente.Location = new Point(1266, 41);
+            pcbFotoPaciente.Location = new Point(1259, 36);
             pcbFotoPaciente.Name = "pcbFotoPaciente";
             pcbFotoPaciente.Size = new Size(200, 200);
             pcbFotoPaciente.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -299,7 +287,7 @@
             btnVaciarCampos.FlatAppearance.BorderSize = 0;
             btnVaciarCampos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVaciarCampos.ForeColor = Color.FromArgb(239, 239, 239);
-            btnVaciarCampos.Location = new Point(1081, 176);
+            btnVaciarCampos.Location = new Point(984, 173);
             btnVaciarCampos.Margin = new Padding(0);
             btnVaciarCampos.Name = "btnVaciarCampos";
             btnVaciarCampos.Size = new Size(160, 35);
@@ -366,15 +354,16 @@
             txtBuscarMatricula.Size = new Size(300, 33);
             txtBuscarMatricula.TabIndex = 8;
             // 
-            // pictureBox1
+            // pcbBuscarIcon
             // 
-            pictureBox1.Image = Properties.Resources.IconoBuscar;
-            pictureBox1.Location = new Point(1654, 55);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(35, 35);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
+            pcbBuscarIcon.Image = Properties.Resources.IconoBuscar;
+            pcbBuscarIcon.Location = new Point(1654, 55);
+            pcbBuscarIcon.Name = "pcbBuscarIcon";
+            pcbBuscarIcon.Size = new Size(35, 35);
+            pcbBuscarIcon.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcbBuscarIcon.TabIndex = 9;
+            pcbBuscarIcon.TabStop = false;
+            pcbBuscarIcon.Click += pcbBuscarIcon_Click;
             // 
             // dgvPacientesBuscar
             // 
@@ -386,6 +375,7 @@
             dgvPacientesBuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvPacientesBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvPacientesBuscar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPacientesBuscar.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvPacientesBuscar.BackgroundColor = Color.White;
             dgvPacientesBuscar.BorderStyle = BorderStyle.None;
             dgvPacientesBuscar.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -409,22 +399,24 @@
             dgvPacientesBuscar.DefaultCellStyle = dataGridViewCellStyle7;
             dgvPacientesBuscar.EnableHeadersVisualStyles = false;
             dgvPacientesBuscar.GridColor = Color.White;
-            dgvPacientesBuscar.Location = new Point(32, 415);
+            dgvPacientesBuscar.Location = new Point(32, 397);
             dgvPacientesBuscar.MultiSelect = false;
             dgvPacientesBuscar.Name = "dgvPacientesBuscar";
             dgvPacientesBuscar.ReadOnly = true;
             dgvPacientesBuscar.RowHeadersVisible = false;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = Color.White;
             dgvPacientesBuscar.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dgvPacientesBuscar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvPacientesBuscar.Size = new Size(1657, 500);
+            dgvPacientesBuscar.Size = new Size(1657, 518);
             dgvPacientesBuscar.TabIndex = 10;
+            dgvPacientesBuscar.CellContentClick += dgvPacientesBuscar_CellContentClick;
             // 
             // label8
             // 
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(23, 147, 209);
-            label8.Location = new Point(1145, 33);
+            label8.Location = new Point(1135, 30);
             label8.Name = "label8";
             label8.Size = new Size(197, 60);
             label8.TabIndex = 56;
@@ -438,7 +430,7 @@
             ClientSize = new Size(1719, 970);
             Controls.Add(label8);
             Controls.Add(dgvPacientesBuscar);
-            Controls.Add(pictureBox1);
+            Controls.Add(pcbBuscarIcon);
             Controls.Add(txtBuscarMatricula);
             Controls.Add(lblVitalisInicio);
             Controls.Add(pnlBuscarPaciente);
@@ -447,7 +439,7 @@
             pnlBuscarPaciente.ResumeLayout(false);
             pnlBuscarPaciente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pcbFotoPaciente).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcbBuscarIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvPacientesBuscar).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -466,8 +458,7 @@
         private PictureBox pcbFotoPaciente;
         private Button btnVaciarCampos;
         private TextBox txtBuscarMatricula;
-        private PictureBox pictureBox1;
-        private Label lblAvisoAntesDeBuscar;
+        private PictureBox pcbBuscarIcon;
         private Button button3;
         private Button button2;
         private Button button1;

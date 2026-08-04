@@ -62,6 +62,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(dtmpConsultaDelDia);
             panel1.Controls.Add(rbReportesDiarios);
             panel1.Controls.Add(cmbReporteMensual);
@@ -69,9 +70,9 @@
             panel1.Controls.Add(rbReporteCantDiagnostico);
             panel1.Controls.Add(rbReporteSemanal);
             panel1.Controls.Add(rbReportePacientesMensuales);
-            panel1.Location = new Point(1205, 178);
+            panel1.Location = new Point(1226, 178);
             panel1.Name = "panel1";
-            panel1.Size = new Size(451, 470);
+            panel1.Size = new Size(446, 601);
             panel1.TabIndex = 10;
             // 
             // dtmpConsultaDelDia
@@ -121,7 +122,7 @@
             btnGenerar.BackColor = Color.FromArgb(192, 0, 0);
             btnGenerar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             btnGenerar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnGenerar.Location = new Point(173, 363);
+            btnGenerar.Location = new Point(146, 363);
             btnGenerar.Name = "btnGenerar";
             btnGenerar.Size = new Size(183, 52);
             btnGenerar.TabIndex = 0;
@@ -227,7 +228,7 @@
             dataGridViewCellStyle5.BackColor = Color.White;
             dgvReportes.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvReportes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvReportes.Size = new Size(1159, 601);
+            dgvReportes.Size = new Size(1148, 601);
             dgvReportes.TabIndex = 12;
             // 
             // frmReportes

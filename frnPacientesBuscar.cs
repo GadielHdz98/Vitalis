@@ -17,11 +17,12 @@ namespace Vitalis
         public frnPacientesBuscar()
         {
             InitializeComponent();
-            paciente.CargarCarreras(cmbCarrera);           
+            paciente.CargarCarreras(cmbCarrera);
         }
         private void btnVaciarCampos_Click(object sender, EventArgs e)
         {
-            paciente.VaciarCampos(pnlBuscarPaciente);            
+            paciente.VaciarCampos(pnlBuscarPaciente);
+            txtBuscarMatricula.Clear();
         }
         private void cmbTipoPaciente_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -57,6 +58,48 @@ namespace Vitalis
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvPacientesBuscar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pcbBuscarIcon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtBuscarMatricula.Text))
+                {
+                    MessageBox.Show("Ingrese una matrícula.",
+                                    "Búsqueda",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                    txtBuscarMatricula.Focus();
+                    return;
+                }
+
+                clsPacientes paciente = new clsPacientes();
+
+                paciente.Matricula = Convert.ToInt32(txtBuscarMatricula.Text);
+
+                dgvPacientesBuscar.DataSource = paciente.ConsultarMatricula();
+
+                if (dgvPacientesBuscar.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontró ningún paciente con esa matrícula.",
+                                    "Búsqueda",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
     }
