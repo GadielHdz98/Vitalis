@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             pnlBuscarPaciente = new Panel();
             cmbTipoPaciente = new ComboBox();
             cmbCarrera = new ComboBox();
@@ -50,7 +50,6 @@
             lblAvisoAntesDeBuscar = new Label();
             pcbFotoPaciente = new PictureBox();
             btnVaciarCampos = new Button();
-            btnBuscarPaciente = new Button();
             txtApellidoMaPaciente = new TextBox();
             txtApellidoPaPaciente = new TextBox();
             txtNombrePaciente = new TextBox();
@@ -85,7 +84,6 @@
             pnlBuscarPaciente.Controls.Add(lblAvisoAntesDeBuscar);
             pnlBuscarPaciente.Controls.Add(pcbFotoPaciente);
             pnlBuscarPaciente.Controls.Add(btnVaciarCampos);
-            pnlBuscarPaciente.Controls.Add(btnBuscarPaciente);
             pnlBuscarPaciente.Controls.Add(txtApellidoMaPaciente);
             pnlBuscarPaciente.Controls.Add(txtApellidoPaPaciente);
             pnlBuscarPaciente.Controls.Add(txtNombrePaciente);
@@ -106,7 +104,7 @@
             cmbTipoPaciente.Name = "cmbTipoPaciente";
             cmbTipoPaciente.Size = new Size(300, 33);
             cmbTipoPaciente.TabIndex = 8;
-            cmbTipoPaciente.SelectedIndexChanged += cmbTipoPaciente_SelectedIndexChanged;
+            cmbTipoPaciente.SelectedIndexChanged += RealizarBusquedaFiltros;
             // 
             // cmbCarrera
             // 
@@ -119,6 +117,7 @@
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(300, 33);
             cmbCarrera.TabIndex = 7;
+            cmbCarrera.TextChanged += RealizarBusquedaFiltros;
             // 
             // cmbGrado
             // 
@@ -132,6 +131,7 @@
             cmbGrado.Name = "cmbGrado";
             cmbGrado.Size = new Size(300, 33);
             cmbGrado.TabIndex = 6;
+            cmbGrado.TextChanged += RealizarBusquedaFiltros;
             // 
             // label7
             // 
@@ -155,6 +155,7 @@
             txtGrupo.PlaceholderText = "Grupo del paciente";
             txtGrupo.Size = new Size(300, 33);
             txtGrupo.TabIndex = 54;
+            txtGrupo.TextChanged += RealizarBusquedaFiltros;
             // 
             // label6
             // 
@@ -307,22 +308,6 @@
             btnVaciarCampos.UseVisualStyleBackColor = false;
             btnVaciarCampos.Click += btnVaciarCampos_Click;
             // 
-            // btnBuscarPaciente
-            // 
-            btnBuscarPaciente.Anchor = AnchorStyles.None;
-            btnBuscarPaciente.BackColor = Color.FromArgb(58, 154, 138);
-            btnBuscarPaciente.FlatAppearance.BorderSize = 0;
-            btnBuscarPaciente.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBuscarPaciente.ForeColor = Color.FromArgb(239, 239, 239);
-            btnBuscarPaciente.Location = new Point(907, 176);
-            btnBuscarPaciente.Margin = new Padding(0);
-            btnBuscarPaciente.Name = "btnBuscarPaciente";
-            btnBuscarPaciente.Size = new Size(160, 35);
-            btnBuscarPaciente.TabIndex = 10;
-            btnBuscarPaciente.Text = "Buscar";
-            btnBuscarPaciente.UseVisualStyleBackColor = false;
-            btnBuscarPaciente.Click += btnBuscarPaciente_Click;
-            // 
             // txtApellidoMaPaciente
             // 
             txtApellidoMaPaciente.BackColor = Color.FromArgb(239, 239, 239);
@@ -333,6 +318,7 @@
             txtApellidoMaPaciente.PlaceholderText = "Apellido Materno a buscar";
             txtApellidoMaPaciente.Size = new Size(300, 33);
             txtApellidoMaPaciente.TabIndex = 5;
+            txtApellidoMaPaciente.TextChanged += RealizarBusquedaFiltros;
             // 
             // txtApellidoPaPaciente
             // 
@@ -344,6 +330,7 @@
             txtApellidoPaPaciente.PlaceholderText = "Apellido paterno a buscar";
             txtApellidoPaPaciente.Size = new Size(300, 33);
             txtApellidoPaPaciente.TabIndex = 4;
+            txtApellidoPaPaciente.TextChanged += RealizarBusquedaFiltros;
             // 
             // txtNombrePaciente
             // 
@@ -355,6 +342,7 @@
             txtNombrePaciente.PlaceholderText = "Nombre(s) a buscar";
             txtNombrePaciente.Size = new Size(300, 33);
             txtNombrePaciente.TabIndex = 1;
+            txtNombrePaciente.TextChanged += RealizarBusquedaFiltros;
             // 
             // lblVitalisInicio
             // 
@@ -394,31 +382,31 @@
             dgvPacientesBuscar.AllowUserToDeleteRows = false;
             dgvPacientesBuscar.AllowUserToResizeColumns = false;
             dgvPacientesBuscar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(239, 239, 239);
-            dgvPacientesBuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(239, 239, 239);
+            dgvPacientesBuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvPacientesBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvPacientesBuscar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPacientesBuscar.BackgroundColor = Color.White;
             dgvPacientesBuscar.BorderStyle = BorderStyle.None;
             dgvPacientesBuscar.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvPacientesBuscar.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(58, 154, 138);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvPacientesBuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(58, 154, 138);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvPacientesBuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvPacientesBuscar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvPacientesBuscar.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.Window;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dgvPacientesBuscar.DefaultCellStyle = dataGridViewCellStyle7;
             dgvPacientesBuscar.EnableHeadersVisualStyles = false;
             dgvPacientesBuscar.GridColor = Color.White;
             dgvPacientesBuscar.Location = new Point(32, 415);
@@ -426,23 +414,22 @@
             dgvPacientesBuscar.Name = "dgvPacientesBuscar";
             dgvPacientesBuscar.ReadOnly = true;
             dgvPacientesBuscar.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dgvPacientesBuscar.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dgvPacientesBuscar.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dgvPacientesBuscar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPacientesBuscar.Size = new Size(1657, 500);
             dgvPacientesBuscar.TabIndex = 10;
             // 
             // label8
             // 
-            label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(23, 147, 209);
-            label8.Location = new Point(1010, 60);
+            label8.Location = new Point(1145, 33);
             label8.Name = "label8";
-            label8.Size = new Size(323, 25);
+            label8.Size = new Size(197, 60);
             label8.TabIndex = 56;
             label8.Text = "Buscar directamente por matricula:";
-            label8.TextAlign = ContentAlignment.MiddleCenter;
+            label8.TextAlign = ContentAlignment.MiddleRight;
             // 
             // frnPacientesBuscar
             // 
@@ -477,7 +464,6 @@
         private ComboBox cmbTipoPaciente;
         private ComboBox cmbCarrera;
         private PictureBox pcbFotoPaciente;
-        private Button btnBuscarPaciente;
         private Button btnVaciarCampos;
         private TextBox txtBuscarMatricula;
         private PictureBox pictureBox1;
