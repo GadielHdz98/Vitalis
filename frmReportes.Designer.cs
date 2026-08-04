@@ -126,7 +126,7 @@
             btnGenerar.Name = "btnGenerar";
             btnGenerar.Size = new Size(183, 52);
             btnGenerar.TabIndex = 0;
-            btnGenerar.Text = "Generar";
+            btnGenerar.Text = "Generar PDF";
             btnGenerar.UseVisualStyleBackColor = false;
             btnGenerar.Click += btnGenerar_Click;
             // 
