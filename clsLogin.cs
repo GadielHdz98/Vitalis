@@ -90,8 +90,6 @@ namespace Vitalis
                                 {
                                     throw new Exception($"El perfil ingresado no tiene permiso para acceder");
                                 }
-
-                                MessageBox.Show("Tu perfil es: " + perfil, "Sistema");
                                 return true;
                             }
                             else

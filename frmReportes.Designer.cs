@@ -35,6 +35,8 @@
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             lblReportes = new Label();
             panel1 = new Panel();
+            dtmpConsultaDelDia = new DateTimePicker();
+            rbReportesDiarios = new RadioButton();
             cmbReporteMensual = new ComboBox();
             btnGenerar = new Button();
             rbReporteCantDiagnostico = new RadioButton();
@@ -52,7 +54,7 @@
             lblReportes.BackColor = Color.Transparent;
             lblReportes.Font = new Font("Segoe UI", 38.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblReportes.ForeColor = Color.FromArgb(23, 147, 209);
-            lblReportes.Location = new Point(60, 86);
+            lblReportes.Location = new Point(40, 96);
             lblReportes.Name = "lblReportes";
             lblReportes.Size = new Size(876, 68);
             lblReportes.TabIndex = 7;
@@ -60,15 +62,44 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(dtmpConsultaDelDia);
+            panel1.Controls.Add(rbReportesDiarios);
             panel1.Controls.Add(cmbReporteMensual);
             panel1.Controls.Add(btnGenerar);
             panel1.Controls.Add(rbReporteCantDiagnostico);
             panel1.Controls.Add(rbReporteSemanal);
             panel1.Controls.Add(rbReportePacientesMensuales);
-            panel1.Location = new Point(1116, 178);
+            panel1.Location = new Point(1205, 178);
             panel1.Name = "panel1";
-            panel1.Size = new Size(540, 470);
+            panel1.Size = new Size(451, 470);
             panel1.TabIndex = 10;
+            // 
+            // dtmpConsultaDelDia
+            // 
+            dtmpConsultaDelDia.CalendarFont = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtmpConsultaDelDia.Enabled = false;
+            dtmpConsultaDelDia.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtmpConsultaDelDia.Format = DateTimePickerFormat.Short;
+            dtmpConsultaDelDia.Location = new Point(59, 78);
+            dtmpConsultaDelDia.MaximumSize = new Size(300, 33);
+            dtmpConsultaDelDia.MinimumSize = new Size(250, 33);
+            dtmpConsultaDelDia.Name = "dtmpConsultaDelDia";
+            dtmpConsultaDelDia.Size = new Size(270, 33);
+            dtmpConsultaDelDia.TabIndex = 50;
+            dtmpConsultaDelDia.ValueChanged += dtmpConsultaDelDia_ValueChanged;
+            // 
+            // rbReportesDiarios
+            // 
+            rbReportesDiarios.AutoSize = true;
+            rbReportesDiarios.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            rbReportesDiarios.Location = new Point(43, 43);
+            rbReportesDiarios.Name = "rbReportesDiarios";
+            rbReportesDiarios.Size = new Size(286, 29);
+            rbReportesDiarios.TabIndex = 49;
+            rbReportesDiarios.TabStop = true;
+            rbReportesDiarios.Text = "Reporte de consultas del dia:";
+            rbReportesDiarios.UseVisualStyleBackColor = true;
+            rbReportesDiarios.CheckedChanged += rbReportesDiarios_CheckedChanged;
             // 
             // cmbReporteMensual
             // 
@@ -79,9 +110,9 @@
             cmbReporteMensual.ForeColor = Color.Black;
             cmbReporteMensual.FormattingEnabled = true;
             cmbReporteMensual.Items.AddRange(new object[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" });
-            cmbReporteMensual.Location = new Point(260, 97);
+            cmbReporteMensual.Location = new Point(263, 184);
             cmbReporteMensual.Name = "cmbReporteMensual";
-            cmbReporteMensual.Size = new Size(244, 33);
+            cmbReporteMensual.Size = new Size(174, 33);
             cmbReporteMensual.TabIndex = 48;
             cmbReporteMensual.SelectedIndexChanged += cmbReporteMensual_SelectedIndexChanged;
             // 
@@ -90,7 +121,7 @@
             btnGenerar.BackColor = Color.FromArgb(192, 0, 0);
             btnGenerar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             btnGenerar.ForeColor = Color.FromArgb(239, 239, 239);
-            btnGenerar.Location = new Point(189, 362);
+            btnGenerar.Location = new Point(173, 363);
             btnGenerar.Name = "btnGenerar";
             btnGenerar.Size = new Size(183, 52);
             btnGenerar.TabIndex = 0;
@@ -102,7 +133,7 @@
             // 
             rbReporteCantDiagnostico.AutoSize = true;
             rbReporteCantDiagnostico.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            rbReporteCantDiagnostico.Location = new Point(82, 205);
+            rbReporteCantDiagnostico.Location = new Point(43, 246);
             rbReporteCantDiagnostico.Name = "rbReporteCantDiagnostico";
             rbReporteCantDiagnostico.Size = new Size(357, 29);
             rbReporteCantDiagnostico.TabIndex = 14;
@@ -115,7 +146,7 @@
             // 
             rbReporteSemanal.AutoSize = true;
             rbReporteSemanal.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            rbReporteSemanal.Location = new Point(60, 153);
+            rbReporteSemanal.Location = new Point(43, 131);
             rbReporteSemanal.Name = "rbReporteSemanal";
             rbReporteSemanal.Size = new Size(394, 29);
             rbReporteSemanal.TabIndex = 13;
@@ -128,7 +159,7 @@
             // 
             rbReportePacientesMensuales.AutoSize = true;
             rbReportePacientesMensuales.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            rbReportePacientesMensuales.Location = new Point(29, 98);
+            rbReportePacientesMensuales.Location = new Point(43, 188);
             rbReportePacientesMensuales.Name = "rbReportePacientesMensuales";
             rbReportePacientesMensuales.Size = new Size(214, 29);
             rbReportePacientesMensuales.TabIndex = 12;
@@ -180,7 +211,7 @@
             dgvReportes.DefaultCellStyle = dataGridViewCellStyle3;
             dgvReportes.EnableHeadersVisualStyles = false;
             dgvReportes.GridColor = Color.White;
-            dgvReportes.Location = new Point(72, 169);
+            dgvReportes.Location = new Point(40, 178);
             dgvReportes.MultiSelect = false;
             dgvReportes.Name = "dgvReportes";
             dgvReportes.ReadOnly = true;
@@ -196,7 +227,7 @@
             dataGridViewCellStyle5.BackColor = Color.White;
             dgvReportes.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvReportes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvReportes.Size = new Size(1015, 649);
+            dgvReportes.Size = new Size(1159, 601);
             dgvReportes.TabIndex = 12;
             // 
             // frmReportes
@@ -228,5 +259,7 @@
         private PictureBox pictureBox1;
         private DataGridView dgvReportes;
         private ComboBox cmbReporteMensual;
+        private RadioButton rbReportesDiarios;
+        private DateTimePicker dtmpConsultaDelDia;
     }
 }

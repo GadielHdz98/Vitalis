@@ -45,7 +45,7 @@
             lblVitalisInicio.ForeColor = Color.FromArgb(23, 147, 209);
             lblVitalisInicio.Location = new Point(411, 9);
             lblVitalisInicio.Name = "lblVitalisInicio";
-            lblVitalisInicio.Size = new Size(898, 68);
+            lblVitalisInicio.Size = new Size(939, 68);
             lblVitalisInicio.TabIndex = 5;
             lblVitalisInicio.Text = "Pacientes agregados recientemente";
             // 

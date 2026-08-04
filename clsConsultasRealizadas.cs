@@ -23,8 +23,7 @@ namespace Vitalis
                 using (var conexion = conexionBD.AbrirConexion())
                 {
                     // Unimos las 4 tablas mediante INNER JOIN para mostrar descripciones claras en el Grid
-                    string sql = "SELECT C.id_Consulta AS 'No. Consulta', " +
-                                 "C.FechaConsulta AS 'Fecha Consulta', " +
+                    string sql = "SELECT C.FechaConsulta AS 'Fecha Consulta', " +
                                  "P.Matricula AS Matricula, " +
                                  "CONCAT(P.nombre, ' ', P.apellidoPaterno, ' ', P.apellidoMaterno) AS 'Nombre Completo', " +
                                  "CA.nombreCarrera AS Carrera, " +
